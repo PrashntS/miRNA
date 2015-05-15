@@ -54,4 +54,4 @@ class Routines(object):
             minion.write(json.dumps(key_list, indent = 4))
 
 if __name__ == "__main__":
-    Routines.build_stats_reverse()
+    print(len(miRNA_reverse))
