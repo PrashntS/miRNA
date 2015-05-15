@@ -76,4 +76,4 @@ class Routines(object):
             minion.write(json.dumps(graph, indent = 4))        
 
 if __name__ == "__main__":
-    Routines.build_stats_one_degree_miRNA_miRNA()
+    Routines.one_degree_mirna_mirna_mapping()
