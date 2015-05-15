@@ -5,6 +5,7 @@ import networkx as nx
 from miRNA_map import miRNA_map
 import matplotlib.pyplot as plt
 from networkx.algorithms import bipartite
+import json
 
 class Routines(object):
     def export_gexf():
@@ -24,12 +25,25 @@ class Routines(object):
         nx.set_node_attributes(G, 'bipartite', c)
         nx.write_gexf(G,"test_massive_color.gexf")
 
-    def build_stats():
+    def build_stats_forward():
         count_v = []
         for rna, target in miRNA_map.items():
             count_v.append((rna, len(set(target))))
 
         print(sorted(count_v, key = lambda x: x[1]))
 
+    def reverse_list():
+        key_list = {}
+        for rna, target in miRNA_map.items():
+            for i in target:
+                key_list[i] = []
+
+        for rna, target in miRNA_map.items():
+            for gene in target:
+                key_list[gene].append(rna)
+
+        with open("map_reverse.json", "w") as minion:
+            minion.write(json.dumps(key_list, indent = 4))
+
 if __name__ == "__main__":
-    Routines.build_stats()
+    Routines.reverse_list()
