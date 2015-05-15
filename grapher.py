@@ -54,7 +54,17 @@ class Routines(object):
             minion.write(json.dumps(key_list, indent = 4))
 
     def one_degree_mirna_mirna_mapping():
-        pass
+        # Take a miRNA from map, iterate on its targets. Lookup every miRNAs connected through miRNA reverse map.
+        graph = {}
+
+        for miRNA, target in miRNA_map.items():
+            graph[miRNA] = set()
+            for genes in target:
+                for miRNA_rev in miRNA_reverse[genes]:
+                    graph[miRNA].add(miRNA_rev)
+
+        with open("one_degree_mirna_mirna_map.json", "w") as minion:
+            minion.write(json.dumps(graph, indent = 4))        
 
 if __name__ == "__main__":
     print(len(miRNA_reverse))
