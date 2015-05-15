@@ -89,5 +89,13 @@ class Stats(object):
 
         print(count_v)
 
+    def neucleotide_distributions():
+        count_v = {i: 0 for i in ['A', 'T', 'G', 'C', 'U']}
+        for miRNA, sequence in sequence_lookup.items():
+            for i in ['A', 'T', 'G', 'C', 'U']:
+                count_v[i] += sequence.count(i)
+
+        print(count_v)
+
 if __name__ == "__main__":
-    Stats.sequence_distributions()
+    Stats.neucleotide_distributions()
