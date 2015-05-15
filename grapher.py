@@ -53,5 +53,8 @@ class Routines(object):
         with open("map_reverse.json", "w") as minion:
             minion.write(json.dumps(key_list, indent = 4))
 
+    def one_degree_mirna_mirna_mapping():
+        pass
+
 if __name__ == "__main__":
     print(len(miRNA_reverse))
