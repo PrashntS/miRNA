@@ -42,7 +42,11 @@ class Routines(object):
         print(sorted(count_v, key = lambda x: x[1]))
 
     def build_stats_one_degree_miRNA_miRNA():
-        pass
+        count_v = []
+        for miRNA1, miRNA2 in one_degree_map.items():
+            count_v.append((miRNA1, len(set(miRNA2))))
+
+        print(sorted(count_v, key = lambda x: x[1]))
 
     def reverse_list():
         key_list = {}
@@ -72,4 +76,4 @@ class Routines(object):
             minion.write(json.dumps(graph, indent = 4))        
 
 if __name__ == "__main__":
-    Routines.one_degree_mirna_mirna_mapping()
+    Routines.build_stats_one_degree_miRNA_miRNA()
