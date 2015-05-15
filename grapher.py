@@ -4,6 +4,7 @@
 import networkx as nx
 from miRNA_map import miRNA_map
 from map_reverse import miRNA_reverse
+from one_degree_mirna_mirna_map import one_degree_map
 import matplotlib.pyplot as plt
 from networkx.algorithms import bipartite
 import json
@@ -40,6 +41,9 @@ class Routines(object):
 
         print(sorted(count_v, key = lambda x: x[1]))
 
+    def build_stats_one_degree_miRNA_miRNA():
+        pass
+
     def reverse_list():
         key_list = {}
         for rna, target in miRNA_map.items():
@@ -62,9 +66,10 @@ class Routines(object):
             for genes in target:
                 for miRNA_rev in miRNA_reverse[genes]:
                     graph[miRNA].add(miRNA_rev)
+            graph[miRNA] = list(graph[miRNA])
 
         with open("one_degree_mirna_mirna_map.json", "w") as minion:
             minion.write(json.dumps(graph, indent = 4))        
 
 if __name__ == "__main__":
-    print(len(miRNA_reverse))
+    Routines.one_degree_mirna_mirna_mapping()
