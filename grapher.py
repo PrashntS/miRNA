@@ -79,7 +79,15 @@ class Routines(object):
 
 class Stats(object):
     def sequence_distributions():
-        pass
+        count_v = {}
+        for miRNA, sequence in sequence_lookup.items():
+            x = len(sequence)
+            if x in count_v:
+                count_v[x] += 1
+            else:
+                count_v[x] = 1
+
+        print(count_v)
 
 if __name__ == "__main__":
     Stats.sequence_distributions()
