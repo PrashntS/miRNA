@@ -2,12 +2,14 @@
 # -*- coding: utf-8 -*-
 
 import networkx as nx
+import json
+import matplotlib.pyplot as plt
+from networkx.algorithms import bipartite
+
 from miRNA_map import miRNA_map
 from map_reverse import miRNA_reverse
 from one_degree_mirna_mirna_map import one_degree_map
-import matplotlib.pyplot as plt
-from networkx.algorithms import bipartite
-import json
+from miRNA_Sequences import sequence_lookup
 
 class Routines(object):
     def export_gexf():
@@ -75,5 +77,9 @@ class Routines(object):
         with open("one_degree_mirna_mirna_map.json", "w") as minion:
             minion.write(json.dumps(graph, indent = 4))        
 
+class Stats(object):
+    def sequence_distributions():
+        pass
+
 if __name__ == "__main__":
-    Routines.one_degree_mirna_mirna_mapping()
+    Stats.sequence_distributions()
