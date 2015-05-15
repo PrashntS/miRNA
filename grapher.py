@@ -3,6 +3,7 @@
 
 import networkx as nx
 from miRNA_map import miRNA_map
+from map_reverse import miRNA_reverse
 import matplotlib.pyplot as plt
 from networkx.algorithms import bipartite
 import json
@@ -32,6 +33,13 @@ class Routines(object):
 
         print(sorted(count_v, key = lambda x: x[1]))
 
+    def build_stats_reverse():
+        count_v = []
+        for rna, target in miRNA_reverse.items():
+            count_v.append((rna, len(set(target))))
+
+        print(sorted(count_v, key = lambda x: x[1]))
+
     def reverse_list():
         key_list = {}
         for rna, target in miRNA_map.items():
@@ -46,4 +54,4 @@ class Routines(object):
             minion.write(json.dumps(key_list, indent = 4))
 
 if __name__ == "__main__":
-    Routines.reverse_list()
+    Routines.build_stats_reverse()
