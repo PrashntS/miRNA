@@ -100,4 +100,4 @@ class Stats(object):
         print(sorted(count_v, key = lambda x: x[1]))
 
 if __name__ == "__main__":
-    Stats.neucleotide_distributions()
+    Stats.stats_reverse()
