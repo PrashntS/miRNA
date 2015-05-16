@@ -60,10 +60,13 @@ class Routines(object):
 
     def gene_data():
         storage = {}
+        total = len(miRNA_reverse)
+        count = 0
         for gene, target_mirnas in miRNA_reverse.items():
+            count += 1
             try:
                 storage[gene] = get_gene_summary_homo_sapiens(gene)
-                print("Done:", gene)
+                print("Done: {0} ({1} of {2}, {3} Remains)".format(gene, count, total, total - count))
             except Exception as e:
                 print("Skipped:", gene, "Due to:", str(e))
 
