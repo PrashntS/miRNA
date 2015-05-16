@@ -1,25 +1,4 @@
 miRNA_reverse = {
-    "": [
-        "hsa-miR-1",
-        "hsa-miR-16-5p",
-        "hsa-miR-16-5p",
-        "hsa-miR-16-5p",
-        "hsa-miR-16-5p",
-        "hsa-miR-16-5p",
-        "hsa-miR-16-5p",
-        "hsa-miR-206",
-        "hsa-miR-30a-5p",
-        "hsa-miR-15a-5p",
-        "hsa-miR-15a-5p",
-        "hsa-miR-15a-5p",
-        "hsa-miR-15a-5p",
-        "hsa-miR-15a-5p",
-        "hsa-miR-15a-5p",
-        "hsa-miR-145-5p",
-        "hsa-miR-145-5p",
-        "hsa-miR-155-5p",
-        "hsa-miR-23a-3p"
-    ],
     "ACTR10": [
         "hsa-miR-30b-5p"
     ],

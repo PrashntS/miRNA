@@ -11,6 +11,8 @@ from map_reverse import miRNA_reverse
 from one_degree_mirna_mirna_map import one_degree_map
 from miRNA_Sequences import sequence_lookup
 
+from retriever import get_gene_summary_homo_sapiens
+
 class Routines(object):
     def export_gexf():
         G = nx.Graph()
@@ -54,7 +56,19 @@ class Routines(object):
             graph[miRNA] = list(graph[miRNA])
 
         with open("one_degree_mirna_mirna_map.json", "w") as minion:
-            minion.write(json.dumps(graph, indent = 4))        
+            minion.write(json.dumps(graph, indent = 4))
+
+    def gene_data():
+        storage = {}
+        for gene, target_mirnas in miRNA_reverse.items():
+            try:
+                storage[gene] = get_gene_summary_homo_sapiens(gene)
+                print("Done:", gene)
+            except Exception as e:
+                print("Skipped:", gene, "Due to:", str(e))
+
+        with open("gene_data_summary.json", "w") as minion:
+            minion.write(json.dumps(storage, indent = 4))
 
 class Stats(object):
     def sequence_distributions():
@@ -76,7 +90,6 @@ class Stats(object):
 
         print(count_v)
         print({i: (j*100)/sum([b for a, b in count_v.items()]) for i, j in count_v.items()})
-
 
     def stats_forward():
         count_v = []
@@ -100,4 +113,4 @@ class Stats(object):
         print(sorted(count_v, key = lambda x: x[1]))
 
 if __name__ == "__main__":
-    Stats.stats_reverse()
+    Routines.gene_data()
