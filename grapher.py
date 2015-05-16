@@ -73,6 +73,7 @@ class Routines(object):
         storage = {}
         total = len(miRNA_reverse)
         count = 0
+        skipped = []
         for gene, target_mirnas in miRNA_reverse.items():
             count += 1
 
@@ -83,10 +84,17 @@ class Routines(object):
                 storage[gene] = get_gene_summary_homo_sapiens(gene)
                 print("Done: {0} ({1} of {2}, {3} Remains)".format(gene, count, total, total - count))
             except Exception as e:
+                skipped.append((gene, str(e)))
                 print("Skipped:", gene, "Due to:", str(e))
 
         with open("gene_data_summary.json", "w") as minion:
             minion.write(json.dumps(storage, indent = 4))
+
+        with open("gene_data_summary_SKIPPED.json", "w") as minion:
+            minion.write(json.dumps(skipped, indent = 4))
+
+        print("Wrote: gene_data_summary.json")
+        print("Skipped genes listed into: gene_data_summary_SKIPPED.json")
 
 class Stats(object):
     def sequence_distributions():
