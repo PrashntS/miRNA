@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import signal
+import sys
 import networkx as nx
 import json
 import matplotlib.pyplot as plt
@@ -12,6 +14,15 @@ from one_degree_mirna_mirna_map import one_degree_map
 from miRNA_Sequences import sequence_lookup
 
 from retriever import get_gene_summary_homo_sapiens
+
+END_SIG = False
+
+def signal_handler(signal, frame):
+    global END_SIG
+    END_SIG = True
+    print('\nEnding Prematurely after Dumping retrieved data. Please Wait.')
+
+signal.signal(signal.SIGINT, signal_handler)
 
 class Routines(object):
     def export_gexf():
@@ -64,6 +75,10 @@ class Routines(object):
         count = 0
         for gene, target_mirnas in miRNA_reverse.items():
             count += 1
+
+            if END_SIG is True:
+                break
+
             try:
                 storage[gene] = get_gene_summary_homo_sapiens(gene)
                 print("Done: {0} ({1} of {2}, {3} Remains)".format(gene, count, total, total - count))

@@ -1,1 +1,18 @@
-{}
+{
+    "IDH3B": {
+        "summary": "Isocitrate dehydrogenases catalyze the oxidative decarboxylation of isocitrate to 2-oxoglutarate. These enzymes belong to two distinct subclasses, one of which utilizes NAD(+) as the electron acceptor and the other NADP(+). Five isocitrate dehydrogenases have been reported: three NAD(+)-dependent isocitrate dehydrogenases, which localize to the mitochondrial matrix, and two NADP(+)-dependent isocitrate dehydrogenases, one of which is mitochondrial and the other predominantly cytosolic. NAD(+)-dependent isocitrate dehydrogenases catalyze the allosterically regulated rate-limiting step of the tricarboxylic acid cycle. Each isozyme is a heterotetramer that is composed of two alpha subunits, one beta subunit, and one gamma subunit. The protein encoded by this gene is the beta subunit of one isozyme of NAD(+)-dependent isocitrate dehydrogenase. Three alternatively spliced transcript variants encoding different isoforms have been described for this gene. [provided by RefSeq, Jul 2008]",
+        "symbol": "IDH3B",
+        "name": "isocitrate dehydrogenase 3 (NAD+) beta",
+        "type": "protein coding",
+        "Data_URL": "http://www.ncbi.nlm.nih.gov/gene/3420",
+        "FASTA_URL": "http://www.ncbi.nlm.nih.gov/nuccore/NC_000020.11?report=fasta&from=2658394&to=2664219&strand=true"
+    },
+    "SERPINE2": {
+        "summary": "This gene encodes a member of the serpin family of proteins, a group of proteins that inhibit serine proteases. Thrombin, urokinase, plasmin and trypsin are among the proteases that this family member can inhibit. This gene is a susceptibility gene for chronic obstructive pulmonary disease and for emphysema. Alternative splicing results in multiple transcript variants. [provided by RefSeq, Aug 2012]",
+        "symbol": "SERPINE2",
+        "name": "serpin peptidase inhibitor, clade E (nexin, plasminogen activator inhibitor type 1), member 2",
+        "type": "protein coding",
+        "Data_URL": "http://www.ncbi.nlm.nih.gov/gene/5270",
+        "FASTA_URL": "http://www.ncbi.nlm.nih.gov/nuccore/NC_000002.12?report=fasta&from=223975048&to=224039319&strand=true"
+    }
+}
