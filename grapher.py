@@ -29,27 +29,6 @@ class Routines(object):
         nx.set_node_attributes(G, 'bipartite', c)
         nx.write_gexf(G,"test_massive_color.gexf")
 
-    def build_stats_forward():
-        count_v = []
-        for rna, target in miRNA_map.items():
-            count_v.append((rna, len(set(target))))
-
-        print(sorted(count_v, key = lambda x: x[1]))
-
-    def build_stats_reverse():
-        count_v = []
-        for rna, target in miRNA_reverse.items():
-            count_v.append((rna, len(set(target))))
-
-        print(sorted(count_v, key = lambda x: x[1]))
-
-    def build_stats_one_degree_miRNA_miRNA():
-        count_v = []
-        for miRNA1, miRNA2 in one_degree_map.items():
-            count_v.append((miRNA1, len(set(miRNA2))))
-
-        print(sorted(count_v, key = lambda x: x[1]))
-
     def reverse_list():
         key_list = {}
         for rna, target in miRNA_map.items():
@@ -96,6 +75,29 @@ class Stats(object):
                 count_v[i] += sequence.count(i)
 
         print(count_v)
+        print({i: (j*100)/sum([b for a, b in count_v.items()]) for i, j in count_v.items()})
+
+
+    def stats_forward():
+        count_v = []
+        for rna, target in miRNA_map.items():
+            count_v.append((rna, len(set(target))))
+
+        print(sorted(count_v, key = lambda x: x[1]))
+
+    def stats_reverse():
+        count_v = []
+        for rna, target in miRNA_reverse.items():
+            count_v.append((rna, len(set(target))))
+
+        print(sorted(count_v, key = lambda x: x[1]))
+
+    def stats_one_degree_miRNA_miRNA():
+        count_v = []
+        for miRNA1, miRNA2 in one_degree_map.items():
+            count_v.append((miRNA1, len(set(miRNA2))))
+
+        print(sorted(count_v, key = lambda x: x[1]))
 
 if __name__ == "__main__":
     Stats.neucleotide_distributions()
