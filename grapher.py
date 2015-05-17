@@ -74,8 +74,15 @@ class Routines(object):
         total = len(miRNA_reverse)
         count = 0
         skipped = []
+
+        with open("gene_data_summary.json", "r") as minion:
+            storage = json.loads(minion.read())
+
         for gene, target_mirnas in miRNA_reverse.items():
             count += 1
+
+            if gene in storage:
+                continue
 
             if END_SIG is True:
                 break
