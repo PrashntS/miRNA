@@ -104,6 +104,16 @@ class Routines(object):
         print("Wrote: gene_data_summary.json")
         print("Skipped genes listed into: gene_data_summary_SKIPPED.json")
 
+    def assign_gene_data():
+        storage = {}
+
+        with open("gene_data_summary.json", "r") as minion:
+            storage = json.loads(minion.read())
+
+        for gene, data in storage:
+            storage[gene]['target_mirnas'] = map_reverse[gene]
+            storage[gene]['targets'] = len(map_reverse[gene])
+
 class Stats(object):
     def sequence_distributions():
         count_v = {}
@@ -147,4 +157,4 @@ class Stats(object):
         print(sorted(count_v, key = lambda x: x[1]))
 
 if __name__ == "__main__":
-    Routines.gene_data()
+    Routines.assign_gene_data()
