@@ -82,6 +82,7 @@ class Routines(object):
             count += 1
 
             if gene in storage:
+                print("Already done, skipping.")
                 continue
 
             if END_SIG is True:
