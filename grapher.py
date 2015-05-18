@@ -110,9 +110,14 @@ class Routines(object):
         with open("gene_data_summary.json", "r") as minion:
             storage = json.loads(minion.read())
 
-        for gene, data in storage:
-            storage[gene]['target_mirnas'] = map_reverse[gene]
-            storage[gene]['targets'] = len(map_reverse[gene])
+        for gene, data in storage.items():
+            storage[gene]['target_mirnas'] = miRNA_reverse[gene]
+            storage[gene]['targets'] = len(miRNA_reverse[gene])
+
+        with open("gene_data_summary_target.json", "w") as minion:
+            minion.write(json.dumps(storage, indent = 4))
+
+        print("Wrote: gene_data_summary_target.json")
 
 class Stats(object):
     def sequence_distributions():
