@@ -1,0 +1,65 @@
+{
+    "ARPC5": {
+        "summary": "This gene encodes one of seven subunits of the human Arp2/3 protein complex. The Arp2/3 protein complex has been implicated in the control of actin polymerization in cells and has been conserved through evolution. The exact role of the protein encoded by this gene, the p16 subunit, has yet to be determined. Alternatively spliced transcript variants encoding different isoforms have been observed for this gene. [provided by RefSeq, Jul 2012]",
+        "symbol": "ARPC5",
+        "type": "protein coding",
+        "FASTA_URL": "http://www.ncbi.nlm.nih.gov/nuccore/NC_000001.11?report=fasta&from=183626193&to=183635941&strand=true",
+        "Data_URL": "http://www.ncbi.nlm.nih.gov/gene/10092",
+        "name": "actin related protein 2/3 complex, subunit 5, 16kDa"
+    },
+    "PORCN": {
+        "summary": "This gene belongs to the evolutionarily conserved porcupine (Porc) gene family. Genes of the porcupine family encode endoplasmic reticulum proteins with multiple transmembrane domains. Porcupine proteins are involved in the processing of Wnt (wingless and int homologue) proteins. Disruption of this gene is associated with focal dermal hypoplasia, and the encoded protein has been implicated in cancer. Multiple alternatively spliced transcript variants encoding distinct isoforms have been observed. [provided by RefSeq, Aug 2013]",
+        "symbol": "PORCN",
+        "type": "protein coding",
+        "FASTA_URL": "http://www.ncbi.nlm.nih.gov/nuccore/NC_000023.11?report=fasta&from=48508959&to=48520814",
+        "Data_URL": "http://www.ncbi.nlm.nih.gov/gene/64840",
+        "name": "porcupine homolog (Drosophila)"
+    },
+    "TUBB2B": {
+        "summary": "The protein encoded by this gene is a beta isoform of tubulin, which binds GTP and is a major component of microtubules. This gene is highly similar to TUBB2A and TUBB2C. Defects in this gene are a cause of asymmetric polymicrogyria. [provided by RefSeq, Mar 2010]",
+        "symbol": "TUBB2B",
+        "type": "protein coding",
+        "FASTA_URL": "http://www.ncbi.nlm.nih.gov/nuccore/NC_000006.12?report=fasta&from=3224261&to=3231665&strand=true",
+        "Data_URL": "http://www.ncbi.nlm.nih.gov/gene/347733",
+        "name": "tubulin, beta 2B class IIb"
+    },
+    "CABYR": {
+        "summary": "To reach fertilization competence, spermatozoa undergo a series of morphological and molecular maturational processes, termed capacitation, involving protein tyrosine phosphorylation and increased intracellular calcium. The protein encoded by this gene localizes to the principal piece of the sperm flagellum in association with the fibrous sheath and exhibits calcium-binding when phosphorylated during capacitation. A pseudogene on chromosome 3 has been identified for this gene. Alternatively spliced transcript variants encoding distinct protein isoforms have been found for this gene. [provided by RefSeq, Jul 2013]",
+        "symbol": "CABYR",
+        "type": "protein coding",
+        "FASTA_URL": "http://www.ncbi.nlm.nih.gov/nuccore/NC_000018.10?report=fasta&from=24138956&to=24161600",
+        "Data_URL": "http://www.ncbi.nlm.nih.gov/gene/26256",
+        "name": "calcium binding tyrosine-(Y)-phosphorylation regulated"
+    },
+    "PPFIA4": {
+        "summary": "PPFIA4, or liprin-alpha-4, belongs to the liprin-alpha gene family. See liprin-alpha-1 (LIP1, or PPFIA1; MIM 611054) for background on liprins.[supplied by OMIM, Mar 2008]",
+        "symbol": "PPFIA4",
+        "type": "protein coding",
+        "FASTA_URL": "http://www.ncbi.nlm.nih.gov/nuccore/NC_000001.11?report=fasta&from=203026521&to=203078736",
+        "Data_URL": "http://www.ncbi.nlm.nih.gov/gene/8497",
+        "name": "protein tyrosine phosphatase, receptor type, f polypeptide (PTPRF), interacting protein (liprin), alpha 4"
+    },
+    "MEIS1": {
+        "summary": "Homeobox genes, of which the most well-characterized category is represented by the HOX genes, play a crucial role in normal development. In addition, several homeoproteins are involved in neoplasia. This gene encodes a homeobox protein belonging to the TALE ('three amino acid loop extension') family of homeodomain-containing proteins. [provided by RefSeq, Jul 2008]",
+        "symbol": "MEIS1",
+        "type": "protein coding",
+        "FASTA_URL": "http://www.ncbi.nlm.nih.gov/nuccore/NC_000002.12?report=fasta&from=66435125&to=66572759",
+        "Data_URL": "http://www.ncbi.nlm.nih.gov/gene/4211",
+        "name": "Meis homeobox 1"
+    },
+    "METTL6": {
+        "type": "protein coding",
+        "symbol": "METTL6",
+        "FASTA_URL": "http://www.ncbi.nlm.nih.gov/nuccore/NC_000003.12?report=fasta&from=15381063&to=15427547&strand=true",
+        "Data_URL": "http://www.ncbi.nlm.nih.gov/gene/131965",
+        "name": "methyltransferase like 6"
+    },
+    "VPS28": {
+        "summary": "This gene encodes a protein subunit of the ESCRT-I complex (endosomal complexes required for transport), which functions in the transport and sorting of proteins into subcellular vesicles. This complex can also be hijacked to facilitate the budding of enveloped viruses from the cell membrane. Alternative splicing results in multiple transcript variants encoding different isoforms. [provided by RefSeq, Jul 2013]",
+        "symbol": "VPS28",
+        "type": "protein coding",
+        "FASTA_URL": "http://www.ncbi.nlm.nih.gov/nuccore/NC_000008.11?report=fasta&from=144423601&to=144428563&strand=true",
+        "Data_URL": "http://www.ncbi.nlm.nih.gov/gene/51160",
+        "name": "vacuolar protein sorting 28 homolog (S. cerevisiae)"
+    }
+}
