@@ -14,7 +14,12 @@ def get_gene_summary_homo_sapiens(gene_name):
     payload = {'term': '({0}) AND "Homo sapiens"[porgn:__txid9606]'.format(gene_name) }
     search_request = requests.get(URL + "/gene", params = payload, timeout = 32)
     gene_dat = BeautifulSoup(search_request.text.encode())
-    gene_url = URL + gene_dat.find("td", {"class": "gene-name-id"}).a.attrs['href']
+    gene_url = search_request.url
+
+    try:
+        gene_url = URL + gene_dat.find("td", {"class": "gene-name-id"}).a.attrs['href']
+    except Exception:
+        pass
 
     gene_request = requests.get(gene_url, timeout = 32)
     summary = BeautifulSoup(gene_request.text.encode())
