@@ -7,6 +7,8 @@ import networkx as nx
 import json
 import matplotlib.pyplot as plt
 from networkx.algorithms import bipartite
+import os
+clear = lambda: os.system('clear')
 
 from miRNA_map import miRNA_map
 from map_reverse import miRNA_reverse
@@ -152,14 +154,30 @@ class Stats(object):
         for rna, target in miRNA_reverse.items():
             count_v.append((rna, len(set(target))))
 
-        print(sorted(count_v, key = lambda x: x[1]))
+        return sorted(count_v, key = lambda x: x[1], reverse = True)
 
     def stats_one_degree_miRNA_miRNA():
         count_v = []
         for miRNA1, miRNA2 in one_degree_map.items():
             count_v.append((miRNA1, len(set(miRNA2))))
 
-        print(sorted(count_v, key = lambda x: x[1]))
+        return sorted(count_v, key = lambda x: x[1])
+
+    def stats_reverse_parsed():
+        storage = {}
+
+        with open("gene_data_summary_target.json", "r") as minion:
+            storage = json.loads(minion.read())
+
+        return storage
 
 if __name__ == "__main__":
-    Routines.gene_data()
+    st = Stats.stats_reverse_parsed()
+    for i in Stats.stats_reverse():
+        clear()
+        st[i[0]]['targets'] = len(set(st[i[0]]['target_mirnas']))
+        del(st[i[0]]['target_mirnas'])
+        del(st[i[0]]['FASTA_URL'])
+        del(st[i[0]]['Data_URL'])
+        print (json.dumps(st[i[0]], indent = 4))
+        input("Press Enter to continue...")
