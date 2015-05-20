@@ -4,6 +4,7 @@
 import requests
 import json
 import os
+import signal
 
 from miRNA_map import miRNA_map
 
@@ -123,16 +124,35 @@ def die():
     print("Wrote all the files. Exiting.")
 
 def routine():
+    global prediction_Store, skipped_list
+    count_miRNA_done = 0
+    count_miRNA_total = len(miRNA_map)
     for miRNA, target_genes in miRNA_map.items():
+        count_miRNA_done += 1
+        count_gene_total = len(target_genes)
+        count_gene_done  = 0
+
+        prediction_Store[miRNA] = {}
+
         for gene in target_genes:
-            print(gene, miRNA)
-        break
+            count_gene_done += 1
+            print("Retrieving Prediction for ({0}, {1}). Progress: Gene - ({2}/{3}); miRNA - ({4}/{5})".format(miRNA, gene, count_gene_done, count_gene_total, count_miRNA_done, count_miRNA_total))
+            
+            if (miRNA in prediction_Store) and (gene in prediction_Store[miRNA]):
+                pass
+            else:
+                try:
+                    prediction_Store[miRNA] = prediction(miRNA, gene)
+                except Exception as e:
+                    skipped_list.append([miRNA, gene, str(e)])
 
 def signal_handler(signal, frame):
     print('\nEnding Prematurely after Dumping retrieved data. Please Wait.')
     die()
+    exit()
 
 if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal_handler)
     init()
     routine()
     die()
