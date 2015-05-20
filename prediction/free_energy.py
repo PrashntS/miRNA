@@ -3,12 +3,14 @@
 
 import requests
 import json
+import os
 
 from miRNA_map import miRNA_map
 
 miRNA_ID_Store   = {}
 gene_ID_Store    = {}
 prediction_Store = {}
+skipped_list     = []
 
 def _miRNA_ID(miRNA):
     """
@@ -87,5 +89,50 @@ def prediction(miRNA, gene):
 
     raise ValueError("Gene `{0}` name not present is query results.".format(gene))
 
+def init():
+    """
+    Loads the cached files.
+    """
+    if os.path.isfile("miRNA_ID_Store.json"):
+        with open("miRNA_ID_Store.json", "r") as minion:
+            miRNA_ID_Store = json.loads(minion.read())
 
-print(len(prediction("hsa-let-7a-3p", "ARMC8")))
+    if os.path.isfile("gene_ID_Store.json"):
+        with open("gene_ID_Store.json", "r") as minion:
+            gene_ID_Store = json.loads(minion.read())
+
+    if os.path.isfile("prediction_Store.json"):
+        with open("prediction_Store.json", "r") as minion:
+            prediction_Store = json.loads(minion.read())
+
+    if os.path.isfile("skipped_list.json"):
+        with open("skipped_list.json", "r") as minion:
+            skipped_list = json.loads(minion.read())
+
+
+def die():
+    with open("miRNA_ID_Store.json", "w") as minion:
+        minion.write(json.dumps(miRNA_ID_Store))
+    with open("gene_ID_Store.json", "w") as minion:
+        minion.write(json.dumps(gene_ID_Store))
+    with open("prediction_Store.json", "w") as minion:
+        minion.write(json.dumps(prediction_Store))
+    with open("skipped_list.json", "w") as minion:
+        minion.write(json.dumps(skipped_list))
+
+    print("Wrote all the files. Exiting.")
+
+def routine():
+    for miRNA, target_genes in miRNA_map.items():
+        for gene in target_genes:
+            print(gene, miRNA)
+        break
+
+def signal_handler(signal, frame):
+    print('\nEnding Prematurely after Dumping retrieved data. Please Wait.')
+    die()
+
+if __name__ == "__main__":
+    init()
+    routine()
+    die()
