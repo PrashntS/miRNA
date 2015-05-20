@@ -144,7 +144,7 @@ def routine():
                 pass
             else:
                 try:
-                    prediction_Store[miRNA] = prediction(miRNA, gene)
+                    prediction_Store[miRNA][gene] = prediction(miRNA, gene)
                 except Exception as e:
                     skipped_list.append([miRNA, gene, str(e)])
 
