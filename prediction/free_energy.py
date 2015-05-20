@@ -94,6 +94,8 @@ def init():
     """
     Loads the cached files.
     """
+    global miRNA_ID_Store, gene_ID_Store, prediction_Store, skipped_list
+
     if os.path.isfile("miRNA_ID_Store.json"):
         with open("miRNA_ID_Store.json", "r") as minion:
             miRNA_ID_Store = json.loads(minion.read())
@@ -109,7 +111,6 @@ def init():
     if os.path.isfile("skipped_list.json"):
         with open("skipped_list.json", "r") as minion:
             skipped_list = json.loads(minion.read())
-
 
 def die():
     with open("miRNA_ID_Store.json", "w") as minion:
@@ -127,6 +128,7 @@ def routine():
     global prediction_Store, skipped_list
     count_miRNA_done = 0
     count_miRNA_total = len(miRNA_map)
+
     for miRNA, target_genes in miRNA_map.items():
         count_miRNA_done += 1
         count_gene_total = len(target_genes)
