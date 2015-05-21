@@ -114,13 +114,13 @@ def init():
 
 def die():
     with open("miRNA_ID_Store.json", "w") as minion:
-        minion.write(json.dumps(miRNA_ID_Store))
+        minion.write(json.dumps(miRNA_ID_Store, indent = 4))
     with open("gene_ID_Store.json", "w") as minion:
-        minion.write(json.dumps(gene_ID_Store))
+        minion.write(json.dumps(gene_ID_Store, indent = 4))
     with open("prediction_Store.json", "w") as minion:
-        minion.write(json.dumps(prediction_Store))
+        minion.write(json.dumps(prediction_Store, indent = 4))
     with open("skipped_list.json", "w") as minion:
-        minion.write(json.dumps(skipped_list))
+        minion.write(json.dumps(skipped_list, indent = 4))
 
     print("Wrote all the files. Exiting.")
 
@@ -134,13 +134,14 @@ def routine():
         count_gene_total = len(target_genes)
         count_gene_done  = 0
 
-        prediction_Store[miRNA] = {}
+        if miRNA not in prediction_Store:
+            prediction_Store[miRNA] = {}
 
         for gene in target_genes:
             count_gene_done += 1
             print("Retrieving Prediction for ({0}, {1}). Progress: Gene - ({2}/{3}); miRNA - ({4}/{5})".format(miRNA, gene, count_gene_done, count_gene_total, count_miRNA_done, count_miRNA_total))
             
-            if (miRNA in prediction_Store) and (gene in prediction_Store[miRNA]):
+            if gene in prediction_Store[miRNA]:
                 pass
             else:
                 try:
