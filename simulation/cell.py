@@ -1,107 +1,81 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# 
-"""
-Gas Station Refueling example
+#
+import networkx as nx
 
-Covers:
+number_of_nodes = 100
+G = nx.complete_graph(number_of_nodes)
 
-- Resources: Resource
-- Resources: Container
-- Waiting for other processes
-
-Scenario:
-  A gas station has a limited number of gas pumps that share a common
-  fuel reservoir. Cars randomly arrive at the gas station, request one
-  of the fuel pumps and start refueling from that reservoir.
-
-  A gas station control process observes the gas station's fuel level
-  and calls a tank truck for refueling if the station's level drops
-  below a threshold.
-
-"""
-import itertools
 import random
+from nxsim import BaseNetworkAgent, BaseLoggingAgent
 
-import simpy
+class ZombieOutbreak(BaseNetworkAgent):
+    def __init__(self, environment=None, agent_id=0, state=()):
+        super().__init__(environment=environment, agent_id=agent_id, state=state)
+        self.bite_prob = 0.1
+        self.cure_prob = 0.001
+        self.cure_lim  = 1
 
+    def run(self):
+        while True:
+            if self.state['id'] == 1:
+                self.zombify()
+                yield self.env.timeout(20)
+            else:
+                if random.random() < 0.3:
+                    self.cure()
+                else:
+                    self.kill()
+                yield self.env.timeout(1)
+                # yield self.env.event()
 
-RANDOM_SEED = 42
-GAS_STATION_SIZE = 200     # liters
-THRESHOLD = 10             # Threshold for calling the tank truck (in %)
-FUEL_TANK_SIZE = 50        # liters
-FUEL_TANK_LEVEL = [5, 25]  # Min/max levels of fuel tanks (in liters)
-REFUELING_SPEED = 2        # liters / second
-TANK_TRUCK_TIME = 300      # Seconds it takes the tank truck to arrive
-T_INTER = [30, 300]        # Create a car every [min, max] seconds
-SIM_TIME = 100000            # Simulation time in seconds
+    def zombify(self):
+        normal_neighbors = self.get_neighboring_agents(state_id=0)
+        for neighbor in normal_neighbors:
+            if random.random() < self.bite_prob:
+                neighbor.state['id'] = 1  # zombie
+                print("BITEN", self.env.now, self.id, neighbor.id, sep='\t')
+                break
 
-
-def car(name, env, gas_station, fuel_pump):
-    """A car arrives at the gas station for refueling.
-
-    It requests one of the gas station's fuel pumps and tries to get the
-    desired amount of gas from it. If the stations reservoir is
-    depleted, the car has to wait for the tank truck to arrive.
-
-    """
-    fuel_tank_level = random.randint(*FUEL_TANK_LEVEL)
-    print('%s arriving at gas station at %.1f' % (name, env.now))
-    with gas_station.request() as req:
-        start = env.now
-        # Request one of the gas pumps
-        yield req
-
-        # Get the required amount of fuel
-        liters_required = FUEL_TANK_SIZE - fuel_tank_level
-        yield fuel_pump.get(liters_required)
-
-        # The "actual" refueling process takes some time
-        yield env.timeout(liters_required / REFUELING_SPEED)
-
-        print('%s finished refueling in %.1f seconds.' % (name,
-                                                          env.now - start))
-
-
-def gas_station_control(env, fuel_pump):
-    """Periodically check the level of the *fuel_pump* and call the tank
-    truck if the level falls below a threshold."""
-    while True:
-        if fuel_pump.level / fuel_pump.capacity * 100 < THRESHOLD:
-            # We need to call the tank truck now!
-            print('Calling tank truck at %d' % env.now)
-            # Wait for the tank truck to arrive and refuel the station
-            yield env.process(tank_truck(env, fuel_pump))
-
-        yield env.timeout(10)  # Check every 10 seconds
+    def cure(self):
+        zombified_neighbours = self.get_neighboring_agents(state_id=1)
+        lim = self.cure_lim
+        for neighbor in zombified_neighbours:
+            if random.random() < self.cure_prob:
+                neighbor.state['id'] = 0
+                print("CURED", self.env.now, self.id, neighbor.id, sep='\t')
+                lim -= 1
+            if lim == 0:
+                break
+    def kill(self):
+        zombified_neighbours = self.get_neighboring_agents(state_id=1)
+        ammos = 4
+        for neighbor in zombified_neighbours:
+            if random.random() < 0.05:
+                neighbor.state['id'] = 2
+                print("KILLD", self.env.now, self.id, neighbor.id, sep='\t')
+                ammos -= 1
+            if ammos == 0:
+                break
 
 
-def tank_truck(env, fuel_pump):
-    """Arrives at the gas station after a certain delay and refuels it."""
-    yield env.timeout(TANK_TRUCK_TIME)
-    print('Tank truck arriving at time %d' % env.now)
-    ammount = fuel_pump.capacity - fuel_pump.level
-    print('Tank truck refuelling %.1f liters.' % ammount)
-    yield fuel_pump.put(ammount)
+from nxsim import NetworkSimulation
 
+# Initialize agent states. Let's assume everyone is normal.
+# Add keys as as necessary, but "id" must always refer to that state category
+init_states = [{'id': 0, } for _ in range(number_of_nodes)]
 
-def car_generator(env, gas_station, fuel_pump):
-    """Generate new cars that arrive at the gas station."""
-    for i in itertools.count():
-        yield env.timeout(random.randint(*T_INTER))
-        env.process(car('Car %d' % i, env, gas_station, fuel_pump))
+# Seed a zombie
+init_states[5] = {'id': 1}
+sim = NetworkSimulation(topology=G, states=init_states, agent_type=ZombieOutbreak,
+                        max_time=3000, dir_path='sim_01', num_trials=1, logging_interval=1.0)
 
+sim.run_simulation()
 
-# Setup and start the simulation
-print('Gas Station refuelling')
-random.seed(RANDOM_SEED)
+trial = BaseLoggingAgent.open_trial_state_history(dir_path='sim_01', trial_id=0)
 
-# Create environment and start processes
-env = simpy.Environment()
-gas_station = simpy.Resource(env, 2)
-fuel_pump = simpy.Container(env, GAS_STATION_SIZE, init=GAS_STATION_SIZE)
-env.process(gas_station_control(env, fuel_pump))
-env.process(car_generator(env, gas_station, fuel_pump))
-
-# Execute!
-env.run(until=SIM_TIME)
+from matplotlib import pyplot as plt
+plt.yscale('log')
+zombie_census = [sum([1 for node_id, state in g.items() if state['id'] == 1]) for t,g in trial.items()]
+plt.plot(zombie_census)
+plt.show()
