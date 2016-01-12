@@ -1,0 +1,25 @@
+{
+  "name": "mirna",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Prashant Sinha"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/PrashntS/miRNA",
+  "moduleType": [
+    "globals"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "jsnetworkx": "https://raw.githubusercontent.com/fkling/JSNetworkX/0b58cdea96477a9285609385597c31b3b031cfe8/jsnetworkx.js"
+  }
+}
