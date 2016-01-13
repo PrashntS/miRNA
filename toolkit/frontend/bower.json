@@ -21,6 +21,7 @@
   "dependencies": {
     "jquery": "~2.2.0",
     "jsnetworkx": "https://raw.githubusercontent.com/fkling/JSNetworkX/0b58cdea96477a9285609385597c31b3b031cfe8/jsnetworkx.js",
-    "normalize-css": "normalize.css#~3.0.3"
+    "normalize-css": "normalize.css#~3.0.3",
+    "terra": "~1.5.2-beta"
   }
 }
