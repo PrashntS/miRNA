@@ -7,7 +7,20 @@ from flask.ext.mongorest.resources import Resource
 
 from miRNA.polynucleotide.model import Gene, miRNA, miRNAGeneTargetComplex
 
-class GeneResource(Resource):
+class SymbolicResource(Resource):
+  rename_fields = {
+    'id': 'symbol',
+  }
+
+  def get_object(self, pk, qfilter=None):
+    qs = self.get_queryset()
+
+    if qfilter:
+      qs = qfilter(qs)
+
+    return qs.get(symbol = pk)
+
+class GeneResource(SymbolicResource):
   document = Gene
 
   filters = {
@@ -20,11 +33,12 @@ class miRNAGeneTargetComplexResource(Resource):
     'gene': GeneResource
   }
 
-class miRNAResource(Resource):
+class miRNAResource(SymbolicResource):
   document = miRNA
 
   related_resources = {
-    'targets': miRNAGeneTargetComplexResource
+    'targets': miRNAGeneTargetComplexResource,
+    'host': GeneResource,
   }
 
   filters = {
