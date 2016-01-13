@@ -9,7 +9,7 @@ from miRNA.polynucleotide.model import Gene, miRNA
 
 from miRNA import app
 
-admin = Admin(app, name='miRNA')
+admin = Admin(app, name = 'miRNA Toolbox')
 
 admin.add_view(ModelView(Gene))
 admin.add_view(ModelView(miRNA))
