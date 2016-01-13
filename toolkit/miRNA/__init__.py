@@ -12,6 +12,9 @@ db = MongoEngine(app)
 
 def create_app():
   from .admin.controller import admin
+  from .api.controller import api
+
+  app.register_blueprint(api, url_prefix = '/api')
 
   @app.route('/')
   def home():
