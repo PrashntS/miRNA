@@ -6,29 +6,32 @@ from flask import request
 from miRNA import db, app
 
 class Gene(db.Document):
-  symbol = db.StringField()
+  symbol = db.StringField(unique = True)
   FASTA  = db.StringField()
+  names  = db.ListField(db.StringField())
+
+  description       = db.StringField()
+  transcript_count  = db.IntField()
 
   meta = {'allow_inheritance': True, 'strict': False}
 
   def __unicode__(self):
     return self.symbol
 
-class miRNA(db.Document):
-  symbol = db.StringField()
-  FASTA  = db.StringField()
-
-  meta = {'allow_inheritance': True, 'strict': False}
-
-  def __unicode__(self):
-    return self.symbol
-
-class miRNAComplex(db.Document):
+class miRNAGeneTargetComplex(db.EmbeddedDocument):
   gene      = db.ReferenceField(Gene)
-  mirna     = db.ReferenceField(miRNA)
   affinity  = db.FloatField()
 
+class miRNA(db.Document):
+  symbol  = db.StringField(unique = True)
+  FASTA   = db.StringField()
+  host    = db.ReferenceField(Gene)
+  targets = db.ListField(db.EmbeddedDocumentField(miRNAGeneTargetComplex))
+
+  mirbase_url = db.StringField()
+  transcript_count = db.IntField()
+
   meta = {'allow_inheritance': True, 'strict': False}
 
   def __unicode__(self):
-    return "{0}-{1}".format(self.gene.symbol, self.mirna.symbol)
+    return self.symbol
