@@ -8,7 +8,7 @@ HOST        = 'http://localhost:6000'
 SERVE_HOST  = '0.0.0.0'
 SERVE_PORT  = 8000
 MEINHELD    = False
-THREADED    = False
+THREADED    = True
 
 # MongoDB Config
 MONGODB_DB      = 'mirna'

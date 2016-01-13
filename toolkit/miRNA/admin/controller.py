@@ -11,5 +11,10 @@ from miRNA import app
 
 admin = Admin(app, name = 'miRNA Toolbox')
 
-admin.add_view(ModelView(Gene))
-admin.add_view(ModelView(miRNA))
+class BaseView(ModelView):
+  can_view_details = True
+  column_searchable_list = ['symbol']
+  column_filters = ['symbol']
+
+admin.add_view(BaseView(Gene))
+admin.add_view(BaseView(miRNA))

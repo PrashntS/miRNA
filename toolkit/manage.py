@@ -30,6 +30,8 @@ def migrate():
 
   import json
 
+  from mongoengine.queryset import DoesNotExist
+
   from miRNA.polynucleotide.model import Gene, miRNA as miRNAModel, miRNAGeneTargetComplex
 
   #: Insert the Gene Data.
@@ -61,7 +63,7 @@ def migrate():
         if h_tc > 0:
           g.transcript_count = h_tc
           g.save()
-      except Exception:
+      except DoesNotExist:
         "No Host Gene"
         pass
 
@@ -73,7 +75,7 @@ def migrate():
           g.transcript_count = gene[1]
           g.save()
           count += 1
-        except Exception:
+        except DoesNotExist:
           #: Move on
           pass
 
@@ -81,7 +83,7 @@ def migrate():
       mtc = meta.get('miRNA Transcript Count', 0)
       try:
         mtc = int(mtc)
-      except Exception:
+      except ValueError:
         mtc = 0
       m.transcript_count = mtc
       m.save()
@@ -94,6 +96,7 @@ def migrate():
     for mir_id, trg in targets.items():
       try:
         m = miRNAModel.objects.get(symbol = mir_id)
+        count = 0
         for i in trg:
           try:
             g = Gene.objects.get(symbol = i[0])
@@ -102,13 +105,13 @@ def migrate():
             e.affinity = i[1]
 
             m.targets.append(e)
-          except Exception:
+            count += 1
+          except DoesNotExist:
             pass
         m.save()
-        print("Updated miRNA: {0} targets".format(str(m)))
+        print("Updated miRNA: {0} with {1} targets".format(str(m), str(count)))
 
-      except Exception as e:
-        print(str(e))
+      except DoesNotExist:
         pass
 
 @manager.command

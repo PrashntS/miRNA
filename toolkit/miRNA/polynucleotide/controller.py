@@ -14,11 +14,17 @@ class GeneResource(Resource):
     'symbol': [ops.Exact, ops.Startswith],
   }
 
+class miRNAGeneTargetComplexResource(Resource):
+  document = miRNAGeneTargetComplex
+  related_resources = {
+    'gene': GeneResource
+  }
+
 class miRNAResource(Resource):
   document = miRNA
 
   related_resources = {
-    'targets': miRNAGeneTargetComplex
+    'targets': miRNAGeneTargetComplexResource
   }
 
   filters = {
