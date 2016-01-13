@@ -11,6 +11,8 @@ app.config.from_pyfile('config.py')
 db = MongoEngine(app)
 
 def create_app():
+  from .admin.controller import admin
+
   @app.route('/')
   def home():
     return render_template('index.html')
