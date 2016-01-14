@@ -1,15 +1,19 @@
 
 App =
   init: ->
-    @t = new terra.Terrarium(100, 50)
+    @t = new terra.Terrarium 100, 50,
+      periodic: no
+      trails: 0
+      background: [255, 255, 255]
+      cellSize: 5
 
     @register()
 
-    @t.grid = @t.makeGrid [
-      ['free_aminoacids', 1]
-      # ['gene', 5]
-      ['rrna', 10]
+    @t.grid = @t.makeGridWithDistribution [
+      ['free_nucleotide', 1]
     ]
+
+    @t.grid[0][0] = @t.makeGrid([['free_aminoacids']])[0][0]
 
     @t.animate()
 
@@ -487,7 +491,7 @@ App =
     free_aminoacids:
       type: 'free_aminoacids'
       degrades_to: 'null'
-      color: [243, 156, 18]
+      color: [0, 0, 0]
 
       #: Inherits from commons.
       move: undefined
