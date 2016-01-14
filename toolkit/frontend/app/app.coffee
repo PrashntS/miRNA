@@ -2,7 +2,7 @@
 App = init: ->
   console.log 'App initialized!'
 
-  elementary = new (terra.Terrarium)(150, 150)
+  elementary = new (terra.Terrarium)(20, 20)
 
   terra.registerCA
     type: 'elementary'
@@ -21,7 +21,9 @@ App = init: ->
         @alive = if isNaN(index) then !x else @ruleset[index]
       true
   elementary.grid = elementary.makeGrid('elementary')
-  elementary.animate()
+  # elementary.animate()
+  elementary.grid = elementary.step(10)
+  elementary.draw()
 
   models:
     gene:
@@ -39,7 +41,13 @@ App = init: ->
         no
       move: (neighbors) ->
       process: (neighbors, x, y) ->
-      reproduce: (neighbors) ->
+        #: Increment the Age of gene.
+        #: If we find a rRNA in neighbour, form rrna_gene_complex.
+        #: If we find a miRNA in neighbour, form mirna_gene_complex.
+        #: If age is more than age lambda, dissociate.
+        #: If none of the above, then, move into any random empty neighbour
+        #: with a probability P, or stay there.
+
       wait:->
 
     mirna:
@@ -56,7 +64,7 @@ App = init: ->
       dGbinding: 0
 
     rrna:
-      type: 'rRNA'
+      type: 'rrna'
 
     rrna_gene_complex:
       type: 'rrna_gene_complex'
