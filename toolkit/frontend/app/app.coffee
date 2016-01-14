@@ -1,16 +1,14 @@
 
 App =
   init: ->
-    console.log 'App initialized!'
-
-    @t = new terra.Terrarium 20, 20
+    @t = new terra.Terrarium(20, 20)
 
     @register()
 
-    @t.makeGridWithDistribution [
-      ['free_nucleotide', 5]
-      ['protein', 5]
-      ['rrna', 5]
+    @t.grid = @t.makeGridWithDistribution [
+      ['free_nucleotide', 1]
+      ['protein', 1]
+      # ['rrna', 5]
     ]
 
     @t.animate()
@@ -25,6 +23,7 @@ App =
   models:
     commons:
       move: (neighbors) ->
+        me = @
         #: Find the spots which are free.
         spots = _.filter neighbors, (spot) ->
           not spot.creature
@@ -34,15 +33,15 @@ App =
           step = spots[_.random(spots.length - 1)]
           #: Move with a probability
 
-          if _.random() > 25
+          if _.random(100) > 25
             return {
               x: step.coords.x
               y: step.coords.y
-              creature: @
+              creature: me
               successFn: ->
                 #: Clear the original Location
                 false
-              failureFn: -> true
+              failureFn: -> false
             }
 
         #: Didn't move.
@@ -61,6 +60,10 @@ App =
             failureFn: -> true
           }
 
+        return false
+
+      wait: ->
+        # @age += 1
         return false
 
     gene:
@@ -243,7 +246,7 @@ App =
 
         if spots.length
           #: YAY! Let's roll a dice.
-          if _.random() < 25
+          if _.random(100) < 25
             #: Okay, we're dissociating.
             #: Take a random empty spot for the released miRNA
             step = spots[_.random(spots.length - 1)]
@@ -436,7 +439,7 @@ App =
         #: See miRNA.process
 
         @age += 1
-        step = @degrade() or @move()
+        step = @degrade() or @move(neighbours)
         if step
           return {
             x: step.x
@@ -448,14 +451,13 @@ App =
 
     free_nucleotide:
       type: 'free_nucleotide'
-      color: [241, 196, 15]
 
       #: Inherits from commons.
       move: undefined
 
       process: (neighbours, x, y) ->
         #: Just moves
-        step = @move()
+        step = @move(neighbours)
         if step
           return {
             x: step.x
@@ -463,7 +465,7 @@ App =
             creature: step.creature
             observed: yes
           }
-        return false
+        return true
 
     source:
       type: 'source'
