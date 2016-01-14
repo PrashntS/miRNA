@@ -90,17 +90,21 @@ App = init: ->
         if spots.length
           #: Order all the spots on the basis of least affinity
           spots = _.sortBy spots, (spot) =>
-            target_id = _.findIndex spot.creature.targets, (target) =>
+            target = _.find spot.creature.targets, (target) =>
               target.symbol is @symbol
 
-            return spot.creature.targets[target_id].affinity
+            return target.affinity
 
           binding_mir = spots.first()
+
+          target = _.find binding_mir.creature.targets, (target) =>
+            target.symbol is @symbol
 
           complex_mir = terra.make 'mirna_gene_complex',
             coords: binding_mir.coords
             gene_ref: @
             mirna_ref: binding_mir.creature
+            dGbinding: target.affinity
 
           return {
             x: binding_mir.coords.x
@@ -221,7 +225,98 @@ App = init: ->
       gene_ref: undefined
       mirna_ref: undefined
       age: 0
+      health: 100
       dGbinding: 0
+
+      #: Inherits from commons.
+      move: undefined
+      degrade: undefined
+
+      dissociate: (neighbours) ->
+        #: Dissociation happens where the miRNA and Gene dissociate. (Duh)
+        #: However, the dissociation ONLY initiates if there's an empty
+        #  neighbour.
+        #: Having empty neighbour is not the only condition, though.
+        #  We can have a scoring mechanism, that takes into account the
+        #  health and age of the complex or other feedbacks.
+        #: In current implementation, however, there's a simple
+        #  stochastic decision here. P = 0.25 is maintained by a
+        #  random number generator.
+
+        #: Find out if there're empty spots
+        spots = _.filter neighbors, (spot) -> not spot.creature
+
+        if spots.length
+          #: YAY! Let's roll a dice.
+          if _.random() < 25
+            #: Okay, we're dissociating.
+            #: Take a random empty spot for the released miRNA
+            step = spots[_.random(spots.length - 1)]
+
+            #: Create a Gene
+            gene = terra.make 'gene',
+              coords: @coords
+              symbol: @gene_ref.symbol
+              age: @gene_ref.age + 1
+              health: @gene_ref.health - 1
+
+            #: Create a miRNA
+            mirna = terra.make 'mirna',
+              coords: step.coords   #: Put it at the empty space
+              symbol: @mirna_ref.symbol
+              age: @mirna_ref.age + 1
+              health: @mirna_ref.health - 1
+              targets: @mirna_ref.targets
+
+            #: First change itself to a Gene, then, put the miRNA
+            return {
+              x: gene.coords.x
+              y: gene.coords.y
+              creature: gene
+              successFn: ->
+                return {
+                  x: mirna.coords.x
+                  y: mirna.coords.y
+                  creature: mirna
+                  successFn: -> true
+                  failureFn: -> true
+                }
+              failureFn: -> false
+            }
+
+        #: We aren't rolling.
+        return false
+
+      process: (neighbors, x, y) ->
+        #: Process is simple. We try to degrade, then probabilisically
+        #  we either move or dissociate.
+        #: This is similar to the gene.process, hence comments are
+        #  removed. See gene for details.
+
+        @age += 1
+
+        actions = [
+          @dissociate
+          @move
+        ]
+
+        performance = _.map actions, (act) => act(@neighbour)
+        degrade_act = @degrade()
+
+        accepted = _.filter performance, (p) -> p isnt false
+        accepted = if degrade_act then [degrade_act] else accepted
+
+        if accepted.length
+          step = accepted[_.random(accepted.length - 1)]
+
+          return {
+            x: step.x
+            y: step.y
+            creature: step.creature
+            observed: yes
+          }
+
+        return false
 
     rrna:
       type: 'rrna'
