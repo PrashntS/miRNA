@@ -23,7 +23,8 @@
     "jsnetworkx": "https://raw.githubusercontent.com/fkling/JSNetworkX/0b58cdea96477a9285609385597c31b3b031cfe8/jsnetworkx.js",
     "normalize-css": "normalize.css#~3.0.3",
     "underscore": "~1.8.3",
-    "terra": "https://github.com/PrashntS/terra.git#master"
+    "terra": "https://github.com/PrashntS/terra.git#master",
+    "select2": "~4.0.1"
   },
   "resolutions": {
     "terra": "master"

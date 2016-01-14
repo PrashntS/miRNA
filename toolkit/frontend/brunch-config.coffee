@@ -13,8 +13,8 @@ module.exports = config:
         before: ['bower_components/normalize-css/normalize.css']
   plugins:
     coffeescript:
-      bare: true
+      bare: yes
     sass:
       mode: 'native'
     autoReload:
-      enabled: true
+      enabled: yes

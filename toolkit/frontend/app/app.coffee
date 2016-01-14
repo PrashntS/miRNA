@@ -1,6 +1,8 @@
 
 App =
   init: ->
+    @ui.init()
+
     @t = new terra.Terrarium 100, 50,
       periodic: no
       trails: 0
@@ -513,5 +515,42 @@ App =
 
     sink:
       type: 'sink'
+
+  ui:
+    init: ->
+      $('.gene_select').select2
+        ajax:
+          url: '/api/gene/',
+          dataType: 'json',
+          delay: 250,
+          data: (param) ->
+            return {
+              names__icontains: param.term
+              _skip: (param.page - 1) * 20 if param.page and param.page > 0
+              _limit: 20
+            }
+          processResults: (data, params) ->
+            params.page = params.page || 1
+
+            return {
+              results: data.data
+              pagination:
+                more: data.has_more
+            }
+          cache: true
+        escapeMarkup: (markup) -> markup
+        minimumInputLength: 1
+        templateResult: (gene) ->
+          return gene.text if gene.loading
+
+          markup = """
+            <div>
+              <p>#{gene.symbol}</p>
+            </div>
+          """
+
+          markup
+
+        templateSelection: (gene) -> gene.symbol or gene.text
 
 module.exports = App

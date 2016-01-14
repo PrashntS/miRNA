@@ -15,6 +15,7 @@ class SymbolicResource(Resource):
   def get_object(self, pk, qfilter=None):
     qs = self.get_queryset()
 
+    print(qs, pk, qfilter)
     if qfilter:
       qs = qfilter(qs)
 
@@ -25,6 +26,8 @@ class GeneResource(SymbolicResource):
 
   filters = {
     'symbol': [ops.Exact, ops.Startswith],
+    'names': [ops.IContains,],
+    'description': [ops.IContains,]
   }
 
 class miRNAGeneTargetComplexResource(Resource):
