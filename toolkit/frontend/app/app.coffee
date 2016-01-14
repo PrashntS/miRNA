@@ -1,15 +1,15 @@
 
 App =
   init: ->
-    @t = new terra.Terrarium(20, 20)
+    @t = new terra.Terrarium(100, 50)
 
     @register()
 
     @t.grid = @t.makeGridWithDistribution [
       # ['free_nucleotide', 1]
-      # ['protein', 10]
+      ['protein', 2]
       # ['gene', 5]
-      ['rrna', 15]
+      ['rrna', 1]
     ]
 
     @t.animate()
@@ -51,8 +51,8 @@ App =
       degrade: (x, y, opts) ->
 
         # if @age > 10**3 or @health < 10 or _.random(10**5) < 25
-        if @health < 10 or _.random(10**5) < 100
-          degraded = terra.make 'free_nucleotide',
+        if @health < 1 or _.random(10**5) < 100
+          degraded = terra.make @degrades_to,
             coords:
               x: x
               y: y
@@ -81,6 +81,7 @@ App =
       health: 100
       actionRadius: 1
       color: [30, 0, 30]
+      degrades_to: 'free_nucleotide'
 
       mirna_gene_complex: (neighbors) ->
         spots = _.filter neighbors, (spot) =>
@@ -195,6 +196,7 @@ App =
       age: 0
       health: 100
       targets: []
+      degrades_to: 'free_nucleotide'
 
       #: Inherits from commons.
       move: undefined
@@ -231,6 +233,7 @@ App =
       age: 0
       health: 100
       dGbinding: 0
+      degrades_to: 'free_nucleotide'
 
       #: Inherits from commons.
       move: undefined
@@ -320,6 +323,9 @@ App =
       type: 'rrna'
       age: 0
       health: 100
+      degrades_to: 'free_nucleotide'
+
+      color: [52, 152, 219]
 
       #: Inherits from commons.
       move: undefined
@@ -348,6 +354,7 @@ App =
       rrna_ref: undefined
       age: 0
       health: 100
+      degrades_to: 'free_nucleotide'
 
       #: Inherits from commons.
       move: undefined
@@ -435,7 +442,8 @@ App =
       gene_ref: undefined
       age: 0
       health: 100
-      color: [241, 196, 15]
+      color: [22, 160, 133]
+      degrades_to: 'free_aminoacids'
 
       #: Inherits from commons.
       move: undefined
@@ -458,6 +466,7 @@ App =
 
     free_nucleotide:
       type: 'free_nucleotide'
+      degrades_to: 'null'
 
       #: Inherits from commons.
       move: undefined
@@ -478,6 +487,8 @@ App =
 
     free_aminoacids:
       type: 'free_aminoacids'
+      degrades_to: 'null'
+      color: [243, 156, 18]
 
       #: Inherits from commons.
       move: undefined
