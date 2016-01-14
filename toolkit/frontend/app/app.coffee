@@ -30,15 +30,13 @@ App = init: ->
       type: 'gene'
       symbol: undefined
       age: 0
+      health: 100
       actionRadius: 1
       color: [30, 0, 30]
       colorFn: ->
         #: Returns the creature's color at each step.
         #: The color is determined on the basis of genes.
         @color
-      isDead: ->
-        #: Determines if the gene is degraded and should be removed.
-        no
 
       mirna_gene_complex: (neighbors) ->
         spots = _.filter neighbors, (spot) =>
@@ -61,8 +59,8 @@ App = init: ->
 
           complex_mir = terra.make 'mirna_gene_complex',
             coords: binding_mir.coords
-            gene_ref: @symbol
-            mirna_ref: binding_mir.creature.symbol
+            gene_ref: @
+            mirna_ref: binding_mir.creature
 
           return {
             x: binding_mir.coords.x
@@ -83,7 +81,7 @@ App = init: ->
 
           complex_rrna = terra.make 'rrna_gene_complex',
             coords: binding_rrna.coords
-            gene_ref: @symbol
+            gene_ref: @
 
           return {
             x: binding_rrna.coords.x
@@ -95,9 +93,21 @@ App = init: ->
 
         return false
 
-      move: (neighbors) ->
-        me = @
+      dissociate: ->
+        if @age > 100 or @health < 10
+          dissociated = terra.make 'free_nucleotide',
+            coords: @coords
 
+          return {
+            x: @coords.x
+            y: @coords.y
+            creature: dissociated
+            successFn: -> false
+          }
+
+        return false
+
+      move: (neighbors) ->
         #: Find the spots which are free.
         spots = _.filter neighbors, (spot) ->
           not spot.creature
@@ -111,7 +121,7 @@ App = init: ->
             return {
               x: step.coords.x
               y: step.coords.y
-              creature: me
+              creature: @
               successFn: ->
                 #: Clear the original Location
                 false
@@ -128,7 +138,6 @@ App = init: ->
         #: If none of the above, then, move into any random empty neighbour
         #: with a probability P, or stay there.
 
-      wait:->
 
     mirna:
       type: 'mirna'
@@ -153,6 +162,9 @@ App = init: ->
 
     protein:
       type: 'protein'
+
+    free_nucleotide:
+      type: 'free_nucleotide'
 
     source:
       type: 'source'
