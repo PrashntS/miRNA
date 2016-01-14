@@ -43,6 +43,8 @@ def migrate():
       g.symbol = gene_id
       g.names  = meta.get('names', [])
       g.description = meta.get('description', '')
+      g.searchable = meta.get('description', '') + ' '.join(meta.get('names', []))
+
       g.save()
       print("Inserted Gene: {0}".format(str(g)))
 
@@ -55,9 +57,12 @@ def migrate():
       m.symbol = mir_id
       m.FASTA  = meta.get('miRNA Sequence', '')
 
+      m.searchable = mir_id + meta.get('miRNA Sequence', '')
+
       try:
         g = Gene.objects.get(symbol = meta.get('Host Gene'))
         m.host = g
+        m.searchable += g.searchable
 
         h_tc = meta.get('Host Gene Transcript Count', 0)
         if h_tc > 0:
@@ -104,6 +109,7 @@ def migrate():
             e.gene = g
             e.affinity = i[1]
 
+            m.searchable += " {0}".format(i[0])
             m.targets.append(e)
             count += 1
           except DoesNotExist:

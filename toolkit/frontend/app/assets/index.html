@@ -2,13 +2,13 @@
 <html>
 <head>
   <title>miRNA Toolbox</title>
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='libraries.css')}}">
   <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='app.css')}}">
 </head>
 <body>
   <p>miRNA Toolbox!</p>
 
-  <select class="gene_select">
-    <option value="3620194" selected="selected">Type or Select a Gene</option>
+  <select class="gene_select" placeholder="Select a Gene">
   </select>
 
   <section class="canvas"></section>

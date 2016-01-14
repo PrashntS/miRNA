@@ -8,9 +8,10 @@ from flask.ext.mongorest.resources import Resource
 from miRNA.polynucleotide.model import Gene, miRNA, miRNAGeneTargetComplex
 
 class SymbolicResource(Resource):
-  # rename_fields = {
-  #   'id': 'symbol',
-  # }
+  max_limit = 20
+  rename_fields = {
+    'searchable': 'q',
+  }
 
   def get_object(self, pk, qfilter=None):
     qs = self.get_queryset()
@@ -23,11 +24,13 @@ class SymbolicResource(Resource):
 
 class GeneResource(SymbolicResource):
   document = Gene
+  fields = ['id', 'symbol', 'description', 'names', 'transcript_count']
 
   filters = {
     'symbol': [ops.Exact, ops.Startswith],
     'names': [ops.IContains,],
-    'description': [ops.IContains,]
+    'description': [ops.IContains,],
+    'q': [ops.IContains,]
   }
 
 class miRNAGeneTargetComplexResource(Resource):

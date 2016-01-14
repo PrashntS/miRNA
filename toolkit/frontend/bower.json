@@ -24,9 +24,22 @@
     "normalize-css": "normalize.css#~3.0.3",
     "underscore": "~1.8.3",
     "terra": "https://github.com/PrashntS/terra.git#master",
-    "select2": "~4.0.1"
+    "select2": "~4.0.1",
+    "select2-skins": "https://github.com/PrashntS/select2-skins",
+    "font-awesome": "fontawesome#~4.5.0"
   },
   "resolutions": {
     "terra": "master"
+  },
+  "overrides": {
+    "select2": {
+      "main": [
+        "dist/js/select2.full.js",
+        "src/scss/core.scss"
+      ]
+    },
+    "normalize-css": {
+      "main": "normalize.css"
+    }
   }
 }

@@ -13,14 +13,11 @@ class Gene(db.Document):
   description       = db.StringField()
   transcript_count  = db.IntField()
 
+  searchable = db.StringField()
+
   meta = {
     'allow_inheritance': True,
     'strict': False,
-    # 'indexes': [{
-    #   'fields': ['symbol', 'names', 'description'],
-    #   'default_language': 'english',
-    #   'weights': {'symbol': 10, 'description': 5, 'names': 2}
-    # }],
   }
 
   def __unicode__(self):
@@ -43,6 +40,8 @@ class miRNA(db.Document):
 
   mirbase_url = db.StringField()
   transcript_count = db.IntField()
+
+  searchable = db.StringField()
 
   meta = {'allow_inheritance': True, 'strict': False}
 

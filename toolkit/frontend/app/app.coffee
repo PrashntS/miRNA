@@ -525,7 +525,7 @@ App =
           delay: 250,
           data: (param) ->
             return {
-              names__icontains: param.term
+              q__icontains: param.term
               _skip: (param.page - 1) * 20 if param.page and param.page > 0
               _limit: 20
             }
@@ -539,6 +539,8 @@ App =
             }
           cache: true
         escapeMarkup: (markup) -> markup
+        containerCssClass: 'tpx-select2-container'
+        dropdownCssClass: 'tpx-select2-drop'
         minimumInputLength: 1
         templateResult: (gene) ->
           return gene.text if gene.loading
@@ -546,6 +548,7 @@ App =
           markup = """
             <div>
               <p>#{gene.symbol}</p>
+              <p>#{gene.description}</p>
             </div>
           """
 
