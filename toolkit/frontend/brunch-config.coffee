@@ -18,5 +18,3 @@ module.exports = config:
       mode: 'ruby'
     autoReload:
       enabled: true
-  conventions:
-    assets: /^app[\\/]assets[\\/]/

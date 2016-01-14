@@ -7,8 +7,9 @@ App =
 
     @t.grid = @t.makeGridWithDistribution [
       # ['free_nucleotide', 1]
-      ['protein', 10]
-      # ['rrna', 5]
+      # ['protein', 10]
+      # ['gene', 5]
+      ['rrna', 15]
     ]
 
     @t.animate()
@@ -23,7 +24,7 @@ App =
   models:
     commons:
       move: (neighbors) ->
-        me = @
+
         #: Find the spots which are free.
         spots = _.filter neighbors, (spot) ->
           not spot.creature
@@ -37,7 +38,7 @@ App =
             return {
               x: step.coords.x
               y: step.coords.y
-              creature: me
+              creature: @
               successFn: ->
                 #: Clear the original Location
                 false
@@ -48,7 +49,7 @@ App =
         false
 
       degrade: (x, y) ->
-        if @age > 100 or @health < 10
+        if @age > 10**5 or @health < 10
           degraded = terra.make 'free_nucleotide',
             coords:
               x: x
@@ -63,6 +64,9 @@ App =
           }
 
         return false
+
+      successFn: -> false
+      failureFn: -> false
 
       wait: ->
         # @age += 1
@@ -150,18 +154,15 @@ App =
 
         @age += 1
 
-        actions = [
-          @mirna_gene_complex
-          @rrna_gene_complex
-          @move
+        performance = [
+          # @mirna_gene_complex
+          # @rrna_gene_complex
+          @move(neighbors)
         ]
-
-        #: Perform all the actions
-        performance = _.map actions, (act) => act(@neighbour)
 
         #: Perform Degrade action now. If this happens, other actions
         #  won't matter.
-        degrade_act = @degrade()
+        degrade_act = @degrade(x, y)
 
         #: Eliminate all the act performances that resulted in a false
         accepted = _.compact performance
@@ -173,6 +174,8 @@ App =
           #: Randomly pick one action.
           #: TODO: The actions must happen on the basis of rate const.
           step = accepted[_.random(accepted.length - 1)]
+
+          # console.log step.creature
 
           return {
             x: step.x
@@ -195,7 +198,7 @@ App =
       move: undefined
       degrade: undefined
 
-      process: (neighbours, x, y) ->
+      process: (neighbors, x, y) ->
         #: Increment the age
         #: miRNAs just move randomly and degrade after a certain age.
         #: The complex formation action is taken by the gene.
@@ -205,7 +208,7 @@ App =
         @age += 1
 
         #: If it doesn't degrades, then only TRY to move.
-        step = @degrade() or @move()
+        step = @degrade(x, y) or @move(neighbors)
 
         if step
           #: Either Degraded, OR Moved.
@@ -231,7 +234,7 @@ App =
       move: undefined
       degrade: undefined
 
-      dissociate: (neighbours) ->
+      dissociate: (neighbors, x, y) ->
         #: Dissociation happens where the miRNA and Gene dissociate. (Duh)
         #: However, the dissociation ONLY initiates if there's an empty
         #  neighbour.
@@ -248,14 +251,16 @@ App =
 
         if spots.length
           #: YAY! Let's roll a dice.
-          if _.random(100) < 25
+          if _.random(10000) < 25
             #: Okay, we're dissociating.
             #: Take a random empty spot for the released miRNA
             step = spots[_.random(spots.length - 1)]
 
             #: Create a Gene at current position.
             gene = terra.make 'gene',
-              coords: @coords
+              coords:
+                x: x
+                y: y
               symbol: @gene_ref.symbol
               age: @gene_ref.age + 1
               health: @gene_ref.health - 1
@@ -269,8 +274,8 @@ App =
               targets: @mirna_ref.targets
 
             return {
-              x: gene.coords.x
-              y: gene.coords.y
+              x: x
+              y: y
               creature: gene
               successFn: -> true
               failureFn: -> false
@@ -287,13 +292,12 @@ App =
 
         @age += 1
 
-        actions = [
-          @dissociate
-          @move
+        performance = [
+          @dissociate(neighbors, x, y)
+          @move(neighbors)
         ]
 
-        performance = _.map actions, (act) => act(@neighbour)
-        degrade_act = @degrade()
+        degrade_act = @degrade(x, y)
 
         accepted = _.compact performance
         accepted = if degrade_act then [degrade_act] else accepted
@@ -326,7 +330,7 @@ App =
         #: See mirna.process for additional comments.
 
         @age += 1
-        step = @degrade() or @move()
+        step = @degrade(x, y) or @move(neighbors)
         if step
           return {
             x: step.x
@@ -347,7 +351,7 @@ App =
       move: undefined
       degrade: undefined
 
-      dissociate: (neighbours) ->
+      dissociate: (neighbors) ->
         #: Dissociation happens after translation is done.
         #: However, the dissociation ONLY initiates if there are
         #  two empty neighbour, and the protein is formed.
@@ -402,13 +406,12 @@ App =
 
         @age += 1
 
-        actions = [
-          @dissociate
-          @move
+        performance = [
+          @dissociate(neighbour, x, y)
+          @move(x, y)
         ]
 
-        performance = _.map actions, (act) => act(@neighbour)
-        degrade_act = @degrade()
+        degrade_act = @degrade(x, y)
 
         accepted = _.compact performance
         accepted = if degrade_act then [degrade_act] else accepted
@@ -436,12 +439,12 @@ App =
       move: undefined
       degrade: undefined
 
-      process: (neighbours, x, y) ->
+      process: (neighbors, x, y) ->
         #: Just moves, and degrades.
         #: See miRNA.process
 
         @age += 1
-        step = @degrade(x, y) or @move(neighbours)
+        step = @degrade(x, y) or @move(neighbors)
         if step
           return {
             x: step.x
@@ -457,9 +460,9 @@ App =
       #: Inherits from commons.
       move: undefined
 
-      process: (neighbours, x, y) ->
+      process: (neighbors, x, y) ->
         #: Just moves
-        step = @move(neighbours)
+        step = @move(neighbors)
         if step
           return {
             x: step.x
