@@ -48,8 +48,10 @@ App =
         #: Didn't move.
         false
 
-      degrade: (x, y) ->
-        if @age > 10**5 or @health < 10
+      degrade: (x, y, opts) ->
+
+        # if @age > 10**3 or @health < 10 or _.random(10**5) < 25
+        if @health < 10 or _.random(10**5) < 100
           degraded = terra.make 'free_nucleotide',
             coords:
               x: x
@@ -456,6 +458,26 @@ App =
 
     free_nucleotide:
       type: 'free_nucleotide'
+
+      #: Inherits from commons.
+      move: undefined
+
+      color: [231, 76, 60]
+
+      process: (neighbors, x, y) ->
+        #: Just moves
+        step = @move(neighbors)
+        if step
+          return {
+            x: step.x
+            y: step.y
+            creature: step.creature
+            observed: yes
+          }
+        return true
+
+    free_aminoacids:
+      type: 'free_aminoacids'
 
       #: Inherits from commons.
       move: undefined
