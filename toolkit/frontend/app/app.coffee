@@ -26,6 +26,46 @@ App = init: ->
   elementary.draw()
 
   models:
+    commons:
+      move: (neighbors) ->
+        #: Find the spots which are free.
+        spots = _.filter neighbors, (spot) ->
+          not spot.creature
+
+        if spots.length
+          #: We found a new spot.
+          step = spots[_.random(spots.length - 1)]
+          #: Move with a probability
+
+          if _.random() > 25
+            return {
+              x: step.coords.x
+              y: step.coords.y
+              creature: @
+              successFn: ->
+                #: Clear the original Location
+                false
+              failureFn: -> true
+            }
+
+        #: Didn't move.
+        false
+
+      degrade: ->
+        if @age > 100 or @health < 10
+          degraded = terra.make 'free_nucleotide',
+            coords: @coords
+
+          return {
+            x: @coords.x
+            y: @coords.y
+            creature: degraded
+            successFn: -> false
+            failureFn: -> true
+          }
+
+        return false
+
     gene:
       type: 'gene'
       symbol: undefined
@@ -93,65 +133,37 @@ App = init: ->
 
         return false
 
-      dissociate: ->
-        if @age > 100 or @health < 10
-          dissociated = terra.make 'free_nucleotide',
-            coords: @coords
-
-          return {
-            x: @coords.x
-            y: @coords.y
-            creature: dissociated
-            successFn: -> false
-            failureFn: -> true
-          }
-
-        return false
-
-      move: (neighbors) ->
-        #: Find the spots which are free.
-        spots = _.filter neighbors, (spot) ->
-          not spot.creature
-
-        if spots.length
-          #: We found a new spot.
-          step = spots[_.random(spots.length - 1)]
-          #: Move with a probability
-
-          if _.random() > 25
-            return {
-              x: step.coords.x
-              y: step.coords.y
-              creature: @
-              successFn: ->
-                #: Clear the original Location
-                false
-              failureFn: -> true
-            }
-
-        #: Didn't move.
-        false
+      #: Inherits from commons.
+      move: undefined
+      degrade: undefined
 
       process: (neighbors, x, y) ->
         #: Increment the Age of gene.
         #: If we find a rRNA in neighbour, form rrna_gene_complex.
         #: If we find a miRNA in neighbour, form mirna_gene_complex.
-        #: If age is more than age lambda, dissociate.
+        #: If age is more than age lambda, degrade.
         #: If none of the above, then, move into any random empty neighbour
         #: with a probability P, or stay there.
+
+        @age += 1
 
         actions = [
           @mirna_gene_complex
           @rrna_gene_complex
-          @dissociate
           @move
         ]
 
         #: Perform all the actions
         performance = _.map actions, (act) => act(@neighbour)
 
-        #: Eliminate all the performances that resulted in a false
+        #: Perform Degrade action now. If this happens, other actions
+        #  won't matter.
+        degrade_act = @degrade()
+
+        #: Eliminate all the act performances that resulted in a false
         accepted = _.filter performance, (p) -> p isnt false
+        #: Make sure degrade didn't happen
+        accepted = if degrade_act then [degrade_act] else accepted
 
         if accepted.length
           #: If ANY valid action was performed
@@ -161,8 +173,8 @@ App = init: ->
 
           return {
             x: step.x
-            y: step.y,
-            creature: step.creature,
+            y: step.y
+            creature: step.creature
             observed: yes
           }
 
@@ -173,7 +185,36 @@ App = init: ->
       type: 'mirna'
       symbol: undefined
       age: 0
+      health: 100
       targets: []
+
+      #: Inherits from commons.
+      move: undefined
+      degrade: undefined
+
+      process: (neighbours, x, y) ->
+        #: Increment the age
+        #: miRNAs just move randomly and degrade after a certain age.
+        #: The complex formation action is taken by the gene.
+        #: SUGGESSTION: It IS possible for miRNA to take the decision
+        #: instead. Will be changed later on.
+
+        @age += 1
+
+        #: If it doesn't degrades, then only TRY to move.
+        step = @degrade() or @move()
+
+        if step
+          #: Either Degraded, OR Moved.
+          return {
+            x: step.x
+            y: step.y
+            creature: step.creature
+            observed: yes
+          }
+
+        #: Didn't move
+        return false
 
     mirna_gene_complex:
       type: 'mirna_gene_complex'
