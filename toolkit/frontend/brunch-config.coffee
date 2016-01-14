@@ -15,6 +15,6 @@ module.exports = config:
     coffeescript:
       bare: true
     sass:
-      mode: 'ruby'
+      mode: 'native'
     autoReload:
       enabled: true

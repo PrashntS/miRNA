@@ -5,11 +5,10 @@ App =
 
     @register()
 
-    @t.grid = @t.makeGridWithDistribution [
-      # ['free_nucleotide', 1]
-      ['protein', 2]
+    @t.grid = @t.makeGrid [
+      ['free_aminoacids', 1]
       # ['gene', 5]
-      ['rrna', 1]
+      ['rrna', 10]
     ]
 
     @t.animate()
