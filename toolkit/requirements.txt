@@ -1,5 +1,10 @@
 Flask == 0.10.1
+pymongo==2.7.2
+mimerender
+cleancat>=0.3
+Flask-Views
 flask-mongoengine == 0.7.1
 flask-restful == 0.3.4
 Click == 3.3
 meinheld == 0.5.8
+git+https://github.com/PrashntS/flask-mongorest.git

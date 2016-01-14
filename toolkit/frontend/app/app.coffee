@@ -27,6 +27,7 @@ App = init: ->
     gene:
       type: 'gene'
       symbol: undefined
+      age: 0
       actionRadius: 1
       color: [30, 0, 30]
       colorFn: ->
@@ -40,20 +41,28 @@ App = init: ->
       process: (neighbors, x, y) ->
       reproduce: (neighbors) ->
       wait:->
+
     mirna:
       type: 'mirna'
       symbol: undefined
+      age: 0
       targets: []
+
     mirna_gene_complex:
       type: 'mirna_gene_complex'
       gene_ref: undefined
       mirna_ref: undefined
+      age: 0
+      dGbinding: 0
 
     rrna:
       type: 'rRNA'
 
     rrna_gene_complex:
       type: 'rrna_gene_complex'
+
+    protein:
+      type: 'protein'
 
     source:
       type: 'source'
