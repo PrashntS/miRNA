@@ -103,6 +103,7 @@ App = init: ->
             y: @coords.y
             creature: dissociated
             successFn: -> false
+            failureFn: -> true
           }
 
         return false
@@ -125,6 +126,7 @@ App = init: ->
               successFn: ->
                 #: Clear the original Location
                 false
+              failureFn: -> true
             }
 
         #: Didn't move.
@@ -138,6 +140,34 @@ App = init: ->
         #: If none of the above, then, move into any random empty neighbour
         #: with a probability P, or stay there.
 
+        actions = [
+          @mirna_gene_complex
+          @rrna_gene_complex
+          @dissociate
+          @move
+        ]
+
+        #: Perform all the actions
+        performance = _.map actions, (act) => act(@neighbour)
+
+        #: Eliminate all the performances that resulted in a false
+        accepted = _.filter performance, (p) -> p isnt false
+
+        if accepted.length
+          #: If ANY valid action was performed
+          #: Randomly pick one action.
+          #: TODO: The actions must happen on the basis of rate const.
+          step = accepted[_.random(accepted.length - 1)]
+
+          return {
+            x: step.x
+            y: step.y,
+            creature: step.creature,
+            observed: yes
+          }
+
+        #: No action were taken
+        return false
 
     mirna:
       type: 'mirna'
