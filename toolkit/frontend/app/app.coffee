@@ -1,29 +1,26 @@
 
-App = init: ->
-  console.log 'App initialized!'
+App =
+  init: ->
+    console.log 'App initialized!'
 
-  elementary = new (terra.Terrarium)(20, 20)
+    @t = new terra.Terrarium 20, 20
 
-  terra.registerCA
-    type: 'elementary'
-    alive: false
-    ruleset: [1, 0, 0, 1, 0, 0, 1, 0].reverse()
-    colorFn: ->
-      if @alive then @color + ',1' else '0,0,0,0'
-    process: (neighbors, x, y) ->
-      if @age == y
-        index = neighbors.filter((neighbor) ->
-          neighbor.coords.y == y - 1
-        ).map((neighbor) ->
-          if neighbor.creature.alive then 1 else 0
-        )
-        index = parseInt(index.join(''), 2)
-        @alive = if isNaN(index) then !x else @ruleset[index]
-      true
-  elementary.grid = elementary.makeGrid('elementary')
-  # elementary.animate()
-  elementary.grid = elementary.step(10)
-  elementary.draw()
+    @register()
+
+    @t.makeGridWithDistribution [
+      ['free_nucleotide', 5]
+      ['protein', 5]
+      ['rrna', 5]
+    ]
+
+    @t.animate()
+
+  register: ->
+    model_final = _.mapObject @models, (val, key) =>
+      if key isnt 'commons' then _.extend val, @models.commons
+
+    for a, b of _.omit model_final, 'commons'
+      terra.registerCreature b
 
   models:
     commons:
@@ -73,10 +70,6 @@ App = init: ->
       health: 100
       actionRadius: 1
       color: [30, 0, 30]
-      colorFn: ->
-        #: Returns the creature's color at each step.
-        #: The color is determined on the basis of genes.
-        @color
 
       mirna_gene_complex: (neighbors) ->
         spots = _.filter neighbors, (spot) =>
@@ -432,6 +425,7 @@ App = init: ->
       gene_ref: undefined
       age: 0
       health: 100
+      color: [241, 196, 15]
 
       #: Inherits from commons.
       move: undefined
@@ -454,6 +448,7 @@ App = init: ->
 
     free_nucleotide:
       type: 'free_nucleotide'
+      color: [241, 196, 15]
 
       #: Inherits from commons.
       move: undefined
