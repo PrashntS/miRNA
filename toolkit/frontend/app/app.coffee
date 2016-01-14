@@ -6,8 +6,8 @@ App =
     @register()
 
     @t.grid = @t.makeGridWithDistribution [
-      ['free_nucleotide', 1]
-      ['protein', 1]
+      # ['free_nucleotide', 1]
+      ['protein', 10]
       # ['rrna', 5]
     ]
 
@@ -47,14 +47,16 @@ App =
         #: Didn't move.
         false
 
-      degrade: ->
+      degrade: (x, y) ->
         if @age > 100 or @health < 10
           degraded = terra.make 'free_nucleotide',
-            coords: @coords
+            coords:
+              x: x
+              y: y
 
           return {
-            x: @coords.x
-            y: @coords.y
+            x: x
+            y: y
             creature: degraded
             successFn: -> false
             failureFn: -> true
@@ -439,7 +441,7 @@ App =
         #: See miRNA.process
 
         @age += 1
-        step = @degrade() or @move(neighbours)
+        step = @degrade(x, y) or @move(neighbours)
         if step
           return {
             x: step.x
