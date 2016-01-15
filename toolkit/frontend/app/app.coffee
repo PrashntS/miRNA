@@ -564,17 +564,16 @@ App =
           cache: true
         escapeMarkup: (markup) -> markup
         placeholder: "Enter a few Genes"
-        minimumInputLength: 1
+        minimumInputLength: 2
+        maximumSelectionLength: 2
         templateResult: (gene) ->
           return gene.text if gene.loading
-
           markup = """
             <div>
               <p>#{gene.symbol}</p>
               <p>#{gene.description}</p>
             </div>
           """
-
           markup
 
         templateSelection: (gene) -> gene.symbol or gene.text

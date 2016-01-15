@@ -156,8 +156,9 @@ div.dg
     border-bottom: none
 
     &.title
-      background: $primary-color-dark
+      background: $ebony-clay
       border-bottom: inherit
+      margin: 0
 
       &::before
         content: "-"
@@ -165,7 +166,13 @@ div.dg
         margin-left: -10px
 
     &.folder
-      border-color: $primary-color-dark
+      background: transparent
+      border: 1px solid $ebony-clay
+
+      border-radius: 2px
+      overflow: hidden
+
+      margin: 5px 0
 
     &.cr
       background: inherit
@@ -188,7 +195,14 @@ div.dg
   &.main
     max-width: 100%
 
-  .closed
+    & > ul
+      background: transparent
+
+  ul
+    background: $madison
+
+  ul.closed
+    background: transparent
     li.title
       background: inherit
 
