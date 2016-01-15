@@ -541,9 +541,9 @@ App =
 
       $('#data_gui').html(gui.domElement)
 
-      $('.gene_select').select2
+      factory_select = (opts) ->
         ajax:
-          url: '/api/gene/',
+          url: opts.uri,
           dataType: 'json',
           delay: 250,
           data: (param) ->
@@ -565,19 +565,27 @@ App =
             }
           cache: true
         escapeMarkup: (markup) -> markup
-        placeholder: "Enter a few Genes"
+        placeholder: opts.placeholder
         minimumInputLength: 2
         maximumSelectionLength: 2
-        templateResult: (gene) ->
-          return gene.text if gene.loading
+        templateResult: (obj) ->
+          return obj.text if obj.loading
           markup = """
             <div>
-              <p>#{gene.symbol}</p>
-              <p>#{gene.description}</p>
+              <p>#{obj.symbol}</p>
+              <p>#{obj.description}</p>
             </div>
           """
           markup
+        templateSelection: (obj) -> obj.symbol or obj.text
 
-        templateSelection: (gene) -> gene.symbol or gene.text
+      $('.gene_select').select2 factory_select
+        uri: '/api/gene'
+        placeholder: "Please Enter a Few Genes"
+
+      $('.mirna_select').select2 factory_select
+        uri: '/api/mirna'
+        placeholder: "Please Enter a Few miRNA"
+
 
 module.exports = App

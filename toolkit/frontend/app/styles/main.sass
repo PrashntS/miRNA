@@ -64,9 +64,7 @@ header
     @include calc(height, "100vh - 35px")
     padding: 10px
     background: $primary-color
-    // min-width: 300px
     max-width: 250px
-    // @include out.er-container
 
     &::before
       clear: both
@@ -74,6 +72,16 @@ header
       display: table
       // margin-top: -1px
       height: 0
+
+section
+  .form-field
+    margin-bottom: 10px
+
+    label
+      margin-bottom: 5px
+      margin-left: 15px
+      letter-spacing: 1px
+      font-size: 14px
 
 a
   color: inherit
@@ -85,8 +93,6 @@ a
   &:active
     opacity: 0.8
 
-// Clear Defaults
-
 p
   margin: 0
 
@@ -95,6 +101,9 @@ span.select2-container--default
   font-family: $fontbody
   font-size: 14px
   color: $primary-color-text
+
+  .select2-search--inline .select2-search__field
+    margin-top: 8px
 
   .select2-selection
     background: transparent
@@ -326,7 +335,6 @@ div.dg
 
   .close-button
     display: none
-
 
 section.canvas
   // background: #EEE
