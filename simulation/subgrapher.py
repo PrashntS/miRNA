@@ -149,12 +149,95 @@ def jsonify(dictionary, filename, text='None'):
 			outfile.write(text + ' = ')
 			outfile.write(a)
 
+'''
+Both miRNA and gene.
+'''
+def both(input_mirna, input_gene):
+	for mirna in miRNA_meta_data.keys():
+		'''
+		Creates a list of genes to be included as nodes.
+		Creates miRNA dictionary with host gene and target genes with affinity.
+		'''
+		target_gene_lis_for_mirna_subgraph = []
+		host_gene_lis_for_mirna_subgraph = []
+		
+		if input_mirna == mirna:
+			mirna_dict[input_mirna] = {}
+			if 'Target Gene with Transcript Count' in miRNA_meta_data[mirna].keys():
+				target_gene_lis_for_mirna_subgraph = miRNA_meta_data[input_mirna]["Target Gene with Transcript Count"]
+
+			if 'Host Gene' in miRNA_meta_data[input_mirna].keys() and not miRNA_meta_data[input_mirna]['Host Gene'] == '':
+				host_gene_lis_for_mirna_subgraph.append(miRNA_meta_data[input_mirna]["Host Gene"])
+
+			for each in host_gene_lis_for_mirna_subgraph:
+				gene_lis_for_mirna_subgraph.append(each)
+
+			for each in target_gene_lis_for_mirna_subgraph:
+				# each - tuple; each[0] - gene symbol
+				gene_lis_for_mirna_subgraph.append(each[0])
+
+			mirna_dict[input_mirna]['Target Genes'] = target_gene_lis_for_mirna_subgraph
+			mirna_dict[input_mirna]['Host Genes'] = host_gene_lis_for_mirna_subgraph
+
+
+	for gene in gene_meta_data.keys():
+		'''
+		Creates a list of miRNAs to be included as nodes.
+		Creates gene dictionary with 'host for' and 'target for' keys with miRNA as values.
+		'''
+		mirna_host_lis = []
+		mirna_target_lis = []
+		if input_gene == gene:
+			if 'Host for' in gene_meta_data[input_gene].keys() and not gene_meta_data[input_gene]['Host for'] == '':
+				mirna_host_lis.append(gene_meta_data[input_gene]['Host for'])
+			if 'Target for' in gene_meta_data[input_gene].keys():
+				mirna_target_lis = gene_meta_data[input_gene]['Target for']
+	
+		mirna_lis_for_gene_subgraph = mirna_host_lis + mirna_target_lis
+
+		gene_dict[input_gene] = {}
+		gene_dict[input_gene]['Host for'] = gene_meta_data[input_gene]['Host for']
+		gene_dict[input_gene]['Target for'] = gene_meta_data[input_gene]['Target for']
+
+	all_mirna_nodes = mirna_lis_for_gene_subgraph
+	all_mirna_nodes.append(input_mirna)
+
+	all_gene_nodes = gene_lis_for_mirna_subgraph
+	all_gene_nodes.append(input_gene)
+
+	both_subgraph(all_gene_nodes, all_mirna_nodes, mirna_dict, gene_dict)
+
+
+def both_subgraph(all_gene_nodes, all_mirna_nodes, mirna_dict, gene_dict):
+	G = nx.DiGraph()
+	G.add_nodes_from(all_gene_nodes)
+	G.add_nodes_from(all_mirna_nodes)
+
+	for mirna in mirna_dict:
+		for target_gene in mirna_dict[mirna]['Target Genes']:
+			G.add_edge(mirna, target_gene[0])
+		for host_gene in mirna_dict[mirna]['Host Genes']:
+			G.add_edge(host_gene, mirna)
+
+	for gene in gene_dict.keys():
+		for host_mirna in gene_dict[gene]['Host for']:
+			G.add_edge(gene, host_mirna)
+		for target_mirna in gene_dict[gene]['Target for']:
+			G.add_edge(target_mirna, gene)
+
+	nx.write_gexf(G, "both_subgraph.gexf")
+	print 'Done!'
+
 
 if __name__ == '__main__':
-	form_data_mirna()
-	with open('./gene_ID_Store.json', 'r') as infile:
-		gene_data = json.loads(infile.read())
-		form_data_genes()
-		
-		# For all genes
-		gene_subgraph(gene_meta_data, miRNA_meta_data.keys())
+	# form_data_mirna()
+	
+	# form_data_genes()	
+	
+	# # For all genes
+	# gene_subgraph(gene_meta_data, miRNA_meta_data.keys())
+
+	# Both
+	mirna = raw_input('Enter miRNA.\n')
+	gene = raw_input('Enter gene.\n')
+	both(mirna, gene)
