@@ -4,7 +4,7 @@ module.exports = config:
   files:
     javascripts: joinTo:
       'libraries.js': /^(?!app\/)/
-      'app.js': /^app\//
+      'app.js': (a) -> /^app\//
     stylesheets:
       joinTo:
         'libraries.css': /^bower_components\//

@@ -24,19 +24,25 @@
     <section class="sidebar">
       <h1>miRNA Toolbox</h1>
 
-      <div class="form-field">
-        <label>Gene</label>
-        <select class="gene_select"
-                placeholder="Select a Gene"
-                multiple="true"></select>
-      </div>
+      <dic id="nodes">
+        <div class="form-field">
+          <label>Gene</label>
+          <select class="gene_select rivets"
+                  placeholder="Select a Gene"
+                  multiple="true"
+                  rv-value="nodes.genes"
+                  ></select>
+        </div>
 
-      <div class="form-field">
-        <label>miRNA</label>
-        <select class="mirna_select"
-                placeholder="Select a miRNA"
-                multiple="true"></select>
-      </div>
+        <div class="form-field">
+          <label>miRNA</label>
+          <select class="mirna_select rivets"
+                  placeholder="Select a miRNA"
+                  multiple="true"
+                  data-rv="nodes.mirnas"
+                  ></select>
+        </div>
+      </dic>
 
       <div class="form-field">
         <label>Simulation Parameters</label>
