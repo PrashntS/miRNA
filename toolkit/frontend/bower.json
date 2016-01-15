@@ -29,7 +29,8 @@
     "dat-gui": "~0.5.1",
     "bower-jquery-sparkline": "~2.1.3",
     "vex": "~2.3.3",
-    "fullpage.js": "~2.7.6"
+    "fullpage.js": "~2.7.6",
+    "d3": "~3.5.12"
   },
   "resolutions": {
     "terra": "master"

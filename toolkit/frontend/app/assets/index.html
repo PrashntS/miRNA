@@ -31,19 +31,23 @@
                 multiple="true"></select>
       </div>
 
-
       <div class="form-field">
         <label>miRNA</label>
         <select class="mirna_select"
                 placeholder="Select a miRNA"
                 multiple="true"></select>
       </div>
-      <div id="data_gui"></div>
+
+      <div class="form-field">
+        <label>Simulation Parameters</label>
+        <div id="data_gui"></div>
+      </div>
     </section>
   </header>
 
-
-  <section class="canvas"></section>
+  <section class="main">
+    <div id="graphcanvas" class="fill"></div>
+  </section>
 
   <script type="text/javascript" src="{{url_for('static', filename='libraries.js')}}"></script>
   <script type="text/javascript" src="{{url_for('static', filename='app.js')}}"></script>

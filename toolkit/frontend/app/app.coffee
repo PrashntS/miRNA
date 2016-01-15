@@ -2,6 +2,7 @@
 App =
   init: ->
     @ui.init()
+    return
 
     @t = new terra.Terrarium 100, 50,
       periodic: no
@@ -538,6 +539,36 @@ App =
       f1.add func, 'speed', -5, 5
       f2.add func, 'explode'
       f2.addColor func, 'col'
+
+      G = new (jsnx.DiGraph)
+      G.addNodesFrom [1],#2,3,4,5,[9,{color: '#008A00'}]],
+        color: '#0064C7'
+
+      # G.addCycle [1,2,3,4,5]
+
+      # G.addEdgesFrom [[1,9], [9,1]]
+
+      jsnx.draw G,
+        element: '#graphcanvas'
+        withLabels: true
+        nodeStyle: fill: (d) ->
+          d.data.color
+        labelStyle: fill: 'white'
+        stickyDrag: true
+      , true
+
+      a = 2
+
+      setInterval ()->
+        return if a > 100
+        G.addNodesFrom [a],
+          color: '#0064C7'
+
+        G.addEdgesFrom [[a-1, a], [1, a]]
+
+        a += 1
+
+      , 10
 
       $('#data_gui').html(gui.domElement)
 
