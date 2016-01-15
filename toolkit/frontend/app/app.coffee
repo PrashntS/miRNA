@@ -12,12 +12,14 @@ App =
     @register()
 
     @t.grid = @t.makeGridWithDistribution [
-      ['free_nucleotide', 1]
+      # ['free_nucleotide', 1]
+      ['protein', 1]
+      ['gen', 1]
     ]
 
-    @t.grid[0][0] = @t.makeGrid([['free_aminoacids']])[0][0]
+    # @t.grid[0][0] = @t.makeGrid([['free_aminoacids']])[0][0]
 
-    @t.animate()
+    # @t.animate()
 
   register: ->
     model_final = _.mapObject @models, (val, key) =>

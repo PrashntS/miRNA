@@ -32,6 +32,10 @@ class miRNAGeneTargetComplex(db.EmbeddedDocument):
   gene      = db.ReferenceField(Gene)
   affinity  = db.FloatField()
 
+  meta = {'allow_inheritance': True, 'strict': False}
+
+
+
 class miRNA(db.Document):
   symbol  = db.StringField(unique = True)
   FASTA   = db.StringField()
