@@ -1,3 +1,332 @@
+@import "bourbon"
+@import "neat"
+
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat)
+
+$fonthead: 'Montserrat', sans-serif
+$fontbody: 'Inconsolata', courier
+
+$primary-color-dark:   #303F9F
+$primary-color:        #3F51B5
+$primary-color-light:  #C5CAE9
+$primary-color-text:   #FFFFFF
+$accent-color:         #03A9F4
+$primary-text-color:   #212121
+$secondary-text-color: #727272
+$divider-color:        #B6B6B6
+
+$ebony-clay:    #22313F
+$dodger-blue:   #19B5FE
+$hoki:          #67809F
+$madison:       #34495E
+$medium-turqoise: #4ECDC4
+
+body
+  font-family: $fonthead
+  margin: 0
+  padding: 0
+  color: $primary-color-text
+
+header
+  position: fixed
+  width: 100%
+
+  nav
+    background: $primary-color-dark
+    text-align: center
+    padding: 10px 10px
+    font-size: 14px
+    font-family: $fontbody
+
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+
+      li
+        display: inline-block
+        margin: 0
+        letter-spacing: 2px
+        text-indent: 2px
+
+        &::after
+          content: "*"
+          padding: 0 0 0 8px
+
+        &:last-of-type
+          &::after
+            content: none
+
+        &.active > a
+          opacity: 0.8
+
+  section
+    @include calc(height, "100vh - 35px")
+    padding: 10px
+    background: $primary-color
+    // min-width: 300px
+    max-width: 250px
+    // @include out.er-container
+
+    &::before
+      clear: both
+      content: ""
+      display: table
+      // margin-top: -1px
+      height: 0
+
+a
+  color: inherit
+  text-decoration: none
+
+  &:hover
+    text-decoration: underline
+
+  &:active
+    opacity: 0.8
+
+// Clear Defaults
+
+p
+  margin: 0
+
+span.select2-container--default
+  min-width: 100%
+  font-family: $fontbody
+  font-size: 14px
+  color: $primary-color-text
+
+  .select2-selection
+    background: transparent
+    border: 1px solid $ebony-clay
+    padding: 2px 5px 5px 2px
+
+  &.select2-container--open
+    .select2-selection
+      background: $ebony-clay
+      border: 1px solid $ebony-clay
+
+  ul.select2-selection__rendered
+    li.select2-selection__choice
+      background: $madison
+      border: none
+      padding: 3px 10px
+      border-radius: 4px
+
+      .select2-selection__choice__remove
+        color: inherit
+        margin-right: 5px
+
+    input.select2-search__field
+      color: inherit
+      font-family: inherit
+      font-size: inherit
+
+.select2-dropdown
+  color: inherit
+  background: $madison
+  border: 1px solid $ebony-clay
+  overflow: hidden
+
+  ul
+    max-height: 40vh !important
+
+  .select2-results__option
+    padding: 10px
+
+    &[aria-selected=true]
+      color: $hoki
+      background: transparent !important
+
+  .select2-results__option--highlighted
+    background: $dodger-blue !important
+
+    &[aria-selected=true]
+      background: transparent !important
+
+div.dg
+  color: $primary-color-text
+  text-shadow: none
+  font-family: $fontbody
+  font-size: 14px
+  letter-spacing: 0.5px
+
+  li
+    background: transparent
+    border-bottom: none
+
+    &.title
+      background: $ebony-clay
+      border-bottom: inherit
+      margin: 0
+
+      &::before
+        content: "-"
+        position: absolute
+        margin-left: -10px
+
+    &.folder
+      background: transparent
+      border: 1px solid $ebony-clay
+
+      border-radius: 2px
+      // overflow: hidden
+
+      margin: 5px 0
+
+      .cr
+        padding-left: 14px
+
+    &.cr
+      background: inherit
+      border-bottom: inherit
+      position: relative
+
+      div:not([class])
+        position: relative
+        height: 100%
+
+      &.color
+        overflow: visible
+
+        input
+          font-family: inherit
+          font-weight: inherit !important
+          text-shadow: none !important
+
+
+        div.selector
+          margin: 0
+          padding: 0 !important
+          border-radius: 0px 0 3px 3px
+          width: 100% !important
+          // overflow: hidden
+          @include calc(top, "100% - 5px")
+
+          .field-knob
+            box-shadow: none !important
+
+          .saturation-field
+            border: none !important
+            margin: 0 !important
+            width: 100px !important
+            height: 100px !important
+            border-bottom-left-radius: 3px
+
+          .hue-field
+            height: 100% !important
+            border: none !important
+            margin: none
+            position: absolute
+            right: 0
+            border-bottom-right-radius: 3px
+            -webkit-width: calc(100% - 100px) !important
+            width: calc(100% - 100px) !important
+
+          .hue-knob
+            width: 100% !important
+            height: 2px !important
+            border: none !important
+            background: #FFFFFF
+
+            &::after
+              content: "*"
+              position: absolute
+              right: 50%
+              top: -2px
+              width: 15px
+              height: 15px
+              line-height: 15px
+              text-align: center
+              margin: -5px -7.5px
+              border-radius: 50%
+              color: $ebony-clay
+              background: #FFFFFF
+
+      &.function:hover
+        background: inherit
+
+        .property-name
+          text-decoration: underline
+
+    .c
+      position: relative
+      height: 100%
+      padding: 5px 0
+
+      input[type=text]
+        background: transparent
+        margin: 0
+        border: 1px solid $ebony-clay
+        padding: 2px 5px
+        border-radius: 2px
+        font-size: inherit
+        font-family: $fontbody
+        height: 100%
+
+        &:active, &:hover, &:focus
+          color: none !important
+          background: $ebony-clay
+
+      .slider
+        margin: 0
+        position: relative
+
+        @include calc(top, "-50% - 2.5px")
+
+        height: 5px
+        background: $ebony-clay
+        border-radius: 10px
+
+        &:hover
+          background: $ebony-clay
+
+        .slider-fg
+          position: relative
+          border-radius: 10px
+          height: 100%
+
+          &::after
+            content: "*"
+            position: absolute
+            right: 0
+            top: 0
+            width: 15px
+            height: 15px
+            line-height: 15px
+            text-align: center
+            margin: -5px -7.5px
+            border-radius: 50%
+            background: $ebony-clay
+
+          &:hover
+            &::after
+              background: inherit
+
+
+  &.main
+    max-width: 100%
+
+    & > ul
+      background: transparent
+
+  ul
+    background: $madison
+
+  ul.closed
+    background: transparent
+    li.title
+      background: inherit
+
+      &::before
+        content: "+"
+
+    .cr.color
+      overflow: hidden
+
+  .close-button
+    display: none
+
 
 section.canvas
-  background: #EEE
+  // background: #EEE

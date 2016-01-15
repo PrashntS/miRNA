@@ -12,12 +12,14 @@ App =
     @register()
 
     @t.grid = @t.makeGridWithDistribution [
-      ['free_nucleotide', 1]
+      # ['free_nucleotide', 1]
+      ['protein', 1]
+      ['gen', 1]
     ]
 
-    @t.grid[0][0] = @t.makeGrid([['free_aminoacids']])[0][0]
+    # @t.grid[0][0] = @t.makeGrid([['free_aminoacids']])[0][0]
 
-    @t.animate()
+    # @t.animate()
 
   register: ->
     model_final = _.mapObject @models, (val, key) =>
@@ -518,6 +520,27 @@ App =
 
   ui:
     init: ->
+      class Fanck
+        constructor: ->
+          @message = ''
+          @speed = 0
+          @col = '#FFFFFF'
+          @explode = () ->
+            console.log "Hey"
+
+      func = new Fanck
+
+      gui = new dat.GUI
+        autoPlace: false
+      f1 = gui.addFolder 'conc'
+      f2 = gui.addFolder 'colors'
+      f1.add func, 'message'
+      f1.add func, 'speed', -5, 5
+      f2.add func, 'explode'
+      f2.addColor func, 'col'
+
+      $('#data_gui').html(gui.domElement)
+
       $('.gene_select').select2
         ajax:
           url: '/api/gene/',
@@ -542,19 +565,17 @@ App =
             }
           cache: true
         escapeMarkup: (markup) -> markup
-        containerCssClass: 'tpx-select2-container'
-        dropdownCssClass: 'tpx-select2-drop'
-        minimumInputLength: 1
+        placeholder: "Enter a few Genes"
+        minimumInputLength: 2
+        maximumSelectionLength: 2
         templateResult: (gene) ->
           return gene.text if gene.loading
-
           markup = """
             <div>
               <p>#{gene.symbol}</p>
               <p>#{gene.description}</p>
             </div>
           """
-
           markup
 
         templateSelection: (gene) -> gene.symbol or gene.text

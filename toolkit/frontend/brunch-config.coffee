@@ -15,7 +15,14 @@ module.exports = config:
     coffeescript:
       bare: yes
     sass:
-      mode: 'native'
+      mode: 'ruby'
+      allowCache: true
+      options:
+        includePaths: (->
+          bourbon = require('node-bourbon').includePaths
+          neat = require('node-neat').includePaths
+          bourbon.concat neat
+        )()
     autoReload:
       enabled: yes
   conventions:

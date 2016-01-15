@@ -12,6 +12,8 @@
     "coffee-script-brunch": "^1.8.3",
     "javascript-brunch": "^1.8.0",
     "jsnetworkx": "^0.3.4",
+    "node-bourbon": "^4.2.3",
+    "node-neat": "^1.7.2",
     "sass-brunch": "^1.9.2"
   }
 }

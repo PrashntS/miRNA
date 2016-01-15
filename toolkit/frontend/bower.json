@@ -25,9 +25,11 @@
     "underscore": "~1.8.3",
     "terra": "https://github.com/PrashntS/terra.git#master",
     "select2": "~4.0.1",
-    "select2-skins": "https://github.com/PrashntS/select2-skins",
     "font-awesome": "fontawesome#~4.5.0",
-    "dat-gui": "~0.5.1"
+    "dat-gui": "~0.5.1",
+    "bower-jquery-sparkline": "~2.1.3",
+    "vex": "~2.3.3",
+    "fullpage.js": "~2.7.6"
   },
   "resolutions": {
     "terra": "master"
