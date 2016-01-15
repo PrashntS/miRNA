@@ -26,7 +26,8 @@
     "terra": "https://github.com/PrashntS/terra.git#master",
     "select2": "~4.0.1",
     "select2-skins": "https://github.com/PrashntS/select2-skins",
-    "font-awesome": "fontawesome#~4.5.0"
+    "font-awesome": "fontawesome#~4.5.0",
+    "dat-gui": "~0.5.1"
   },
   "resolutions": {
     "terra": "master"

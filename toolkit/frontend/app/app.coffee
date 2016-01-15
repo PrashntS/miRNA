@@ -533,7 +533,10 @@ App =
             params.page = params.page || 1
 
             return {
-              results: data.data
+              results: _.map data.data, (dat) ->
+                dat.id = dat.symbol
+                dat.text = dat.symbol
+                dat
               pagination:
                 more: data.has_more
             }
