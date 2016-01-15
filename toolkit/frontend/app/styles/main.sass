@@ -174,9 +174,17 @@ div.dg
 
       margin: 5px 0
 
+      .cr
+        padding-left: 14px
+
     &.cr
       background: inherit
       border-bottom: inherit
+      position: relative
+
+      div:not([class])
+        position: relative
+        height: 100%
 
       &.function:hover
         background: inherit
@@ -185,12 +193,58 @@ div.dg
           text-decoration: underline
 
     .c
+      position: relative
+      height: 100%
+      padding: 5px 0
+
       input[type=text]
         background: transparent
-        border: 1px solid #fff
+        margin: 0
+        border: 1px solid $ebony-clay
         padding: 2px 5px
         border-radius: 2px
+        font-size: inherit
         font-family: $fontbody
+        height: 100%
+
+        &:active, &:hover, &:focus
+          color: none !important
+          background: $ebony-clay
+
+      .slider
+        margin: 0
+        position: relative
+
+        @include calc(top, "-50% - 2.5px")
+
+        height: 5px
+        background: $ebony-clay
+        border-radius: 10px
+
+        &:hover
+          background: $ebony-clay
+
+        .slider-fg
+          position: relative
+          border-radius: 10px
+          height: 100%
+
+          &::after
+            content: "*"
+            position: absolute
+            right: 0
+            top: 0
+            width: 15px
+            height: 15px
+            line-height: 15px
+            text-align: center
+            margin: -5px -7.5px
+            border-radius: 50%
+            background: $ebony-clay
+
+          &:hover
+            &::after
+              background: inherit
 
   &.main
     max-width: 100%
