@@ -520,6 +520,25 @@ App =
 
   ui:
     init: ->
+      class Fanck
+        constructor: ->
+          @message = ''
+          @speed = 0
+          @explode = () ->
+            console.log "Hey"
+
+      func = new Fanck
+
+      gui = new dat.GUI
+        autoPlace: false
+      f1 = gui.addFolder 'conc'
+      f2 = gui.addFolder 'colors'
+      f1.add func, 'message'
+      f1.add func, 'speed', -5, 5
+      f2.add func, 'explode'
+
+      $('#data_gui').html(gui.domElement)
+
       $('.gene_select').select2
         ajax:
           url: '/api/gene/',
