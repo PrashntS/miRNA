@@ -18,38 +18,40 @@ $divider-color:        #B6B6B6
 body
   font-family: $fonthead
   margin: 0
-  background: $primary-color
   color: $primary-color-text
   padding: 0
 
-nav
-  background: $primary-color-dark
-  text-align: center
-  padding: 10px 10px
-  font-size: 14px
-  font-family: $fontbody
+header
+  background: $primary-color
 
-  ul
-    margin: 0
-    padding: 0
-    list-style: none
+  nav
+    background: $primary-color-dark
+    text-align: center
+    padding: 10px 10px
+    font-size: 14px
+    font-family: $fontbody
 
-    li
-      display: inline-block
+    ul
       margin: 0
-      letter-spacing: 2px
-      text-indent: 2px
+      padding: 0
+      list-style: none
 
-      &::after
-        content: "*"
-        padding: 0 0 0 8px
+      li
+        display: inline-block
+        margin: 0
+        letter-spacing: 2px
+        text-indent: 2px
 
-      &:last-of-type
         &::after
-          content: none
+          content: "*"
+          padding: 0 0 0 8px
 
-      &.active > a
-        opacity: 0.8
+        &:last-of-type
+          &::after
+            content: none
+
+        &.active > a
+          opacity: 0.8
 
 a
   color: inherit
