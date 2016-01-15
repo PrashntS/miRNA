@@ -107,6 +107,7 @@ def collect_mirna_info_for_gene(user_input):
 	Creates gene dictionary with 'host for' and 'target for' keys with miRNA as values.
 	'''
 	mirna_host_lis = []
+
 	if 'Host for' in gene_meta_data[user_input].keys() and not gene_meta_data[user_input]['Host for'] == '':
 		mirna_host_lis.append(gene_meta_data[user_input]['Host for'])
 	if 'Target for' in gene_meta_data[user_input].keys():
@@ -150,7 +151,10 @@ def jsonify(dictionary, filename, text='None'):
 
 
 if __name__ == '__main__':
-	# form_data_mirna()
+	form_data_mirna()
 	with open('./gene_ID_Store.json', 'r') as infile:
 		gene_data = json.loads(infile.read())
 		form_data_genes()
+		
+		# For all genes
+		gene_subgraph(gene_meta_data, miRNA_meta_data.keys())
