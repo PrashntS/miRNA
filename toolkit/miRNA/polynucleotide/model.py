@@ -5,6 +5,12 @@
 from flask import request
 from miRNA import db, app
 
+class miRNAGeneTargetedByComplex(db.EmbeddedDocument):
+  miRNA     = db.ReferenceField('miRNA')
+  affinity  = db.FloatField()
+
+  meta = {'allow_inheritance': True, 'strict': False}
+
 class Gene(db.Document):
   symbol = db.StringField(unique = True)
   FASTA  = db.StringField()
@@ -12,6 +18,9 @@ class Gene(db.Document):
 
   description       = db.StringField()
   transcript_count  = db.IntField()
+
+  host_of = db.ReferenceField('miRNA')
+  targeted_by = db.ListField(db.EmbeddedDocumentField(miRNAGeneTargetedByComplex))
 
   searchable = db.StringField()
 
@@ -27,14 +36,11 @@ class Gene(db.Document):
   def foo(self):
       return "fee"
 
-
 class miRNAGeneTargetComplex(db.EmbeddedDocument):
   gene      = db.ReferenceField(Gene)
   affinity  = db.FloatField()
 
   meta = {'allow_inheritance': True, 'strict': False}
-
-
 
 class miRNA(db.Document):
   symbol  = db.StringField(unique = True)

@@ -32,7 +32,7 @@ def migrate():
 
   from mongoengine.queryset import DoesNotExist
 
-  from miRNA.polynucleotide.model import Gene, miRNA as miRNAModel, miRNAGeneTargetComplex
+  from miRNA.polynucleotide.model import Gene, miRNA as miRNAModel, miRNAGeneTargetComplex, miRNAGeneTargetedByComplex
 
   #: Insert the Gene Data.
   with open('data_dump/gene_metadata.json') as minion:
@@ -73,16 +73,6 @@ def migrate():
         pass
 
       count = 0
-      #: We'll add targets later, first, we gotta just save transcript counts
-      for gene in meta.get('Target Gene with Transcript Count', []):
-        try:
-          g = Gene.objects.get(symbol = gene[0])
-          g.transcript_count = gene[1]
-          g.save()
-          count += 1
-        except DoesNotExist:
-          #: Move on
-          pass
 
       m.mirbase_url = meta.get('mature miRNA entry', '')
       mtc = meta.get('miRNA Transcript Count', 0)
@@ -92,6 +82,19 @@ def migrate():
         mtc = 0
       m.transcript_count = mtc
       m.save()
+
+      #: We'll add targets later, first, we gotta just save transcript counts and host_of
+      for gene in meta.get('Target Gene with Transcript Count', []):
+        try:
+          g = Gene.objects.get(symbol = gene[0])
+          g.transcript_count = gene[1]
+          g.host_of = m
+          g.save()
+          count += 1
+        except DoesNotExist:
+          #: Move on
+          pass
+
       print("Inserted miRNA: {0}, and updated {1} genes".format(str(m), str(count)))
 
   #: Insert miRNA targets
@@ -108,6 +111,13 @@ def migrate():
             e = miRNAGeneTargetComplex()
             e.gene = g
             e.affinity = i[1]
+
+            f = miRNAGeneTargetedByComplex()
+            f.miRNA = m
+            f.affinity = i[1]
+
+            g.targeted_by.append(f)
+            g.save()
 
             m.searchable += " {0}".format(i[0])
             m.targets.append(e)

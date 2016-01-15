@@ -43,7 +43,7 @@ exports.interaction =
 
     @nodes = {}
 
-    rivets.bind($('#nodes'), {nodes: @nodes})
+    @n = rivets.bind($('#nodes'), {nodes: @nodes})
 
     setInterval ()->
       return if a > 10

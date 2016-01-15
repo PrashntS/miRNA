@@ -5,7 +5,9 @@
 from flask.ext.mongorest import operators as ops
 from flask.ext.mongorest.resources import Resource
 
-from miRNA.polynucleotide.model import Gene, miRNA, miRNAGeneTargetComplex
+from miRNA.polynucleotide.model import (Gene, miRNA,
+                                        miRNAGeneTargetComplex,
+                                        miRNAGeneTargetedByComplex)
 
 class SymbolicResource(Resource):
   max_limit = 20
@@ -22,9 +24,24 @@ class SymbolicResource(Resource):
 
     return qs.get(symbol = pk)
 
+class miRNADoc(Resource):
+  document = miRNA
+  fields = ['id', 'symbol']
+
+class miRNAGeneTargetedByComplexResource(Resource):
+  document = miRNAGeneTargetedByComplex
+  related_resources = {
+    'miRNA': miRNADoc
+  }
+
 class GeneResource(SymbolicResource):
   document = Gene
-  fields = ['id', 'symbol', 'description', 'names', 'transcript_count']
+  fields = ['id', 'symbol', 'description', 'names', 'transcript_count', 'targeted_by', 'host_of']
+
+  related_resources = {
+    'targeted_by': miRNAGeneTargetedByComplexResource,
+    'host_of': miRNADoc,
+  }
 
   filters = {
     'symbol': [ops.Exact, ops.Startswith],
@@ -33,18 +50,25 @@ class GeneResource(SymbolicResource):
     'q': [ops.IContains,]
   }
 
+
+class GeneDoc(Resource):
+  document = Gene
+  fields = ['id', 'symbol']
+
 class miRNAGeneTargetComplexResource(Resource):
   document = miRNAGeneTargetComplex
+  fields = ['affinity', 'gene']
   related_resources = {
-    'gene': GeneResource
+    'gene': GeneDoc
   }
 
 class miRNAResource(SymbolicResource):
   document = miRNA
+  fields = ['id', 'targets', 'host', 'mirbase_url', 'symbol']
 
   related_resources = {
     'targets': miRNAGeneTargetComplexResource,
-    'host': GeneResource,
+    'host': GeneDoc,
   }
 
   filters = {
