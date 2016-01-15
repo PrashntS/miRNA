@@ -524,6 +524,7 @@ App =
         constructor: ->
           @message = ''
           @speed = 0
+          @col = '#FFFFFF'
           @explode = () ->
             console.log "Hey"
 
@@ -536,6 +537,7 @@ App =
       f1.add func, 'message'
       f1.add func, 'speed', -5, 5
       f2.add func, 'explode'
+      f2.addColor func, 'col'
 
       $('#data_gui').html(gui.domElement)
 

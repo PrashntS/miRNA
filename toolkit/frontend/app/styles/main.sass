@@ -170,7 +170,7 @@ div.dg
       border: 1px solid $ebony-clay
 
       border-radius: 2px
-      overflow: hidden
+      // overflow: hidden
 
       margin: 5px 0
 
@@ -185,6 +185,63 @@ div.dg
       div:not([class])
         position: relative
         height: 100%
+
+      &.color
+        overflow: visible
+
+        input
+          font-family: inherit
+          font-weight: inherit !important
+          text-shadow: none !important
+
+
+        div.selector
+          margin: 0
+          padding: 0 !important
+          border-radius: 0px 0 3px 3px
+          width: 100% !important
+          // overflow: hidden
+          @include calc(top, "100% - 5px")
+
+          .field-knob
+            box-shadow: none !important
+
+          .saturation-field
+            border: none !important
+            margin: 0 !important
+            width: 100px !important
+            height: 100px !important
+            border-bottom-left-radius: 3px
+
+          .hue-field
+            height: 100% !important
+            border: none !important
+            margin: none
+            position: absolute
+            right: 0
+            border-bottom-right-radius: 3px
+            -webkit-width: calc(100% - 100px) !important
+            width: calc(100% - 100px) !important
+
+          .hue-knob
+            width: 100% !important
+            height: 2px !important
+            border: none !important
+            background: #FFFFFF
+
+            &::after
+              content: "*"
+              position: absolute
+              right: 50%
+              top: -2px
+              width: 15px
+              height: 15px
+              line-height: 15px
+              text-align: center
+              margin: -5px -7.5px
+              border-radius: 50%
+              color: $ebony-clay
+              background: #FFFFFF
 
       &.function:hover
         background: inherit
@@ -246,6 +303,7 @@ div.dg
             &::after
               background: inherit
 
+
   &.main
     max-width: 100%
 
@@ -262,6 +320,9 @@ div.dg
 
       &::before
         content: "+"
+
+    .cr.color
+      overflow: hidden
 
   .close-button
     display: none
