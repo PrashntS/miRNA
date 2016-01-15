@@ -563,8 +563,7 @@ App =
             }
           cache: true
         escapeMarkup: (markup) -> markup
-        containerCssClass: 'tpx-select2-container'
-        dropdownCssClass: 'tpx-select2-drop'
+        placeholder: "Enter a few Genes"
         minimumInputLength: 1
         templateResult: (gene) ->
           return gene.text if gene.loading

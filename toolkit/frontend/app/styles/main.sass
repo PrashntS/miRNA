@@ -10,10 +10,16 @@ $primary-color-dark:   #303F9F
 $primary-color:        #3F51B5
 $primary-color-light:  #C5CAE9
 $primary-color-text:   #FFFFFF
-$accent-color:         #009688
+$accent-color:         #03A9F4
 $primary-text-color:   #212121
 $secondary-text-color: #727272
 $divider-color:        #B6B6B6
+
+$ebony-clay:    #22313F
+$dodger-blue:   #19B5FE
+$hoki:          #67809F
+$madison:       #34495E
+$medium-turqoise: #4ECDC4
 
 body
   font-family: $fonthead
@@ -79,32 +85,64 @@ a
   &:active
     opacity: 0.8
 
+// Clear Defaults
+
+p
+  margin: 0
+
 span.select2-container--default
   min-width: 100%
   font-family: $fontbody
   font-size: 14px
   color: $primary-color-text
 
-  .tpx-select2-container
+  .select2-selection
     background: transparent
-    border: 1px solid $primary-color-light
+    border: 1px solid $ebony-clay
     padding: 2px 5px 5px 2px
 
-  &.select2-container--focus
-    .tpx-select2-container
-      border: 1px solid $primary-color-light
+  &.select2-container--open
+    .select2-selection
+      background: $ebony-clay
+      border: 1px solid $ebony-clay
 
   ul.select2-selection__rendered
     li.select2-selection__choice
-      background: $accent-color
-      border: 1px solid $primary-color-light
+      background: $madison
+      border: none
+      padding: 3px 10px
+      border-radius: 4px
 
       .select2-selection__choice__remove
         color: inherit
         margin-right: 5px
 
-.select2-dropdown, .tpx-select2-drop
-  color: $primary-text-color
+    input.select2-search__field
+      color: inherit
+      font-family: inherit
+      font-size: inherit
+
+.select2-dropdown
+  color: inherit
+  background: $madison
+  border: 1px solid $ebony-clay
+  overflow: hidden
+
+  ul
+    max-height: 40vh !important
+
+  .select2-results__option
+    padding: 10px
+
+    &[aria-selected=true]
+      color: $hoki
+      background: transparent !important
+
+  .select2-results__option--highlighted
+    background: $dodger-blue !important
+
+    &[aria-selected=true]
+      background: transparent !important
 
 div.dg
   color: $primary-color-text
@@ -147,6 +185,8 @@ div.dg
         border-radius: 2px
         font-family: $fontbody
 
+  &.main
+    max-width: 100%
 
   .closed
     li.title
