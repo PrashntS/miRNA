@@ -466,7 +466,7 @@
         "miRNA Name": "MIRLET7B",
         "miRNA Sequence": "CUAUACAACCUACUGCCUUCCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000063"
     },
     "hsa-let-7b-5p": {
         "Host Gene": "",
@@ -1022,7 +1022,7 @@
         "miRNA Name": "MIRLET7B",
         "miRNA Sequence": "UGAGGUAGUAGGUUGUGUGGUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000063"
     },
     "hsa-let-7c*": {},
     "hsa-let-7c-5p": {},
@@ -1414,7 +1414,7 @@
         "miRNA Name": "MIRLET7D",
         "miRNA Sequence": "AGAGGUAGUAGGUUGCAUAGUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000065"
     },
     "hsa-let-7e-3p": {
         "Host Gene": "SPACA6P-AS",
@@ -1704,7 +1704,7 @@
         "miRNA Name": "MIRLET7E",
         "miRNA Sequence": "UGAGGUAGGAGGUUGUAUAGUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000066"
     },
     "hsa-let-7f-1-3p": {
         "Host Gene": "RP11-2B6.3",
@@ -1720,7 +1720,7 @@
         "miRNA Name": "MIRLET7F1",
         "miRNA Sequence": "CUAUACAAUCUAUUGCCUUCCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000067"
     },
     "hsa-let-7f-2-3p": {
         "Host Gene": "HUWE1",
@@ -1775,7 +1775,7 @@
         "miRNA Name": "MIRLET7G",
         "miRNA Sequence": "UGAGGUAGUAGUUUGUACAGUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000433"
     },
     "hsa-let-7i-5p": {
         "Host Gene": "RP11-631N16.2",
@@ -1821,7 +1821,7 @@
         "miRNA Name": "MIRLET7I",
         "miRNA Sequence": "UGAGGUAGUAGUUUGUGCUGUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000434"
     },
     "hsa-miR-1": {
         "Target Gene with Transcript Count": [],
@@ -1858,7 +1858,7 @@
         "miRNA Name": "MIR100",
         "miRNA Sequence": "AACCCGUAGAUCCGAACUUGUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000102"
     },
     "hsa-miR-101-3p": {
         "Host Gene": "RCL1",
@@ -3100,7 +3100,7 @@
         "miRNA Name": "MIR106A",
         "miRNA Sequence": "AAAAGUGCUUACAGUGCAGGUAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000113"
     },
     "hsa-miR-106b-3p": {
         "Host Gene": "MCM7",
@@ -3121,7 +3121,7 @@
         "miRNA Name": "MIR106B",
         "miRNA Sequence": "CCGCACUGUGGGUACUUGCUGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000734"
     },
     "hsa-miR-106b-5p": {
         "Host Gene": "MCM7",
@@ -3437,7 +3437,7 @@
         "miRNA Name": "MIR106B",
         "miRNA Sequence": "UAAAGUGCUGACAGUGCAGAU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000734"
     },
     "hsa-miR-107": {
         "Host Gene": "PANK1",
@@ -3453,7 +3453,7 @@
         "miRNA Name": "MIR107",
         "miRNA Sequence": "AGCAGCAUUGUACAGGGCUAUCA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000114"
     },
     "hsa-miR-10a-3p": {
         "Host Gene": "HOXB3",
@@ -3868,7 +3868,7 @@
         "miRNA Name": "MIR10A",
         "miRNA Sequence": "UACCCUGUAGAUCCGAAUUUGUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000266"
     },
     "hsa-miR-10b-3p": {
         "Host Gene": "HOXD3",
@@ -3884,7 +3884,7 @@
         "miRNA Name": "MIR10B",
         "miRNA Sequence": "ACAGAUUCGAUUCUAGGGGAAU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000267"
     },
     "hsa-miR-10b-5p": {
         "Host Gene": "HOXD3",
@@ -4050,7 +4050,7 @@
         "miRNA Name": "MIR10B",
         "miRNA Sequence": "UACCCUGUAGAACCGAAUUUGUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000267"
     },
     "hsa-miR-1180-3p": {
         "Host Gene": "B9D1",
@@ -4170,7 +4170,7 @@
         "miRNA Name": "MIR122",
         "miRNA Sequence": "UGGAGUGUGACAAUGGUGUUUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000442"
     },
     "hsa-miR-1224-3p": {
         "Host Gene": "EIF2B5",
@@ -4194,7 +4194,7 @@
         "miRNA Name": "MIR1225",
         "miRNA Sequence": "UGAGCCCCUGUGCCGCCCCCAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0006311"
     },
     "hsa-miR-1225-5p": {
         "Host Gene": "PKD1",
@@ -4334,7 +4334,7 @@
         "miRNA Name": "MIR1226",
         "miRNA Sequence": "UCACCAGCCCUGUGUUCCCUAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0006313"
     },
     "hsa-miR-1226-5p": {
         "Host Gene": "DHX30",
@@ -4350,7 +4350,7 @@
         "miRNA Name": "MIR1226",
         "miRNA Sequence": "GUGAGGGCAUGCAGGCCUGGAUGGGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0006313"
     },
     "hsa-miR-1227-3p": {
         "Host Gene": "PLEKHJ1",
@@ -6749,7 +6749,7 @@
         "miRNA Name": "MIR1245A",
         "miRNA Sequence": "AAGUGAUCUAAAGGCCUACAU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0006380"
     },
     "hsa-miR-1247-5p": {
         "Host Gene": "DIO3OS",
@@ -6815,7 +6815,7 @@
         "miRNA Name": "MIR1256",
         "miRNA Sequence": "AGGCAUUGACUUCUCACUAGCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0006390"
     },
     "hsa-miR-1258": {
         "Host Gene": "ZNF385B",
@@ -6840,7 +6840,7 @@
         "miRNA Name": "MIR125A",
         "miRNA Sequence": "ACAGGUGAGGUUCUUGGGAGCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000469"
     },
     "hsa-miR-125a-5p": {
         "Host Gene": "SPACA6P-AS",
@@ -7001,7 +7001,7 @@
         "miRNA Name": "MIR125A",
         "miRNA Sequence": "UCCCUGAGACCCUUUAACCUGUGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000469"
     },
     "hsa-miR-125b-2-3p": {
         "Host Gene": "",
@@ -7042,11 +7042,21 @@
         "miRNA Name": "MIR99AHG",
         "miRNA Sequence": "UCACAAGUCAGGCUCUUGGGAC",
         "miRNA Transcript Count": 19,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000470"
     },
     "hsa-miR-125b-5p": {
+        "Accession ID": [
+            "MI0000446"
+        ],
+        "Database cross-references": [
+            "TARGETS:PICTAR-VERT:hsa-miR-125b",
+            "HGNC:31506",
+            "ENTREZGENE:406911"
+        ],
+        "Description": "Homo sapiens miR-125b-1 stem-loop",
         "Host Gene": "",
         "Host Gene Transcript Count": 0,
+        "Name": "hsa-mir-125b-1",
         "Target Gene with Transcript Count": [
             [
                 "LIF",
@@ -7469,6 +7479,44 @@
                 -18.7869
             ]
         ],
+        "citations": {
+            "0": {
+                "authors": "Lagos-Quintana M, Rauhut R, Yalcin A, Meyer J, Lendeckel W, Tuschl T",
+                "journal": "Curr Biol. 12:735-739(2002).",
+                "title": "Identification of tissue-specific microRNAs from mouse"
+            },
+            "1": {
+                "authors": "Cai X, Lu S, Zhang Z, Gonzalez CM, Damania B, Cullen BR",
+                "journal": "Proc Natl Acad Sci U S A. 102:5570-5575(2005).",
+                "title": "Kaposi's sarcoma-associated herpesvirus expresses an array of viral microRNAs in  latently infected cells"
+            },
+            "2": {
+                "authors": "Lee YS, Kim HK, Chung S, Kim KS, Dutta A",
+                "journal": "J Biol Chem. 280:16635-16641(2005).",
+                "title": "Depletion of human micro-RNA miR-125b reveals that it is critical for the proliferation of differentiated cells but not for the down-regulation of putative targets during differentiation"
+            },
+            "3": {
+                "authors": "Fu H, Tie Y, Xu C, Zhang Z, Zhu J, Shi Y, Jiang H, Sun Z, Zheng X",
+                "journal": "FEBS Lett. 579:3849-3854(2005).",
+                "title": "Identification of human fetal liver miRNAs by a novel method"
+            },
+            "4": {
+                "authors": "Landgraf P, Rusu M, Sheridan R, Sewer A, Iovino N, Aravin A, Pfeffer S, Rice A, Kamphorst AO, Landthaler M, Lin C, Socci ND, Hermida L, Fulci V, Chiaretti S, Foa R, Schliwka J, Fuchs U, Novosel A, Muller RU, Schermer B, Bissels U, Inman J, Phan Q, Chien M, Weir DB, Choksi R, De Vita G, Frezzetti D, Trompeter HI, Hornung V, Teng G, Hartmann G, Palkovits M, Di Lauro R, Wernet P, Macino G, Rogler CE, Nagle JW, Ju J, Papavasiliou FN, Benzing T, Lichter P, Tam W, Brownstein MJ, Bosio A, Borkhardt A, Russo JJ, Sander C, Zavolan M, Tuschl T",
+                "journal": "Cell. 129:1401-1414(2007).",
+                "title": "A mammalian microRNA expression atlas based on small RNA library sequencing"
+            },
+            "5": {
+                "authors": "Lui WO, Pourmand N, Patterson BK, Fire A",
+                "journal": "Cancer Res. 67:6031-6043(2007).",
+                "title": "Patterns of known and novel small RNAs in human cervical cancer"
+            },
+            "6": {
+                "authors": "Koh W, Sheng CT, Tan B, Lee QY, Kuznetsov V, Kiang LS, Tanavde V",
+                "journal": "BMC Genomics. 11 Suppl 1:S6(2010).",
+                "title": "Analysis of deep sequencing microRNA expression profile from human embryonic stem cells derived mesenchymal stem cells reveals possible role of let-7 microRNA family in downstream targeting of hepatic nuclear factor 4 alpha"
+            }
+        },
+        "comment": "This miRNA sequence is predicted based on homology to a verified miRNA\nfrom mouse [1].  Its expression was later verified in human BC-1 cells\n[2].",
         "mature miRNA entry": "http://mirbase.org/cgi-bin/mature.pl?mature_acc=MIMAT0000423",
         "miRNA Name": "MIR99AHG",
         "miRNA Sequence": "UCCCUGAGACCCUAACUUGUGA",
@@ -7494,7 +7542,7 @@
         "miRNA Name": "MIR126",
         "miRNA Sequence": "UCGUACCGUGAGUAAUAAUGCG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000471"
     },
     "hsa-miR-126-5p": {
         "Host Gene": "EGFL7",
@@ -7525,7 +7573,7 @@
         "miRNA Name": "MIR126",
         "miRNA Sequence": "CAUUAUUACUUUUGGUACGCG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000471"
     },
     "hsa-miR-1260a": {
         "Host Gene": "NGB",
@@ -7541,7 +7589,7 @@
         "miRNA Name": "MIR1260A",
         "miRNA Sequence": "AUCCCACCUCUGCCACCA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0006394"
     },
     "hsa-miR-1260b": {
         "Host Gene": "MAML2",
@@ -7597,7 +7645,7 @@
         "miRNA Name": "MIR1260B",
         "miRNA Sequence": "AUCCCACCACUGCCACCAU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0014197"
     },
     "hsa-miR-1262": {
         "Host Gene": "GNG12-AS1",
@@ -7632,7 +7680,7 @@
         "miRNA Name": "MIR1276",
         "miRNA Sequence": "UAAAGAGCCCUGUGGAGACA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0006416"
     },
     "hsa-miR-128-3p": {
         "Host Gene": "ARPP21",
@@ -7677,7 +7725,7 @@
         "miRNA Name": "MIR129-2",
         "miRNA Sequence": "AAGCCCUUACCCCAAAAAGCAU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000473"
     },
     "hsa-miR-129-5p": {
         "Host Gene": "",
@@ -7750,7 +7798,7 @@
         "miRNA Name": null,
         "miRNA Sequence": "UUCAAGUAAUUCAGGUG",
         "miRNA Transcript Count": null,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0006358"
     },
     "hsa-miR-1301-3p": {
         "Host Gene": "DNMT3A",
@@ -7854,7 +7902,7 @@
         "miRNA Name": "MIR130A",
         "miRNA Sequence": "CAGUGCAAUGUUAAAAGGGCAU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000448"
     },
     "hsa-miR-130b-3p": {
         "Host Gene": "PPIL2",
@@ -8560,7 +8608,7 @@
         "miRNA Name": "MIR130B",
         "miRNA Sequence": "CAGUGCAAUGAUGAAAGGGCAU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000748"
     },
     "hsa-miR-130b-5p": {
         "Host Gene": "PPIL2",
@@ -8706,7 +8754,7 @@
         "miRNA Name": "MIR130B",
         "miRNA Sequence": "ACUCUUUCCCUGUUGCACUAC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000748"
     },
     "hsa-miR-132-3p": {
         "Host Gene": "",
@@ -8897,7 +8945,7 @@
         "miRNA Name": "MIR132",
         "miRNA Sequence": "UAACAGUCUACAGCCAUGGUCG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000449"
     },
     "hsa-miR-132-5p": {},
     "hsa-miR-133a-3p": {},
@@ -8930,7 +8978,7 @@
         "miRNA Name": "MIR133B",
         "miRNA Sequence": "UUUGGUCCCCUUCAACCAGCUA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000822"
     },
     "hsa-miR-134-5p": {},
     "hsa-miR-135a-5p": {
@@ -8978,7 +9026,7 @@
         "miRNA Name": "MIR139",
         "miRNA Sequence": "UGGAGACGCGGCCCUGUUGGAGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000261"
     },
     "hsa-miR-139-5p": {
         "Host Gene": "PDE2A",
@@ -8999,7 +9047,7 @@
         "miRNA Name": "MIR139",
         "miRNA Sequence": "UCUACAGUGCACGUGUCUCCAGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000261"
     },
     "hsa-miR-140-3p": {
         "Host Gene": "WWP2",
@@ -9045,7 +9093,7 @@
         "miRNA Name": "MIR140",
         "miRNA Sequence": "UACCACAGGGUAGAACCACGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000456"
     },
     "hsa-miR-140-5p": {
         "Host Gene": "WWP2",
@@ -9170,7 +9218,7 @@
         "miRNA Name": "MIR141",
         "miRNA Sequence": "UAACACUGUCUGGUAAAGAUGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000457"
     },
     "hsa-miR-142-3p": {
         "Host Gene": "RP5-1171I10.5",
@@ -9306,7 +9354,7 @@
         "miRNA Name": "MIR142",
         "miRNA Sequence": "UGUAGUGUUUCCUACUUUAUGGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000458"
     },
     "hsa-miR-142-5p": {
         "Host Gene": "RP5-1171I10.5",
@@ -9406,7 +9454,7 @@
         "miRNA Name": "MIR145",
         "miRNA Sequence": "GUCCAGUUUUCCCAGGAAUCCCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000461"
     },
     "hsa-miR-146a-3p": {
         "Host Gene": "CTC-231O11.1",
@@ -9496,7 +9544,7 @@
         "miRNA Name": "MIR146A",
         "miRNA Sequence": "UGAGAACUGAAUUCCAUGGGUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000477"
     },
     "hsa-miR-146b-3p": {},
     "hsa-miR-146b-5p": {
@@ -9518,7 +9566,7 @@
         "miRNA Name": "MIR146B",
         "miRNA Sequence": "UGAGAACUGAAUUCCAUAGGCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003129"
     },
     "hsa-miR-147a": {
         "Host Gene": "",
@@ -9534,7 +9582,7 @@
         "miRNA Name": "MIR147A",
         "miRNA Sequence": "GUGUGUGGAAAUGCUUCUGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000262"
     },
     "hsa-miR-147b": {
         "Host Gene": "RP11-519G16.5",
@@ -9764,7 +9812,7 @@
         "miRNA Name": "MIR148A",
         "miRNA Sequence": "UCAGUGCACUACAGAACUUUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000253"
     },
     "hsa-miR-148a-5p": {},
     "hsa-miR-148b-3p": {
@@ -9826,7 +9874,7 @@
         "miRNA Name": "MIR148B",
         "miRNA Sequence": "UCAGUGCAUCACAGAACUUUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000811"
     },
     "hsa-miR-148b-5p": {
         "Host Gene": "RP11-968A15.8",
@@ -9847,7 +9895,7 @@
         "miRNA Name": "MIR148B",
         "miRNA Sequence": "AAGUUCUGUUAUACACUCAGGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000811"
     },
     "hsa-miR-149-3p": {
         "Host Gene": "PP14571",
@@ -9878,7 +9926,7 @@
         "miRNA Name": "MIR149",
         "miRNA Sequence": "AGGGAGGGACGGGGGCUGUGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000478"
     },
     "hsa-miR-149-5p": {
         "Host Gene": "PP14571",
@@ -10164,7 +10212,7 @@
         "miRNA Name": "MIR149",
         "miRNA Sequence": "UCUGGCUCCGUGUCUUCACUCCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000478"
     },
     "hsa-miR-150-5p": {},
     "hsa-miR-151a-3p": {
@@ -10251,7 +10299,7 @@
         "miRNA Name": "MIR151A",
         "miRNA Sequence": "CUAGACUGAAGCUCCUUGAGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000809"
     },
     "hsa-miR-151a-5p": {
         "Host Gene": "PTK2",
@@ -10279,7 +10327,7 @@
         "miRNA Name": "MIR154",
         "miRNA Sequence": "UAGGUUAUCCGUGUUGCCUUCG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000480"
     },
     "hsa-miR-155-3p": {},
     "hsa-miR-155-5p": {
@@ -11251,7 +11299,7 @@
         "miRNA Name": "MIR155",
         "miRNA Sequence": "UUAAUGCUAAUCGUGAUAGGGGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000681"
     },
     "hsa-miR-15a-3p": {
         "Host Gene": "DLEU2",
@@ -11277,7 +11325,7 @@
         "miRNA Name": "MIR15A",
         "miRNA Sequence": "CAGGCCAUAUUGUGCUGCCUCA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000069"
     },
     "hsa-miR-15a-5p": {
         "Host Gene": "DLEU2",
@@ -11371,7 +11419,7 @@
         "miRNA Name": "MIR15B",
         "miRNA Sequence": "UAGCAGCACAUCAUGGUUUACA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000438"
     },
     "hsa-miR-16-1-3p": {
         "Host Gene": "DLEU2",
@@ -11387,7 +11435,7 @@
         "miRNA Name": "MIR16-1",
         "miRNA Sequence": "CCAGUAUUAACUGUGCUGCUGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000070"
     },
     "hsa-miR-16-2-3p": {
         "Host Gene": "RP11-432B6.3",
@@ -11408,7 +11456,7 @@
         "miRNA Name": "MIR16-2",
         "miRNA Sequence": "CCAAUAUUACUGUGCUGCUUUA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000115"
     },
     "hsa-miR-16-5p": {
         "Host Gene": "RP11-432B6.3",
@@ -13005,7 +13053,7 @@
         "miRNA Name": "MIR17HG",
         "miRNA Sequence": "ACUGCAGUGAAGGCACUUGUAG",
         "miRNA Transcript Count": 3,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000071"
     },
     "hsa-miR-17-5p": {
         "Host Gene": "",
@@ -13451,7 +13499,7 @@
         "miRNA Name": "MIR17HG",
         "miRNA Sequence": "CAAAGUGCUUACAGUGCAGGUAG",
         "miRNA Transcript Count": 3,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000071"
     },
     "hsa-miR-181a-2-3p": {
         "Host Gene": "NR6A1",
@@ -14154,7 +14202,7 @@
         "miRNA Name": "MIR182",
         "miRNA Sequence": "UGGUUCUAGACUUGCCAACUA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000272"
     },
     "hsa-miR-182-5p": {},
     "hsa-miR-1826": {},
@@ -14368,7 +14416,7 @@
         "miRNA Name": "MIR183",
         "miRNA Sequence": "UAUGGCACUGGUAGAAUUCACU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000273"
     },
     "hsa-miR-184": {
         "Host Gene": "ANKRD34C-AS1",
@@ -14394,7 +14442,7 @@
         "miRNA Name": "MIR184",
         "miRNA Sequence": "UGGACGGAGAACUGAUAAGGGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000481"
     },
     "hsa-miR-185-3p": {
         "Host Gene": "TANGO2",
@@ -14415,7 +14463,7 @@
         "miRNA Name": "MIR185",
         "miRNA Sequence": "AGGGGCUGGCUUUCCUCUGGUC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000482"
     },
     "hsa-miR-185-5p": {
         "Host Gene": "TANGO2",
@@ -14666,7 +14714,7 @@
         "miRNA Name": "MIR185",
         "miRNA Sequence": "UGGAGAGAAAGGCAGUUCCUGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000482"
     },
     "hsa-miR-186-3p": {
         "Host Gene": "ZRANB2",
@@ -14697,7 +14745,7 @@
         "miRNA Name": "MIR186",
         "miRNA Sequence": "GCCCAAAGGUGAAUUUUUUGGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000483"
     },
     "hsa-miR-186-5p": {
         "Host Gene": "ZRANB2",
@@ -15808,7 +15856,7 @@
         "miRNA Name": "MIR186",
         "miRNA Sequence": "CAAAGAAUUCUCCUUUUGGGCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000483"
     },
     "hsa-miR-187-3p": {},
     "hsa-miR-188-3p": {
@@ -16333,7 +16381,7 @@
         "miRNA Name": "MIR18A",
         "miRNA Sequence": "ACUGCCCUAAGUGCUCCUUCUGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000072"
     },
     "hsa-miR-18a-5p": {
         "Host Gene": "",
@@ -16749,7 +16797,7 @@
         "miRNA Name": "MIR18A",
         "miRNA Sequence": "UAAGGUGCAUCUAGUGCAGAUAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000072"
     },
     "hsa-miR-18b-5p": {},
     "hsa-miR-1908-5p": {
@@ -16782,7 +16830,7 @@
         "miRNA Name": "MIR191",
         "miRNA Sequence": "GCUGCGCUUGGAUUUCGUCCCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000465"
     },
     "hsa-miR-191-5p": {
         "Host Gene": "DALRD3",
@@ -16810,7 +16858,7 @@
         "miRNA Name": "MIR1914",
         "miRNA Sequence": "GGAGGGGUCCCGCACUGGGAGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0008335"
     },
     "hsa-miR-1914-5p": {
         "Host Gene": "UCKL1",
@@ -16839,7 +16887,7 @@
         "miRNA Name": "MIR1915",
         "miRNA Sequence": "ACCUUGCCUUGCUGCCCGGGCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0008336"
     },
     "hsa-miR-192-5p": {
         "Host Gene": "AP001187.9",
@@ -18090,7 +18138,7 @@
         "miRNA Name": "MIR192",
         "miRNA Sequence": "CUGACCUAUGAAUUGACAGCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000234"
     },
     "hsa-miR-193a-3p": {
         "Host Gene": "",
@@ -18156,7 +18204,7 @@
         "miRNA Name": "MIR193A",
         "miRNA Sequence": "AACUGGCCUACAAAGUCCCAGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000487"
     },
     "hsa-miR-193a-5p": {},
     "hsa-miR-193b-3p": {
@@ -18873,7 +18921,7 @@
         "miRNA Name": "MIR193B",
         "miRNA Sequence": "AACUGGCCCUCAAAGUCCCGCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003137"
     },
     "hsa-miR-193b-5p": {
         "Host Gene": "RP11-65J21.3",
@@ -19009,7 +19057,7 @@
         "miRNA Name": "MIR497HG",
         "miRNA Sequence": "UAGCAGCACAGAAAUAUUGGC",
         "miRNA Transcript Count": 2,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000489"
     },
     "hsa-miR-196a-3p": {
         "Host Gene": "RP11-834C11.12",
@@ -19057,7 +19105,7 @@
         "miRNA Name": "MIR196B",
         "miRNA Sequence": "UAGGUAGUUUCCUGUUGUUGGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0001150"
     },
     "hsa-miR-197-3p": {
         "Host Gene": "GNAI3",
@@ -19148,7 +19196,7 @@
         "miRNA Name": "MIR197",
         "miRNA Sequence": "UUCACCACCUUCUCCACCCAGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000239"
     },
     "hsa-miR-198": {
         "Host Gene": "FSTL1",
@@ -19253,7 +19301,7 @@
         "miRNA Name": "MIR199B",
         "miRNA Sequence": "CCCAGUGUUUAGACUAUCUGUUC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000282"
     },
     "hsa-miR-19a-3p": {},
     "hsa-miR-19a-5p": {},
@@ -19783,7 +19831,7 @@
         "miRNA Name": "MIR200A",
         "miRNA Sequence": "UAACACUGUCUGGUAACGAUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000737"
     },
     "hsa-miR-200b-3p": {
         "Host Gene": "",
@@ -19914,7 +19962,7 @@
         "miRNA Name": "MIR200B",
         "miRNA Sequence": "UAAUACUGCCUGGUAAUGAUGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000342"
     },
     "hsa-miR-200c-3p": {
         "Host Gene": "U47924.27",
@@ -19934,7 +19982,7 @@
         "miRNA Name": "MIR202HG",
         "miRNA Sequence": "AGAGGUAUAGGGCAUGGGAA",
         "miRNA Transcript Count": 2,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003130"
     },
     "hsa-miR-203a": {},
     "hsa-miR-204-5p": {
@@ -20191,7 +20239,7 @@
         "miRNA Name": "MIR204",
         "miRNA Sequence": "UUCCCUUUGUCAUCCUAUGCCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000284"
     },
     "hsa-miR-205-5p": {
         "Host Gene": "",
@@ -20247,7 +20295,7 @@
         "miRNA Name": "MIR205",
         "miRNA Sequence": "UCCUUCAUUCCACCGGAGUCUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000285"
     },
     "hsa-miR-206": {},
     "hsa-miR-208a-3p": {
@@ -20443,7 +20491,7 @@
         "miRNA Name": "MIR17HG",
         "miRNA Sequence": "UAAAGUGCUUAUAGUGCAGGUAG",
         "miRNA Transcript Count": 3,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000076"
     },
     "hsa-miR-20b-5p": {},
     "hsa-miR-21-3p": {
@@ -20939,7 +20987,7 @@
         "miRNA Name": "MIR21",
         "miRNA Sequence": "UAGCUUAUCAGACUGAUGUUGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000077"
     },
     "hsa-miR-210-3p": {},
     "hsa-miR-211-5p": {
@@ -21000,7 +21048,7 @@
         "miRNA Name": "MIR212",
         "miRNA Sequence": "UAACAGUCUCCAGUCACGGCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000288"
     },
     "hsa-miR-214-3p": {
         "Host Gene": "DNM3OS",
@@ -21029,7 +21077,7 @@
         "miRNA Name": "MIR217HG",
         "miRNA Sequence": "UAAUCUCAGCUGGCAACUGUGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000292"
     },
     "hsa-miR-216b-5p": {
         "Host Gene": "RP11-481J13.1",
@@ -21059,7 +21107,7 @@
         "miRNA Name": "MIR217HG",
         "miRNA Sequence": "UACUGCAUCAGGAACUGAUUGGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000293"
     },
     "hsa-miR-218-1-3p": {
         "Host Gene": "SLIT2",
@@ -21586,7 +21634,7 @@
         "miRNA Name": "MIR22",
         "miRNA Sequence": "AAGCUGCCAGUUGAAGAACUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000078"
     },
     "hsa-miR-22-5p": {
         "Host Gene": "",
@@ -21612,7 +21660,7 @@
         "miRNA Name": "MIR22",
         "miRNA Sequence": "AGUUCUUCAGUGGCAAGCUUUA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000078"
     },
     "hsa-miR-221-3p": {
         "Host Gene": "",
@@ -21883,7 +21931,7 @@
         "miRNA Name": "MIR221",
         "miRNA Sequence": "AGCUACAUUGUCUGCUGGGUUUC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000298"
     },
     "hsa-miR-221-5p": {},
     "hsa-miR-222-3p": {
@@ -22130,7 +22178,7 @@
         "miRNA Name": "MIR222",
         "miRNA Sequence": "AGCUACAUCUGGCUACUGGGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000299"
     },
     "hsa-miR-223-3p": {
         "Host Gene": "RP6-159A1.4",
@@ -22215,7 +22263,7 @@
         "miRNA Name": "MIR224",
         "miRNA Sequence": "CAAGUCACUAGUGGUUCCGUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000301"
     },
     "hsa-miR-2277-5p": {
         "Host Gene": "FAM172A",
@@ -22290,7 +22338,7 @@
         "miRNA Name": "MIR23A",
         "miRNA Sequence": "AUCACAUUGCCAGGGAUUUCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000079"
     },
     "hsa-miR-23a-5p": {},
     "hsa-miR-23b-3p": {
@@ -22332,7 +22380,7 @@
         "miRNA Name": "MIR23B",
         "miRNA Sequence": "AUCACAUUGCCAGGGAUUACC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000439"
     },
     "hsa-miR-23b-5p": {
         "Host Gene": "C9orf3",
@@ -22903,7 +22951,7 @@
         "miRNA Name": "MIR25",
         "miRNA Sequence": "CAUUGCACUUGUCUCGGUCUGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000082"
     },
     "hsa-miR-25-5p": {
         "Host Gene": "MCM7",
@@ -22919,7 +22967,7 @@
         "miRNA Name": "MIR25",
         "miRNA Sequence": "AGGCGGAGACUUGGGCAAUUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000082"
     },
     "hsa-miR-26a-2-3p": {
         "Host Gene": "CTDSP2",
@@ -24499,7 +24547,7 @@
         "miRNA Name": "MIR26B",
         "miRNA Sequence": "UUCAAGUAAUUCAGGAUAGGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000084"
     },
     "hsa-miR-27a-3p": {
         "Host Gene": "",
@@ -24890,7 +24938,7 @@
         "miRNA Name": "MIR27A",
         "miRNA Sequence": "UUCACAGUGGCUAAGUUCCGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000085"
     },
     "hsa-miR-27b-3p": {
         "Host Gene": "C9orf3",
@@ -24946,7 +24994,7 @@
         "miRNA Name": "MIR27B",
         "miRNA Sequence": "UUCACAGUGGCUAAGUUCUGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000440"
     },
     "hsa-miR-27b-5p": {
         "Host Gene": "C9orf3",
@@ -24981,7 +25029,7 @@
         "miRNA Name": "MIR28",
         "miRNA Sequence": "CACUAGAUUGUGAGCUCCUGGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000086"
     },
     "hsa-miR-28-5p": {
         "Host Gene": "LPP",
@@ -25067,7 +25115,7 @@
         "miRNA Name": "MIR28",
         "miRNA Sequence": "AAGGAGCUCACAGUCUAUUGAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000086"
     },
     "hsa-miR-296-3p": {
         "Host Gene": "RP4-806M20.4",
@@ -25143,7 +25191,7 @@
         "miRNA Name": "MIR296",
         "miRNA Sequence": "GAGGGUUGGGUGGAGGCUCUCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000747"
     },
     "hsa-miR-296-5p": {
         "Host Gene": "RP4-806M20.4",
@@ -25168,7 +25216,7 @@
         "miRNA Name": "MIR298",
         "miRNA Sequence": "AGCAGAAGCAGGGAGGUUCUCCCA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0005523"
     },
     "hsa-miR-299-3p": {},
     "hsa-miR-299-5p": {
@@ -25185,7 +25233,7 @@
         "miRNA Name": "MIR299",
         "miRNA Sequence": "UGGUUUACCGUCCCACAUACAU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000744"
     },
     "hsa-miR-29a-3p": {
         "Host Gene": "AC016831.7",
@@ -25241,7 +25289,7 @@
         "miRNA Name": "MIR29A",
         "miRNA Sequence": "UAGCACCAUCUGAAAUCGGUUA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000087"
     },
     "hsa-miR-29b-2-5p": {
         "Host Gene": "C1orf132",
@@ -25262,7 +25310,7 @@
         "miRNA Name": "MIR29B2",
         "miRNA Sequence": "CUGGUUUCACAUGGUGGCUUAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000107"
     },
     "hsa-miR-29b-3p": {
         "Host Gene": "AC016831.7",
@@ -25719,7 +25767,7 @@
         "miRNA Name": "MIR29C",
         "miRNA Sequence": "UAGCACCAUUUGAAAUCGGUUA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000735"
     },
     "hsa-miR-29c-5p": {
         "Host Gene": "C1orf132",
@@ -25804,13 +25852,13 @@
         "miRNA Name": "MIR301A",
         "miRNA Sequence": "CAGUGCAAUAGUAUUGUCAAAGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000745"
     },
     "hsa-miR-301b": {
         "Target Gene with Transcript Count": [],
         "mature miRNA entry": null,
         "miRNA Sequence": "CAGUGCAAUGAUAUUGUCAAAGC",
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0005568"
     },
     "hsa-miR-302a-3p": {
         "Host Gene": "LARP7",
@@ -25856,7 +25904,7 @@
         "miRNA Name": "MIR302A",
         "miRNA Sequence": "UAAGUGCUUCCAUGUUUUGGUGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000738"
     },
     "hsa-miR-302b-3p": {
         "Host Gene": "LARP7",
@@ -25872,7 +25920,7 @@
         "miRNA Name": "MIR302B",
         "miRNA Sequence": "UAAGUGCUUCCAUGUUUUAGUAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000772"
     },
     "hsa-miR-302c-3p": {
         "Host Gene": "LARP7",
@@ -25888,7 +25936,7 @@
         "miRNA Name": "MIR302C",
         "miRNA Sequence": "UAAGUGCUUCCAUGUUUCAGUGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000773"
     },
     "hsa-miR-302d-3p": {
         "Host Gene": "LARP7",
@@ -25949,11 +25997,36 @@
         "miRNA Name": "MIR302D",
         "miRNA Sequence": "UAAGUGCUUCCAUGUUUGAGUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000774"
     },
     "hsa-miR-3065-3p": {
+        "Accession ID": [
+            "MI0014228"
+        ],
+        "Database cross-references": [
+            "ENTREZGENE:100422915"
+        ],
+        "Description": "Homo sapiens miR-3065 stem-loop",
         "Host Gene": "AC115099.1",
-        "Host Gene Transcript Count": 1
+        "Host Gene Transcript Count": 1,
+        "Name": "hsa-mir-3065",
+        "citations": {
+            "0": {
+                "authors": "Stark MS, Tyagi S, Nancarrow DJ, Boyle GM, Cook AL, Whiteman DC, Parsons PG, Schmidt C, Sturm RA, Hayward NK",
+                "journal": "PLoS One. 5:e9685(2010).",
+                "title": "Characterization of the Melanoma miRNAome by Deep Sequencing"
+            },
+            "1": {
+                "authors": "Meiri E, Levy A, Benjamin H, Ben-David M, Cohen L, Dov A, Dromi N, Elyakim E, Yerushalmi N, Zion O, Lithwick-Yanai G, Sitbon E",
+                "journal": "Nucleic Acids Res. 38:6234-6246(2010).",
+                "title": "Discovery of microRNAs and other small RNAs in solid tumors"
+            },
+            "2": {
+                "authors": "Persson H, Kvist A, Rego N, Staaf J, Vallon-Christersson J, Luts L, Loman N, Jonsson G, Naya H, Hoglund M, Borg A, Rovira C",
+                "journal": "Cancer Res. 71:78-86(2011).",
+                "title": "Identification of new microRNAs in paired normal and tumor breast tissue suggests a dual role for the ERBB2/Her2 gene"
+            }
+        }
     },
     "hsa-miR-3065-5p": {
         "Host Gene": "AC115099.1",
@@ -25969,7 +26042,7 @@
         "miRNA Name": null,
         "miRNA Sequence": "UCAACAAAAUCACUGAUGCUGGA",
         "miRNA Transcript Count": null,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0014228"
     },
     "hsa-miR-30a-3p": {
         "Host Gene": "LINC00472",
@@ -26055,7 +26128,7 @@
         "miRNA Name": "MIR30A",
         "miRNA Sequence": "CUUUCAGUCGGAUGUUUGCAGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000088"
     },
     "hsa-miR-30a-5p": {
         "Host Gene": "LINC00472",
@@ -26436,7 +26509,7 @@
         "miRNA Name": "MIR30A",
         "miRNA Sequence": "UGUAAACAUCCUCGACUGGAAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000088"
     },
     "hsa-miR-30b-3p": {},
     "hsa-miR-30b-5p": {
@@ -26688,7 +26761,7 @@
         "miRNA Name": "MIR30B",
         "miRNA Sequence": "UGUAAACAUCCUACACUCAGCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000441"
     },
     "hsa-miR-30c-1-3p": {
         "Host Gene": "NFYC",
@@ -26729,7 +26802,7 @@
         "miRNA Name": "MIR30C1",
         "miRNA Sequence": "CUGGGAGAGGGUUGUUUACUCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000736"
     },
     "hsa-miR-30c-2-3p": {
         "Host Gene": "LINC00472",
@@ -26795,7 +26868,7 @@
         "miRNA Name": "MIR30C2",
         "miRNA Sequence": "CUGGGAGAAGGCUGUUUACUCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000254"
     },
     "hsa-miR-30c-5p": {
         "Host Gene": "LINC00472",
@@ -26983,7 +27056,7 @@
         "miRNA Name": "MIR30D",
         "miRNA Sequence": "UGUAAACAUCCCCGACUGGAAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000255"
     },
     "hsa-miR-30e-3p": {
         "Host Gene": "NFYC",
@@ -27014,7 +27087,7 @@
         "miRNA Name": "MIR30E",
         "miRNA Sequence": "CUUUCAGUCGGAUGUUUACAGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000749"
     },
     "hsa-miR-30e-5p": {
         "Host Gene": "NFYC",
@@ -27105,7 +27178,7 @@
         "miRNA Name": "MIR30E",
         "miRNA Sequence": "UGUAAACAUCCUUGACUGGAAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000749"
     },
     "hsa-miR-31-3p": {
         "Host Gene": "",
@@ -27156,7 +27229,7 @@
         "miRNA Name": "MIR31",
         "miRNA Sequence": "UGCUAUGCCAACAUAUUGCCAU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000089"
     },
     "hsa-miR-31-5p": {
         "Host Gene": "",
@@ -27182,7 +27255,7 @@
         "miRNA Name": "MIR31",
         "miRNA Sequence": "AGGCAAGAUGCUGGCAUAGCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000089"
     },
     "hsa-miR-3117-3p": {
         "Host Gene": "SGIP1",
@@ -27202,7 +27275,7 @@
         "miRNA Name": null,
         "miRNA Sequence": "AUCAGGGCUUGUGGAAUGGGAAG",
         "miRNA Transcript Count": null,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0014144"
     },
     "hsa-miR-3131": {
         "Host Gene": "IHH",
@@ -27318,7 +27391,7 @@
         "miRNA Name": "MIR3188",
         "miRNA Sequence": "AGAGGCUUUGUGCGGAUACGGGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0014232"
     },
     "hsa-miR-3196": {
         "Host Gene": "BIRC7",
@@ -27492,7 +27565,7 @@
         "miRNA Name": "MIR32",
         "miRNA Sequence": "UAUUGCACAUUACUAAGUUGCA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000090"
     },
     "hsa-miR-3200-3p": {
         "Host Gene": "OSBP2",
@@ -28077,7 +28150,7 @@
         "miRNA Name": "MIR320A",
         "miRNA Sequence": "AAAAGCUGGGUUGAGAGGGCGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000542"
     },
     "hsa-miR-320b": {
         "Host Gene": "NVL",
@@ -28164,7 +28237,7 @@
         "miRNA Name": "MIR320E",
         "miRNA Sequence": "AAAGCUGGGUUGAGAAGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0014234"
     },
     "hsa-miR-324-3p": {
         "Host Gene": "ACADVL",
@@ -28485,7 +28558,7 @@
         "miRNA Name": "MIR324",
         "miRNA Sequence": "ACUGCCCCAGGUGCUGCUGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000813"
     },
     "hsa-miR-324-5p": {
         "Host Gene": "ACADVL",
@@ -28696,7 +28769,7 @@
         "miRNA Name": "MIR324",
         "miRNA Sequence": "CGCAUCCCCUAGGGCAUUGGUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000813"
     },
     "hsa-miR-326": {
         "Host Gene": "ARRB1",
@@ -28737,7 +28810,7 @@
         "miRNA Name": "MIR326",
         "miRNA Sequence": "CCUCUGGGCCCUUCCUCCAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000808"
     },
     "hsa-miR-328-3p": {
         "Host Gene": "ELMO3",
@@ -28802,7 +28875,7 @@
         "miRNA Name": "MIR330",
         "miRNA Sequence": "GCAAAGCACACGGCCUGCAGAGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000803"
     },
     "hsa-miR-330-5p": {
         "Host Gene": "EML2",
@@ -28858,7 +28931,7 @@
         "miRNA Name": "MIR330",
         "miRNA Sequence": "UCUCUGGGCCUGUGUCUUAGGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000803"
     },
     "hsa-miR-331-3p": {
         "Host Gene": "",
@@ -29249,7 +29322,7 @@
         "miRNA Name": "MIR331",
         "miRNA Sequence": "GCCCCUGGGCCUAUCCUAGAA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000812"
     },
     "hsa-miR-331-5p": {},
     "hsa-miR-335-5p": {
@@ -31331,7 +31404,7 @@
         "miRNA Name": "MIR335",
         "miRNA Sequence": "UCAAGAGCAAUAACGAAAAAUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000816"
     },
     "hsa-miR-337-3p": {
         "Host Gene": "",
@@ -31357,7 +31430,7 @@
         "miRNA Name": "MIR337",
         "miRNA Sequence": "CUCCUAUAUGAUGCCUUUCUUC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000806"
     },
     "hsa-miR-338-3p": {
         "Host Gene": "AC115099.1",
@@ -31388,7 +31461,7 @@
         "miRNA Name": null,
         "miRNA Sequence": "UCCAGCAUCAGUGAUUUUGUUG",
         "miRNA Transcript Count": null,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000814"
     },
     "hsa-miR-338-5p": {
         "Host Gene": "AC115099.1",
@@ -31452,7 +31525,7 @@
         "miRNA Name": "MIR339",
         "miRNA Sequence": "UCCCUGUCCUCCAGGAGCUCACG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000815"
     },
     "hsa-miR-33a-3p": {
         "Host Gene": "SREBF2",
@@ -31767,7 +31840,7 @@
         "miRNA Name": "MIR33A",
         "miRNA Sequence": "GUGCAUUGUAGUUGCAUUGCA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000091"
     },
     "hsa-miR-33b-5p": {
         "Host Gene": "SREBF1",
@@ -31788,7 +31861,7 @@
         "miRNA Name": "MIR33B",
         "miRNA Sequence": "GUGCAUUGCUGUUGCAUUGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003646"
     },
     "hsa-miR-340-3p": {
         "Host Gene": "RNF130",
@@ -31982,7 +32055,7 @@
         "miRNA Name": "MIR342",
         "miRNA Sequence": "UCUCACACAGAAAUCGCACCCGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000805"
     },
     "hsa-miR-342-5p": {
         "Host Gene": "EVL",
@@ -32048,7 +32121,7 @@
         "miRNA Name": "MIR342",
         "miRNA Sequence": "AGGGGUGCUAUCUGUGAUUGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000805"
     },
     "hsa-miR-345-5p": {},
     "hsa-miR-346": {
@@ -32495,7 +32568,7 @@
         "miRNA Name": "MIR34A",
         "miRNA Sequence": "UGGCAGUGUCUUAGCUGGUUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000268"
     },
     "hsa-miR-34b-3p": {
         "Host Gene": "",
@@ -32516,7 +32589,7 @@
         "miRNA Name": "MIR34B",
         "miRNA Sequence": "CAAUCACUAACUCCACUGCCAU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000742"
     },
     "hsa-miR-34b-5p": {
         "Host Gene": "",
@@ -32562,7 +32635,7 @@
         "miRNA Name": "MIR34B",
         "miRNA Sequence": "UAGGCAGUGUCAUUAGCUGAUUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000742"
     },
     "hsa-miR-34c-5p": {},
     "hsa-miR-3605-3p": {
@@ -32588,7 +32661,7 @@
         "miRNA Name": "MIR361",
         "miRNA Sequence": "UCCCCCAGGUGUGAUUCUGAUUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000760"
     },
     "hsa-miR-361-5p": {
         "Host Gene": "CHM",
@@ -32839,7 +32912,7 @@
         "miRNA Name": "MIR361",
         "miRNA Sequence": "UUAUCAGAAUCUCCAGGGGUAC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000760"
     },
     "hsa-miR-3615": {
         "Host Gene": "SLC9A3R1",
@@ -32870,7 +32943,7 @@
         "miRNA Name": "MIR362",
         "miRNA Sequence": "AACACACCUAUUCAAGGAUUCA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000762"
     },
     "hsa-miR-362-5p": {
         "Host Gene": "CLCN5",
@@ -32921,7 +32994,7 @@
         "miRNA Name": "MIR365A",
         "miRNA Sequence": "AGGGACUUUUGGGGGCAGAUGUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000767"
     },
     "hsa-miR-3663-3p": {},
     "hsa-miR-3676-3p": {},
@@ -33179,7 +33252,7 @@
         "miRNA Name": "MIR373",
         "miRNA Sequence": "GAAGUGCUUCGAUUUUGGGGUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000781"
     },
     "hsa-miR-374a-3p": {
         "Host Gene": "FTX",
@@ -33229,7 +33302,7 @@
         "miRNA Name": "MIR374A",
         "miRNA Sequence": "UUAUAAUACAACCUGAUAAGUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000782"
     },
     "hsa-miR-374b-5p": {
         "Host Gene": "FTX",
@@ -33684,7 +33757,7 @@
         "miRNA Name": "MIR375",
         "miRNA Sequence": "UUUGUUCGUUCGGCUCGCGUGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000783"
     },
     "hsa-miR-376a-3p": {
         "Host Gene": "",
@@ -33763,7 +33836,7 @@
         "miRNA Name": "MIR376C",
         "miRNA Sequence": "AACAUAGAGGAAAUUCCACGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000776"
     },
     "hsa-miR-377-3p": {
         "Host Gene": "",
@@ -33784,7 +33857,7 @@
         "miRNA Name": "MIR377",
         "miRNA Sequence": "AUCACACAAAGGCAACUUUUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000785"
     },
     "hsa-miR-378a-3p": {
         "Host Gene": "PPARGC1B",
@@ -33910,7 +33983,7 @@
         "miRNA Name": "MIR378A",
         "miRNA Sequence": "ACUGGACUUGGAGUCAGAAGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000786"
     },
     "hsa-miR-378a-5p": {
         "Host Gene": "PPARGC1B",
@@ -34061,7 +34134,7 @@
         "miRNA Name": "MIR378A",
         "miRNA Sequence": "CUCCUGACUCCAGGUCCUGUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000786"
     },
     "hsa-miR-378c": {},
     "hsa-miR-379-5p": {},
@@ -34472,7 +34545,7 @@
         "miRNA Name": "MIR421",
         "miRNA Sequence": "AUCAACAGACAUUAAUUGGGCGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003685"
     },
     "hsa-miR-422a": {
         "Host Gene": "",
@@ -34488,7 +34561,7 @@
         "miRNA Name": "MIR422A",
         "miRNA Sequence": "ACUGGACUUAGGGUCAGAAGGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0001444"
     },
     "hsa-miR-423-3p": {
         "Host Gene": "RP11-1148O4.2",
@@ -34599,7 +34672,7 @@
         "miRNA Name": "MIR423",
         "miRNA Sequence": "AGCUCGGUCUGAGGCCCCUCAGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0001445"
     },
     "hsa-miR-423-5p": {
         "Host Gene": "RP11-1148O4.2",
@@ -34900,7 +34973,7 @@
         "miRNA Name": "MIR423",
         "miRNA Sequence": "UGAGGGGCAGAGAGCGAGACUUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0001445"
     },
     "hsa-miR-424-3p": {},
     "hsa-miR-424-5p": {
@@ -35037,7 +35110,7 @@
         "miRNA Name": "MIR424",
         "miRNA Sequence": "CAGCAGCAAUUCAUGUUUUGAA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0001446"
     },
     "hsa-miR-425-3p": {
         "Host Gene": "DALRD3",
@@ -35063,7 +35136,7 @@
         "miRNA Name": "MIR425",
         "miRNA Sequence": "AUCGGGAAUGUCGUGUCCGCCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0001448"
     },
     "hsa-miR-425-5p": {
         "Host Gene": "DALRD3",
@@ -35274,7 +35347,7 @@
         "miRNA Name": "MIR425",
         "miRNA Sequence": "AAUGACACGAUCACUCCCGUUGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0001448"
     },
     "hsa-miR-4284": {
         "Host Gene": "STX1A",
@@ -35353,7 +35426,7 @@
         "miRNA Name": "MIR429",
         "miRNA Sequence": "UAAUACUGUCUGGUAAAACCGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0001641"
     },
     "hsa-miR-4323": {
         "Host Gene": "POU2F2",
@@ -35451,7 +35524,7 @@
         "miRNA Name": "MIR449A",
         "miRNA Sequence": "UGGCAGUGUAUUGUUAGCUGGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0001648"
     },
     "hsa-miR-449b-5p": {
         "Host Gene": "CDC20B",
@@ -35480,7 +35553,7 @@
         "miRNA Name": "MIR449C",
         "miRNA Sequence": "UAGGCAGUGUAUUGCUAGCGGCUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003823"
     },
     "hsa-miR-450a-1-3p": {},
     "hsa-miR-450a-5p": {},
@@ -35578,7 +35651,7 @@
         "miRNA Name": "MIR454",
         "miRNA Sequence": "UAGUGCAAUAUUGCUUAUAGGGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003820"
     },
     "hsa-miR-454-5p": {
         "Host Gene": "SKA2",
@@ -35683,7 +35756,7 @@
         "miRNA Name": "MIR455",
         "miRNA Sequence": "GCAGUCCAUGGGCAUAUACAC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003513"
     },
     "hsa-miR-455-5p": {
         "Host Gene": "COL27A1",
@@ -35699,7 +35772,7 @@
         "miRNA Name": "MIR455",
         "miRNA Sequence": "UAUGUGCCUUUGGACUACAUCG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003513"
     },
     "hsa-miR-483-3p": {
         "Host Gene": "INS-IGF2",
@@ -35720,7 +35793,7 @@
         "miRNA Name": "MIR483",
         "miRNA Sequence": "UCACUCCUCUCCUCCCGUCUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0002467"
     },
     "hsa-miR-483-5p": {
         "Host Gene": "INS-IGF2",
@@ -35736,7 +35809,7 @@
         "miRNA Name": "MIR483",
         "miRNA Sequence": "AAGACGGGAGGAAAGAAGGGAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0002467"
     },
     "hsa-miR-484": {
         "Host Gene": "NDE1",
@@ -36617,7 +36690,7 @@
         "miRNA Name": "MIR484",
         "miRNA Sequence": "UCAGGCUCAGUCCCCUCCCGAU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0002468"
     },
     "hsa-miR-485-3p": {
         "Host Gene": "",
@@ -36633,7 +36706,7 @@
         "miRNA Name": "MIR485",
         "miRNA Sequence": "GUCAUACACGGCUCUCCUCUCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0002469"
     },
     "hsa-miR-485-5p": {},
     "hsa-miR-486-5p": {
@@ -36666,7 +36739,7 @@
         "miRNA Name": "MIR490",
         "miRNA Sequence": "CAACCUGGAGGACUCCAUGCUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003125"
     },
     "hsa-miR-491-5p": {
         "Host Gene": "FOCAD",
@@ -36687,7 +36760,7 @@
         "miRNA Name": "MIR495",
         "miRNA Sequence": "AAACAAACAUGGUGCACUUCUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003135"
     },
     "hsa-miR-497-5p": {
         "Host Gene": "RP11-589P10.7",
@@ -36707,7 +36780,7 @@
         "miRNA Name": "MIR498",
         "miRNA Sequence": "UUUCAAGCCAGGGGGCGUUUUUC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003142"
     },
     "hsa-miR-499a-5p": {
         "Host Gene": "MYH7B",
@@ -36742,7 +36815,7 @@
         "miRNA Name": "MIR500A",
         "miRNA Sequence": "AUGCACCUGGGCAAGGAUUCUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003184"
     },
     "hsa-miR-500a-5p": {
         "Host Gene": "CLCN5",
@@ -36773,7 +36846,7 @@
         "miRNA Name": "MIR500A",
         "miRNA Sequence": "UAAUCCUUGCUACCUGGGUGAGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003184"
     },
     "hsa-miR-501-3p": {
         "Host Gene": "CLCN5",
@@ -36794,7 +36867,7 @@
         "miRNA Name": "MIR501",
         "miRNA Sequence": "AAUGCACCCGGGCAAGGAUUCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003185"
     },
     "hsa-miR-501-5p": {
         "Host Gene": "CLCN5",
@@ -36820,7 +36893,7 @@
         "miRNA Name": "MIR501",
         "miRNA Sequence": "AAUCCUUUGUCCCUGGGUGAGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003185"
     },
     "hsa-miR-502-3p": {
         "Host Gene": "CLCN5",
@@ -37020,7 +37093,7 @@
         "miRNA Name": "MIR503HG",
         "miRNA Sequence": "UAGCAGCGGGAACAGUUCUGCAG",
         "miRNA Transcript Count": 5,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003188"
     },
     "hsa-miR-504-5p": {
         "Host Gene": "FGF13",
@@ -37105,7 +37178,7 @@
         "miRNA Name": "MIR505",
         "miRNA Sequence": "CGUCAACACUUGCUGGUUUCCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003190"
     },
     "hsa-miR-505-5p": {
         "Host Gene": "ATP11C",
@@ -37166,7 +37239,7 @@
         "miRNA Name": "MIR505",
         "miRNA Sequence": "GGGAGCCAGGAAGUAUUGAUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003190"
     },
     "hsa-miR-506-3p": {
         "Host Gene": "",
@@ -37182,7 +37255,7 @@
         "miRNA Name": "MIR506",
         "miRNA Sequence": "UAAGGCACCCUUCUGAGUAGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003193"
     },
     "hsa-miR-509-3p": {},
     "hsa-miR-510-5p": {},
@@ -37255,7 +37328,7 @@
         "miRNA Name": "MIR518B",
         "miRNA Sequence": "CAAAGCGCUCCCCUUUAGAGGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003156"
     },
     "hsa-miR-519a-3p": {
         "Host Gene": "AC011453.2",
@@ -37275,7 +37348,7 @@
         "miRNA Name": "MIR519B",
         "miRNA Sequence": "AAAGUGCAUCCUUUUAGAGGUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003151"
     },
     "hsa-miR-519c-3p": {},
     "hsa-miR-519d-3p": {},
@@ -37320,7 +37393,7 @@
         "miRNA Name": "MIR520B",
         "miRNA Sequence": "AAAGUGCUUCCUUUUAGAGGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003155"
     },
     "hsa-miR-520c-3p": {},
     "hsa-miR-520e": {},
@@ -37349,7 +37422,7 @@
         "miRNA Name": "MIR520H",
         "miRNA Sequence": "ACAAAGUGCUUCCCUUUAGAGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003175"
     },
     "hsa-miR-521": {},
     "hsa-miR-522-3p": {},
@@ -37489,7 +37562,7 @@
         "miRNA Name": "MIR548B",
         "miRNA Sequence": "CAAGAACCUCAGUUGCUUUUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003596"
     },
     "hsa-miR-548d-3p": {
         "Host Gene": "ATAD2",
@@ -37579,7 +37652,7 @@
         "miRNA Name": "MIR574",
         "miRNA Sequence": "CACGCUCAUGCACACACCCACA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003581"
     },
     "hsa-miR-574-5p": {
         "Host Gene": "FAM114A1",
@@ -37595,7 +37668,7 @@
         "miRNA Name": "MIR574",
         "miRNA Sequence": "UGAGUGUGUGUGUGUGAGUGUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003581"
     },
     "hsa-miR-576-5p": {
         "Host Gene": "SEC24B",
@@ -37623,7 +37696,7 @@
         "miRNA Name": "MIR582",
         "miRNA Sequence": "UUACAGUUGUUCAACCAGUUACU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003589"
     },
     "hsa-miR-584-5p": {
         "Host Gene": "SH3TC2",
@@ -37643,7 +37716,7 @@
         "miRNA Name": "MIR589",
         "miRNA Sequence": "UCAGAACAAAUGCCGGUUCCCAGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003599"
     },
     "hsa-miR-589-5p": {
         "Host Gene": "FBXL18",
@@ -37838,7 +37911,7 @@
         "miRNA Name": "MIR590",
         "miRNA Sequence": "UAAUUUUAUGUAUAAGCUAGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003602"
     },
     "hsa-miR-590-5p": {
         "Host Gene": "EIF4H",
@@ -37854,7 +37927,7 @@
         "miRNA Name": "MIR590",
         "miRNA Sequence": "GAGCUUAUUCAUAAAAGUGCAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003602"
     },
     "hsa-miR-595": {
         "Host Gene": "PTPRN2",
@@ -37874,7 +37947,7 @@
         "miRNA Name": "MIR596",
         "miRNA Sequence": "AAGCCUGCCCGGCUCCUCGGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003608"
     },
     "hsa-miR-597-5p": {
         "Host Gene": "TNKS",
@@ -37914,7 +37987,7 @@
         "miRNA Name": "MIR612",
         "miRNA Sequence": "GCUGGGCAGGGCUUCUGAGCUCCUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003625"
     },
     "hsa-miR-613": {
         "Host Gene": "APOLD1",
@@ -38059,7 +38132,7 @@
         "miRNA Name": "MIR615",
         "miRNA Sequence": "UCCGAGCCUGGGUCUCCCUCUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003628"
     },
     "hsa-miR-615-5p": {
         "Host Gene": "HOXC4",
@@ -38084,7 +38157,7 @@
         "miRNA Name": "MIR616",
         "miRNA Sequence": "AGUCAUUGGAGGGUUUGAGCAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003629"
     },
     "hsa-miR-616-5p": {
         "Host Gene": "DDIT3",
@@ -38100,7 +38173,7 @@
         "miRNA Name": "MIR616",
         "miRNA Sequence": "ACUCAAAACCCUUCAGUGACUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003629"
     },
     "hsa-miR-617": {
         "Host Gene": "LIN7A",
@@ -38140,7 +38213,7 @@
         "miRNA Name": "MIR622",
         "miRNA Sequence": "ACAGUCUGCUGAGGUUGGAGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003636"
     },
     "hsa-miR-624-3p": {
         "Host Gene": "STRN3",
@@ -38156,7 +38229,7 @@
         "miRNA Name": "MIR624",
         "miRNA Sequence": "CACAAGGUAUUGGUAUUACCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003638"
     },
     "hsa-miR-624-5p": {
         "Host Gene": "STRN3",
@@ -38184,7 +38257,7 @@
         "miRNA Name": "MIR626",
         "miRNA Sequence": "AGCUGUCUGAAAAUGUCUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003640"
     },
     "hsa-miR-628-3p": {
         "Host Gene": "CCPG1",
@@ -38222,7 +38295,7 @@
         "miRNA Name": "MIR629",
         "miRNA Sequence": "UGGGUUUACGUUGGGAGAACU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003643"
     },
     "hsa-miR-630": {
         "Host Gene": "ARIH1",
@@ -38262,7 +38335,7 @@
         "miRNA Name": "MIR639",
         "miRNA Sequence": "AUCGCUGCGGUUGCGAGCGCUGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003654"
     },
     "hsa-miR-641": {
         "Host Gene": "AKT2",
@@ -38278,7 +38351,7 @@
         "miRNA Name": "MIR641",
         "miRNA Sequence": "AAAGACAUAGGAUAGAGUCACCUC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003656"
     },
     "hsa-miR-642a-5p": {
         "Host Gene": "GIPR",
@@ -38294,7 +38367,7 @@
         "miRNA Name": "MIR642A",
         "miRNA Sequence": "GUCCCUCUCCAAAUGUGUCUUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003657"
     },
     "hsa-miR-644a": {
         "Host Gene": "ITCH",
@@ -38310,7 +38383,7 @@
         "miRNA Name": "MIR644A",
         "miRNA Sequence": "AGUGUGGCUUUCUUAGAGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003659"
     },
     "hsa-miR-650": {
         "Host Gene": "IGLV2-8",
@@ -38370,7 +38443,7 @@
         "miRNA Name": "MIR652",
         "miRNA Sequence": "AAUGGCGCCACUAGGGUUGUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003667"
     },
     "hsa-miR-654-3p": {},
     "hsa-miR-657": {
@@ -38392,11 +38465,27 @@
         "miRNA Name": "MIR657",
         "miRNA Sequence": "GGCAGGUUCUCACCCUCUCUAGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003681"
     },
     "hsa-miR-659-3p": {
+        "Accession ID": [
+            "MI0003683"
+        ],
+        "Database cross-references": [
+            "HGNC:32915",
+            "ENTREZGENE:724029"
+        ],
+        "Description": "Homo sapiens miR-659 stem-loop",
         "Host Gene": "ANKRD54",
-        "Host Gene Transcript Count": 12
+        "Host Gene Transcript Count": 12,
+        "Name": "hsa-mir-659",
+        "citations": {
+            "0": {
+                "authors": "Cummins JM, He Y, Leary RJ, Pagliarini R, Diaz LA Jr, Sjoblom T, Barad O, Bentwich Z, Szafranska AE, Labourier E, Raymond CK, Roberts BS, Juhl H, Kinzler KW, Vogelstein B, Velculescu VE",
+                "journal": "Proc Natl Acad Sci U S A. 103:3687-3692(2006).",
+                "title": "The colorectal microRNAome"
+            }
+        }
     },
     "hsa-miR-660-5p": {
         "Host Gene": "CLCN5",
@@ -38436,7 +38525,7 @@
         "miRNA Name": "MIR661",
         "miRNA Sequence": "UGCCUGGGUCUCUGGCCUGCGCGU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003669"
     },
     "hsa-miR-662": {
         "Host Gene": "MSLNL",
@@ -38466,7 +38555,7 @@
         "miRNA Name": "MIR663AHG",
         "miRNA Sequence": "AGGCGGGGCGCCGCGGGACCGC",
         "miRNA Transcript Count": 37,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003672"
     },
     "hsa-miR-663b": {
         "Host Gene": "ANKRD30BL",
@@ -38509,7 +38598,7 @@
         "miRNA Name": "MIR671",
         "miRNA Sequence": "AGGAAGCCCUGGAGGGGCUGGAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003760"
     },
     "hsa-miR-675-5p": {
         "Host Gene": "H19",
@@ -38549,7 +38638,7 @@
         "miRNA Name": "MIR7-1",
         "miRNA Sequence": "CAACAAAUCACAGUCUGCCAUA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000263"
     },
     "hsa-miR-7-5p": {
         "Host Gene": "HNRNPK",
@@ -39463,7 +39552,7 @@
         "miRNA Name": "MIR744",
         "miRNA Sequence": "UGCGGGGCUAGGGCUAACAGCA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0005559"
     },
     "hsa-miR-760": {
         "Host Gene": "BCAR3",
@@ -39489,7 +39578,7 @@
         "miRNA Name": "MIR760",
         "miRNA Sequence": "CGGCUCUGGGUCUGUGGGGA",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0005567"
     },
     "hsa-miR-762": {
         "Host Gene": "AC106782.20",
@@ -39538,7 +39627,7 @@
         "miRNA Name": "MIR766",
         "miRNA Sequence": "ACUCCAGCCCCACAGCCUCAGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003836"
     },
     "hsa-miR-768-5p": {},
     "hsa-miR-769-3p": {
@@ -39665,7 +39754,7 @@
         "miRNA Name": "MIR769",
         "miRNA Sequence": "CUGGGAUCUCCGGGGUCUUGGUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003834"
     },
     "hsa-miR-769-5p": {
         "Host Gene": "CCDC61",
@@ -39741,7 +39830,7 @@
         "miRNA Name": "MIR769",
         "miRNA Sequence": "UGAGACCUCUGGGUUCUGAGCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003834"
     },
     "hsa-miR-802": {
         "Host Gene": "AF015720.3",
@@ -40116,7 +40205,7 @@
         "miRNA Name": "MIR877",
         "miRNA Sequence": "UCCUCUUCUCCCUCCUCCCAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0005561"
     },
     "hsa-miR-877-5p": {
         "Host Gene": "ABCF1",
@@ -40297,7 +40386,7 @@
         "miRNA Name": "MIR877",
         "miRNA Sequence": "GUAGAGGAGAUGGCGCAGGG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0005561"
     },
     "hsa-miR-885-5p": {
         "Host Gene": "ATP2B2",
@@ -40563,7 +40652,7 @@
         "miRNA Name": "MIR17HG",
         "miRNA Sequence": "AGGUUGGGAUCGGUUGCAAUGCU",
         "miRNA Transcript Count": 3,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000093"
     },
     "hsa-miR-92a-3p": {
         "Host Gene": "",
@@ -41350,7 +41439,7 @@
         "miRNA Name": "MIR92B",
         "miRNA Sequence": "UAUUGCACUCGUCCCGGCCUCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003560"
     },
     "hsa-miR-92b-5p": {
         "Host Gene": "RP11-263K19.4",
@@ -41381,7 +41470,7 @@
         "miRNA Name": "MIR92B",
         "miRNA Sequence": "AGGGACGGGACGCGGUGCAGUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0003560"
     },
     "hsa-miR-93-3p": {
         "Host Gene": "MCM7",
@@ -41617,7 +41706,7 @@
         "miRNA Name": "MIR93",
         "miRNA Sequence": "ACUGCUGAGCUAGCACUUCCCG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000095"
     },
     "hsa-miR-93-5p": {
         "Host Gene": "MCM7",
@@ -42588,7 +42677,7 @@
         "miRNA Name": "MIR93",
         "miRNA Sequence": "CAAAGUGCUGUUCGUGCAGGUAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000095"
     },
     "hsa-miR-935": {
         "Host Gene": "CACNG8",
@@ -42664,7 +42753,7 @@
         "miRNA Name": "MIR935",
         "miRNA Sequence": "CCAGUUACCGCUUCCGCUACCGC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0005757"
     },
     "hsa-miR-937-3p": {
         "Host Gene": "SCRIB",
@@ -42684,7 +42773,7 @@
         "miRNA Name": "MIR939",
         "miRNA Sequence": "UGGGGAGCUGAGGCUCUGGGGGUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0005761"
     },
     "hsa-miR-940": {
         "Host Gene": "RP11-304L19.13",
@@ -42815,7 +42904,7 @@
         "miRNA Name": "MIR940",
         "miRNA Sequence": "AAGGCAGGGCCCCCGCUCCCC",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0005762"
     },
     "hsa-miR-941": {
         "Host Gene": "DNAJC5",
@@ -42861,7 +42950,7 @@
         "miRNA Name": "MIR943",
         "miRNA Sequence": "CUGACUGUUGCCGUCCUCCAG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0005768"
     },
     "hsa-miR-95-3p": {
         "Host Gene": "ABLIM2",
@@ -42941,7 +43030,7 @@
         "miRNA Name": "MIR96",
         "miRNA Sequence": "UUUGGCACUAGCACAUUUUUGCU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000098"
     },
     "hsa-miR-98-5p": {
         "Host Gene": "HUWE1",
@@ -43422,7 +43511,7 @@
         "miRNA Name": "MIR98",
         "miRNA Sequence": "UGAGGUAGUAAGUUGUAUUGUU",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000100"
     },
     "hsa-miR-99a-3p": {},
     "hsa-miR-99a-5p": {
@@ -43479,7 +43568,7 @@
         "miRNA Name": "MIR99A",
         "miRNA Sequence": "AACCCGUAGAUCCGAUCUUGUG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000101"
     },
     "hsa-miR-99b-3p": {
         "Host Gene": "SPACA6P-AS",
@@ -43505,7 +43594,7 @@
         "miRNA Name": "MIR99B",
         "miRNA Sequence": "CAAGCUCGUGUCUGUGGGUCCG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000746"
     },
     "hsa-miR-99b-5p": {
         "Host Gene": "SPACA6P-AS",
@@ -43526,7 +43615,7 @@
         "miRNA Name": "MIR99B",
         "miRNA Sequence": "CACCCGUAGAACCGACCUUGCG",
         "miRNA Transcript Count": 1,
-        "miRNA family entry": null
+        "miRNA family entry": "http://mirbase.org/cgi-bin/mirna_entry.pl?acc=MI0000746"
     },
     "kshv-miR-K12-1-5p": {},
     "kshv-miR-K12-11-3p": {},
