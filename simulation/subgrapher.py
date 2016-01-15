@@ -28,27 +28,34 @@ def form_data_mirna():
 		user_input = str(raw_input('Choose miRNAs from above list.\n'))
 		if user_input in mirna_lis:
 			if user_input in miRNA_meta_data.keys():
-				mirna_dict, gene_lis_for_mirna_subgraph = collect_gene_info(user_input)
+				mirna_dict, gene_lis_for_mirna_subgraph = collect_gene_info_for_mirna(user_input)
 		else:
-			print "Wrong input. Please enter again"
+			print 'Wrong input. Please enter again.'
 			sys.exit(0)
 
 	mirna_subgraph(mirna_dict, gene_lis_for_mirna_subgraph)
 
 
-def collect_gene_info(user_input):
+def collect_gene_info_for_mirna(user_input):
+	'''
+	Creates a list of genes to be included as nodes.
+	Creates miRNA dictionary with host gene and target genes with affinity.
+	'''
 	target_gene_lis_for_mirna_subgraph = []
 	host_gene_lis_for_mirna_subgraph = []
 	mirna_dict[user_input] = {}
-	if "Target Gene with Transcript Count" in miRNA_meta_data[user_input].keys():
+	if 'Target Gene with Transcript Count' in miRNA_meta_data[user_input].keys():
+		# This list contains tuples of the format (gene symbol, transcript count, affinity).
 		target_gene_lis_for_mirna_subgraph = miRNA_meta_data[user_input]["Target Gene with Transcript Count"]
 		
-	if "Host Gene" in miRNA_meta_data[user_input].keys():
+	if 'Host Gene' in miRNA_meta_data[user_input].keys() and not miRNA_meta_data[user_input]['Host Gene'] == '':
 		host_gene_lis_for_mirna_subgraph.append(miRNA_meta_data[user_input]["Host Gene"])
 
 	for each in host_gene_lis_for_mirna_subgraph:
 		gene_lis_for_mirna_subgraph.append(each)
+
 	for each in target_gene_lis_for_mirna_subgraph:
+		# each - tuple; each[0] - gene symbol
 		gene_lis_for_mirna_subgraph.append(each[0])
 
 	mirna_dict[user_input]['Target Genes'] = target_gene_lis_for_mirna_subgraph
@@ -58,6 +65,7 @@ def collect_gene_info(user_input):
 	# print mirna_dict
 
 	return mirna_dict, gene_lis_for_mirna_subgraph
+
 
 def mirna_subgraph(mirna_dict, gene_lis_for_mirna_subgraph):
 	G = nx.DiGraph()
@@ -85,16 +93,19 @@ def form_data_genes():
 		user_input = str(raw_input('Choose genes from above list.\n'))
 		if user_input in gene_lis:
 			if user_input in gene_meta_data.keys():
-				mirna_lis_for_gene_subgraph, gene_dict = collect_info(user_input)
-				# mirna_dict_for_gene_subgraph[] = gene_meta_data[]
+				mirna_lis_for_gene_subgraph, gene_dict = collect_mirna_info_for_gene(user_input)
 		else:
-			print "Wrong input. Please enter again"
-			exit(0)
+			print 'Wrong input. Please enter again.'
+			sys.exit(0)
 
 	gene_subgraph(gene_dict, mirna_lis_for_gene_subgraph)
 
 
-def collect_info(user_input):
+def collect_mirna_info_for_gene(user_input):
+	'''
+	Creates a list of miRNAs to be included as nodes.
+	Creates gene dictionary with 'host for' and 'target for' keys with miRNA as values.
+	'''
 	mirna_host_lis = []
 	if 'Host for' in gene_meta_data[user_input].keys() and not gene_meta_data[user_input]['Host for'] == '':
 		mirna_host_lis.append(gene_meta_data[user_input]['Host for'])
@@ -107,8 +118,8 @@ def collect_info(user_input):
 	gene_dict[user_input]['Host for'] = gene_meta_data[user_input]['Host for']
 	gene_dict[user_input]['Target for'] = gene_meta_data[user_input]['Target for']
 
-	print mirna_lis_for_gene_subgraph
-	print gene_dict
+	# print mirna_lis_for_gene_subgraph
+	# print gene_dict
 
 	return mirna_lis_for_gene_subgraph, gene_dict
 
