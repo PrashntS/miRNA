@@ -6,7 +6,7 @@ exports.automaton =
       h: $(".overlay-terra").height()
       w: $(".overlay-terra").width()
 
-    cell = 20
+    cell = 5
 
     @t = new terra.Terrarium dim.w // cell, dim.h // cell,
       periodic: no
@@ -18,9 +18,9 @@ exports.automaton =
     @register()
 
     @t.grid = @t.makeGridWithDistribution [
-      ['free_nucleotide', 5]
+      # ['free_nucleotide', 5]
       ['protein', 10]
-      ['gen', 15]
+      ['gene', 15]
     ]
 
     @t.animate()
@@ -64,7 +64,7 @@ exports.automaton =
 
       degrade: (x, y, opts) ->
 
-        # if @age > 10**3 or @health < 10 or _.random(10**5) < 25
+        # if @age > 10**2 or @health < 10 or _.random(10**5) < 25
         if @health < 1 or _.random(10**5) < 100
           degraded = terra.make @degrades_to,
             coords:

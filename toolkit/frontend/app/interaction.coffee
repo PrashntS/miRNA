@@ -22,9 +22,9 @@ exports.interaction =
     f2.add func, 'explode'
     f2.addColor func, 'col'
 
-    G = new (jsnx.DiGraph)
+    @G = new (jsnx.DiGraph)
 
-    jsnx.draw G,
+    jsnx.draw @G,
       element: '#graphcanvas'
       withLabels: true
       nodeStyle:
@@ -45,21 +45,21 @@ exports.interaction =
 
     graph_factory = (opts) =>
       $.getJSON "/api/graph?#{$.param(@nodes, true)}"
-      .done (dat) ->
+      .done (dat) =>
         $(".overlay-info").fadeOut()
         $(".overlay-terra").fadeOut()
         {target_list, host_list, miRNA_store, genes_store} = dat
 
-        G.addNodesFrom miRNA_store,
-          color: '#81CFE0'
+        @G.addNodesFrom miRNA_store,
+          color: '#FF0000'
           strokeWidth: 0
 
-        G.addNodesFrom genes_store,
+        @G.addNodesFrom genes_store,
           color: '#87D37C'
           strokeWidth: 0
 
-        G.addEdgesFrom target_list
-        G.addEdgesFrom host_list
+        @G.addEdgesFrom target_list
+        @G.addEdgesFrom host_list
 
     $('#data_gui').html(gui.domElement)
 
