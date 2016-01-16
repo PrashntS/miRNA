@@ -3,6 +3,7 @@
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
 from flask import request
+
 from miRNA import db, app
 
 class miRNAGeneTargetedByComplex(db.EmbeddedDocument):
@@ -33,8 +34,12 @@ class Gene(db.Document):
     return self.symbol
 
   @property
-  def foo(self):
-      return "fee"
+  def tinyrepr(self):
+      return {
+        'symbol': self.symbol,
+        'type':   self.__class__.__name__,
+      }
+
 
 class miRNAGeneTargetComplex(db.EmbeddedDocument):
   gene      = db.ReferenceField(Gene)
@@ -57,3 +62,11 @@ class miRNA(db.Document):
 
   def __unicode__(self):
     return self.symbol
+
+  @property
+  def tinyrepr(self):
+      return {
+        'symbol': self.symbol,
+        'type':   self.__class__.__name__,
+      }
+
