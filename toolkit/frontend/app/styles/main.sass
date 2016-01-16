@@ -74,6 +74,25 @@ header
     background: $primary-color
     max-width: $sidebar-width
 
+    .logo
+      margin: 5px 0 30px
+      font-weight: 200
+      text-align: center
+      position: relative
+
+      strong
+        letter-spacing: 2px
+        position: relative
+
+        &::after
+          content: ""
+          background: #FFFFFF
+          width: 100%
+          height: 1px
+          position: absolute
+          bottom: -5px
+          right: 0
+
     &::before
       clear: both
       content: ""
@@ -95,15 +114,36 @@ section
 section.main
   background: $white-smoke
   min-width: 100%
-  @include calc(min-height, "100vh - 35px")
+  min-height: 100vh
   padding-left: $sidebar-width
   padding-top: 35px
   position: relative
 
   .fill
-    min-height: 100vh
-    height: 100%
+    @include calc(height, "100vh - 35px")
     width: 100%
+
+  .overlay-info
+    position: absolute
+    color: $primary-text-color
+    padding: 10px 30% 20px 20px
+
+    max-width: 1024px
+
+    h1
+      margin: 5px 0 15px
+      border-bottom: 2px solid
+      padding-bottom: 5px
+
+    p
+      margin-bottom: 10px
+      font-family: $fontbody
+
+    blockquote
+      margin: 0
+      border-left: 2px solid
+      padding-left: 10px
+
 a
   color: inherit
   text-decoration: none
@@ -173,6 +213,24 @@ span.select2-container--default
 
     &[aria-selected=true]
       background: transparent !important
+
+.dropdown-card
+  h1
+    margin: 0 0 5px 0
+    font-size: 16px
+    letter-spacing: 2px
+    font-family: $fonthead
+
+  p
+    margin-bottom: 5px
+
+  ul
+    margin: 0
+    padding-left: 5px
+    list-style: none
+
+    li
+      padding: 0
 
 div.dg
   color: $primary-color-text

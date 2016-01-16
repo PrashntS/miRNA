@@ -23,19 +23,17 @@ exports.interaction =
     f2.addColor func, 'col'
 
     G = new (jsnx.DiGraph)
-    # G.addNodesFrom [1],#2,3,4,5,[9,{color: '#008A00'}]],
-    #   color: '#0064C7'
-
-    # G.addCycle [1,2,3,4,5]
-
-    # G.addEdgesFrom [[1,9], [9,1]]
 
     jsnx.draw G,
       element: '#graphcanvas'
       withLabels: true
-      nodeStyle: fill: (d) ->
-        d.data.color
-      labelStyle: fill: 'white'
+      nodeStyle:
+        fill: (d) ->
+          d.data.color
+      labelStyle: fill: 'black'
+      edgeStyle:
+        fill: '#6C7A89'
+        opacity: 0.5
       stickyDrag: true
     , true
 
@@ -48,13 +46,16 @@ exports.interaction =
     graph_factory = (opts) =>
       $.getJSON "/api/graph?#{$.param(@nodes, true)}"
       .done (dat) ->
+        $(".overlay-info").fadeOut()
         {target_list, host_list, miRNA_store, genes_store} = dat
 
         G.addNodesFrom miRNA_store,
-          color: '#4ECDC4'
+          color: '#81CFE0'
+          strokeWidth: 0
 
         G.addNodesFrom genes_store,
-          color: '#F5AB35'
+          color: '#87D37C'
+          strokeWidth: 0
 
         G.addEdgesFrom target_list
         G.addEdgesFrom host_list
@@ -97,9 +98,14 @@ exports.interaction =
       templateResult: (obj) ->
         return obj.text if obj.loading
         markup = """
-          <div>
-            <p>#{obj.symbol}</p>
+          <div class="dropdown-card">
+            <h1>#{obj.symbol}</h1>
             <p>#{obj.description}</p>
+            <ul>
+              <li><strong>Targeted By</strong>: #{obj.targeted_by.length} miRNAs</li>
+              <li><strong>Host of (miRNA)</strong>: #{obj.host_of?.symbol || 'N.A.'}</li>
+              <li><strong>ESID</strong>: #{obj.names[0]}</li>
+            </ul>
           </div>
         """
         markup
@@ -108,11 +114,16 @@ exports.interaction =
       uri: '/api/mirna'
       placeholder: "Please Enter a Few miRNA"
       templateResult: (obj) ->
+      templateResult: (obj) ->
         return obj.text if obj.loading
         markup = """
-          <div>
-            <p>#{obj.symbol}</p>
-            <p>#{obj.description}</p>
+          <div class="dropdown-card">
+            <h1>#{obj.symbol}</h1>
+            <ul>
+              <li><strong>Targets</strong>: #{obj.targets.length} Genes</li>
+              <li><strong>Host Gene</strong>: #{obj.host?.symbol || 'N.A.'}</li>
+              <li><strong><a href="#{obj.mirbase_url}">miRBase Link</a></strong></li>
+            </ul>
           </div>
         """
         markup
