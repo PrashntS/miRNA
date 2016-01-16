@@ -23,8 +23,8 @@ exports.interaction =
     f2.addColor func, 'col'
 
     G = new (jsnx.DiGraph)
-    G.addNodesFrom [1],#2,3,4,5,[9,{color: '#008A00'}]],
-      color: '#0064C7'
+    # G.addNodesFrom [1],#2,3,4,5,[9,{color: '#008A00'}]],
+    #   color: '#0064C7'
 
     # G.addCycle [1,2,3,4,5]
 
@@ -45,19 +45,19 @@ exports.interaction =
 
     @n = rivets.bind($('#nodes'), {nodes: @nodes})
 
-    setInterval ()->
-      return if a > 10
-      G.addNodesFrom [a],
-        color: '#0064C7'
+    graph_factory = (opts) =>
+      $.getJSON "/api/graph?#{$.param(@nodes, true)}"
+      .done (dat) ->
+        {target_list, host_list, miRNA_store, genes_store} = dat
 
-      if _.random(1000) < 200
-        G.addEdgesFrom [[a-1, a], [a, _.random(a)]]
-      else
-        G.addEdgesFrom [[a-1, a]]
+        G.addNodesFrom miRNA_store,
+          color: '#4ECDC4'
 
-      a += 1
+        G.addNodesFrom genes_store,
+          color: '#F5AB35'
 
-    , 0.1
+        G.addEdgesFrom target_list
+        G.addEdgesFrom host_list
 
     $('#data_gui').html(gui.domElement)
 
@@ -87,7 +87,7 @@ exports.interaction =
       escapeMarkup: (markup) -> markup
       placeholder: opts.placeholder
       minimumInputLength: 2
-      maximumSelectionLength: 2
+      maximumSelectionLength: 5
       templateResult: (obj) ->
         return obj.text if obj.loading
         markup = """
@@ -106,6 +106,9 @@ exports.interaction =
     $('.mirna_select').select2 factory_select
       uri: '/api/mirna'
       placeholder: "Please Enter a Few miRNA"
+
+    $('select.rivets').on 'change', =>
+      graph_factory()
 
   node_val: ->
     @nodes

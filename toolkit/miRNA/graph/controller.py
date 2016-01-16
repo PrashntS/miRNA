@@ -9,11 +9,31 @@ from flask_restful import Resource, reqparse
 from miRNA.polynucleotide.model import Gene, miRNA
 
 class SubGraphController(Resource):
-  def get(self):
+  def args(self):
+    parser = reqparse.RequestParser()
+    parser.add_argument('genes', type = str, action = 'append')
+    parser.add_argument('mirna', type = str, action = 'append')
+    return parser.parse_args()
 
-    #: Initial set containing the miRNAs from User
-    in_mirna = set([miRNA.objects.get(symbol = 'hsa-let-7a-5p')])
-    in_genes = set() #: Initial set containing the genes from User
+  def get(self):
+    swag = self.args()
+    genes = self._gather(Gene, swag.get('genes'))
+    mirna = self._gather(miRNA, swag.get('mirna'))
+
+    return self._get(mirna, genes)
+
+  def _gather(self, collection, arr):
+    doc = []
+    for sym in arr:
+      try:
+        doc.append(collection.objects.get(symbol = sym))
+      except Exception:
+        pass
+    return doc
+
+  def _get(self, imirna, igenes):
+    in_mirna = set(imirna)
+    in_genes = set(igenes)
 
     #: {Edge(miRNA -> Gene)}
     target_list = set()

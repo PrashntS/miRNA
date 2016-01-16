@@ -31,7 +31,8 @@
     "vex": "~2.3.3",
     "fullpage.js": "~2.7.6",
     "d3": "~3.5.12",
-    "rivets": "~0.8.1"
+    "rivets": "~0.8.1",
+    "PACE": "pace#~1.0.2"
   },
   "resolutions": {
     "terra": "master"
@@ -41,6 +42,12 @@
       "main": [
         "dist/js/select2.full.js",
         "src/scss/core.scss"
+      ]
+    },
+    "PACE": {
+      "main": [
+        "pace.js",
+        "themes/black/pace-theme-flash.css"
       ]
     },
     "normalize-css": {
