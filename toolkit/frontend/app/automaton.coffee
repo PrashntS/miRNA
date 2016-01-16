@@ -1,26 +1,32 @@
 
 exports.automaton =
   init: ->
-    console.log "LOL"
-    return
 
-    @t = new terra.Terrarium 100, 50,
+    dim =
+      h: $(".overlay-terra").height()
+      w: $(".overlay-terra").width()
+
+    cell = 20
+
+    @t = new terra.Terrarium dim.w // cell, dim.h // cell,
       periodic: no
       trails: 0
-      background: [255, 255, 255]
-      cellSize: 5
+      # background: [255, 255, 255]
+      cellSize: cell
+      insertAfter: document.getElementById('overlay_terra')
 
     @register()
 
     @t.grid = @t.makeGridWithDistribution [
-      # ['free_nucleotide', 1]
-      ['protein', 1]
-      ['gen', 1]
+      ['free_nucleotide', 5]
+      ['protein', 10]
+      ['gen', 15]
     ]
 
-    # @t.grid[0][0] = @t.makeGrid([['free_aminoacids']])[0][0]
+    @t.animate()
 
-    # @t.animate()
+    $(".overlay-terra").find("canvas")
+    .height(dim.h).width(dim.w)
 
   register: ->
     model_final = _.mapObject @models, (val, key) =>

@@ -120,13 +120,14 @@ section.main
   position: relative
 
   .fill
-    @include calc(height, "100vh - 35px")
+    @include calc(height, "100vh - 37px")
     width: 100%
 
   .overlay-info
     position: absolute
     color: $primary-text-color
     padding: 10px 30% 20px 20px
+    z-index: 2
 
     max-width: 1024px
 
@@ -143,6 +144,14 @@ section.main
       margin: 0
       border-left: 2px solid
       padding-left: 10px
+
+  .overlay-terra
+    position: absolute
+    opacity: 0.2
+    left: $sidebar-width
+    right: 0
+    @include calc(height, "100vh - 35px")
+    z-index: 1
 
 a
   color: inherit

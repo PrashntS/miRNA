@@ -47,6 +47,7 @@ exports.interaction =
       $.getJSON "/api/graph?#{$.param(@nodes, true)}"
       .done (dat) ->
         $(".overlay-info").fadeOut()
+        $(".overlay-terra").fadeOut()
         {target_list, host_list, miRNA_store, genes_store} = dat
 
         G.addNodesFrom miRNA_store,
