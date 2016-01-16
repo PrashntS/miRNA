@@ -36,7 +36,7 @@ class SubGraphController(Resource):
         target_list.update([(mir, _) for _ in targets])
 
         if mir.host:
-          miRNA_store.add(mir.host)
+          genes_store.add(mir.host)
           host_list.update([(mir.host, mir)])
 
       for gene in in_genes:
@@ -46,23 +46,19 @@ class SubGraphController(Resource):
         target_list.update([(_, gene) for _ in targeted_by])
 
         if gene.host_of:
-          genes_store.add(gene.host_of)
+          miRNA_store.add(gene.host_of)
           host_list.update([(gene, gene.host_of)])
 
     factory(in_mirna, in_genes)
     factory(miRNA_store.copy(), genes_store.copy())
 
-    G = nx.DiGraph()
-    G.add_nodes_from(miRNA_store)
-    G.add_nodes_from(genes_store)
+    trn = lambda x: str(x)
+    tre = lambda x: [str(x[0]), str(x[1])]
 
-    G.add_edges_from(target_list)
-    G.add_edges_from(host_list)
+    return {
+      'target_list': list(map(tre, target_list)),
+      'host_list': list(map(tre, host_list)),
+      'miRNA_store': list(map(trn, miRNA_store)),
+      'genes_store': list(map(trn, genes_store)),
+    }
 
-    dod = nx.convert.to_edgelist(G)
-
-    print(nx.to_dict_of_dicts(G))
-
-    convert = lambda x: (x[0].tinyrepr, x[1].tinyrepr)
-
-    return list(map(convert, dod))

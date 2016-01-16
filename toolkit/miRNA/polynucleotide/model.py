@@ -34,12 +34,8 @@ class Gene(db.Document):
     return self.symbol
 
   @property
-  def tinyrepr(self):
-      return {
-        'symbol': self.symbol,
-        'type':   self.__class__.__name__,
-      }
-
+  def tr(self):
+      return '{0}'.format(self.symbol)
 
 class miRNAGeneTargetComplex(db.EmbeddedDocument):
   gene      = db.ReferenceField(Gene)
@@ -64,9 +60,6 @@ class miRNA(db.Document):
     return self.symbol
 
   @property
-  def tinyrepr(self):
-      return {
-        'symbol': self.symbol,
-        'type':   self.__class__.__name__,
-      }
+  def tr(self):
+      return '{0}'.format(self.symbol)
 
