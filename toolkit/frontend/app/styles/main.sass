@@ -95,7 +95,7 @@ section
 section.main
   background: $white-smoke
   min-width: 100%
-  min-height: 100vh
+  @include calc(min-height, "100vh - 35px")
   padding-left: $sidebar-width
   padding-top: 35px
   position: relative
