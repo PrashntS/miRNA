@@ -88,6 +88,12 @@ exports.interaction =
       placeholder: opts.placeholder
       minimumInputLength: 2
       maximumSelectionLength: 5
+      templateResult: opts.templateResult
+      templateSelection: (obj) -> obj.symbol or obj.text
+
+    $('.gene_select').select2 factory_select
+      uri: '/api/gene'
+      placeholder: "Please Enter a Few Genes"
       templateResult: (obj) ->
         return obj.text if obj.loading
         markup = """
@@ -97,15 +103,19 @@ exports.interaction =
           </div>
         """
         markup
-      templateSelection: (obj) -> obj.symbol or obj.text
-
-    $('.gene_select').select2 factory_select
-      uri: '/api/gene'
-      placeholder: "Please Enter a Few Genes"
 
     $('.mirna_select').select2 factory_select
       uri: '/api/mirna'
       placeholder: "Please Enter a Few miRNA"
+      templateResult: (obj) ->
+        return obj.text if obj.loading
+        markup = """
+          <div>
+            <p>#{obj.symbol}</p>
+            <p>#{obj.description}</p>
+          </div>
+        """
+        markup
 
     $('select.rivets').on 'change', =>
       graph_factory()

@@ -24,6 +24,9 @@ class SubGraphController(Resource):
 
   def _gather(self, collection, arr):
     doc = []
+
+    if not arr:
+      return doc
     for sym in arr:
       try:
         doc.append(collection.objects.get(symbol = sym))
