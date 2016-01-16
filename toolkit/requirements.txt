@@ -1,13 +1,13 @@
-Flask == 0.10.1
+Flask==0.10.1
 pymongo==2.7.2
-mongoengine == 0.7.1
+mongoengine==0.10.1
 mimerender
 cleancat>=0.3
 Flask-Views
-flask-mongoengine == 0.7.1
-flask-restful == 0.3.4
+flask-mongoengin==0.7.1
+flask-restful==0.3.4
 Flask-Script==2.0.5
-Flask_Admin == 1.3.0
-Click == 3.3
-meinheld == 0.5.8
+Flask_Admin==1.3.0
+Click==3.3
+meinheld==0.5.8
 git+https://github.com/PrashntS/flask-mongorest.git
