@@ -3,8 +3,8 @@ module.exports = config:
     public: '../miRNA/static'
   files:
     javascripts: joinTo:
-      'libraries.js': /^(?!app\/)/
-      'app.js': (a) -> /^app\//
+      'libraries.js': /^bower_components\//
+      'app.js': /^(app)\//
     stylesheets:
       joinTo:
         'libraries.css': /^bower_components\//

@@ -190,11 +190,13 @@ rRNA and, if so, then, for how long. More comments on this will be added later.
 This function performs following functions, overriding the default behaviour,
 when provided with the neighbors and its current coordinate in space. It takes
 a decision from following:
+
 - Increment the Age of gene.
-- If we find a rRNA in neighbor, form `rRNA_Gene_Complex`.
-- If we find a miRNA in neighbor, form `miRNA_Gene_Complex`.
+- If we find a rRNA in neighbor, form rRNAGeneComplex.
+- If we find a miRNA in neighbor, form miRNAGeneComplex.
 - If age is more than some age, degrade.
-- If none of the above, then, move.
+
+If none of the above, happens, then we simply move.
 
       process: (neighbors, x, y) ->
         @age += 1
@@ -431,7 +433,7 @@ dissociates.
       constructor: (opts) ->
         @type = 'Protein'
         @gene_ref = opts.gene_ref?
-        @degrades_to = FreeAminoAcids
+        @degrades_to = FreeAminoAcid
         super opts
 
 # Free Nucleotides and Amino Acids
@@ -450,6 +452,7 @@ probably DO degrade, and are not REALLY dumb. But. That's chemistry.
         @type = 'FreeAminoAcid'
         @degrades_to = undefined
         super opts
+    # coffeelint: enable=camel_case_classes
 
 
 # Source and Sink
@@ -479,9 +482,7 @@ users too, so, the effects seen on the network can be observed here as well.
       process: (neighbors, x, y) ->
         return false
 
-# Export these models to module level.
-
-    exports =
+    module.exports =
       Gene: Gene
       miRNA: miRNA
       rRNA: rRNA
