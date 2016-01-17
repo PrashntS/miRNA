@@ -35,7 +35,7 @@ class Gene(db.Document):
 
   @property
   def tr(self):
-      return '{0}'.format(self.symbol)
+      return '{0}-{1}'.format(self.symbol, self.host_of.symbol)
 
 class miRNAGeneTargetComplex(db.EmbeddedDocument):
   gene      = db.ReferenceField(Gene)

@@ -6,7 +6,7 @@ exports.automaton =
       h: $(".overlay-terra").height()
       w: $(".overlay-terra").width()
 
-    cell = 5
+    cell = 15
 
     @t = new terra.Terrarium dim.w // cell, dim.h // cell,
       periodic: no
@@ -17,13 +17,16 @@ exports.automaton =
 
     @register()
 
-    @t.grid = @t.makeGridWithDistribution [
-      # ['free_nucleotide', 5]
-      ['protein', 10]
-      ['gene', 15]
+    @t.grid = @t.makeGrid [
+      []
+      []
+      []
+      []
+      []
+      ['','','','protein']
     ]
 
-    @t.animate()
+    @t.animate(1)
 
     $(".overlay-terra").find("canvas")
     .height(dim.h).width(dim.w)
@@ -468,7 +471,7 @@ exports.automaton =
         #: See miRNA.process
 
         @age += 1
-        step = @degrade(x, y) or @move(neighbors)
+        step = @degrade(x, y)# or @move(neighbors)
         if step
           return {
             x: step.x
@@ -476,7 +479,7 @@ exports.automaton =
             creature: step.creature
             observed: yes
           }
-        return false
+        return true
 
     free_nucleotide:
       type: 'free_nucleotide'
@@ -509,6 +512,7 @@ exports.automaton =
 
       process: (neighbors, x, y) ->
         #: Just moves
+        return false
         step = @move(neighbors)
         if step
           return {

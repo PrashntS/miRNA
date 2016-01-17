@@ -83,12 +83,19 @@ def migrate():
       m.transcript_count = mtc
       m.save()
 
+      try:
+        g = Gene.objects.get(symbol = meta.get('Host Gene'))
+        g.host_of = m
+        g.save()
+      except DoesNotExist:
+        "No Host Gene"
+        pass
+
       #: We'll add targets later, first, we gotta just save transcript counts and host_of
       for gene in meta.get('Target Gene with Transcript Count', []):
         try:
           g = Gene.objects.get(symbol = gene[0])
           g.transcript_count = gene[1]
-          g.host_of = m
           g.save()
           count += 1
         except DoesNotExist:

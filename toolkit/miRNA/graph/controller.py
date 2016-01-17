@@ -51,10 +51,11 @@ class SubGraphController(Resource):
     miRNA_store.update(in_mirna)
     genes_store.update(in_genes)
 
-    def factory(in_mirna, in_genes):
-      for mir in in_mirna:
+    def factory(_in_mirna, _in_genes):
+      for mir in _in_mirna:
         #: Gather the targets of the miRNAs given
         targets = Gene.objects(targeted_by__miRNA=mir.id)
+
         genes_store.update(targets)
         target_list.update([(mir, _) for _ in targets])
 
@@ -62,7 +63,7 @@ class SubGraphController(Resource):
           genes_store.add(mir.host)
           host_list.update([(mir.host, mir)])
 
-      for gene in in_genes:
+      for gene in _in_genes:
         #: The miRNAs which targets the given one
         targeted_by = miRNA.objects(targets__gene=gene.id)
         miRNA_store.update(targeted_by)
