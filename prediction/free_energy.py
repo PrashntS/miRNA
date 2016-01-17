@@ -148,6 +148,7 @@ def routine():
                     prediction_Store[miRNA][gene] = prediction(miRNA, gene)
                 except Exception as e:
                     skipped_list.append([miRNA, gene, str(e)])
+                    prediction_Store[miRNA][gene] = []
 
 def signal_handler(signal, frame):
     print('\nEnding Prematurely after Dumping retrieved data. Please Wait.')
