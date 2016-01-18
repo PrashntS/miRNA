@@ -14,9 +14,9 @@ module.exports = (canvas, grid, cellSize, trails, background) ->
     _.each column, (creature, y) ->
       if creature
         color = if creature.colorFn then creature.colorFn() else
-          "#{creature.color},#{creature.energy / creature.maxEnergy}"
+          "#{creature.color}"#,#{creature.energy / creature.maxEnergy}"
 
-        ctx.fillStyle = 'rgba(' + color + ')'
+        ctx.fillStyle = 'rgb(' + color + ')'
 
         if creature.character
           ctx.fillText creature.character, x * cellSize, y * cellSize + cellSize

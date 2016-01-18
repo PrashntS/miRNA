@@ -140,27 +140,55 @@ class Terrarium
 
     processCreaturesInner = (creature, x, y) ->
       if creature
-        neighbors = _.map(self.getNeighborCoords(x, y, creature.actionRadius),
-                          zipCoordsWithNeighbors)
-        result = creature.process(neighbors, x, y)
+        neighbors = _.map self.getNeighborCoords(x, y, creature.actionRadius),
+        zipCoordsWithNeighbors
 
-        if typeof result == 'object'
-          eigenColumn = eigenGrid[result.x]
-          returnedCreature = result.creature
-          returnedY = result.y
-          if !eigenColumn[returnedY]
-            eigenColumn[returnedY] = []
-          eigenColumn[returnedY].push
-            x: x
-            y: y
-            creature: returnedCreature
-          if !self.hasChanged and result.observed
-            self.hasChanged = true
+        result = creature.process neighbors, x, y
+
+        if result
+          for r in result
+            eigenColumn = eigenGrid[r.x]
+            returnedCreature = r.creature
+            returnedY = r.y
+
+            if not eigenColumn[returnedY]
+              eigenColumn[returnedY] = []
+
+            eigenColumn[returnedY].push
+              x: x
+              y: y
+              creature: r.creature
+
+            if not self.hasChanged and r.observed
+              self.hasChanged = yes
         else
-          if result and !self.hasChanged
+          if result and not self.hasChanged
             self.hasChanged = true
           processLoser creature
-      return
+
+    # processCreaturesInner = (creature, x, y) ->
+    #   if creature
+    #     neighbors = _.map(self.getNeighborCoords(x, y, creature.actionRadius),
+    #                       zipCoordsWithNeighbors)
+    #     result = creature.process(neighbors, x, y)
+
+    #     if typeof result == 'object'
+    #       eigenColumn = eigenGrid[result.x]
+    #       returnedCreature = result.creature
+    #       returnedY = result.y
+    #       if !eigenColumn[returnedY]
+    #         eigenColumn[returnedY] = []
+    #       eigenColumn[returnedY].push
+    #         x: x
+    #         y: y
+    #         creature: returnedCreature
+    #       if !self.hasChanged and result.observed
+    #         self.hasChanged = true
+    #     else
+    #       if result and !self.hasChanged
+    #         self.hasChanged = true
+    #       processLoser creature
+    #   return
 
     processCreatures = (column, x) ->
       _.each column, (creature, y) ->
