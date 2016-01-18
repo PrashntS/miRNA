@@ -1,35 +1,27 @@
 _ = require('./util')
 
 # abstract factory that adds a superclass of baseCreature
-factory = do ->
 
-  baseCreature = ->
+class baseCreature
+  constructor: ->
     @age = -1
-    return
+    @initialEnergy = 50
+    @maxEnergy = 100
+    @efficiency = 0.7
+    @size = 50
+    @actionRadius = 1
+    @sustainability = 2
+    @reproduceLv = 0.70
+    @moveLv = 0
 
-  baseCA = ->
-    @age = -1
-    return
-
-  baseCreature::initialEnergy = 50
-  baseCreature::maxEnergy = 100
-  baseCreature::efficiency = 0.7
-  baseCreature::size = 50
-  baseCreature::actionRadius = 1
-  baseCreature::sustainability = 2
-  # used as percentages of maxEnergy
-  baseCreature::reproduceLv = 0.70
-  baseCreature::moveLv = 0
-
-  baseCreature::boundEnergy = ->
+  boundEnergy: ->
     if @energy > @maxEnergy
       @energy = @maxEnergy
-    return
 
-  baseCreature::isDead = ->
+  isDead: ->
     @energy <= 0
 
-  baseCreature::reproduce = (neighbors) ->
+  reproduce: (neighbors) ->
     spots = _.filter(neighbors, (spot) ->
       !spot.creature
     )
@@ -52,7 +44,7 @@ factory = do ->
     else
       false
 
-  baseCreature::move = (neighbors) ->
+  move: (neighbors) ->
     creature = this
     # first, look for creatures to eat
     spots = _.filter(neighbors, ((spot) ->
@@ -84,11 +76,11 @@ factory = do ->
     else
       false
 
-  baseCreature::wait = ->
+  wait: ->
     @energy -= 5
     true
 
-  baseCreature::process = (neighbors, x, y) ->
+  process: (neighbors, x, y) ->
     step = {}
     maxEnergy = @maxEnergy
     if @energy > maxEnergy * @reproduceLv and @reproduce
@@ -108,90 +100,94 @@ factory = do ->
     else
       @energy != @maxEnergy
 
-  baseCA::actionRadius = 1
+class baseCA
+  constructor: ->
+    @age = -1
 
-  baseCA::boundEnergy = ->
+  actionRadius: 1
 
-  baseCA::isDead = ->
-    false
+  boundEnergy: ->
 
-  baseCA::process = (neighbors, x, y) ->
+  isDead: -> false
 
-  baseCA::wait = ->
+  process: (neighbors, x, y) ->
 
-  # Storage for our creature types
-  types = {}
-  {
-    make: (type, options) ->
-      Creature = types[type]
-      if Creature then new Creature(options) else false
-    registerCreature: (options, init) ->
-      # required attributes
-      type = options.type
-      # only register classes that fulfill the creature contract
-      if typeof type == 'string' and typeof types[type] == 'undefined'
-        # set the constructor, including init if it's defined
-        if typeof init == 'function'
+  wait: ->
 
-          types[type] = ->
-            @energy = @initialEnergy
-            init.call this
-            return
+class factory
+  constructor: ->
+    @types = {}
 
-        else
+  make: (type, options) ->
+    Creature = @types[type]
+    return type
+    if Creature then new Creature(options) else false
 
-          types[type] = ->
-            @energy = @initialEnergy
-            return
+  registerCreature: (options, init) ->
+    # required attributes
+    type = options.type
+    # only register classes that fulfill the creature contract
+    if typeof type == 'string' and typeof types[type] == 'undefined'
+      # set the constructor, including init if it's defined
+      if typeof init == 'function'
 
-        color = options.color or options.colour
-        # set the color randomly if none is provided
-        if typeof color != 'object' or color.length != 3
-          options.color = [
-            _.random(255)
-            _.random(255)
-            _.random(255)
-          ]
-        types[type].prototype = new baseCreature
-        types[type]::constructor = types[type]
-        _.each options, (value, key) ->
-          types[type].prototype[key] = value
-          return
-        types[type]::successFn = types[type]::wait
-        types[type]::failureFn = types[type]::wait
-        types[type]::energy = options.initialEnergy
-        true
-      else
-        false
-    registerCA: (options, init) ->
-      # required attributes
-      type = options.type
-      # only register classes that fulfill the creature contract
-      if typeof type == 'string' and typeof types[type] == 'undefined'
-        # set the constructor, including init if it's defined
-        types[type] = if typeof init == 'function' then (->
+        types[type] = ->
+          @energy = @initialEnergy
           init.call this
           return
-        ) else (->
-        )
-        color = options.color = options.color or options.colour
-        # set the color randomly if none is provided
-        if typeof color != 'object' or color.length != 3
-          options.color = [
-            _.random(255)
-            _.random(255)
-            _.random(255)
-          ]
-        options.colorFn = options.colorFn or options.colourFn
-        types[type].prototype = new baseCA
-        types[type]::constructor = types[type]
-        _.each options, (value, key) ->
-          types[type].prototype[key] = value
-          return
-        true
+
       else
-        false
 
-  }
+        types[type] = ->
+          @energy = @initialEnergy
+          return
 
-module.exports = factory
+      color = options.color or options.colour
+      # set the color randomly if none is provided
+      if typeof color != 'object' or color.length != 3
+        options.color = [
+          _.random(255)
+          _.random(255)
+          _.random(255)
+        ]
+      types[type].prototype = new baseCreature
+      types[type]::constructor = types[type]
+      _.each options, (value, key) ->
+        types[type].prototype[key] = value
+        return
+      types[type]::successFn = types[type]::wait
+      types[type]::failureFn = types[type]::wait
+      types[type]::energy = options.initialEnergy
+      true
+    else
+      false
+  registerCA: (options, init) ->
+    # required attributes
+    type = options.type
+    # only register classes that fulfill the creature contract
+    if typeof type == 'string' and typeof types[type] == 'undefined'
+      # set the constructor, including init if it's defined
+      types[type] = if typeof init == 'function' then (->
+        init.call this
+        return
+      ) else (->
+      )
+      color = options.color = options.color or options.colour
+      # set the color randomly if none is provided
+      if typeof color != 'object' or color.length != 3
+        options.color = [
+          _.random(255)
+          _.random(255)
+          _.random(255)
+        ]
+      options.colorFn = options.colorFn or options.colourFn
+      types[type].prototype = new baseCA
+      types[type]::constructor = types[type]
+      _.each options, (value, key) ->
+        types[type].prototype[key] = value
+        return
+      true
+    else
+      false
+
+module.exports = new factory

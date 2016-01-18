@@ -10,7 +10,6 @@ createCanvasElement = (width, height, cellSize, id, insertAfter, background) ->
     ctx = canvas.getContext('2d')
     # Creates a dummy canvas to test device's pixel ratio
     ratio = do ->
-      `var ctx`
       ctx = document.createElement('canvas').getContext('2d')
       dpr = window.devicePixelRatio or 1
       bsr = (ctx.webkitBackingStorePixelRatio or
@@ -36,6 +35,7 @@ createCanvasElement = (width, height, cellSize, id, insertAfter, background) ->
   width *= cellSize
   height *= cellSize
   canvas = createHDCanvas()
+
   if insertAfter
     insertAfter.parentNode.insertBefore canvas, insertAfter.nextSibling
   else

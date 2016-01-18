@@ -11,7 +11,6 @@ exports.automaton =
 
     cell = 15
 
-    console.log terra.Terrarium
 
     @t = new terra.Terrarium dim.w // cell, dim.h // cell,
       periodic: no
@@ -22,19 +21,20 @@ exports.automaton =
 
     g = new entities.Protein
       color: [0,0,0]
-
-    console.log @t
+      gene_ref: "CDKN1A"
+      symbol: "KER"
 
     @t.grid = @t.makeGrid [
-      []
-      []
-      []
-      []
-      []
-      ['','','',g]
+      [g]
     ]
 
-    @t.animate(1)
+    @t.animate 50, =>
+      console.log g
+      g.age = 100
+      console.log g
+
+      @t.animate 100, ->
+        console.log g
 
     $(".overlay-terra").find("canvas")
     .height(dim.h).width(dim.w)

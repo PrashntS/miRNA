@@ -23,6 +23,8 @@ hereby denoted as "Entities" in the given cellular environment.
       constructor: (opts) ->
         {@symbol, @color} = opts
         @age = 0
+        @health = 100
+        @actionRadius = 1
 
 ## Movement
 
@@ -46,16 +48,16 @@ Currently, this dicision is taken with a random probability, however, a more
 
         spots = _.filter neighbors, (spot) -> not spot.creature
         if spots.length
-          step = spots[_.random]
+          step = spots[_.random(spots.length - 1)]
 
-          if _.random(100) > 25
-            return {
-              x: step.coords.x
-              y: step.coords.y
-              creature: @
-              successFn: -> false
-              failureFn: -> false
-            }
+          # if _.random(100) > 25
+          return {
+            x: step.coords.x
+            y: step.coords.y
+            creature: @
+            successFn: -> false
+            failureFn: -> false
+          }
         false
 
 ## Degradation
@@ -65,11 +67,9 @@ entities are expected to degrade into the constituents after they are either
 too old, or have a "poor" health.
 
       degrade: (x, y, opts) ->
-        if @health < 1 or _.random(10**5) < 100
-          degraded = terra.make @degrades_to,
-            coords:
-              x: x
-              y: y
+        if @age > 100 # or _.random(10**5) < 100
+          degraded = new @degrades_to
+            symbol: @symbol
 
           return {
             x: x
@@ -84,6 +84,8 @@ too old, or have a "poor" health.
       #: Some Functionally important defaults.
       successFn: -> false
       failureFn: -> false
+      isDead: -> false
+      boundEnergy: ->
       wait: -> false
 
 ## Process
@@ -432,7 +434,7 @@ dissociates.
     class Protein extends Entity
       constructor: (opts) ->
         @type = 'Protein'
-        @gene_ref = opts.gene_ref?
+        @gene_ref = opts.gene_ref
         @degrades_to = FreeAminoAcid
         super opts
 
