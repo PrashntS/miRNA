@@ -1,5 +1,6 @@
 
 rivets = require('rivets').rvt
+_ = require('lodash/lodash')._
 
 exports.interaction =
   init: ->

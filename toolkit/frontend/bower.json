@@ -22,8 +22,6 @@
     "jquery": "~2.2.0",
     "jsnetworkx": "https://raw.githubusercontent.com/fkling/JSNetworkX/0b58cdea96477a9285609385597c31b3b031cfe8/jsnetworkx.js",
     "normalize-css": "normalize.css#~3.0.3",
-    "underscore": "~1.8.3",
-    "terra": "https://github.com/PrashntS/terra.git#master",
     "select2": "~4.0.1",
     "font-awesome": "fontawesome#~4.5.0",
     "dat-gui": "~0.5.1",
@@ -32,10 +30,8 @@
     "fullpage.js": "~2.7.6",
     "d3": "~3.5.12",
     "rivets": "~0.8.1",
-    "PACE": "pace#~1.0.2"
-  },
-  "resolutions": {
-    "terra": "master"
+    "PACE": "pace#~1.0.2",
+    "seedrandom": "~2.4.2"
   },
   "overrides": {
     "select2": {
