@@ -1,4 +1,4 @@
-_ = require('util.js')
+_ = require('./util')
 
 # abstract factory that adds a superclass of baseCreature
 factory = do ->

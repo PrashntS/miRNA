@@ -1,5 +1,6 @@
 
 entities = require('creatures')
+terra = require('terra/main')
 
 exports.automaton =
   init: ->
@@ -9,6 +10,8 @@ exports.automaton =
       w: $(".overlay-terra").width()
 
     cell = 15
+
+    console.log terra.Terrarium
 
     @t = new terra.Terrarium dim.w // cell, dim.h // cell,
       periodic: no
@@ -20,7 +23,7 @@ exports.automaton =
     g = new entities.Protein
       color: [0,0,0]
 
-    console.log g
+    console.log @t
 
     @t.grid = @t.makeGrid [
       []

@@ -1,8 +1,6 @@
 # Seed Math.random() with seedrandom
-require('../bower_components/seedrandom/seedrandom.js') 'terra :)', global: true
-# an extended custom build of lodash, generated with:
-# lodash exports=commonjs include=assign,clone,filter,each,map,random,reduce,some
-_ = require('../lodash_custom/lodash.custom.min.js')._
+Math.seedrandom 'terra :)'
+_ = require('lodash')
 
 ###*
 # Takes a cell and returns the coordinates of its neighbors

@@ -1,4 +1,4 @@
-_ = require('./util.js')
+_ = require('./util')
 
 module.exports = (canvas, grid, cellSize, trails, background) ->
   ctx = canvas.getContext('2d')

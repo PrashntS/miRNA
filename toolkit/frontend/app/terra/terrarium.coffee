@@ -1,7 +1,7 @@
 _ = require('./util')
-factory = require('./creature.js')
-display = require('./display.js')
-dom = require('./dom.js')
+factory = require('./creature')
+display = require('./display')
+dom = require('./dom')
 
 ###*
 # Create a grid and fill it by using a function, 2-d array, or uniform type

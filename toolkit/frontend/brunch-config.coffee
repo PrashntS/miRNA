@@ -3,8 +3,10 @@ module.exports = config:
     public: '../miRNA/static'
   files:
     javascripts: joinTo:
-      'libraries.js': /^bower_components\//
-      'app.js': /^(app)\//
+      'libraries.js': (path) ->
+        /^(bower_components)|(lodash)\//.test path
+      'app.js': (path) ->
+        /^(app)\//.test path
     stylesheets:
       joinTo:
         'libraries.css': /^bower_components\//
@@ -25,6 +27,9 @@ module.exports = config:
         )()
     autoReload:
       enabled: yes
+  npm:
+    enabled: yes
+    whitelist: ['lodash']
   conventions:
     ignored: [
       /fontawesome/

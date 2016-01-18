@@ -45,9 +45,6 @@
         "pace.js",
         "themes/black/pace-theme-flash.css"
       ]
-    },
-    "normalize-css": {
-      "main": "normalize.css"
     }
   }
 }
