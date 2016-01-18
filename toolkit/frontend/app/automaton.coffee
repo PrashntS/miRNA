@@ -20,21 +20,46 @@ exports.automaton =
       insertAfter: document.getElementById('overlay_terra')
 
     g = new entities.Protein
-      color: [0,0,0]
+      color: [0,100,0]
+      gene_ref: "CDKN1A"
+      symbol: "KER"
+
+    g2 = () -> new entities.Gene
+      color: [200, 10, 100]
+      symbol: "CDKN1A"
+      host_of: ["A", "B"],
+      targeted_by: [
+        {symbol: "C", affinity: 10}
+        {symbol: "D", affinity: 20}
+        {symbol: "E", affinity: 30}
+      ]
+
+    g3 = () -> new entities.miRNA
+      color: [0, 100, 10]
+      symbol: "C"
+
+    g4 = new entities.miRNA
+      color: [100, 100, 10]
+      symbol: "E"
+
+    g5 = new entities.miRNA
+      color: [200, 10, 100]
+      symbol: "H"
+
+
+    h = new entities.Protein
+      color: [100,0,0]
       gene_ref: "CDKN1A"
       symbol: "KER"
 
     @t.grid = @t.makeGrid [
-      [g]
+      [g3(), g3(), g3(), g3(), g3()]
+      []
+      []
+      [g3(), g2(), g3(), g3(), g3(), g3(), g3()]
     ]
 
-    @t.animate 50, =>
-      console.log g
-      g.age = 100
-      console.log g
-
-      @t.animate 100, ->
-        console.log g
+    @t.animate 10, => console.log @t.grid
 
     $(".overlay-terra").find("canvas")
     .height(dim.h).width(dim.w)

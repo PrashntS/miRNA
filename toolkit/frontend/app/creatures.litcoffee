@@ -37,8 +37,6 @@ performed by the entities is sufficiently small.
 The following function takes in the surrounding entities (neighbors) and makes
 an informed decision of the the movement.
 
-      move: (neighbors) ->
-
 The decision is taken as follows:
 1. Find the spots that are empty.
 2. In those empty spots, find the location where the cell could go next.
@@ -46,18 +44,18 @@ The decision is taken as follows:
 Currently, this dicision is taken with a random probability, however, a more
 "vectorial" movement can easily be implemented.
 
+      move: (neighbors) ->
         spots = _.filter neighbors, (spot) -> not spot.creature
         if spots.length
           step = spots[_.random(spots.length - 1)]
 
           # if _.random(100) > 25
-          return {
+          return [{
             x: step.coords.x
             y: step.coords.y
             creature: @
-            successFn: -> false
-            failureFn: -> false
-          }
+            observed: yes
+          }]
         false
 
 ## Degradation
@@ -67,17 +65,19 @@ entities are expected to degrade into the constituents after they are either
 too old, or have a "poor" health.
 
       degrade: (x, y, opts) ->
+        return false if not @degrades_to
+
         if @age > 100 # or _.random(10**5) < 100
           degraded = new @degrades_to
             symbol: @symbol
+            color: [0,0,0]
 
-          return {
+          return [{
             x: x
             y: y
             creature: degraded
-            successFn: -> false
-            failureFn: -> true
-          }
+            observed: yes
+          }]
 
         return false
 
@@ -96,14 +96,7 @@ This dumb function allows the entity to move and degrade.
       process: (neighbors, x, y) ->
         @age += 1
         step = @degrade(x, y) or @move(neighbors)
-        if step
-          return {
-            x: step.x
-            y: step.y
-            creature: step.creature
-            observed: yes
-          }
-        return false
+        return step or false
 
 # Genes
 
@@ -116,6 +109,8 @@ prevented by binding to the miRNAs and forming a miRNA-Gene complex.
       constructor: (opts) ->
         @type = 'Gene'
         @degrades_to = FreeNucleotide
+        @host_of = opts.host_of
+        @targeted_by = opts.targeted_by
         super opts
 
 The following function determines if the gene would form a miRNA Gene complex.
@@ -128,39 +123,38 @@ This function, similar to the "move" function, inspects its neighbors.
 
       miRNA_Gene_Complex: (neighbors) ->
         spots = _.filter neighbors, (spot) =>
-          return false if spot.creature.type isnt 'miRNA'
+          return false if spot.creature?.type isnt 'miRNA'
 
-          target_id = _.findIndex spot.creature.targets, (target) =>
-            target.symbol is @symbol
+          target_id = _.findIndex @targeted_by, (x) ->
+            x.symbol is spot.creature.symbol
 
           return target_id isnt -1
 
         if spots.length
           #: Order all the spots on the basis of least affinity
           spots = _.sortBy spots, (spot) =>
-            target = _.find spot.creature.targets, (target) =>
-              target.symbol is @symbol
+            target = _.find @targeted_by, (x) ->
+              x.symbol is spot.creature.symbol
 
             return target.affinity
 
-          binding_mir = spots.first()
+          binding_mir = _.head(spots)
 
-          target = _.find binding_mir.creature.targets, (target) =>
-            target.symbol is @symbol
+          target = _.find @targeted_by, (x) ->
+            x.symbol is binding_mir.creature.symbol
 
-          complex_mir = terra.make 'mirna_gene_complex',
-            coords: binding_mir.coords
-            gene_ref: @.creature
-            mirna_ref: binding_mir.creature
-            dGbinding: target.affinity
+          complex_mir = new miRNAGeneComplex
+            symbol: "#{@.symbol}-#{binding_mir.symbol}"
+            gene_ref: @.symbol
+            mirna_ref: binding_mir.creature.symbol
+          binding_mir.creature.age = 200
 
-          return {
+          return [{
             x: binding_mir.coords.x
             y: binding_mir.coords.y
             creature: complex_mir
-            successFn: -> false
-            failureFn: -> true
-          }
+            observed: no
+          }]
 
         return false
 
@@ -204,7 +198,7 @@ If none of the above, happens, then we simply move.
         @age += 1
 
         performance = [
-          # @mirna_gene_complex
+          @miRNA_Gene_Complex(neighbors)
           # @rrna_gene_complex
           @move(neighbors)
         ]
@@ -216,12 +210,7 @@ If none of the above, happens, then we simply move.
 
         if accepted.length
           step = accepted[_.random(accepted.length - 1)]
-          return {
-            x: step.x
-            y: step.y
-            creature: step.creature
-            observed: yes
-          }
+          return step
 
         return false
 
@@ -252,6 +241,7 @@ degrade, and, dissociate.
         @type = 'miRNAGeneComplex'
         {@gene_ref, @mirna_ref} = opts
         @degrades_to = FreeNucleotide
+        super opts
 
 Dissociation happens where the miRNA and Gene dissociate. (Duh) However, the
 dissociation ONLY initiates if there's an empty neighbour.
@@ -306,24 +296,19 @@ dissociate.
         @age += 1
 
         performance = [
-          @dissociate(neighbors, x, y)
+          # @dissociate(neighbors, x, y)
           @move(neighbors)
         ]
 
-        degrade_act = @degrade(x, y)
+        # degrade_act = @degrade(x, y)
 
         accepted = _.compact performance
-        accepted = if degrade_act then [degrade_act] else accepted
+        # accepted = if degrade_act then [degrade_act] else accepted
 
         if accepted.length
           step = accepted[_.random(accepted.length - 1)]
 
-          return {
-            x: step.x
-            y: step.y
-            creature: step.creature
-            observed: yes
-          }
+          return step
 
         return false
 
