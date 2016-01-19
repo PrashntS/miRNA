@@ -12,6 +12,20 @@ exports.interaction =
         @explode = () ->
           console.log "Hey"
 
+    if $('.cd-stretchy-nav').length > 0
+      stretchyNavs = $('.cd-stretchy-nav')
+      stretchyNavs.each ->
+        stretchyNav = $(this)
+        stretchyNavTrigger = stretchyNav.find('.cd-nav-trigger')
+        stretchyNavTrigger.on 'click', (event) ->
+          event.preventDefault()
+          stretchyNav.toggleClass 'nav-is-visible'
+          return
+        return
+      $(document).on 'click', (event) ->
+        !$(event.target).is('.cd-nav-trigger') and !$(event.target).is('.cd-nav-trigger span') and stretchyNavs.removeClass('nav-is-visible')
+        return
+
     func = new Fanck
 
     gui = new dat.GUI

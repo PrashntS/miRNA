@@ -24,7 +24,7 @@
     <section class="sidebar">
       <h1 class="logo">miRNA <strong>toolbox</strong></h1>
 
-      <dic id="nodes">
+      <div id="nodes">
         <div class="form-field">
           <label>Gene</label>
           <select class="gene_select rivets"
@@ -42,11 +42,27 @@
                   rv-value="nodes.mirna"
                   ></select>
         </div>
-      </dic>
+      </div>
 
       <div class="form-field">
         <label>Simulation Parameters</label>
         <div id="data_gui"></div>
+      </div>
+
+      <div class="cd-stretchy-nav">
+        <a class="cd-nav-trigger" href="#0">
+          Menu
+          <span aria-hidden="true"></span>
+        </a>
+
+        <ul>
+          <li><a href="#0" class="active"><span>Knockout</span><i class="fa fa-eraser"></i></a></li>
+          <li><a href="#0"><span>Observe</span><i class="fa fa-crosshairs"></i></a></li>
+          <li><a href="#0"><span>Simulate</span><i class="fa fa-dot-circle-o"></i></a></li>
+          <li><a href="#0"><span>Information</span><i class="fa fa-info-circle"></i></a></li>
+        </ul>
+
+        <span aria-hidden="true" class="stretchy-nav-bg"></span>
       </div>
     </section>
   </header>

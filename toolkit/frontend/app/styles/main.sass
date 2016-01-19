@@ -1,5 +1,6 @@
 @import "bourbon"
 @import "neat"
+@import "nav"
 
 @import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat)
 
@@ -98,6 +99,10 @@ header
       content: ""
       display: table
       height: 0
+
+    .cd-stretchy-nav
+      font-family: $fonthead
+      @include calc(left, "50% + #{$sidebar-width}/2")
 
 section
   .form-field
