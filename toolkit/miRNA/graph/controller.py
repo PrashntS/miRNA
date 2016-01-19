@@ -4,6 +4,7 @@
 
 import networkx as nx
 
+from pydash import py_
 from flask_restful import Resource, reqparse
 
 from miRNA.polynucleotide.model import Gene, miRNA
@@ -76,13 +77,17 @@ class SubGraphController(Resource):
     factory(in_mirna, in_genes)
     factory(miRNA_store.copy(), genes_store.copy())
 
-    trn = lambda x: str(x)
-    tre = lambda x: [str(x[0]), str(x[1])]
+    node_fmt = lambda x: {'name': str(x), 'group': x._cls}
+    nodes = list(map(node_fmt, miRNA_store | genes_store))
+
+    #: Find Node Index
+    fni = lambda x: py_.find_index(nodes, lambda _: str(x) == _['name'])
+
+    link_fmt = lambda x: {'source': fni(x[0]), 'target': fni(x[1]), 'value': 1}
+    links = list(map(link_fmt, target_list | host_list))
 
     return {
-      'target_list': list(map(tre, target_list)),
-      'host_list': list(map(tre, host_list)),
-      'miRNA_store': list(map(trn, miRNA_store)),
-      'genes_store': list(map(trn, genes_store)),
+      'nodes': nodes,
+      'links': links
     }
 

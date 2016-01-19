@@ -7,77 +7,106 @@ class GraphView
     {@width, @height, @elem} = opts
 
     @nodemousedn = no
-    @color = d3.scale.category20()
+    @fill = d3.scale.category20()
     @webcola = cola.d3adaptor().size [@width, @height]
+
+    @force = d3.layout.force()
+      .gravity(.05)
+      .charge(-240)
+      .linkDistance(50)
+      .size([@width, @height])
 
     @init_containers()
 
   init_containers: ->
-    @outer = d3.select(@elem)
+    @svg = d3.select(@elem)
       .append 'svg'
+      .attr   'class', 'svgpos'
       .attr   'width', @width
       .attr   'height', @height
-      .attr   'pointer-events', 'all'
+      .call(d3.behavior.zoom().on 'zoom', @redraw)
 
-    @outer.append('rect')
-      .attr 'class', 'background'
-      .attr 'width', '100%'
-      .attr 'height', '100%'
-      .call d3.behavior.zoom().on 'zoom', @redraw
+    @svg.append('rect')
+      .attr('class', 'background')
+      .attr('width', "100%")
+      .attr('height', "100%")
 
-    @vis = @outer.append('g')
+    @vis = @svg.append('g')
+
+  init_defs: ->
+    @svg.append('svg:defs').append('svg:marker')
+        .attr('id', 'end-arrow')
+        .attr('viewBox', '0 -5 10 10')
+        .attr('refX', 6)
+        .attr('markerWidth', 3)
+        .attr('markerHeight', 3)
+        .attr('orient', 'auto')
+      .append('svg:path')
+        .attr('d', 'M0,-5L10,0L0,5')
+        .attr('fill', '#000')
 
   redraw: =>
-    return if @nodemousedn
-    velocity = 10
-    scale = d3.event.scale ** velocity
-    translateY = (300 - (300 * scale)) / 2
-    translateX = (200 - (200 * scale)) / 2
-
     @vis.attr 'transform',
-      "translate(#{translateX}, #{translateY}) scale(#{scale})"
+      "translate(#{d3.event.translate}) scale(#{d3.event.scale})"
+
+  graph_factory: (dat) =>
+    $.getJSON "/api/graph?#{dat}"
+    .done (dat) =>
+      {target_list, host_list, miRNA_store, genes_store} = dat
 
   routine: ->
-    d3.json '/static/mis.json', (error, graph) =>
-      @webcola.nodes(graph.nodes)
-        .links(graph.links)
-        .jaccardLinkLengths(40, 0.7)
-        .start 30
+    d3.json '/api/graph?genes=RIN2&mirna=', (error, graph) =>
 
-      link = @vis.selectAll('.link')
-        .data(graph.links).enter()
-        .append 'line'
-        .attr 'class', 'link'
-        .style 'stroke-width', (d) -> Math.sqrt d.value
+      radius = 10
+      width =
 
-      node = @vis.selectAll('.node')
-        .data(graph.nodes).enter()
-        .append 'circle'
-        .attr 'class', 'node'
-        .attr 'r', 5
-        .style 'fill', (d) => @color d.group
-        .call @webcola.drag
+      link = @svg
+        .selectAll('line')
+        .data(graph.links)
+        .enter()
+        .append('line')
 
-      node.append('title').text (d) -> d.name
+      node = @svg
+        .selectAll('circle')
+        .data(graph.nodes)
+        .enter()
+        .append('circle')
+        .attr('r', radius - .75)
+        .style('fill', (d) => @fill d.group)
+        .style('stroke', (d) => d3.rgb(@fill(d.group)).darker())
+        .call(@force.drag)
 
-      @webcola.on 'tick', ->
+      tick = =>
+        node.attr('cx', (d) =>
+          d.x = Math.max(radius, Math.min(@width - radius, d.x)))
+        .attr 'cy', (d) =>
+          d.y = Math.max(radius, Math.min(@height - radius, d.y))
+
         link.attr 'x1', (d) -> d.source.x
             .attr 'y1', (d) -> d.source.y
             .attr 'x2', (d) -> d.target.x
             .attr 'y2', (d) -> d.target.y
+        return
 
-        node.attr 'cx', (d) -> d.x
-            .attr 'cy', (d) -> d.y
+      @force
+        .nodes(graph.nodes)
+        .links(graph.links)
+        .on('tick', tick)
+        .start()
 
 class UserView
   constructor: (opts) ->
     @select_init()
     @bound_select_input = {}
     @select_init()
+    @rivets_init()
 
   rivets_init: ->
     @rivets_view = rivets.bind($('#nodes'), {nodes: @bound_select_input})
     @bound_select_input.genes = ['RIN2']
+
+  select_val: ->
+    $.param(@bound_select_input, true)
 
   select_init: ->
     factory_select = (opts) ->
@@ -159,9 +188,7 @@ class UserView
         """
         markup
 
-
 exports.interaction =
-
   mmn: ->
     width = $(".overlay-terra").width()
     height = $(".overlay-terra").height()
@@ -174,6 +201,8 @@ exports.interaction =
       elem: '#graphcanvas'
 
     g.routine()
+    # g.graph_factory ui.select_val()
+
 
   init: ->
     class Fanck
