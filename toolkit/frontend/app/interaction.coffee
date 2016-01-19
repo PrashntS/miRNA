@@ -49,9 +49,9 @@ class GraphView
     @svg.append('svg:defs').append('svg:marker')
         .attr('id', 'start-arrow')
         .attr('viewBox', '0 -5 10 10')
-        .attr('refX', 4)
-        .attr('markerWidth', 3)
-        .attr('markerHeight', 3)
+        .attr('refX', 0)
+        .attr('markerWidth', 5)
+        .attr('markerHeight', 5)
         .attr('orient', 'auto')
       .append('svg:path')
         .attr('d', 'M0,-5L10,0L0,5')
@@ -80,17 +80,35 @@ class GraphView
         .attr('class', 'link')
 
       node = @svg
-        .selectAll('circle')
+        .selectAll('.node')
         .data(graph.nodes)
         .enter()
+        .append('g')
+        .attr("class", "node")
+        .call(@force.drag)
+
+      circle = node
         .append('circle')
         .attr('r', radius - .75)
         .style('fill', (d) => @fill d.group)
         .style('stroke', (d) => d3.rgb(@fill(d.group)).darker())
-        .call(@force.drag)
+        .on 'mouseover', ->
+          d3.select(@)
+            .transition()
+            .duration(200)
+            .attr("r", 16)
+        .on 'mouseout', ->
+          d3.select(@)
+            .transition()
+            .duration(200)
+            .attr("r", 5)
+
+      label = node.append("text")
+        .attr("dy", ".35em")
+        .text((d) -> d.name)
 
       tick = ->
-        node.attr 'cx', (d) -> d.x
+        circle.attr 'cx', (d) -> d.x
             .attr 'cy', (d) -> d.y
 
         link.attr 'points', (d) ->
@@ -99,6 +117,9 @@ class GraphView
           tx = d.target.x
           ty = d.target.y
           "#{sx},#{sy} #{(sx + tx)/2},#{(sy + ty)/2} #{tx},#{ty}"
+
+        label.attr "x", (d) -> d.x + 8
+            .attr "y", (d) -> d.y
 
         # link.attr 'x1', (d) -> d.source.x
         #     .attr 'y1', (d) -> d.source.y
