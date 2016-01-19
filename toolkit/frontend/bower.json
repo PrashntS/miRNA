@@ -46,6 +46,15 @@
         "pace.js",
         "themes/black/pace-theme-flash.css"
       ]
+    },
+    "vex": {
+      "main": [
+        "js/vex.combined.min.js",
+        "sass/_mixins.sass",
+        "sass/_keyframes.sass",
+        "sass/vex.sass",
+        "sass/vex-theme-default.sass"
+      ]
     }
   }
 }
