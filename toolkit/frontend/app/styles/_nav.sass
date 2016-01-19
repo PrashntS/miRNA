@@ -23,7 +23,9 @@ $alice-blue:    #E4F1FE
   left: 50%
   right: auto
   @include transform(translateX(-50%))
-  width: $width * 5
+  // width: $width * 5
+  width: auto
+  height: $width
 
   .stretchy-nav-bg
     position: absolute
@@ -98,10 +100,12 @@ $alice-blue:    #E4F1FE
     position: relative
     z-index: 2
     margin: 0
+    width: 0
     padding: 0
     visibility: hidden
     text-align: right
-    @include transition(visibility 0.3s)
+    @include transform(translateY(100px))
+    @include transition(visibility 0.3s, width 0.5s step-end)
 
     &::after
       clear: both
@@ -186,6 +190,11 @@ $alice-blue:    #E4F1FE
 
     ul
       visibility: visible
+      width: $width * 5
+      @include transform(translateY(0))
+      @include transition(visibility 0.3s, width 0.4s step-start)
+
+      // @include transition(display 0s step-start)
       a
         i
           // navigation item icons

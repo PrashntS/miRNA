@@ -37,19 +37,26 @@ exports.interaction =
     f2.add func, 'explode'
     f2.addColor func, 'col'
 
-    @G = new (jsnx.DiGraph)
+    @G = new jsnx.DiGraph
 
     jsnx.draw @G,
       element: '#graphcanvas'
       withLabels: true
+      # labels: -> 'LOL!?'
+      edgeLabels: -> 'xD'
       nodeStyle:
         fill: (d) ->
           d.data.color
       labelStyle: fill: 'black'
-      edgeStyle:
-        fill: '#6C7A89'
-        opacity: 0.5
+      # edgeStyle:
+      #   fill: '#6C7A89'
+      #   opacity: 0.5
       stickyDrag: true
+      weighted: yes
+      weightedStroke: yes
+      weights: (s) ->
+        console.log _.random(10), s
+        _.random(10)
     , true
 
     a = 2
@@ -110,6 +117,7 @@ exports.interaction =
 
     $('.gene_select').select2 factory_select
       uri: '/api/gene'
+      value: 'CDKN1A'
       placeholder: "Please Enter a Few Genes"
       templateResult: (obj) ->
         return obj.text if obj.loading
@@ -146,6 +154,9 @@ exports.interaction =
 
     $('select.rivets').on 'change', =>
       graph_factory()
+
+    @nodes.genes = ['RIN2']
+    graph_factory()
 
   node_val: ->
     @nodes
