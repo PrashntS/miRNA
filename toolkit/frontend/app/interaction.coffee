@@ -2,18 +2,74 @@
 rivets = require('rivets').rvt
 _ = require('lodash')
 
+class Graph
+  constructor: (opts)->
+    @G = new jsnx.DiGraph
+    @r = {}
+
+  fetch: (dat, func) ->
+    $.getJSON "/api/graph?#{dat}"
+    .done (dat) =>
+      {target_list, host_list, miRNA_store, genes_store} = dat
+
+      @miRNAs = _.union @miRNAs, miRNA_store
+
+      @G.addNodesFrom miRNA_store
+      @G.addNodesFrom genes_store
+      @G.addEdgesFrom target_list
+      @G.addEdgesFrom host_list
+
+      @r = jsnx.toDictOfLists(@G)
+
+      if func then func()
+
+  nodes: () ->
+    ret = []
+
+    for k, v of @r
+      ret.push
+        name: k
+        type: if _.indexOf(@miRNAs, k) > -1 then 'miRNA' else 'Gene'
+        weight: v.length
+
+    ret
+
+  edges: () ->
+    n = @nodes()
+    ret = []
+    for src, v of @r
+      for target in v
+        ret.push
+          source: _.findIndex n, (d) -> d.name is src
+          target: _.findIndex n, (d) -> d.name is target
+
+    ret
+
 class GraphView
   constructor: (opts)->
     {@width, @height, @elem} = opts
+    @nodes = []
+    @links = []
+    @miRNAs = []
+
+    @G = new Graph
 
     @nodemousedn = no
     @fill = d3.scale.category20()
-    @webcola = cola.d3adaptor().size [@width, @height]
 
-    @force = d3.layout.force()
-      .gravity(.05)
+    @forcem = d3.layout.force()
+      .gravity(.5)
       .charge(-240)
-      .linkDistance(50)
+      .linkDistance(100)
+      .size([@width, @height])
+
+    @force = cola.d3adaptor()
+      .linkDistance(200)
+      # .flowLayout("y", 30)
+      # .avoidOverlaps(true)
+
+      # .symmetricDiffLinkLengths(60)
+
       .size([@width, @height])
 
     @init_containers()
@@ -58,79 +114,109 @@ class GraphView
         .attr('fill', '#000')
 
   redraw: =>
+    console.log d3.event
     @vis.attr 'transform',
       "translate(#{d3.event.translate}) scale(#{d3.event.scale})"
 
-  graph_factory: (dat) =>
-    $.getJSON "/api/graph?#{dat}"
-    .done (dat) =>
-      {target_list, host_list, miRNA_store, genes_store} = dat
+  get_graph: (dat) ->
+
+    @G.fetch dat, =>
+      @nodes = @G.nodes()
+      @links = @G.edges()
+
+      @routine()
+
+  graph_factory: (dat) ->
+    # $.getJSON "/api/graph?#{dat}"
+    # .done (dat) =>
+    d3.json "/api/graph?#{dat}", (error, graph) =>
+      {nodes, links} = graph
+
+      new jsnx.DiGraph
+
+      @nodes = _.unionWith @nodes, nodes, (x, y) ->
+        x.name is y.name
+
+      @links = _.unionWith @links, links, (x, y) ->
+        if typeof y.source is 'number' and typeof x.source is 'number'
+          nodes[x.source].name is nodes[y.source].name and
+          nodes[x.target].name is nodes[y.target].name
+
+        else if typeof y.source is 'object' and typeof x.source is 'number'
+          nodes[x.source].name is y.source.name and
+          nodes[x.target].name is y.target.name
+
+        else if typeof y.source is 'object' and typeof x.source is 'object'
+          x.source.name is y.source.name and
+          x.target.name is y.target.name
+
+        else if typeof y.source is 'number' and typeof x.source is 'object'
+          x.source.name is nodes[y.source].name and
+          x.target.name is nodes[y.target].name
+
+      @routine()
 
   routine: ->
-    d3.json '/api/graph?genes=RIN2&&mirna=', (error, graph) =>
+    radius = 5
 
-      radius = 5
+    link = @vis
+      .selectAll('.link')
+      .data(@links)
+      .enter()
+      .append('polyline')
+      .style('marker-mid', 'url(#start-arrow)')
+      .attr('class', 'link')
 
-      link = @svg
-        .selectAll('.link')
-        .data(graph.links)
-        .enter()
-        .append('polyline')
-        .style('marker-mid', 'url(#start-arrow)')
-        .attr('class', 'link')
+    node = @vis
+      .selectAll('.node')
+      .data(@nodes)
+      .enter()
+      .append('g')
+      .attr("class", "node")
+      .call(@force.drag)
 
-      node = @svg
-        .selectAll('.node')
-        .data(graph.nodes)
-        .enter()
-        .append('g')
-        .attr("class", "node")
-        .call(@force.drag)
+    circle = node
+      .append('circle')
+      .attr('r', (d) -> radius)
+      .style('fill', (d) => @fill d.type)
+      # .style('stroke', (d) => d3.rgb(@fill(d.group)).darker())
+      .on 'mouseover', ->
+        d3.select(@)
+          .transition()
+          .duration(200)
+          .attr("r", 16)
+      .on 'mouseout', ->
+        d3.select(@)
+          .transition()
+          .duration(200)
+          .attr("r", 5)
 
-      circle = node
-        .append('circle')
-        .attr('r', radius - .75)
-        .style('fill', (d) => @fill d.group)
-        .style('stroke', (d) => d3.rgb(@fill(d.group)).darker())
-        .on 'mouseover', ->
-          d3.select(@)
-            .transition()
-            .duration(200)
-            .attr("r", 16)
-        .on 'mouseout', ->
-          d3.select(@)
-            .transition()
-            .duration(200)
-            .attr("r", 5)
+    label = node.append("text")
+      .attr("dy", ".35em")
+      .text((d) -> d.name)
 
-      label = node.append("text")
-        .attr("dy", ".35em")
-        .text((d) -> d.name)
+    tick = ->
+      circle.attr 'cx', (d) -> d.x
+          .attr 'cy', (d) -> d.y
 
-      tick = ->
-        circle.attr 'cx', (d) -> d.x
-            .attr 'cy', (d) -> d.y
+      link.attr 'points', (d) ->
+        sx = d.source.x
+        sy = d.source.y
+        tx = d.target.x
+        ty = d.target.y
+        "#{sx},#{sy} #{(sx + tx)/2},#{(sy + ty)/2} #{tx},#{ty}"
 
-        link.attr 'points', (d) ->
-          sx = d.source.x
-          sy = d.source.y
-          tx = d.target.x
-          ty = d.target.y
-          "#{sx},#{sy} #{(sx + tx)/2},#{(sy + ty)/2} #{tx},#{ty}"
+      label
+        .attr "x", (d) -> d.x + 8
+        .attr "y", (d) -> d.y
 
-        label.attr "x", (d) -> d.x + 8
-            .attr "y", (d) -> d.y
+    @force
+      .nodes(@nodes)
+      .links(@links)
+      .jaccardLinkLengths(100,0.7)
+      .on('tick', tick)
+      .start()
 
-        # link.attr 'x1', (d) -> d.source.x
-        #     .attr 'y1', (d) -> d.source.y
-        #     .attr 'x2', (d) -> d.target.x
-        #     .attr 'y2', (d) -> d.target.y
-
-      @force
-        .nodes(graph.nodes)
-        .links(graph.links)
-        .on('tick', tick)
-        .start()
 
 class UserView
   constructor: (opts) ->
@@ -138,10 +224,16 @@ class UserView
     @bound_select_input = {}
     @select_init()
     @rivets_init()
+    @toolbar_init()
 
   rivets_init: ->
     @rivets_view = rivets.bind($('#nodes'), {nodes: @bound_select_input})
     @bound_select_input.genes = ['RIN2']
+
+  toolbar_init: ->
+    @toolbar = $('.cd-stretchy-nav')
+    @toolbar.find('.cd-nav-trigger').on 'click', =>
+      @toolbar.toggleClass 'nav-is-visible'
 
   select_val: ->
     $.param(@bound_select_input, true)
@@ -238,9 +330,24 @@ exports.interaction =
       height: height
       elem: '#graphcanvas'
 
-    g.routine()
-    # g.graph_factory ui.select_val()
+    g.get_graph ui.select_val()
 
+    # g.routine()
+    # $('select.rivets').on 'change', ->
+    #   g.get_graph ui.select_val()
+
+    # g2 = new jsnx.DiGraph
+
+    # $.getJSON "/api/graph?genes=CDKN1A"
+    # .done (dat) ->
+    #   {target_list, host_list, miRNA_store, genes_store} = dat
+
+    #   g2.addNodesFrom miRNA_store
+    #   g2.addNodesFrom genes_store
+    #   g2.addEdgesFrom target_list
+    #   g2.addEdgesFrom host_list
+
+    #   console.log g2.edges()
 
   init: ->
     class Fanck
@@ -250,20 +357,6 @@ exports.interaction =
         @col = '#FFFFFF'
         @explode = () ->
           console.log "Hey"
-
-    if $('.cd-stretchy-nav').length > 0
-      stretchyNavs = $('.cd-stretchy-nav')
-      stretchyNavs.each ->
-        stretchyNav = $(this)
-        stretchyNavTrigger = stretchyNav.find('.cd-nav-trigger')
-        stretchyNavTrigger.on 'click', (event) ->
-          event.preventDefault()
-          stretchyNav.toggleClass 'nav-is-visible'
-          return
-        return
-      $(document).on 'click', (event) ->
-        !$(event.target).is('.cd-nav-trigger') and !$(event.target).is('.cd-nav-trigger span') and stretchyNavs.removeClass('nav-is-visible')
-        return
 
     func = new Fanck
 
@@ -276,46 +369,6 @@ exports.interaction =
     f2.add func, 'explode'
     f2.addColor func, 'col'
 
-    @G = new jsnx.DiGraph
-
-    jsnx.draw @G,
-      element: '#graphcanvas'
-      withLabels: true
-      # labels: -> 'LOL!?'
-      edgeLabels: -> 'xD'
-      nodeStyle:
-        fill: (d) ->
-          d.data.color
-      labelStyle: fill: 'black'
-      # edgeStyle:
-      #   fill: '#6C7A89'
-      #   opacity: 0.5
-      stickyDrag: true
-      weighted: yes
-      weightedStroke: yes
-      weights: (s) ->
-        console.log _.random(10), s
-        _.random(10)
-    , true
-
-    a = 2
-    graph_factory = (opts) =>
-      $.getJSON "/api/graph?#{$.param(@nodes, true)}"
-      .done (dat) =>
-        $(".overlay-info").fadeOut()
-        $(".overlay-terra").fadeOut()
-        {target_list, host_list, miRNA_store, genes_store} = dat
-
-        @G.addNodesFrom miRNA_store,
-          color: '#FF0000'
-          strokeWidth: 0
-
-        @G.addNodesFrom genes_store,
-          color: '#87D37C'
-          strokeWidth: 0
-
-        @G.addEdgesFrom target_list
-        @G.addEdgesFrom host_list
 
     $('#data_gui').html(gui.domElement)
 
