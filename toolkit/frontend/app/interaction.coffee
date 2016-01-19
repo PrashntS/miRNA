@@ -17,6 +17,7 @@ class GraphView
       .size([@width, @height])
 
     @init_containers()
+    @init_defs()
 
   init_containers: ->
     @svg = d3.select(@elem)
@@ -45,6 +46,17 @@ class GraphView
         .attr('d', 'M0,-5L10,0L0,5')
         .attr('fill', '#000')
 
+    @svg.append('svg:defs').append('svg:marker')
+        .attr('id', 'start-arrow')
+        .attr('viewBox', '0 -5 10 10')
+        .attr('refX', 4)
+        .attr('markerWidth', 3)
+        .attr('markerHeight', 3)
+        .attr('orient', 'auto')
+      .append('svg:path')
+        .attr('d', 'M0,-5L10,0L0,5')
+        .attr('fill', '#000')
+
   redraw: =>
     @vis.attr 'transform',
       "translate(#{d3.event.translate}) scale(#{d3.event.scale})"
@@ -55,16 +67,17 @@ class GraphView
       {target_list, host_list, miRNA_store, genes_store} = dat
 
   routine: ->
-    d3.json '/api/graph?genes=RIN2&mirna=', (error, graph) =>
+    d3.json '/api/graph?genes=RIN2&&mirna=', (error, graph) =>
 
-      radius = 10
-      width =
+      radius = 5
 
       link = @svg
-        .selectAll('line')
+        .selectAll('.link')
         .data(graph.links)
         .enter()
-        .append('line')
+        .append('polyline')
+        .style('marker-mid', 'url(#start-arrow)')
+        .attr('class', 'link')
 
       node = @svg
         .selectAll('circle')
@@ -76,17 +89,21 @@ class GraphView
         .style('stroke', (d) => d3.rgb(@fill(d.group)).darker())
         .call(@force.drag)
 
-      tick = =>
-        node.attr('cx', (d) =>
-          d.x = Math.max(radius, Math.min(@width - radius, d.x)))
-        .attr 'cy', (d) =>
-          d.y = Math.max(radius, Math.min(@height - radius, d.y))
+      tick = ->
+        node.attr 'cx', (d) -> d.x
+            .attr 'cy', (d) -> d.y
 
-        link.attr 'x1', (d) -> d.source.x
-            .attr 'y1', (d) -> d.source.y
-            .attr 'x2', (d) -> d.target.x
-            .attr 'y2', (d) -> d.target.y
-        return
+        link.attr 'points', (d) ->
+          sx = d.source.x
+          sy = d.source.y
+          tx = d.target.x
+          ty = d.target.y
+          "#{sx},#{sy} #{(sx + tx)/2},#{(sy + ty)/2} #{tx},#{ty}"
+
+        # link.attr 'x1', (d) -> d.source.x
+        #     .attr 'y1', (d) -> d.source.y
+        #     .attr 'x2', (d) -> d.target.x
+        #     .attr 'y2', (d) -> d.target.y
 
       @force
         .nodes(graph.nodes)
