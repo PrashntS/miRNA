@@ -1,7 +1,7 @@
 
 rivets = require('rivets').rvt
 _ = require('lodash')
-g = require('utils/graph')
+GraphUtils = require('utils/graph')
 
 class Graph
   constructor: (opts)->
@@ -41,7 +41,6 @@ class Graph
       else
         @nodes[id].weight = v.length
 
-
   i_edges: () ->
     for src, v of @r
       for target in v
@@ -53,173 +52,22 @@ class Graph
 
 class GraphView
   constructor: (opts)->
-    {@width, @height, @elem} = opts
-    @G = new Graph
-    @nodes = @G.nodes
-    @links = @G.edges
-    @miRNAs = []
+    @graph = new GraphUtils.Graph opts
 
-    @nodemousedn = no
-    @fill = d3.scale.category20()
+  fetch_and_update: (dat) ->
+    $.getJSON "/api/graph?#{dat}"
+      .done (data) =>
+        for gene in data.genes_store
+          @graph.addNode gene
+        for mirna in data.miRNA_store
+          @graph.addNode mirna
 
-    @forcem = d3.layout.force()
-      .gravity(.5)
-      .charge(-240)
-      .linkDistance(100)
-      .size([@width, @height])
+        for edge in data.target_list
+          @graph.addLink edge[0], edge[1], '10'
+        for edge in data.host_list
+          @graph.addLink edge[0], edge[1], '10'
 
-    @force = cola.d3adaptor()
-      .linkDistance(200)
-      # .flowLayout("y", 30)
-      # .avoidOverlaps(true)
-
-      # .symmetricDiffLinkLengths(60)
-
-      .size([@width, @height])
-
-    @init_containers()
-    @init_defs()
-
-  init_containers: ->
-    @svg = d3.select(@elem)
-      .append 'svg'
-      .attr   'class', 'svgpos'
-      .attr   'width', @width
-      .attr   'height', @height
-      .call(d3.behavior.zoom().on 'zoom', @redraw)
-
-    @svg.append('rect')
-      .attr('class', 'background')
-      .attr('width', "100%")
-      .attr('height', "100%")
-
-    @vis = @svg.append('g')
-
-  init_defs: ->
-    @svg.append('svg:defs').append('svg:marker')
-        .attr('id', 'end-arrow')
-        .attr('viewBox', '0 -5 10 10')
-        .attr('refX', 6)
-        .attr('markerWidth', 3)
-        .attr('markerHeight', 3)
-        .attr('orient', 'auto')
-      .append('svg:path')
-        .attr('d', 'M0,-5L10,0L0,5')
-        .attr('fill', '#000')
-
-    @svg.append('svg:defs').append('svg:marker')
-        .attr('id', 'start-arrow')
-        .attr('viewBox', '0 -5 10 10')
-        .attr('refX', 0)
-        .attr('markerWidth', 5)
-        .attr('markerHeight', 5)
-        .attr('orient', 'auto')
-      .append('svg:path')
-        .attr('d', 'M0,-5L10,0L0,5')
-        .attr('fill', '#000')
-
-  redraw: =>
-    console.log d3.event
-    @vis.attr 'transform',
-      "translate(#{d3.event.translate}) scale(#{d3.event.scale})"
-
-  get_graph: (dat) ->
-
-    @G.fetch dat, =>
-      console.log @links
-      @routine()
-
-  graph_factory: (dat) ->
-    # $.getJSON "/api/graph?#{dat}"
-    # .done (dat) =>
-    d3.json "/api/graph?#{dat}", (error, graph) =>
-      {nodes, links} = graph
-
-      new jsnx.DiGraph
-
-      @nodes = _.unionWith @nodes, nodes, (x, y) ->
-        x.name is y.name
-
-      @links = _.unionWith @links, links, (x, y) ->
-        if typeof y.source is 'number' and typeof x.source is 'number'
-          nodes[x.source].name is nodes[y.source].name and
-          nodes[x.target].name is nodes[y.target].name
-
-        else if typeof y.source is 'object' and typeof x.source is 'number'
-          nodes[x.source].name is y.source.name and
-          nodes[x.target].name is y.target.name
-
-        else if typeof y.source is 'object' and typeof x.source is 'object'
-          x.source.name is y.source.name and
-          x.target.name is y.target.name
-
-        else if typeof y.source is 'number' and typeof x.source is 'object'
-          x.source.name is nodes[y.source].name and
-          x.target.name is nodes[y.target].name
-
-      @routine()
-
-  routine: ->
-    radius = 5
-
-    link = @vis
-      .selectAll('.link')
-      .data(@links)
-      .enter()
-      .append('polyline')
-      .style('marker-mid', 'url(#start-arrow)')
-      .attr('class', 'link')
-
-    node = @vis
-      .selectAll('.node')
-      .data(@nodes)
-      .enter()
-      .append('g')
-      .attr("class", "node")
-      .call(@force.drag)
-
-    circle = node
-      .append('circle')
-      .attr('r', (d) -> radius)
-      .style('fill', (d) => @fill d.type)
-      # .style('stroke', (d) => d3.rgb(@fill(d.group)).darker())
-      .on 'mouseover', ->
-        d3.select(@)
-          .transition()
-          .duration(200)
-          .attr("r", 16)
-      .on 'mouseout', ->
-        d3.select(@)
-          .transition()
-          .duration(200)
-          .attr("r", 5)
-
-    label = node.append("text")
-      .attr("dy", ".35em")
-      .text((d) -> d.name)
-
-    tick = ->
-      circle.attr 'cx', (d) -> d.x
-          .attr 'cy', (d) -> d.y
-
-      link.attr 'points', (d) ->
-        sx = d.source.x
-        sy = d.source.y
-        tx = d.target.x
-        ty = d.target.y
-        "#{sx},#{sy} #{(sx + tx)/2},#{(sy + ty)/2} #{tx},#{ty}"
-
-      label
-        .attr "x", (d) -> d.x + 8
-        .attr "y", (d) -> d.y
-
-    @force
-      .nodes(@nodes)
-      .links(@links)
-      .jaccardLinkLengths(100,0.7)
-      .on('tick', tick)
-      .start()
-
+        @graph.update()
 
 class UserView
   constructor: (opts) ->
@@ -325,59 +173,18 @@ exports.interaction =
   mmn: ->
     width = $(".overlay-terra").width()
     height = $(".overlay-terra").height()
+    ui = new UserView
 
-    graph = new g.Graph
+    graph = new GraphView
       w: width
       h: height
       elem: '#graphcanvas'
+      dat: ui.select_val
 
-    ui = new UserView
+    $('select.rivets').on 'change', ->
+      graph.fetch_and_update(ui.select_val())
 
 
-    graph.addNode 'Sophia'
-    graph.addNode 'Daniel'
-    graph.addNode 'Ryan'
-    graph.addNode 'Lila'
-    graph.addNode 'Suzie'
-    graph.addNode 'Riley'
-    graph.addNode 'Grace'
-    graph.addNode 'Dylan'
-    graph.addNode 'Mason'
-    graph.addNode 'Emma'
-    graph.addNode 'Alex'
-    graph.addLink 'Alex', 'Ryan', '20'
-    graph.addLink 'Sophia', 'Ryan', '20'
-    graph.addLink 'Daniel', 'Ryan', '20'
-    graph.addLink 'Ryan', 'Lila', '30'
-    graph.addLink 'Lila', 'Suzie', '20'
-    graph.addLink 'Suzie', 'Riley', '10'
-    graph.addLink 'Suzie', 'Grace', '30'
-    graph.addLink 'Grace', 'Dylan', '10'
-    graph.addLink 'Dylan', 'Mason', '20'
-    graph.addLink 'Dylan', 'Emma', '20'
-    graph.addLink 'Emma', 'Mason', '10'
-
-    setTimeout (->
-      graph.addNode 'Prashant'
-      graph.addLink 'Prashant', 'Lila', '6'
-      graph.addLink 'Alex', 'Sophia', '20'
-      graph.keepNodesOnTop()
-    ), 2000
-    setTimeout (->
-      graph.addLink 'Sophia', 'Daniel', '20'
-      graph.keepNodesOnTop()
-    ), 4000
-    setTimeout (->
-      graph.addLink 'Daniel', 'Alex', '20'
-      graph.removeNode 'Prashant'
-      graph.keepNodesOnTop()
-    ), 5000
-
-    setTimeout (->
-      graph.removeLink 'Dylan', 'Mason'
-      graph.addLink 'Dylan', 'Mason', '8'
-      graph.keepNodesOnTop()
-    ), 8000
 
     # g = new GraphView
     #   width: width
