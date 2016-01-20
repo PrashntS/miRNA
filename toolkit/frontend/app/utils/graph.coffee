@@ -24,8 +24,9 @@ class Graph
     @nodes.push 'id': id
 
   initZoomAndPan: ->
+    self = @
     @zoom = d3.behavior.zoom()
-      .scaleExtent [1, 10]
+      .scaleExtent [-10, 10]
       .on "zoom", =>
         @vis.attr "transform",
           "translate(#{d3.event.translate}) scale(#{d3.event.scale})"
@@ -33,14 +34,27 @@ class Graph
     @drag = d3.behavior.drag()
       .origin (d) -> d
       .on "dragstart", (d) ->
-        d3.event.sourceEvent.stopPropagation()
         d3.select(@).classed "dragging", true
+        #: Sticky node
+        d3.select(@).classed "fixed", d.fixed = no
+        self.force.resume()
+        d3.event.sourceEvent.stopPropagation()
+
       .on "drag", (d) ->
         d3.select(@)
           .attr "cx", d.x = d3.event.x
           .attr "cy", d.y = d3.event.y
+        d3.select(@).classed "fixed", d.fixed = no
+        d3.event.sourceEvent.stopPropagation()
+
       .on "dragend", (d) ->
-        d3.select(@).classed "dragging", false
+        d3.select(@).classed "dragging", no
+        #: Sticky node
+        d3.select(@).classed "fixed", d.fixed = yes
+        d3.event.sourceEvent.stopPropagation()
+
+    @dblclk = (d) ->
+      d3.select(@).classed "fixed", d.fixed = no
 
   initDefs: ->
     @svg.append('svg:defs').append('svg:marker')
@@ -140,6 +154,7 @@ class Graph
       .enter()
       .append 'g'
         .attr 'class', 'node'
+        .on 'dblclick', @dblclk
       .call @drag
 
     nodeEnter
@@ -161,13 +176,6 @@ class Graph
     @force.on 'tick', ->
       node.attr 'transform', (d) -> "translate(#{d.x}, #{d.y})"
 
-      #: Use below when the links are "lines"
-      # link
-      #   .attr 'x1', (d) -> d.source.x
-      #   .attr 'y1', (d) -> d.source.y
-      #   .attr 'x2', (d) -> d.target.x
-      #   .attr 'y2', (d) -> d.target.y
-
       link.attr 'points', (d) ->
         sx = d.source.x
         sy = d.source.y
@@ -177,9 +185,9 @@ class Graph
 
     # Restart the force layout.
     @force
-      .gravity .01
-      .charge -80000
-      .friction 0
+      .gravity .05
+      .charge -1200
+      .friction 0.3
       .linkDistance (d) -> d.value * 10
       .size [@w, @h]
       .start()

@@ -183,6 +183,8 @@ exports.interaction =
       elem: '#graphcanvas'
       dat: ui.select_val
 
+    graph.fetch_and_update("genes=CDKN1A")
+
     $('select.rivets').on 'change', ->
       graph.fetch_and_update(ui.select_val())
 
