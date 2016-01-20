@@ -263,6 +263,8 @@ debugging.
             step = spots[_.random(spots.length - 1)]
 
             #: Create a Gene at current position.
+            # gene = new Gene
+
             gene = terra.make 'gene',
               coords:
                 x: x

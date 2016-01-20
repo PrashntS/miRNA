@@ -9,7 +9,7 @@ exports.automaton =
       h: $(".overlay-terra").height()
       w: $(".overlay-terra").width()
 
-    cell = 15
+    cell = 50
 
 
     @t = new terra.Terrarium dim.w // cell, dim.h // cell,

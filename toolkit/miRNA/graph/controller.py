@@ -4,6 +4,7 @@
 
 import networkx as nx
 
+from pydash import py_
 from flask_restful import Resource, reqparse
 
 from miRNA.polynucleotide.model import Gene, miRNA
@@ -79,6 +80,14 @@ class SubGraphController(Resource):
     trn = lambda x: str(x)
     tre = lambda x: [str(x[0]), str(x[1])]
 
+    nodes = miRNA_store | genes_store
+    links = target_list | host_list
+
+    node_fmt = lambda x: {'symbol': str(x), 'type': x._cls}
+    edge_fmt = lambda x: {'symbol': str(x), 'type': x._cls}
+
+
+
     return {
       'target_list': list(map(tre, target_list)),
       'host_list': list(map(tre, host_list)),
@@ -86,3 +95,16 @@ class SubGraphController(Resource):
       'genes_store': list(map(trn, genes_store)),
     }
 
+    # node_fmt = lambda x: {'name': str(x), 'group': x._cls}
+    # nodes = list(map(node_fmt, miRNA_store | genes_store))
+
+    # #: Find Node Index
+    # fni = lambda x: py_.find_index(nodes, lambda _: str(x) == _['name'])
+
+    # link_fmt = lambda x: {'source': fni(x[0]), 'target': fni(x[1]), 'value': 1}
+    # links = list(map(link_fmt, target_list | host_list))
+
+    # return {
+    #   'nodes': nodes,
+    #   'links': links
+    # }

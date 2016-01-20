@@ -1,5 +1,6 @@
 @import "bourbon"
 @import "neat"
+@import "nav"
 
 @import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat)
 
@@ -72,6 +73,7 @@ header
     @include calc(height, "100vh - 35px")
     padding: 10px
     background: $primary-color
+    width: $sidebar-width
     max-width: $sidebar-width
 
     .logo
@@ -99,6 +101,11 @@ header
       display: table
       height: 0
 
+    .cd-stretchy-nav
+      font-family: $fonthead
+      @include calc(left, "50% + #{$sidebar-width}/2")
+      bottom: 50px
+
 section
   .form-field
     margin-bottom: 10px
@@ -118,10 +125,6 @@ section.main
   padding-left: $sidebar-width
   padding-top: 35px
   position: relative
-
-  .fill
-    @include calc(height, "100vh - 37px")
-    width: 100%
 
   .overlay-info
     display: none
@@ -148,12 +151,18 @@ section.main
 
   .overlay-terra
     position: absolute
+    display: none
     opacity: 1
     left: $sidebar-width
     right: 0
     @include calc(height, "100vh - 35px")
     z-index: 1
 
+  .graphcanvassvg
+    position: relative
+    overflow: hidden
+    @include calc(height, "100vh - 37px")
+    width: 100%
 a
   color: inherit
   text-decoration: none
