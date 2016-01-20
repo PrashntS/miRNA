@@ -1,4 +1,4 @@
-miRNA_meta_data = {
+{
     "hsa-let-7a-3p": {
         "Accession ID": [
             "MI0000060"
@@ -7,7 +7,11 @@ miRNA_meta_data = {
             "RFAM:RF00027",
             "TARGETS:PICTAR-VERT:hsa-let-7a",
             "HGNC:31476",
-            "ENTREZGENE:406881"
+            "ENTREZGENE:406881",
+            "MIM:605386",
+            "HGNC:HGNC:31476",
+            "Ensembl:ENSG00000199165",
+            "miRBase:MI0000060"
         ],
         "Description": "Homo sapiens let-7a-1 stem-loop",
         "Host Gene": "RP11-2B6.3",
@@ -125,7 +129,11 @@ miRNA_meta_data = {
             "RFAM:RF00027",
             "TARGETS:PICTAR-VERT:hsa-let-7a",
             "HGNC:31476",
-            "ENTREZGENE:406881"
+            "ENTREZGENE:406881",
+            "MIM:605386",
+            "HGNC:HGNC:31476",
+            "Ensembl:ENSG00000199165",
+            "miRBase:MI0000060"
         ],
         "Description": "Homo sapiens let-7a-1 stem-loop",
         "Host Gene": "RP11-2B6.3",
@@ -1853,7 +1861,11 @@ miRNA_meta_data = {
             "RFAM:RF00027",
             "TARGETS:PICTAR-VERT:hsa-let-7c",
             "HGNC:31480",
-            "ENTREZGENE:406885"
+            "ENTREZGENE:406885",
+            "MIM:612144",
+            "HGNC:HGNC:31480",
+            "Ensembl:ENSG00000199030",
+            "miRBase:MI0000064"
         ],
         "Description": "Homo sapiens let-7c stem-loop",
         "Name": "hsa-let-7c",
@@ -2718,7 +2730,11 @@ miRNA_meta_data = {
             "RFAM:RF00027",
             "TARGETS:PICTAR-VERT:hsa-let-7d",
             "HGNC:31481",
-            "ENTREZGENE:406886"
+            "ENTREZGENE:406886",
+            "MIM:612145",
+            "HGNC:HGNC:31481",
+            "Ensembl:ENSG00000199133",
+            "miRBase:MI0000065"
         ],
         "Description": "Homo sapiens let-7d stem-loop",
         "Host Gene": "RP11-2B6.3",
@@ -2786,7 +2802,11 @@ miRNA_meta_data = {
             "RFAM:RF00027",
             "TARGETS:PICTAR-VERT:hsa-let-7d",
             "HGNC:31481",
-            "ENTREZGENE:406886"
+            "ENTREZGENE:406886",
+            "MIM:612145",
+            "HGNC:HGNC:31481",
+            "Ensembl:ENSG00000199133",
+            "miRBase:MI0000065"
         ],
         "Description": "Homo sapiens let-7d stem-loop",
         "Host Gene": "RP11-2B6.3",
@@ -3379,7 +3399,10 @@ miRNA_meta_data = {
             "RFAM:RF00027",
             "TARGETS:PICTAR-VERT:hsa-let-7f",
             "HGNC:31483",
-            "ENTREZGENE:406888"
+            "ENTREZGENE:406888",
+            "MIM:612146",
+            "HGNC:HGNC:31483",
+            "miRBase:MI0000067"
         ],
         "Description": "Homo sapiens let-7f-1 stem-loop",
         "Host Gene": "RP11-2B6.3",
@@ -3456,7 +3479,11 @@ miRNA_meta_data = {
             "RFAM:RF00027",
             "TARGETS:PICTAR-VERT:hsa-let-7f",
             "HGNC:31484",
-            "ENTREZGENE:406889"
+            "ENTREZGENE:406889",
+            "MIM:300721",
+            "HGNC:HGNC:31484",
+            "Ensembl:ENSG00000208012",
+            "miRBase:MI0000068"
         ],
         "Description": "Homo sapiens let-7f-2 stem-loop",
         "Host Gene": "HUWE1",
@@ -3533,7 +3560,11 @@ miRNA_meta_data = {
             "RFAM:RF00027",
             "TARGETS:PICTAR-VERT:hsa-let-7f",
             "HGNC:31484",
-            "ENTREZGENE:406889"
+            "ENTREZGENE:406889",
+            "MIM:300721",
+            "HGNC:HGNC:31484",
+            "Ensembl:ENSG00000208012",
+            "miRBase:MI0000068"
         ],
         "Description": "Homo sapiens let-7f-2 stem-loop",
         "Host Gene": "HUWE1",
@@ -3979,7 +4010,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-let-7g",
             "HGNC:31485",
-            "ENTREZGENE:406890"
+            "ENTREZGENE:406890",
+            "MIM:612102",
+            "HGNC:HGNC:31485",
+            "miRBase:MI0000433"
         ],
         "Description": "Homo sapiens let-7g stem-loop",
         "Host Gene": "WDR82",
@@ -4046,7 +4080,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-let-7g",
             "HGNC:31485",
-            "ENTREZGENE:406890"
+            "ENTREZGENE:406890",
+            "MIM:612102",
+            "HGNC:HGNC:31485",
+            "miRBase:MI0000433"
         ],
         "Description": "Homo sapiens let-7g stem-loop",
         "Host Gene": "WDR82",
@@ -4226,7 +4263,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-let-7i",
             "HGNC:31486",
-            "ENTREZGENE:406891"
+            "ENTREZGENE:406891",
+            "MIM:612148",
+            "HGNC:HGNC:31486",
+            "miRBase:MI0000434"
         ],
         "Description": "Homo sapiens let-7i stem-loop",
         "Host Gene": "RP11-631N16.2",
@@ -4372,7 +4412,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-101",
             "HGNC:31488",
-            "ENTREZGENE:406893"
+            "ENTREZGENE:406893",
+            "MIM:612511",
+            "HGNC:HGNC:31488",
+            "Ensembl:ENSG00000199135",
+            "miRBase:MI0000103"
         ],
         "Description": "Homo sapiens miR-101-1 stem-loop",
         "Host Gene": "RCL1",
@@ -5289,7 +5333,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-103",
             "HGNC:31491",
-            "ENTREZGENE:406896"
+            "ENTREZGENE:406896",
+            "MIM:613188",
+            "HGNC:HGNC:31491",
+            "Ensembl:ENSG00000199024",
+            "miRBase:MI0000108"
         ],
         "Description": "Homo sapiens miR-103a-2 stem-loop",
         "Host Gene": "PANK2",
@@ -5371,7 +5419,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-103",
             "HGNC:31490",
-            "ENTREZGENE:406895"
+            "ENTREZGENE:406895",
+            "MIM:613187",
+            "HGNC:HGNC:31490",
+            "Ensembl:ENSG00000199035",
+            "miRBase:MI0000109"
         ],
         "Description": "Homo sapiens miR-103a-1 stem-loop",
         "Host Gene": "PANK3",
@@ -6783,7 +6835,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-105",
             "HGNC:31492",
-            "ENTREZGENE:406897"
+            "ENTREZGENE:406897",
+            "MIM:300811",
+            "HGNC:HGNC:31492",
+            "Ensembl:ENSG00000207957",
+            "miRBase:MI0000111"
         ],
         "Description": "Homo sapiens miR-105-1 stem-loop",
         "Host Gene": "GABRA3",
@@ -6835,7 +6891,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-106b",
             "HGNC:31495",
-            "ENTREZGENE:406900"
+            "ENTREZGENE:406900",
+            "MIM:612983",
+            "HGNC:HGNC:31495",
+            "Ensembl:ENSG00000208036",
+            "miRBase:MI0000734"
         ],
         "Description": "Homo sapiens miR-106b stem-loop",
         "Host Gene": "MCM7",
@@ -7191,7 +7251,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-106b",
             "HGNC:31495",
-            "ENTREZGENE:406900"
+            "ENTREZGENE:406900",
+            "MIM:612983",
+            "HGNC:HGNC:31495",
+            "Ensembl:ENSG00000208036",
+            "miRBase:MI0000734"
         ],
         "Description": "Homo sapiens miR-106b stem-loop",
         "Host Gene": "MCM7",
@@ -8341,7 +8405,11 @@ miRNA_meta_data = {
             "MIR:MI0000108",
             "TARGETS:PICTAR-VERT:hsa-miR-107",
             "HGNC:31496",
-            "ENTREZGENE:406901"
+            "ENTREZGENE:406901",
+            "MIM:613189",
+            "HGNC:HGNC:31496",
+            "Ensembl:ENSG00000198997",
+            "miRBase:MI0000114"
         ],
         "Description": "Homo sapiens miR-107 stem-loop",
         "Host Gene": "PANK1",
@@ -8664,7 +8732,11 @@ miRNA_meta_data = {
             "RFAM:RF00104",
             "TARGETS:PICTAR-VERT:hsa-miR-10a",
             "HGNC:31497",
-            "ENTREZGENE:406902"
+            "ENTREZGENE:406902",
+            "MIM:610173",
+            "HGNC:HGNC:31497",
+            "Ensembl:ENSG00000274592",
+            "miRBase:MI0000266"
         ],
         "Description": "Homo sapiens miR-10a stem-loop",
         "Host Gene": "HOXB3",
@@ -8747,7 +8819,11 @@ miRNA_meta_data = {
             "RFAM:RF00104",
             "TARGETS:PICTAR-VERT:hsa-miR-10a",
             "HGNC:31497",
-            "ENTREZGENE:406902"
+            "ENTREZGENE:406902",
+            "MIM:610173",
+            "HGNC:HGNC:31497",
+            "Ensembl:ENSG00000274592",
+            "miRBase:MI0000266"
         ],
         "Description": "Homo sapiens miR-10a stem-loop",
         "Host Gene": "HOXB3",
@@ -10288,7 +10364,11 @@ miRNA_meta_data = {
             "RFAM:RF00104",
             "TARGETS:PICTAR-VERT:hsa-miR-10b",
             "HGNC:31498",
-            "ENTREZGENE:406903"
+            "ENTREZGENE:406903",
+            "MIM:611576",
+            "HGNC:HGNC:31498",
+            "Ensembl:ENSG00000207744",
+            "miRBase:MI0000267"
         ],
         "Description": "Homo sapiens miR-10b stem-loop",
         "Host Gene": "HOXD3",
@@ -10351,7 +10431,11 @@ miRNA_meta_data = {
             "RFAM:RF00104",
             "TARGETS:PICTAR-VERT:hsa-miR-10b",
             "HGNC:31498",
-            "ENTREZGENE:406903"
+            "ENTREZGENE:406903",
+            "MIM:611576",
+            "HGNC:HGNC:31498",
+            "Ensembl:ENSG00000207744",
+            "miRBase:MI0000267"
         ],
         "Description": "Homo sapiens miR-10b stem-loop",
         "Host Gene": "HOXD3",
@@ -11027,7 +11111,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35261",
-            "ENTREZGENE:100302256"
+            "ENTREZGENE:100302256",
+            "HGNC:HGNC:35261",
+            "Ensembl:ENSG00000221540",
+            "miRBase:MI0006273"
         ],
         "Description": "Homo sapiens miR-1180 stem-loop",
         "Host Gene": "B9D1",
@@ -11317,7 +11404,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33923",
-            "ENTREZGENE:100187716"
+            "ENTREZGENE:100187716",
+            "MIM:611620",
+            "HGNC:HGNC:33923",
+            "Ensembl:ENSG00000221120",
+            "miRBase:MI0003764"
         ],
         "Description": "Homo sapiens miR-1224 stem-loop",
         "Host Gene": "EIF2B5",
@@ -11388,7 +11479,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33923",
-            "ENTREZGENE:100187716"
+            "ENTREZGENE:100187716",
+            "MIM:611620",
+            "HGNC:HGNC:33923",
+            "Ensembl:ENSG00000221120",
+            "miRBase:MI0003764"
         ],
         "Description": "Homo sapiens miR-1224 stem-loop",
         "Host Gene": "EIF2B5",
@@ -11454,7 +11549,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33931",
-            "ENTREZGENE:100188847"
+            "ENTREZGENE:100188847",
+            "MIM:611621",
+            "HGNC:HGNC:33931",
+            "Ensembl:ENSG00000221656",
+            "miRBase:MI0006311"
         ],
         "Description": "Homo sapiens miR-1225 stem-loop",
         "Host Gene": "PKD1",
@@ -11519,7 +11618,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33931",
-            "ENTREZGENE:100188847"
+            "ENTREZGENE:100188847",
+            "MIM:611621",
+            "HGNC:HGNC:33931",
+            "Ensembl:ENSG00000221656",
+            "miRBase:MI0006311"
         ],
         "Description": "Homo sapiens miR-1225 stem-loop",
         "Host Gene": "PKD1",
@@ -11569,7 +11672,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33922",
-            "ENTREZGENE:100302232"
+            "ENTREZGENE:100302232",
+            "HGNC:HGNC:33922",
+            "Ensembl:ENSG00000221585",
+            "miRBase:MI0006313"
         ],
         "Description": "Homo sapiens miR-1226 stem-loop",
         "Host Gene": "DHX30",
@@ -12259,7 +12365,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33922",
-            "ENTREZGENE:100302232"
+            "ENTREZGENE:100302232",
+            "HGNC:HGNC:33922",
+            "Ensembl:ENSG00000221585",
+            "miRBase:MI0006313"
         ],
         "Description": "Homo sapiens miR-1226 stem-loop",
         "Host Gene": "DHX30",
@@ -12309,7 +12418,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33932",
-            "ENTREZGENE:100302283"
+            "ENTREZGENE:100302283",
+            "HGNC:HGNC:33932",
+            "Ensembl:ENSG00000221411",
+            "miRBase:MI0006316"
         ],
         "Description": "Homo sapiens miR-1227 stem-loop",
         "Host Gene": "PLEKHJ1",
@@ -12424,7 +12536,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33928",
-            "ENTREZGENE:100302201"
+            "ENTREZGENE:100302201",
+            "HGNC:HGNC:33928",
+            "Ensembl:ENSG00000221365",
+            "miRBase:MI0006318"
         ],
         "Description": "Homo sapiens miR-1228 stem-loop",
         "Host Gene": "LRP1",
@@ -12479,7 +12594,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33924",
-            "ENTREZGENE:100302156"
+            "ENTREZGENE:100302156",
+            "HGNC:HGNC:33924",
+            "Ensembl:ENSG00000221394",
+            "miRBase:MI0006319"
         ],
         "Description": "Homo sapiens miR-1229 stem-loop",
         "Host Gene": "MGAT4B",
@@ -13189,7 +13307,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33925",
-            "ENTREZGENE:100302242"
+            "ENTREZGENE:100302242",
+            "HGNC:HGNC:33925",
+            "Ensembl:ENSG00000221267",
+            "miRBase:MI0006326"
         ],
         "Description": "Homo sapiens miR-1236 stem-loop",
         "Host Gene": "NELFE",
@@ -13274,7 +13395,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33927",
-            "ENTREZGENE:100302280"
+            "ENTREZGENE:100302280",
+            "HGNC:HGNC:33927",
+            "Ensembl:ENSG00000221273",
+            "miRBase:MI0006327"
         ],
         "Description": "Homo sapiens miR-1237 stem-loop",
         "Host Gene": "RPS6KA4",
@@ -13325,7 +13449,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-124a",
             "HGNC:31503",
-            "ENTREZGENE:406908"
+            "ENTREZGENE:406908",
+            "HGNC:HGNC:31503",
+            "Ensembl:ENSG00000207816",
+            "miRBase:MI0000444"
         ],
         "Description": "Homo sapiens miR-124-2 stem-loop",
         "Name": "hsa-mir-124-2",
@@ -19889,7 +20016,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35311",
-            "ENTREZGENE:100302219"
+            "ENTREZGENE:100302219",
+            "HGNC:HGNC:35311",
+            "Ensembl:ENSG00000221502",
+            "miRBase:MI0006380"
         ],
         "Description": "Homo sapiens miR-1245a stem-loop",
         "Host Gene": "COL3A1",
@@ -19935,7 +20065,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35316",
-            "ENTREZGENE:100302229"
+            "ENTREZGENE:100302229",
+            "HGNC:HGNC:35316",
+            "Ensembl:ENSG00000221025",
+            "miRBase:MI0006385"
         ],
         "Description": "Homo sapiens miR-1250 stem-loop",
         "Host Gene": "AATK",
@@ -20005,7 +20138,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35319",
-            "ENTREZGENE:100302273"
+            "ENTREZGENE:100302273",
+            "HGNC:HGNC:35319",
+            "Ensembl:ENSG00000221184",
+            "miRBase:MI0006388"
         ],
         "Description": "Homo sapiens miR-1254-1 stem-loop",
         "Host Gene": "CCAR1",
@@ -20085,7 +20221,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35321",
-            "ENTREZGENE:100302155"
+            "ENTREZGENE:100302155",
+            "HGNC:HGNC:35321",
+            "Ensembl:ENSG00000221808",
+            "miRBase:MI0006390"
         ],
         "Description": "Homo sapiens miR-1256 stem-loop",
         "Host Gene": "EIF4G3",
@@ -20135,7 +20274,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35323",
-            "ENTREZGENE:100302172"
+            "ENTREZGENE:100302172",
+            "MIM:614488",
+            "HGNC:HGNC:35323",
+            "Ensembl:ENSG00000221240",
+            "miRBase:MI0006392"
         ],
         "Description": "Homo sapiens miR-1258 stem-loop",
         "Host Gene": "ZNF385B",
@@ -20181,7 +20324,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-125b",
             "HGNC:31507",
-            "ENTREZGENE:406912"
+            "ENTREZGENE:406912",
+            "MIM:610105",
+            "HGNC:HGNC:31507",
+            "Ensembl:ENSG00000207863",
+            "miRBase:MI0000470"
         ],
         "Description": "Homo sapiens miR-125b-2 stem-loop",
         "Name": "hsa-mir-125b-2",
@@ -20306,7 +20453,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-125b",
             "HGNC:31507",
-            "ENTREZGENE:406912"
+            "ENTREZGENE:406912",
+            "MIM:610105",
+            "HGNC:HGNC:31507",
+            "Ensembl:ENSG00000207863",
+            "miRBase:MI0000470"
         ],
         "Description": "Homo sapiens miR-125b-2 stem-loop",
         "Name": "hsa-mir-125b-2",
@@ -21825,7 +21976,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-126",
             "TARGETS:PICTAR-VERT:hsa-miR-126*",
             "HGNC:31508",
-            "ENTREZGENE:406913"
+            "ENTREZGENE:406913",
+            "MIM:611767",
+            "HGNC:HGNC:31508",
+            "Ensembl:ENSG00000199161",
+            "miRBase:MI0000471"
         ],
         "Description": "Homo sapiens miR-126 stem-loop",
         "Host Gene": "EGFL7",
@@ -22025,7 +22180,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-126",
             "TARGETS:PICTAR-VERT:hsa-miR-126*",
             "HGNC:31508",
-            "ENTREZGENE:406913"
+            "ENTREZGENE:406913",
+            "MIM:611767",
+            "HGNC:HGNC:31508",
+            "Ensembl:ENSG00000199161",
+            "miRBase:MI0000471"
         ],
         "Description": "Homo sapiens miR-126 stem-loop",
         "Host Gene": "EGFL7",
@@ -22103,7 +22262,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35328",
-            "ENTREZGENE:100302279"
+            "ENTREZGENE:100302279",
+            "HGNC:HGNC:35328",
+            "Ensembl:ENSG00000221203",
+            "miRBase:MI0006397"
         ],
         "Description": "Homo sapiens miR-1262 stem-loop",
         "Host Gene": "GNG12-AS1",
@@ -22148,7 +22310,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35338",
-            "ENTREZGENE:100302179"
+            "ENTREZGENE:100302179",
+            "HGNC:HGNC:35338",
+            "Ensembl:ENSG00000238517",
+            "miRBase:MI0006407"
         ],
         "Description": "Homo sapiens miR-1270 stem-loop",
         "Host Gene": "ZNF826P",
@@ -22193,7 +22358,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35252",
-            "ENTREZGENE:100302203"
+            "ENTREZGENE:100302203",
+            "HGNC:HGNC:35252",
+            "Ensembl:ENSG00000221464",
+            "miRBase:MI0003814"
         ],
         "Description": "Homo sapiens miR-1271 stem-loop",
         "Host Gene": "ARL10",
@@ -22248,7 +22416,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35347",
-            "ENTREZGENE:100302121"
+            "ENTREZGENE:100302121",
+            "HGNC:HGNC:35347",
+            "Ensembl:ENSG00000221634",
+            "miRBase:MI0006416"
         ],
         "Description": "Homo sapiens miR-1276 stem-loop",
         "Host Gene": "KLHL25",
@@ -22299,7 +22470,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-128b",
             "HGNC:31511",
-            "ENTREZGENE:406916"
+            "ENTREZGENE:406916",
+            "MIM:611769",
+            "HGNC:HGNC:31511",
+            "Ensembl:ENSG00000207625",
+            "miRBase:MI0000727"
         ],
         "Description": "Homo sapiens miR-128-2 stem-loop",
         "Host Gene": "ARPP21",
@@ -23778,7 +23953,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35362",
-            "ENTREZGENE:100302112"
+            "ENTREZGENE:100302112",
+            "HGNC:HGNC:35362",
+            "Ensembl:ENSG00000221264",
+            "miRBase:MI0006431"
         ],
         "Description": "Homo sapiens miR-1284 stem-loop",
         "Host Gene": "FOXP1",
@@ -23823,7 +24001,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35278",
-            "ENTREZGENE:100302268"
+            "ENTREZGENE:100302268",
+            "HGNC:HGNC:35278",
+            "Ensembl:ENSG00000221238",
+            "miRBase:MI0006347"
         ],
         "Description": "Homo sapiens miR-1285-2 stem-loop",
         "Host Gene": "AC000120.7",
@@ -23874,7 +24055,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-129",
             "HGNC:31513",
-            "ENTREZGENE:406918"
+            "ENTREZGENE:406918",
+            "HGNC:HGNC:31513",
+            "Ensembl:ENSG00000199077",
+            "miRBase:MI0000473"
         ],
         "Description": "Homo sapiens miR-129-2 stem-loop",
         "Host Gene": "HSD17B12",
@@ -23951,7 +24135,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-129",
             "HGNC:31513",
-            "ENTREZGENE:406918"
+            "ENTREZGENE:406918",
+            "HGNC:HGNC:31513",
+            "Ensembl:ENSG00000199077",
+            "miRBase:MI0000473"
         ],
         "Description": "Homo sapiens miR-129-2 stem-loop",
         "Name": "hsa-mir-129-2",
@@ -24045,7 +24232,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35286",
-            "ENTREZGENE:100302220"
+            "ENTREZGENE:100302220",
+            "HGNC:HGNC:35286",
+            "Ensembl:ENSG00000221604",
+            "miRBase:MI0006355"
         ],
         "Description": "Homo sapiens miR-1293 stem-loop",
         "Host Gene": "LIMA1",
@@ -24090,7 +24280,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35249",
-            "ENTREZGENE:100302150"
+            "ENTREZGENE:100302150",
+            "HGNC:HGNC:35249",
+            "Ensembl:ENSG00000221063",
+            "miRBase:MI0003780"
         ],
         "Description": "Homo sapiens miR-1296 stem-loop",
         "Host Gene": "JMJD1C",
@@ -24585,7 +24778,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35253",
-            "ENTREZGENE:100302246"
+            "ENTREZGENE:100302246",
+            "HGNC:HGNC:35253",
+            "miRBase:MI0003815"
         ],
         "Description": "Homo sapiens miR-1301 stem-loop",
         "Host Gene": "DNMT3A",
@@ -25195,7 +25390,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35302",
-            "ENTREZGENE:100302240"
+            "ENTREZGENE:100302240",
+            "HGNC:HGNC:35302",
+            "Ensembl:ENSG00000221170",
+            "miRBase:MI0006371"
         ],
         "Description": "Homo sapiens miR-1304 stem-loop",
         "Host Gene": "TAF1D",
@@ -25240,7 +25438,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35372",
-            "ENTREZGENE:100302174"
+            "ENTREZGENE:100302174",
+            "HGNC:HGNC:35372",
+            "Ensembl:ENSG00000221767",
+            "miRBase:MI0006444"
         ],
         "Description": "Homo sapiens miR-1307 stem-loop",
         "Host Gene": "USMG5",
@@ -25351,7 +25552,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-130a",
             "HGNC:31514",
-            "ENTREZGENE:406919"
+            "ENTREZGENE:406919",
+            "MIM:610175",
+            "HGNC:HGNC:31514",
+            "Ensembl:ENSG00000208009",
+            "miRBase:MI0000448"
         ],
         "Description": "Homo sapiens miR-130a stem-loop",
         "Host Gene": "AP000662.4",
@@ -25533,7 +25738,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-133a",
             "HGNC:31518",
-            "ENTREZGENE:406923"
+            "ENTREZGENE:406923",
+            "MIM:610255",
+            "HGNC:HGNC:31518",
+            "Ensembl:ENSG00000207764",
+            "miRBase:MI0000451"
         ],
         "Description": "Homo sapiens miR-133a-2 stem-loop",
         "Name": "hsa-mir-133a-2",
@@ -25801,7 +26010,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-135a",
             "HGNC:31520",
-            "ENTREZGENE:406925"
+            "ENTREZGENE:406925",
+            "HGNC:HGNC:31520",
+            "Ensembl:ENSG00000207926",
+            "miRBase:MI0000452"
         ],
         "Description": "Homo sapiens miR-135a-1 stem-loop",
         "Host Gene": "GLYCTK-AS1",
@@ -25868,7 +26080,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-135b",
             "HGNC:31760",
-            "ENTREZGENE:442891"
+            "ENTREZGENE:442891",
+            "HGNC:HGNC:31760",
+            "Ensembl:ENSG00000199059",
+            "miRBase:MI0000810"
         ],
         "Description": "Homo sapiens miR-135b stem-loop",
         "Host Gene": "LEMD1",
@@ -25963,7 +26178,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-139",
             "HGNC:31526",
-            "ENTREZGENE:406931"
+            "ENTREZGENE:406931",
+            "MIM:615017",
+            "HGNC:HGNC:31526",
+            "Ensembl:ENSG00000272036",
+            "miRBase:MI0000261"
         ],
         "Description": "Homo sapiens miR-139 stem-loop",
         "Host Gene": "PDE2A",
@@ -26015,7 +26234,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-139",
             "HGNC:31526",
-            "ENTREZGENE:406931"
+            "ENTREZGENE:406931",
+            "MIM:615017",
+            "HGNC:HGNC:31526",
+            "Ensembl:ENSG00000272036",
+            "miRBase:MI0000261"
         ],
         "Description": "Homo sapiens miR-139 stem-loop",
         "Host Gene": "PDE2A",
@@ -26085,7 +26308,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-140",
             "HGNC:31527",
-            "ENTREZGENE:406932"
+            "ENTREZGENE:406932",
+            "MIM:611894",
+            "HGNC:HGNC:31527",
+            "Ensembl:ENSG00000208017",
+            "miRBase:MI0000456"
         ],
         "Description": "Homo sapiens miR-140 stem-loop",
         "Host Gene": "WWP2",
@@ -26267,7 +26494,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-140",
             "HGNC:31527",
-            "ENTREZGENE:406932"
+            "ENTREZGENE:406932",
+            "MIM:611894",
+            "HGNC:HGNC:31527",
+            "Ensembl:ENSG00000208017",
+            "miRBase:MI0000456"
         ],
         "Description": "Homo sapiens miR-140 stem-loop",
         "Host Gene": "WWP2",
@@ -26417,7 +26648,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-141",
             "HGNC:31528",
-            "ENTREZGENE:406933"
+            "ENTREZGENE:406933",
+            "MIM:612093",
+            "HGNC:HGNC:31528",
+            "Ensembl:ENSG00000207708",
+            "miRBase:MI0000457"
         ],
         "Description": "Homo sapiens miR-141 stem-loop",
         "Host Gene": "U47924.27",
@@ -26658,7 +26893,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33655",
-            "ENTREZGENE:100126311"
+            "ENTREZGENE:100126311",
+            "HGNC:HGNC:33655",
+            "Ensembl:ENSG00000211519",
+            "miRBase:MI0005544"
         ],
         "Description": "Homo sapiens miR-147b stem-loop",
         "Host Gene": "RP11-519G16.5",
@@ -26704,7 +26942,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-148b",
             "HGNC:31761",
-            "ENTREZGENE:442892"
+            "ENTREZGENE:442892",
+            "MIM:613787",
+            "HGNC:HGNC:31761",
+            "Ensembl:ENSG00000199122",
+            "miRBase:MI0000811"
         ],
         "Description": "Homo sapiens miR-148b stem-loop",
         "Host Gene": "RP11-968A15.8",
@@ -28184,7 +28426,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-148b",
             "HGNC:31761",
-            "ENTREZGENE:442892"
+            "ENTREZGENE:442892",
+            "MIM:613787",
+            "HGNC:HGNC:31761",
+            "Ensembl:ENSG00000199122",
+            "miRBase:MI0000811"
         ],
         "Description": "Homo sapiens miR-148b stem-loop",
         "Host Gene": "RP11-968A15.8",
@@ -28261,7 +28507,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-149",
             "HGNC:31536",
-            "ENTREZGENE:406941"
+            "ENTREZGENE:406941",
+            "MIM:615209",
+            "HGNC:HGNC:31536",
+            "Ensembl:ENSG00000207611",
+            "miRBase:MI0000478"
         ],
         "Description": "Homo sapiens miR-149 stem-loop",
         "Host Gene": "PP14571",
@@ -28333,7 +28583,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-149",
             "HGNC:31536",
-            "ENTREZGENE:406941"
+            "ENTREZGENE:406941",
+            "MIM:615209",
+            "HGNC:HGNC:31536",
+            "Ensembl:ENSG00000207611",
+            "miRBase:MI0000478"
         ],
         "Description": "Homo sapiens miR-149 stem-loop",
         "Host Gene": "PP14571",
@@ -29928,7 +30182,9 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-151",
             "HGNC:31762",
-            "ENTREZGENE:442893"
+            "ENTREZGENE:442893",
+            "HGNC:HGNC:31762",
+            "miRBase:MI0000809"
         ],
         "Description": "Homo sapiens miR-151a stem-loop",
         "Host Gene": "PTK2",
@@ -30193,7 +30449,9 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-151",
             "HGNC:31762",
-            "ENTREZGENE:442893"
+            "ENTREZGENE:442893",
+            "HGNC:HGNC:31762",
+            "miRBase:MI0000809"
         ],
         "Description": "Homo sapiens miR-151a stem-loop",
         "Host Gene": "PTK2",
@@ -30420,7 +30678,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-152",
             "HGNC:31538",
-            "ENTREZGENE:406943"
+            "ENTREZGENE:406943",
+            "MIM:613788",
+            "HGNC:HGNC:31538",
+            "miRBase:MI0000462"
         ],
         "Description": "Homo sapiens miR-152 stem-loop",
         "Host Gene": "COPZ2",
@@ -30530,7 +30791,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-153",
             "HGNC:31539",
-            "ENTREZGENE:406944"
+            "ENTREZGENE:406944",
+            "HGNC:HGNC:31539",
+            "Ensembl:ENSG00000207647",
+            "miRBase:MI0000463"
         ],
         "Description": "Homo sapiens miR-153-1 stem-loop",
         "Host Gene": "PTPRN2",
@@ -30620,7 +30884,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-15a",
             "HGNC:31543",
-            "ENTREZGENE:406948"
+            "ENTREZGENE:406948",
+            "MIM:609703",
+            "HGNC:HGNC:31543",
+            "Ensembl:ENSG00000275952",
+            "miRBase:MI0000069"
         ],
         "Description": "Homo sapiens miR-15a stem-loop",
         "Host Gene": "DLEU2",
@@ -30722,7 +30990,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-15a",
             "HGNC:31543",
-            "ENTREZGENE:406948"
+            "ENTREZGENE:406948",
+            "MIM:609703",
+            "HGNC:HGNC:31543",
+            "Ensembl:ENSG00000275952",
+            "miRBase:MI0000069"
         ],
         "Description": "Homo sapiens miR-15a stem-loop",
         "Host Gene": "DLEU2",
@@ -31384,7 +31656,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-15b",
             "HGNC:31544",
-            "ENTREZGENE:406949"
+            "ENTREZGENE:406949",
+            "HGNC:HGNC:31544",
+            "Ensembl:ENSG00000207779",
+            "miRBase:MI0000438"
         ],
         "Description": "Homo sapiens miR-15b stem-loop",
         "Host Gene": "RP11-432B6.3",
@@ -31456,7 +31731,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-15b",
             "HGNC:31544",
-            "ENTREZGENE:406949"
+            "ENTREZGENE:406949",
+            "HGNC:HGNC:31544",
+            "Ensembl:ENSG00000207779",
+            "miRBase:MI0000438"
         ],
         "Description": "Homo sapiens miR-15b stem-loop",
         "Host Gene": "RP11-432B6.3",
@@ -32373,7 +32651,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-16",
             "HGNC:31545",
-            "ENTREZGENE:406950"
+            "ENTREZGENE:406950",
+            "MIM:609704",
+            "HGNC:HGNC:31545",
+            "Ensembl:ENSG00000208006",
+            "miRBase:MI0000070"
         ],
         "Description": "Homo sapiens miR-16-1 stem-loop",
         "Host Gene": "DLEU2",
@@ -32465,7 +32747,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-16",
             "HGNC:31546",
-            "ENTREZGENE:406951"
+            "ENTREZGENE:406951",
+            "HGNC:HGNC:31546",
+            "Ensembl:ENSG00000198987",
+            "miRBase:MI0000115"
         ],
         "Description": "Homo sapiens miR-16-2 stem-loop",
         "Host Gene": "RP11-432B6.3",
@@ -32552,7 +32837,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-16",
             "HGNC:31545",
-            "ENTREZGENE:406950"
+            "ENTREZGENE:406950",
+            "MIM:609704",
+            "HGNC:HGNC:31545",
+            "Ensembl:ENSG00000208006",
+            "miRBase:MI0000070"
         ],
         "Description": "Homo sapiens miR-16-1 stem-loop",
         "Host Gene": "RP11-432B6.3",
@@ -38366,7 +38655,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-17-3p",
             "TARGETS:PICTAR-VERT:hsa-miR-17-5p",
             "HGNC:31547",
-            "ENTREZGENE:406952"
+            "ENTREZGENE:406952",
+            "MIM:609416",
+            "HGNC:HGNC:31547",
+            "Ensembl:ENSG00000275042",
+            "miRBase:MI0000071"
         ],
         "Description": "Homo sapiens miR-17 stem-loop",
         "Name": "hsa-mir-17",
@@ -38732,7 +39025,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-17-3p",
             "TARGETS:PICTAR-VERT:hsa-miR-17-5p",
             "HGNC:31547",
-            "ENTREZGENE:406952"
+            "ENTREZGENE:406952",
+            "MIM:609416",
+            "HGNC:HGNC:31547",
+            "Ensembl:ENSG00000275042",
+            "miRBase:MI0000071"
         ],
         "Description": "Homo sapiens miR-17 stem-loop",
         "Name": "hsa-mir-17",
@@ -40357,7 +40654,11 @@ miRNA_meta_data = {
             "RFAM:RF00076",
             "TARGETS:PICTAR-VERT:hsa-mir-181a-2",
             "HGNC:31549",
-            "ENTREZGENE:406954"
+            "ENTREZGENE:406954",
+            "MIM:612743",
+            "HGNC:HGNC:31549",
+            "Ensembl:ENSG00000207595",
+            "miRBase:MI0000269"
         ],
         "Description": "Homo sapiens miR-181a-2 stem-loop",
         "Host Gene": "NR6A1",
@@ -40429,7 +40730,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-181a",
             "HGNC:31590",
-            "ENTREZGENE:406995"
+            "ENTREZGENE:406995",
+            "MIM:612742",
+            "HGNC:HGNC:31590",
+            "Ensembl:ENSG00000207759",
+            "miRBase:MI0000289"
         ],
         "Description": "Homo sapiens miR-181a-1 stem-loop",
         "Name": "hsa-mir-181a-1",
@@ -40506,7 +40811,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-181a",
             "HGNC:31590",
-            "ENTREZGENE:406995"
+            "ENTREZGENE:406995",
+            "MIM:612742",
+            "HGNC:HGNC:31590",
+            "Ensembl:ENSG00000207759",
+            "miRBase:MI0000289"
         ],
         "Description": "Homo sapiens miR-181a-1 stem-loop",
         "Host Gene": "NR6A1",
@@ -41759,7 +42068,11 @@ miRNA_meta_data = {
             "RFAM:RF00076",
             "TARGETS:PICTAR-VERT:hsa-miR-181b",
             "HGNC:31550",
-            "ENTREZGENE:406955"
+            "ENTREZGENE:406955",
+            "MIM:612744",
+            "HGNC:HGNC:31550",
+            "Ensembl:ENSG00000207975",
+            "miRBase:MI0000270"
         ],
         "Description": "Homo sapiens miR-181b-1 stem-loop",
         "Host Gene": "NR6A1",
@@ -42310,7 +42623,11 @@ miRNA_meta_data = {
             "RFAM:RF00076",
             "TARGETS:PICTAR-VERT:hsa-miR-181c",
             "HGNC:31552",
-            "ENTREZGENE:406957"
+            "ENTREZGENE:406957",
+            "MIM:612746",
+            "HGNC:HGNC:31552",
+            "Ensembl:ENSG00000207613",
+            "miRBase:MI0000271"
         ],
         "Description": "Homo sapiens miR-181c stem-loop",
         "Host Gene": "NANOS3",
@@ -42363,7 +42680,11 @@ miRNA_meta_data = {
             "RFAM:RF00076",
             "TARGETS:PICTAR-VERT:hsa-miR-181c",
             "HGNC:31552",
-            "ENTREZGENE:406957"
+            "ENTREZGENE:406957",
+            "MIM:612746",
+            "HGNC:HGNC:31552",
+            "Ensembl:ENSG00000207613",
+            "miRBase:MI0000271"
         ],
         "Description": "Homo sapiens miR-181c stem-loop",
         "Host Gene": "NANOS3",
@@ -42497,7 +42818,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32089",
-            "ENTREZGENE:574457"
+            "ENTREZGENE:574457",
+            "HGNC:HGNC:32089",
+            "Ensembl:ENSG00000207585",
+            "miRBase:MI0003139"
         ],
         "Description": "Homo sapiens miR-181d stem-loop",
         "Host Gene": "NANOS3",
@@ -42674,7 +42998,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-185",
             "HGNC:31556",
-            "ENTREZGENE:406961"
+            "ENTREZGENE:406961",
+            "MIM:615576",
+            "HGNC:HGNC:31556",
+            "miRBase:MI0000482"
         ],
         "Description": "Homo sapiens miR-185 stem-loop",
         "Host Gene": "TANGO2",
@@ -42751,7 +43078,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-185",
             "HGNC:31556",
-            "ENTREZGENE:406961"
+            "ENTREZGENE:406961",
+            "MIM:615576",
+            "HGNC:HGNC:31556",
+            "miRBase:MI0000482"
         ],
         "Description": "Homo sapiens miR-185 stem-loop",
         "Host Gene": "TANGO2",
@@ -43256,7 +43586,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-186",
             "HGNC:31557",
-            "ENTREZGENE:406962"
+            "ENTREZGENE:406962",
+            "HGNC:HGNC:31557",
+            "Ensembl:ENSG00000207721",
+            "miRBase:MI0000483"
         ],
         "Description": "Homo sapiens miR-186 stem-loop",
         "Host Gene": "ZRANB2",
@@ -43353,7 +43686,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-186",
             "HGNC:31557",
-            "ENTREZGENE:406962"
+            "ENTREZGENE:406962",
+            "HGNC:HGNC:31557",
+            "Ensembl:ENSG00000207721",
+            "miRBase:MI0000483"
         ],
         "Description": "Homo sapiens miR-186 stem-loop",
         "Host Gene": "ZRANB2",
@@ -46095,7 +46431,9 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-188",
             "HGNC:31559",
-            "ENTREZGENE:406964"
+            "ENTREZGENE:406964",
+            "HGNC:HGNC:31559",
+            "miRBase:MI0000484"
         ],
         "Description": "Homo sapiens miR-188 stem-loop",
         "Host Gene": "CLCN5",
@@ -46152,7 +46490,9 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-188",
             "HGNC:31559",
-            "ENTREZGENE:406964"
+            "ENTREZGENE:406964",
+            "HGNC:HGNC:31559",
+            "miRBase:MI0000484"
         ],
         "Description": "Homo sapiens miR-188 stem-loop",
         "Host Gene": "CLCN5",
@@ -46241,7 +46581,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:31548",
-            "ENTREZGENE:406953"
+            "ENTREZGENE:406953",
+            "MIM:609417",
+            "HGNC:HGNC:31548",
+            "miRBase:MI0000072"
         ],
         "Description": "Homo sapiens miR-18a stem-loop",
         "Name": "hsa-mir-18a",
@@ -47490,7 +47833,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:31548",
-            "ENTREZGENE:406953"
+            "ENTREZGENE:406953",
+            "MIM:609417",
+            "HGNC:HGNC:31548",
+            "miRBase:MI0000072"
         ],
         "Description": "Homo sapiens miR-18a stem-loop",
         "Name": "hsa-mir-18a",
@@ -48349,7 +48695,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35392",
-            "ENTREZGENE:100302263"
+            "ENTREZGENE:100302263",
+            "HGNC:HGNC:35392",
+            "Ensembl:ENSG00000222326",
+            "miRBase:MI0008329"
         ],
         "Description": "Homo sapiens miR-1908 stem-loop",
         "Host Gene": "FADS2",
@@ -48419,7 +48768,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35393",
-            "ENTREZGENE:100302210"
+            "ENTREZGENE:100302210",
+            "MIM:615201",
+            "HGNC:HGNC:35393",
+            "Ensembl:ENSG00000223244",
+            "miRBase:MI0008330"
         ],
         "Description": "Homo sapiens miR-1909 stem-loop",
         "Host Gene": "REXO1",
@@ -48469,7 +48822,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35393",
-            "ENTREZGENE:100302210"
+            "ENTREZGENE:100302210",
+            "MIM:615201",
+            "HGNC:HGNC:35393",
+            "Ensembl:ENSG00000223244",
+            "miRBase:MI0008330"
         ],
         "Description": "Homo sapiens miR-1909 stem-loop",
         "Host Gene": "REXO1",
@@ -48530,7 +48887,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-190",
             "HGNC:31560",
-            "ENTREZGENE:406965"
+            "ENTREZGENE:406965",
+            "MIM:615845",
+            "HGNC:HGNC:31560",
+            "Ensembl:ENSG00000211137",
+            "miRBase:MI0000486"
         ],
         "Description": "Homo sapiens miR-190a stem-loop",
         "Host Gene": "TLN2",
@@ -48595,7 +48956,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-191",
             "HGNC:31561",
-            "ENTREZGENE:406966"
+            "ENTREZGENE:406966",
+            "MIM:615150",
+            "HGNC:HGNC:31561",
+            "Ensembl:ENSG00000207605",
+            "miRBase:MI0000465"
         ],
         "Description": "Homo sapiens miR-191 stem-loop",
         "Host Gene": "DALRD3",
@@ -48672,7 +49037,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-191",
             "HGNC:31561",
-            "ENTREZGENE:406966"
+            "ENTREZGENE:406966",
+            "MIM:615150",
+            "HGNC:HGNC:31561",
+            "Ensembl:ENSG00000207605",
+            "miRBase:MI0000465"
         ],
         "Description": "Homo sapiens miR-191 stem-loop",
         "Host Gene": "DALRD3",
@@ -48956,7 +49325,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35394",
-            "ENTREZGENE:100302261"
+            "ENTREZGENE:100302261",
+            "HGNC:HGNC:35394",
+            "miRBase:MI0008331"
         ],
         "Description": "Homo sapiens miR-1910 stem-loop",
         "Host Gene": "C16orf74",
@@ -49014,7 +49385,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35397",
-            "ENTREZGENE:100302141"
+            "ENTREZGENE:100302141",
+            "HGNC:HGNC:35397",
+            "Ensembl:ENSG00000222958",
+            "miRBase:MI0008334"
         ],
         "Description": "Homo sapiens miR-1913 stem-loop",
         "Host Gene": "RPS6KA2",
@@ -49059,7 +49433,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35398",
-            "ENTREZGENE:100302137"
+            "ENTREZGENE:100302137",
+            "HGNC:HGNC:35398",
+            "Ensembl:ENSG00000272045",
+            "miRBase:MI0008335"
         ],
         "Description": "Homo sapiens miR-1914 stem-loop",
         "Host Gene": "UCKL1",
@@ -49129,7 +49506,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35398",
-            "ENTREZGENE:100302137"
+            "ENTREZGENE:100302137",
+            "HGNC:HGNC:35398",
+            "Ensembl:ENSG00000272045",
+            "miRBase:MI0008335"
         ],
         "Description": "Homo sapiens miR-1914 stem-loop",
         "Host Gene": "UCKL1",
@@ -49259,7 +49639,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35399",
-            "ENTREZGENE:100302129"
+            "ENTREZGENE:100302129",
+            "MIM:615202",
+            "HGNC:HGNC:35399",
+            "Ensembl:ENSG00000222071",
+            "miRBase:MI0008336"
         ],
         "Description": "Homo sapiens miR-1915 stem-loop",
         "Host Gene": "CASC10",
@@ -49309,7 +49693,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35399",
-            "ENTREZGENE:100302129"
+            "ENTREZGENE:100302129",
+            "MIM:615202",
+            "HGNC:HGNC:35399",
+            "Ensembl:ENSG00000222071",
+            "miRBase:MI0008336"
         ],
         "Description": "Homo sapiens miR-1915 stem-loop",
         "Host Gene": "CASC10",
@@ -49374,7 +49762,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32087",
-            "ENTREZGENE:574455"
+            "ENTREZGENE:574455",
+            "MIM:614734",
+            "HGNC:HGNC:32087",
+            "Ensembl:ENSG00000207639",
+            "miRBase:MI0003137"
         ],
         "Description": "Homo sapiens miR-193b stem-loop",
         "Host Gene": "RP11-65J21.3",
@@ -53310,7 +53702,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32087",
-            "ENTREZGENE:574455"
+            "ENTREZGENE:574455",
+            "MIM:614734",
+            "HGNC:HGNC:32087",
+            "Ensembl:ENSG00000207639",
+            "miRBase:MI0003137"
         ],
         "Description": "Homo sapiens miR-193b stem-loop",
         "Host Gene": "RP11-65J21.3",
@@ -53382,7 +53778,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-195",
             "HGNC:31566",
-            "ENTREZGENE:406971"
+            "ENTREZGENE:406971",
+            "MIM:610718",
+            "HGNC:HGNC:31566",
+            "Ensembl:ENSG00000275739",
+            "miRBase:MI0000489"
         ],
         "Description": "Homo sapiens miR-195 stem-loop",
         "Host Gene": "RP11-589P10.7",
@@ -53617,7 +54017,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-196a",
             "HGNC:31568",
-            "ENTREZGENE:406973"
+            "ENTREZGENE:406973",
+            "MIM:609687",
+            "HGNC:HGNC:31568",
+            "Ensembl:ENSG00000207924",
+            "miRBase:MI0000279"
         ],
         "Description": "Homo sapiens miR-196a-2 stem-loop",
         "Host Gene": "RP11-834C11.12",
@@ -53684,7 +54088,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-196a",
             "HGNC:31568",
-            "ENTREZGENE:406973"
+            "ENTREZGENE:406973",
+            "MIM:609687",
+            "HGNC:HGNC:31568",
+            "Ensembl:ENSG00000207924",
+            "miRBase:MI0000279"
         ],
         "Description": "Homo sapiens miR-196a-2 stem-loop",
         "Host Gene": "HOXB7",
@@ -54856,7 +55264,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-196b",
             "HGNC:31790",
-            "ENTREZGENE:442920"
+            "ENTREZGENE:442920",
+            "MIM:609688",
+            "HGNC:HGNC:31790",
+            "Ensembl:ENSG00000207584",
+            "miRBase:MI0001150"
         ],
         "Description": "Homo sapiens miR-196b stem-loop",
         "Host Gene": "HOXA9",
@@ -54918,7 +55330,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-196b",
             "HGNC:31790",
-            "ENTREZGENE:442920"
+            "ENTREZGENE:442920",
+            "MIM:609688",
+            "HGNC:HGNC:31790",
+            "Ensembl:ENSG00000207584",
+            "miRBase:MI0001150"
         ],
         "Description": "Homo sapiens miR-196b stem-loop",
         "Host Gene": "HOXA9",
@@ -55224,7 +55640,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-199a",
             "TARGETS:PICTAR-VERT:hsa-miR-199a*",
             "HGNC:31572",
-            "ENTREZGENE:406977"
+            "ENTREZGENE:406977",
+            "MIM:610720",
+            "HGNC:HGNC:31572",
+            "Ensembl:ENSG00000208024",
+            "miRBase:MI0000281"
         ],
         "Description": "Homo sapiens miR-199a-2 stem-loop",
         "Host Gene": "DNM2",
@@ -55355,7 +55775,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-199a",
             "TARGETS:PICTAR-VERT:hsa-miR-199a*",
             "HGNC:31572",
-            "ENTREZGENE:406977"
+            "ENTREZGENE:406977",
+            "MIM:610720",
+            "HGNC:HGNC:31572",
+            "Ensembl:ENSG00000208024",
+            "miRBase:MI0000281"
         ],
         "Description": "Homo sapiens miR-199a-2 stem-loop",
         "Host Gene": "DNM2",
@@ -55517,7 +55941,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-19a",
             "HGNC:31574",
-            "ENTREZGENE:406979"
+            "ENTREZGENE:406979",
+            "MIM:609418",
+            "HGNC:HGNC:31574",
+            "Ensembl:ENSG00000277328",
+            "miRBase:MI0000073"
         ],
         "Description": "Homo sapiens miR-19a stem-loop",
         "Name": "hsa-mir-19a",
@@ -55752,7 +56180,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-19a",
             "HGNC:31574",
-            "ENTREZGENE:406979"
+            "ENTREZGENE:406979",
+            "MIM:609418",
+            "HGNC:HGNC:31574",
+            "Ensembl:ENSG00000277328",
+            "miRBase:MI0000073"
         ],
         "Description": "Homo sapiens miR-19a stem-loop",
         "Name": "hsa-mir-19a",
@@ -55817,7 +56249,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-19b",
             "HGNC:31575",
-            "ENTREZGENE:406980"
+            "ENTREZGENE:406980",
+            "MIM:609419",
+            "HGNC:HGNC:31575",
+            "Ensembl:ENSG00000275802",
+            "miRBase:MI0000074"
         ],
         "Description": "Homo sapiens miR-19b-1 stem-loop",
         "Name": "hsa-mir-19b-1",
@@ -55931,7 +56367,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-19b",
             "HGNC:31575",
-            "ENTREZGENE:406980"
+            "ENTREZGENE:406980",
+            "MIM:609419",
+            "HGNC:HGNC:31575",
+            "Ensembl:ENSG00000275802",
+            "miRBase:MI0000074"
         ],
         "Description": "Homo sapiens miR-19b-1 stem-loop",
         "Name": "hsa-mir-19b-1",
@@ -57270,7 +57710,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-200c",
             "HGNC:31580",
-            "ENTREZGENE:406985"
+            "ENTREZGENE:406985",
+            "MIM:612092",
+            "HGNC:HGNC:31580",
+            "miRBase:MI0000650"
         ],
         "Description": "Homo sapiens miR-200c stem-loop",
         "Host Gene": "U47924.27",
@@ -57576,7 +58019,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32080",
-            "ENTREZGENE:574448"
+            "ENTREZGENE:574448",
+            "HGNC:HGNC:32080",
+            "Ensembl:ENSG00000278352",
+            "miRBase:MI0003130"
         ],
         "Description": "Homo sapiens miR-202 stem-loop",
         "Name": "hsa-mir-202",
@@ -57629,7 +58075,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-204",
             "HGNC:31582",
-            "ENTREZGENE:406987"
+            "ENTREZGENE:406987",
+            "MIM:610942",
+            "HGNC:HGNC:31582",
+            "Ensembl:ENSG00000207935",
+            "miRBase:MI0000284"
         ],
         "Description": "Homo sapiens miR-204 stem-loop",
         "Host Gene": "TRPM3",
@@ -58039,7 +58489,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-205",
             "HGNC:31583",
-            "ENTREZGENE:406988"
+            "ENTREZGENE:406988",
+            "MIM:613147",
+            "HGNC:HGNC:31583",
+            "Ensembl:ENSG00000276335",
+            "miRBase:MI0000285"
         ],
         "Description": "Homo sapiens miR-205 stem-loop",
         "Name": "hsa-mir-205",
@@ -58207,7 +58661,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-208",
             "HGNC:31585",
-            "ENTREZGENE:406990"
+            "ENTREZGENE:406990",
+            "MIM:611116",
+            "HGNC:HGNC:31585",
+            "Ensembl:ENSG00000199157",
+            "miRBase:MI0000251"
         ],
         "Description": "Homo sapiens miR-208a stem-loop",
         "Host Gene": "MYH6",
@@ -58270,7 +58728,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33669",
-            "ENTREZGENE:100126336"
+            "ENTREZGENE:100126336",
+            "MIM:613613",
+            "HGNC:HGNC:33669",
+            "Ensembl:ENSG00000215991",
+            "miRBase:MI0005570"
         ],
         "Description": "Homo sapiens miR-208b stem-loop",
         "Host Gene": "MYH7",
@@ -58326,7 +58788,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:31577",
-            "ENTREZGENE:406982"
+            "ENTREZGENE:406982",
+            "MIM:609420",
+            "HGNC:HGNC:31577",
+            "Ensembl:ENSG00000275534",
+            "miRBase:MI0000076"
         ],
         "Description": "Homo sapiens miR-20a stem-loop",
         "Name": "hsa-mir-20a",
@@ -58449,7 +58915,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:31577",
-            "ENTREZGENE:406982"
+            "ENTREZGENE:406982",
+            "MIM:609420",
+            "HGNC:HGNC:31577",
+            "Ensembl:ENSG00000275534",
+            "miRBase:MI0000076"
         ],
         "Description": "Homo sapiens miR-20a stem-loop",
         "Name": "hsa-mir-20a",
@@ -59428,7 +59898,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-210",
             "HGNC:31587",
-            "ENTREZGENE:406992"
+            "ENTREZGENE:406992",
+            "MIM:612982",
+            "HGNC:HGNC:31587",
+            "Ensembl:ENSG00000199038",
+            "miRBase:MI0000286"
         ],
         "Description": "Homo sapiens miR-210 stem-loop",
         "Name": "hsa-mir-210",
@@ -59761,7 +60235,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-211",
             "HGNC:31588",
-            "ENTREZGENE:406993"
+            "ENTREZGENE:406993",
+            "MIM:613753",
+            "HGNC:HGNC:31588",
+            "Ensembl:ENSG00000207702",
+            "miRBase:MI0000287"
         ],
         "Description": "Homo sapiens miR-211 stem-loop",
         "Host Gene": "TRPM1",
@@ -59841,7 +60319,10 @@ miRNA_meta_data = {
             "MI0010635"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100313886"
+            "ENTREZGENE:100313886",
+            "HGNC:HGNC:37310",
+            "Ensembl:ENSG00000253030",
+            "miRBase:MI0010635"
         ],
         "Description": "Homo sapiens miR-2116 stem-loop",
         "Host Gene": "MYO1E",
@@ -59887,7 +60368,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-216",
             "HGNC:31593",
-            "ENTREZGENE:406998"
+            "ENTREZGENE:406998",
+            "MIM:610944",
+            "HGNC:HGNC:31593",
+            "Ensembl:ENSG00000207798",
+            "miRBase:MI0000292"
         ],
         "Description": "Homo sapiens miR-216a stem-loop",
         "Host Gene": "RP11-481J13.1",
@@ -59966,7 +60451,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33668",
-            "ENTREZGENE:100126319"
+            "ENTREZGENE:100126319",
+            "HGNC:HGNC:33668",
+            "Ensembl:ENSG00000211520",
+            "miRBase:MI0005569"
         ],
         "Description": "Homo sapiens miR-216b stem-loop",
         "Host Gene": "RP11-481J13.1",
@@ -60023,7 +60511,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-217",
             "HGNC:31594",
-            "ENTREZGENE:406999"
+            "ENTREZGENE:406999",
+            "MIM:615096",
+            "HGNC:HGNC:31594",
+            "miRBase:MI0000293"
         ],
         "Description": "Homo sapiens miR-217 stem-loop",
         "Host Gene": "RP11-481J13.1",
@@ -60123,7 +60614,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-218",
             "HGNC:31595",
-            "ENTREZGENE:407000"
+            "ENTREZGENE:407000",
+            "HGNC:HGNC:31595",
+            "Ensembl:ENSG00000207732",
+            "miRBase:MI0000294"
         ],
         "Description": "Homo sapiens miR-218-1 stem-loop",
         "Host Gene": "SLIT2",
@@ -60180,7 +60674,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-218",
             "HGNC:31596",
-            "ENTREZGENE:407001"
+            "ENTREZGENE:407001",
+            "HGNC:HGNC:31596",
+            "Ensembl:ENSG00000207739",
+            "miRBase:MI0000295"
         ],
         "Description": "Homo sapiens miR-218-2 stem-loop",
         "Host Gene": "SLIT3",
@@ -60660,7 +61157,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-221",
             "HGNC:31601",
-            "ENTREZGENE:407006"
+            "ENTREZGENE:407006",
+            "MIM:300568",
+            "HGNC:HGNC:31601",
+            "Ensembl:ENSG00000207870",
+            "miRBase:MI0000298"
         ],
         "Description": "Homo sapiens miR-221 stem-loop",
         "Name": "hsa-mir-221",
@@ -61968,7 +62469,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-221",
             "HGNC:31601",
-            "ENTREZGENE:407006"
+            "ENTREZGENE:407006",
+            "MIM:300568",
+            "HGNC:HGNC:31601",
+            "Ensembl:ENSG00000207870",
+            "miRBase:MI0000298"
         ],
         "Description": "Homo sapiens miR-221 stem-loop",
         "Name": "hsa-mir-221",
@@ -62043,7 +62548,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-222",
             "HGNC:31602",
-            "ENTREZGENE:407007"
+            "ENTREZGENE:407007",
+            "MIM:300569",
+            "HGNC:HGNC:31602",
+            "Ensembl:ENSG00000207725",
+            "miRBase:MI0000299"
         ],
         "Description": "Homo sapiens miR-222 stem-loop",
         "Name": "hsa-mir-222",
@@ -63548,7 +64057,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-224",
             "HGNC:31604",
-            "ENTREZGENE:407009"
+            "ENTREZGENE:407009",
+            "MIM:300769",
+            "HGNC:HGNC:31604",
+            "Ensembl:ENSG00000207621",
+            "miRBase:MI0000301"
         ],
         "Description": "Homo sapiens miR-224 stem-loop",
         "Host Gene": "GABRE",
@@ -63700,7 +64213,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-23b",
             "HGNC:31606",
-            "ENTREZGENE:407011"
+            "ENTREZGENE:407011",
+            "MIM:610723",
+            "HGNC:HGNC:31606",
+            "Ensembl:ENSG00000207563",
+            "miRBase:MI0000439"
         ],
         "Description": "Homo sapiens miR-23b stem-loop",
         "Host Gene": "C9orf3",
@@ -64620,7 +65137,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-23b",
             "HGNC:31606",
-            "ENTREZGENE:407011"
+            "ENTREZGENE:407011",
+            "MIM:610723",
+            "HGNC:HGNC:31606",
+            "Ensembl:ENSG00000207563",
+            "miRBase:MI0000439"
         ],
         "Description": "Homo sapiens miR-23b stem-loop",
         "Host Gene": "C9orf3",
@@ -64688,7 +65209,10 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-189",
             "TARGETS:PICTAR-VERT:hsa-miR-24",
             "HGNC:31607",
-            "ENTREZGENE:407012"
+            "ENTREZGENE:407012",
+            "MIM:609705",
+            "HGNC:HGNC:31607",
+            "miRBase:MI0000080"
         ],
         "Description": "Homo sapiens miR-24-1 stem-loop",
         "Host Gene": "C9orf3",
@@ -64777,7 +65301,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-24",
             "HGNC:31608",
-            "ENTREZGENE:407013"
+            "ENTREZGENE:407013",
+            "MIM:610724",
+            "HGNC:HGNC:31608",
+            "Ensembl:ENSG00000276797",
+            "miRBase:MI0000081"
         ],
         "Description": "Homo sapiens miR-24-2 stem-loop",
         "Host Gene": "C9orf3",
@@ -66419,7 +66947,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-25",
             "HGNC:31609",
-            "ENTREZGENE:407014"
+            "ENTREZGENE:407014",
+            "MIM:612150",
+            "HGNC:HGNC:31609",
+            "Ensembl:ENSG00000207547",
+            "miRBase:MI0000082"
         ],
         "Description": "Homo sapiens miR-25 stem-loop",
         "Host Gene": "MCM7",
@@ -67360,7 +67892,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-25",
             "HGNC:31609",
-            "ENTREZGENE:407014"
+            "ENTREZGENE:407014",
+            "MIM:612150",
+            "HGNC:HGNC:31609",
+            "Ensembl:ENSG00000207547",
+            "miRBase:MI0000082"
         ],
         "Description": "Homo sapiens miR-25 stem-loop",
         "Host Gene": "MCM7",
@@ -67426,7 +67962,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-26a",
             "HGNC:31611",
-            "ENTREZGENE:407016"
+            "ENTREZGENE:407016",
+            "MIM:613057",
+            "HGNC:HGNC:31611",
+            "Ensembl:ENSG00000207789",
+            "miRBase:MI0000750"
         ],
         "Description": "Homo sapiens miR-26a-2 stem-loop",
         "Host Gene": "CTDSP2",
@@ -67508,7 +68048,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-26a",
             "HGNC:31610",
-            "ENTREZGENE:407015"
+            "ENTREZGENE:407015",
+            "MIM:612151",
+            "HGNC:HGNC:31610",
+            "Ensembl:ENSG00000199075",
+            "miRBase:MI0000083"
         ],
         "Description": "Homo sapiens miR-26a-1 stem-loop",
         "Host Gene": "CTDSPL",
@@ -68480,7 +69024,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-26b",
             "HGNC:31612",
-            "ENTREZGENE:407017"
+            "ENTREZGENE:407017",
+            "MIM:612152",
+            "HGNC:HGNC:31612",
+            "miRBase:MI0000084"
         ],
         "Description": "Homo sapiens miR-26b stem-loop",
         "Host Gene": "CTDSP1",
@@ -68562,7 +69109,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-26b",
             "HGNC:31612",
-            "ENTREZGENE:407017"
+            "ENTREZGENE:407017",
+            "MIM:612152",
+            "HGNC:HGNC:31612",
+            "miRBase:MI0000084"
         ],
         "Description": "Homo sapiens miR-26b stem-loop",
         "Host Gene": "CTDSP1",
@@ -76799,7 +77349,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-27b",
             "HGNC:31614",
-            "ENTREZGENE:407019"
+            "ENTREZGENE:407019",
+            "MIM:610636",
+            "HGNC:HGNC:31614",
+            "Ensembl:ENSG00000207864",
+            "miRBase:MI0000440"
         ],
         "Description": "Homo sapiens miR-27b stem-loop",
         "Host Gene": "C9orf3",
@@ -77296,7 +77850,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-27b",
             "HGNC:31614",
-            "ENTREZGENE:407019"
+            "ENTREZGENE:407019",
+            "MIM:610636",
+            "HGNC:HGNC:31614",
+            "Ensembl:ENSG00000207864",
+            "miRBase:MI0000440"
         ],
         "Description": "Homo sapiens miR-27b stem-loop",
         "Host Gene": "C9orf3",
@@ -77368,7 +77926,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-28",
             "HGNC:31615",
-            "ENTREZGENE:407020"
+            "ENTREZGENE:407020",
+            "MIM:612154",
+            "HGNC:HGNC:31615",
+            "Ensembl:ENSG00000207651",
+            "miRBase:MI0000086"
         ],
         "Description": "Homo sapiens miR-28 stem-loop",
         "Host Gene": "LPP",
@@ -77469,7 +78031,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-28",
             "HGNC:31615",
-            "ENTREZGENE:407020"
+            "ENTREZGENE:407020",
+            "MIM:612154",
+            "HGNC:HGNC:31615",
+            "Ensembl:ENSG00000207651",
+            "miRBase:MI0000086"
         ],
         "Description": "Homo sapiens miR-28 stem-loop",
         "Host Gene": "LPP",
@@ -77680,7 +78246,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-301",
             "HGNC:31622",
-            "ENTREZGENE:407027"
+            "ENTREZGENE:407027",
+            "MIM:615675",
+            "HGNC:HGNC:31622",
+            "Ensembl:ENSG00000207996",
+            "miRBase:MI0000745"
         ],
         "Description": "Homo sapiens miR-301a stem-loop",
         "Host Gene": "SKA2",
@@ -77869,7 +78439,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-302a",
             "TARGETS:PICTAR-VERT:hsa-miR-302a*",
             "HGNC:31623",
-            "ENTREZGENE:407028"
+            "ENTREZGENE:407028",
+            "MIM:614596",
+            "HGNC:HGNC:31623",
+            "Ensembl:ENSG00000207927",
+            "miRBase:MI0000738"
         ],
         "Description": "Homo sapiens miR-302a stem-loop",
         "Host Gene": "LARP7",
@@ -77981,7 +78555,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-302b",
             "TARGETS:PICTAR-VERT:hsa-miR-302b*",
             "HGNC:31763",
-            "ENTREZGENE:442894"
+            "ENTREZGENE:442894",
+            "MIM:614597",
+            "HGNC:HGNC:31763",
+            "Ensembl:ENSG00000274389",
+            "miRBase:MI0000772"
         ],
         "Description": "Homo sapiens miR-302b stem-loop",
         "Host Gene": "LARP7",
@@ -78053,7 +78631,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-302c",
             "TARGETS:PICTAR-VERT:hsa-miR-302c*",
             "HGNC:31764",
-            "ENTREZGENE:442895"
+            "ENTREZGENE:442895",
+            "MIM:614598",
+            "HGNC:HGNC:31764",
+            "Ensembl:ENSG00000199102",
+            "miRBase:MI0000773"
         ],
         "Description": "Homo sapiens miR-302c stem-loop",
         "Host Gene": "LARP7",
@@ -78119,7 +78701,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-302d",
             "HGNC:31765",
-            "ENTREZGENE:442896"
+            "ENTREZGENE:442896",
+            "MIM:614599",
+            "HGNC:HGNC:31765",
+            "Ensembl:ENSG00000199145",
+            "miRBase:MI0000774"
         ],
         "Description": "Homo sapiens miR-302d stem-loop",
         "Host Gene": "LARP7",
@@ -78222,7 +78808,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-30a-3p",
             "TARGETS:PICTAR-VERT:hsa-miR-30a-5p",
             "HGNC:31624",
-            "ENTREZGENE:407029"
+            "ENTREZGENE:407029",
+            "MIM:612329",
+            "HGNC:HGNC:31624",
+            "Ensembl:ENSG00000207827",
+            "miRBase:MI0000088"
         ],
         "Description": "Homo sapiens miR-30a stem-loop",
         "Host Gene": "LINC00472",
@@ -78435,7 +79025,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-30a-3p",
             "TARGETS:PICTAR-VERT:hsa-miR-30a-5p",
             "HGNC:31624",
-            "ENTREZGENE:407029"
+            "ENTREZGENE:407029",
+            "MIM:612329",
+            "HGNC:HGNC:31624",
+            "Ensembl:ENSG00000207827",
+            "miRBase:MI0000088"
         ],
         "Description": "Homo sapiens miR-30a stem-loop",
         "Host Gene": "LINC00472",
@@ -80697,7 +81291,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-30c",
             "HGNC:31626",
-            "ENTREZGENE:407031"
+            "ENTREZGENE:407031",
+            "MIM:615151",
+            "HGNC:HGNC:31626",
+            "Ensembl:ENSG00000207962",
+            "miRBase:MI0000736"
         ],
         "Description": "Homo sapiens miR-30c-1 stem-loop",
         "Host Gene": "NFYC",
@@ -80804,7 +81402,9 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-30c",
             "HGNC:31627",
-            "ENTREZGENE:407032"
+            "ENTREZGENE:407032",
+            "HGNC:HGNC:31627",
+            "miRBase:MI0000254"
         ],
         "Description": "Homo sapiens miR-30c-2 stem-loop",
         "Host Gene": "LINC00472",
@@ -80961,7 +81561,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-30c",
             "HGNC:31626",
-            "ENTREZGENE:407031"
+            "ENTREZGENE:407031",
+            "MIM:615151",
+            "HGNC:HGNC:31626",
+            "Ensembl:ENSG00000207962",
+            "miRBase:MI0000736"
         ],
         "Description": "Homo sapiens miR-30c-1 stem-loop",
         "Host Gene": "LINC00472",
@@ -82085,7 +82689,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:31629",
-            "ENTREZGENE:407034"
+            "ENTREZGENE:407034",
+            "HGNC:HGNC:31629",
+            "Ensembl:ENSG00000198974",
+            "miRBase:MI0000749"
         ],
         "Description": "Homo sapiens miR-30e stem-loop",
         "Host Gene": "NFYC",
@@ -82221,7 +82828,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:31629",
-            "ENTREZGENE:407034"
+            "ENTREZGENE:407034",
+            "HGNC:HGNC:31629",
+            "Ensembl:ENSG00000198974",
+            "miRBase:MI0000749"
         ],
         "Description": "Homo sapiens miR-30e stem-loop",
         "Host Gene": "NFYC",
@@ -82483,7 +83093,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-31",
             "HGNC:31630",
-            "ENTREZGENE:407035"
+            "ENTREZGENE:407035",
+            "MIM:612155",
+            "HGNC:HGNC:31630",
+            "Ensembl:ENSG00000199177",
+            "miRBase:MI0000089"
         ],
         "Description": "Homo sapiens miR-31 stem-loop",
         "Name": "hsa-mir-31",
@@ -82613,7 +83227,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-31",
             "HGNC:31630",
-            "ENTREZGENE:407035"
+            "ENTREZGENE:407035",
+            "MIM:612155",
+            "HGNC:HGNC:31630",
+            "Ensembl:ENSG00000199177",
+            "miRBase:MI0000089"
         ],
         "Description": "Homo sapiens miR-31 stem-loop",
         "Name": "hsa-mir-31",
@@ -83091,7 +83709,9 @@ miRNA_meta_data = {
             "MI0014130"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100422871"
+            "ENTREZGENE:100422871",
+            "HGNC:HGNC:38385",
+            "miRBase:MI0014130"
         ],
         "Description": "Homo sapiens miR-3117 stem-loop",
         "Host Gene": "SGIP1",
@@ -83143,7 +83763,9 @@ miRNA_meta_data = {
             "MI0014144"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100422928"
+            "ENTREZGENE:100422928",
+            "HGNC:HGNC:38269",
+            "miRBase:MI0014144"
         ],
         "Description": "Homo sapiens miR-3127 stem-loop",
         "Host Gene": "AC092636.1",
@@ -83190,7 +83812,10 @@ miRNA_meta_data = {
             "MI0014151"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100422957"
+            "ENTREZGENE:100422957",
+            "HGNC:HGNC:38347",
+            "Ensembl:ENSG00000264755",
+            "miRBase:MI0014151"
         ],
         "Description": "Homo sapiens miR-3131 stem-loop",
         "Host Gene": "IHH",
@@ -83239,7 +83864,10 @@ miRNA_meta_data = {
             "MI0014163"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100422896"
+            "ENTREZGENE:100422896",
+            "HGNC:HGNC:38183",
+            "Ensembl:ENSG00000264678",
+            "miRBase:MI0014163"
         ],
         "Description": "Homo sapiens miR-3140 stem-loop",
         "Host Gene": "FBXW7",
@@ -83298,7 +83926,10 @@ miRNA_meta_data = {
             "MI0014185"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100422892"
+            "ENTREZGENE:100422892",
+            "HGNC:HGNC:38172",
+            "Ensembl:ENSG00000266407",
+            "miRBase:MI0014185"
         ],
         "Description": "Homo sapiens miR-3157 stem-loop",
         "Host Gene": "ENTPD1-AS1",
@@ -83367,7 +83998,10 @@ miRNA_meta_data = {
             "MI0014210"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100423037"
+            "ENTREZGENE:100423037",
+            "HGNC:HGNC:38345",
+            "Ensembl:ENSG00000266235",
+            "miRBase:MI0014210"
         ],
         "Description": "Homo sapiens miR-3176 stem-loop",
         "Host Gene": "CAPN15",
@@ -83481,7 +84115,10 @@ miRNA_meta_data = {
             "MI0014211"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100423012"
+            "ENTREZGENE:100423012",
+            "HGNC:HGNC:38364",
+            "Ensembl:ENSG00000265820",
+            "miRBase:MI0014211"
         ],
         "Description": "Homo sapiens miR-3177 stem-loop",
         "Host Gene": "MAPK8IP3",
@@ -83550,7 +84187,10 @@ miRNA_meta_data = {
             "MI0014223"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100422972"
+            "ENTREZGENE:100422972",
+            "HGNC:HGNC:38378",
+            "Ensembl:ENSG00000264947",
+            "miRBase:MI0014223"
         ],
         "Description": "Homo sapiens miR-3181 stem-loop",
         "Host Gene": "CYLD",
@@ -83599,7 +84239,10 @@ miRNA_meta_data = {
             "MI0014241"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100423014"
+            "ENTREZGENE:100423014",
+            "HGNC:HGNC:38198",
+            "Ensembl:ENSG00000266463",
+            "miRBase:MI0014241"
         ],
         "Description": "Homo sapiens miR-3196 stem-loop",
         "Host Gene": "BIRC7",
@@ -83643,7 +84286,10 @@ miRNA_meta_data = {
             "MI0014246"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100423025"
+            "ENTREZGENE:100423025",
+            "HGNC:HGNC:38236",
+            "Ensembl:ENSG00000264757",
+            "miRBase:MI0014246"
         ],
         "Description": "Homo sapiens miR-3198-1 stem-loop",
         "Host Gene": "BID",
@@ -83694,7 +84340,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-32",
             "HGNC:31631",
-            "ENTREZGENE:407036"
+            "ENTREZGENE:407036",
+            "MIM:609355",
+            "HGNC:HGNC:31631",
+            "Ensembl:ENSG00000207698",
+            "miRBase:MI0000090"
         ],
         "Description": "Homo sapiens miR-32 stem-loop",
         "Host Gene": "TMEM245",
@@ -84469,7 +85119,9 @@ miRNA_meta_data = {
             "MI0014249"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100422912"
+            "ENTREZGENE:100422912",
+            "HGNC:HGNC:38227",
+            "miRBase:MI0014249"
         ],
         "Description": "Homo sapiens miR-3200 stem-loop",
         "Host Gene": "OSBP2",
@@ -84592,7 +85244,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35256",
-            "ENTREZGENE:100313769"
+            "ENTREZGENE:100313769",
+            "HGNC:HGNC:35256",
+            "Ensembl:ENSG00000221406",
+            "miRBase:MI0003839"
         ],
         "Description": "Homo sapiens miR-320b-2 stem-loop",
         "Host Gene": "NVL",
@@ -84982,7 +85637,9 @@ miRNA_meta_data = {
             "MI0014234"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100422913"
+            "ENTREZGENE:100422913",
+            "HGNC:HGNC:38230",
+            "miRBase:MI0014234"
         ],
         "Description": "Homo sapiens miR-320e stem-loop",
         "Host Gene": "PRKD2",
@@ -85033,7 +85690,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-326",
             "HGNC:31769",
-            "ENTREZGENE:442900"
+            "ENTREZGENE:442900",
+            "MIM:613755",
+            "HGNC:HGNC:31769",
+            "Ensembl:ENSG00000199090",
+            "miRBase:MI0000808"
         ],
         "Description": "Homo sapiens miR-326 stem-loop",
         "Host Gene": "ARRB1",
@@ -85328,7 +85989,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-330",
             "HGNC:31771",
-            "ENTREZGENE:442902"
+            "ENTREZGENE:442902",
+            "HGNC:HGNC:31771",
+            "Ensembl:ENSG00000199066",
+            "miRBase:MI0000803"
         ],
         "Description": "Homo sapiens miR-330 stem-loop",
         "Host Gene": "EML2",
@@ -85523,7 +86187,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-330",
             "HGNC:31771",
-            "ENTREZGENE:442902"
+            "ENTREZGENE:442902",
+            "HGNC:HGNC:31771",
+            "Ensembl:ENSG00000199066",
+            "miRBase:MI0000803"
         ],
         "Description": "Homo sapiens miR-330 stem-loop",
         "Host Gene": "EML2",
@@ -85735,7 +86402,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-335",
             "HGNC:31773",
-            "ENTREZGENE:442904"
+            "ENTREZGENE:442904",
+            "MIM:611768",
+            "HGNC:HGNC:31773",
+            "Ensembl:ENSG00000199043",
+            "miRBase:MI0000816"
         ],
         "Description": "Homo sapiens miR-335 stem-loop",
         "Host Gene": "MEST",
@@ -98525,7 +99196,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-338",
             "HGNC:31775",
-            "ENTREZGENE:442906"
+            "ENTREZGENE:442906",
+            "MIM:614059",
+            "HGNC:HGNC:31775",
+            "miRBase:MI0000814"
         ],
         "Description": "Homo sapiens miR-338 stem-loop",
         "Host Gene": "AC115099.1",
@@ -98638,7 +99312,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-338",
             "HGNC:31775",
-            "ENTREZGENE:442906"
+            "ENTREZGENE:442906",
+            "MIM:614059",
+            "HGNC:HGNC:31775",
+            "miRBase:MI0000814"
         ],
         "Description": "Homo sapiens miR-338 stem-loop",
         "Host Gene": "AC115099.1",
@@ -98698,7 +99375,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-339",
             "HGNC:31776",
-            "ENTREZGENE:442907"
+            "ENTREZGENE:442907",
+            "MIM:615977",
+            "HGNC:HGNC:31776",
+            "Ensembl:ENSG00000199023",
+            "miRBase:MI0000815"
         ],
         "Description": "Homo sapiens miR-339 stem-loop",
         "Host Gene": "C7orf50",
@@ -98765,7 +99446,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-339",
             "HGNC:31776",
-            "ENTREZGENE:442907"
+            "ENTREZGENE:442907",
+            "MIM:615977",
+            "HGNC:HGNC:31776",
+            "Ensembl:ENSG00000199023",
+            "miRBase:MI0000815"
         ],
         "Description": "Homo sapiens miR-339 stem-loop",
         "Host Gene": "C7orf50",
@@ -99205,7 +99890,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-33",
             "HGNC:31634",
-            "ENTREZGENE:407039"
+            "ENTREZGENE:407039",
+            "MIM:612156",
+            "HGNC:HGNC:31634",
+            "Ensembl:ENSG00000207932",
+            "miRBase:MI0000091"
         ],
         "Description": "Homo sapiens miR-33a stem-loop",
         "Host Gene": "SREBF2",
@@ -99257,7 +99946,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-33",
             "HGNC:31634",
-            "ENTREZGENE:407039"
+            "ENTREZGENE:407039",
+            "MIM:612156",
+            "HGNC:HGNC:31634",
+            "Ensembl:ENSG00000207932",
+            "miRBase:MI0000091"
         ],
         "Description": "Homo sapiens miR-33a stem-loop",
         "Host Gene": "SREBF2",
@@ -99703,7 +100396,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32791",
-            "ENTREZGENE:693120"
+            "ENTREZGENE:693120",
+            "MIM:613486",
+            "HGNC:HGNC:32791",
+            "Ensembl:ENSG00000207839",
+            "miRBase:MI0003646"
         ],
         "Description": "Homo sapiens miR-33b stem-loop",
         "Host Gene": "SREBF1",
@@ -99775,7 +100472,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-340",
             "HGNC:31777",
-            "ENTREZGENE:442908"
+            "ENTREZGENE:442908",
+            "HGNC:HGNC:31777",
+            "Ensembl:ENSG00000198995",
+            "miRBase:MI0000802"
         ],
         "Description": "Homo sapiens miR-340 stem-loop",
         "Host Gene": "RNF130",
@@ -99885,7 +100585,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-340",
             "HGNC:31777",
-            "ENTREZGENE:442908"
+            "ENTREZGENE:442908",
+            "HGNC:HGNC:31777",
+            "Ensembl:ENSG00000198995",
+            "miRBase:MI0000802"
         ],
         "Description": "Homo sapiens miR-340 stem-loop",
         "Host Gene": "RNF130",
@@ -100552,7 +101255,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-342",
             "HGNC:31778",
-            "ENTREZGENE:442909"
+            "ENTREZGENE:442909",
+            "HGNC:HGNC:31778",
+            "Ensembl:ENSG00000199082",
+            "miRBase:MI0000805"
         ],
         "Description": "Homo sapiens miR-342 stem-loop",
         "Host Gene": "EVL",
@@ -101032,7 +101738,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-342",
             "HGNC:31778",
-            "ENTREZGENE:442909"
+            "ENTREZGENE:442909",
+            "HGNC:HGNC:31778",
+            "Ensembl:ENSG00000199082",
+            "miRBase:MI0000805"
         ],
         "Description": "Homo sapiens miR-342 stem-loop",
         "Host Gene": "EVL",
@@ -101239,7 +101948,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-346",
             "HGNC:31780",
-            "ENTREZGENE:442911"
+            "ENTREZGENE:442911",
+            "MIM:611190",
+            "HGNC:HGNC:31780",
+            "Ensembl:ENSG00000199104",
+            "miRBase:MI0000826"
         ],
         "Description": "Homo sapiens miR-346 stem-loop",
         "Host Gene": "GRID1",
@@ -101565,7 +102278,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:31867",
-            "ENTREZGENE:494323"
+            "ENTREZGENE:494323",
+            "HGNC:HGNC:31867",
+            "miRBase:MI0000760"
         ],
         "Description": "Homo sapiens miR-361 stem-loop",
         "Host Gene": "CHM",
@@ -101690,7 +102405,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:31867",
-            "ENTREZGENE:494323"
+            "ENTREZGENE:494323",
+            "HGNC:HGNC:31867",
+            "miRBase:MI0000760"
         ],
         "Description": "Homo sapiens miR-361 stem-loop",
         "Host Gene": "CHM",
@@ -102207,7 +102924,10 @@ miRNA_meta_data = {
             "MI0016009"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100500828"
+            "ENTREZGENE:100500828",
+            "HGNC:HGNC:38998",
+            "Ensembl:ENSG00000266533",
+            "miRBase:MI0016009"
         ],
         "Description": "Homo sapiens miR-3619 stem-loop",
         "Name": "hsa-mir-3619",
@@ -102265,7 +102985,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32022",
-            "ENTREZGENE:574030"
+            "ENTREZGENE:574030",
+            "HGNC:HGNC:32022",
+            "Ensembl:ENSG00000208015",
+            "miRBase:MI0000762"
         ],
         "Description": "Homo sapiens miR-362 stem-loop",
         "Host Gene": "CLCN5",
@@ -102330,7 +103053,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32022",
-            "ENTREZGENE:574030"
+            "ENTREZGENE:574030",
+            "HGNC:HGNC:32022",
+            "Ensembl:ENSG00000208015",
+            "miRBase:MI0000762"
         ],
         "Description": "Homo sapiens miR-362 stem-loop",
         "Host Gene": "CLCN5",
@@ -102394,7 +103120,10 @@ miRNA_meta_data = {
             "MI0016011"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100500810"
+            "ENTREZGENE:100500810",
+            "HGNC:HGNC:38917",
+            "Ensembl:ENSG00000264944",
+            "miRBase:MI0016011"
         ],
         "Description": "Homo sapiens miR-3620 stem-loop",
         "Host Gene": "ARF1",
@@ -102454,7 +103183,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33692",
-            "ENTREZGENE:100126355"
+            "ENTREZGENE:100126355",
+            "MIM:614735",
+            "HGNC:HGNC:33692",
+            "miRBase:MI0000767"
         ],
         "Description": "Homo sapiens miR-365a stem-loop",
         "Host Gene": "RP11-65J21.3",
@@ -102670,7 +103402,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33692",
-            "ENTREZGENE:100126355"
+            "ENTREZGENE:100126355",
+            "MIM:614735",
+            "HGNC:HGNC:33692",
+            "miRBase:MI0000767"
         ],
         "Description": "Homo sapiens miR-365a stem-loop",
         "Host Gene": "RP11-65J21.3",
@@ -102732,7 +103467,10 @@ miRNA_meta_data = {
             "MI0016064"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100500893"
+            "ENTREZGENE:100500893",
+            "HGNC:HGNC:38958",
+            "Ensembl:ENSG00000266782",
+            "miRBase:MI0016064"
         ],
         "Description": "Homo sapiens miR-3663 stem-loop",
         "Name": "hsa-mir-3663",
@@ -102779,7 +103517,10 @@ miRNA_meta_data = {
             "MI0016080"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100500878"
+            "ENTREZGENE:100500878",
+            "HGNC:HGNC:38979",
+            "Ensembl:ENSG00000263813",
+            "miRBase:MI0016080"
         ],
         "Description": "Homo sapiens miR-3679 stem-loop",
         "Host Gene": "MGAT5",
@@ -102843,7 +103584,10 @@ miRNA_meta_data = {
             "MI0016092"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100500900"
+            "ENTREZGENE:100500900",
+            "HGNC:HGNC:38909",
+            "Ensembl:ENSG00000265083",
+            "miRBase:MI0016092"
         ],
         "Description": "Homo sapiens miR-3691 stem-loop",
         "Host Gene": "LYRM4",
@@ -102894,7 +103638,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-370",
             "HGNC:31784",
-            "ENTREZGENE:442915"
+            "ENTREZGENE:442915",
+            "MIM:612553",
+            "HGNC:HGNC:31784",
+            "miRBase:MI0000778"
         ],
         "Description": "Homo sapiens miR-370 stem-loop",
         "Host Gene": "MEG8",
@@ -102971,7 +103718,9 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-374",
             "HGNC:31788",
-            "ENTREZGENE:442919"
+            "ENTREZGENE:442919",
+            "HGNC:HGNC:31788",
+            "miRBase:MI0000782"
         ],
         "Description": "Homo sapiens miR-374a stem-loop",
         "Host Gene": "FTX",
@@ -103032,7 +103781,9 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-374",
             "HGNC:31788",
-            "ENTREZGENE:442919"
+            "ENTREZGENE:442919",
+            "HGNC:HGNC:31788",
+            "miRBase:MI0000782"
         ],
         "Description": "Homo sapiens miR-374a stem-loop",
         "Host Gene": "FTX",
@@ -103132,7 +103883,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33665",
-            "ENTREZGENE:100126317"
+            "ENTREZGENE:100126317",
+            "HGNC:HGNC:33665",
+            "miRBase:MI0005566"
         ],
         "Description": "Homo sapiens miR-374b stem-loop",
         "Host Gene": "FTX",
@@ -103499,7 +104252,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-378",
             "HGNC:31871",
-            "ENTREZGENE:494327"
+            "ENTREZGENE:494327",
+            "MIM:611957",
+            "HGNC:HGNC:31871",
+            "miRBase:MI0000786"
         ],
         "Description": "Homo sapiens miR-378a stem-loop",
         "Host Gene": "PPARGC1B",
@@ -104156,7 +104912,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-378",
             "HGNC:31871",
-            "ENTREZGENE:494327"
+            "ENTREZGENE:494327",
+            "MIM:611957",
+            "HGNC:HGNC:31871",
+            "miRBase:MI0000786"
         ],
         "Description": "Homo sapiens miR-378a stem-loop",
         "Host Gene": "PPARGC1B",
@@ -104481,7 +105240,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-383",
             "HGNC:31876",
-            "ENTREZGENE:494332"
+            "ENTREZGENE:494332",
+            "HGNC:HGNC:31876",
+            "Ensembl:ENSG00000199127",
+            "miRBase:MI0000791"
         ],
         "Description": "Homo sapiens miR-383 stem-loop",
         "Host Gene": "SGCZ",
@@ -104553,7 +105315,10 @@ miRNA_meta_data = {
             "MI0016413"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100500826"
+            "ENTREZGENE:100500826",
+            "HGNC:HGNC:38987",
+            "Ensembl:ENSG00000266320",
+            "miRBase:MI0016413"
         ],
         "Description": "Homo sapiens miR-3909 stem-loop",
         "Host Gene": "TOM1",
@@ -104622,7 +105387,10 @@ miRNA_meta_data = {
             "MI0016600"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100500829"
+            "ENTREZGENE:100500829",
+            "HGNC:HGNC:38888",
+            "Ensembl:ENSG00000264069",
+            "miRBase:MI0016600"
         ],
         "Description": "Homo sapiens miR-3943 stem-loop",
         "Host Gene": "HECW1-IT1",
@@ -104677,7 +105445,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32793",
-            "ENTREZGENE:693122"
+            "ENTREZGENE:693122",
+            "HGNC:HGNC:32793",
+            "miRBase:MI0003685"
         ],
         "Description": "Homo sapiens miR-421 stem-loop",
         "Host Gene": "FTX",
@@ -105437,7 +106207,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:31880",
-            "ENTREZGENE:494335"
+            "ENTREZGENE:494335",
+            "HGNC:HGNC:31880",
+            "Ensembl:ENSG00000199071",
+            "miRBase:MI0001445"
         ],
         "Description": "Homo sapiens miR-423 stem-loop",
         "Host Gene": "RP11-1148O4.2",
@@ -106518,7 +107291,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:31880",
-            "ENTREZGENE:494335"
+            "ENTREZGENE:494335",
+            "HGNC:HGNC:31880",
+            "Ensembl:ENSG00000199071",
+            "miRBase:MI0001445"
         ],
         "Description": "Homo sapiens miR-423 stem-loop",
         "Host Gene": "RP11-1148O4.2",
@@ -107419,7 +108195,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:31882",
-            "ENTREZGENE:494337"
+            "ENTREZGENE:494337",
+            "HGNC:HGNC:31882",
+            "Ensembl:ENSG00000199032",
+            "miRBase:MI0001448"
         ],
         "Description": "Homo sapiens miR-425 stem-loop",
         "Host Gene": "DALRD3",
@@ -107563,7 +108342,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:31882",
-            "ENTREZGENE:494337"
+            "ENTREZGENE:494337",
+            "HGNC:HGNC:31882",
+            "Ensembl:ENSG00000199032",
+            "miRBase:MI0001448"
         ],
         "Description": "Homo sapiens miR-425 stem-loop",
         "Host Gene": "DALRD3",
@@ -108013,7 +108795,10 @@ miRNA_meta_data = {
             "MI0015854"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100422979"
+            "ENTREZGENE:100422979",
+            "HGNC:HGNC:38392",
+            "Ensembl:ENSG00000265407",
+            "miRBase:MI0015854"
         ],
         "Description": "Homo sapiens miR-4324 stem-loop",
         "Host Gene": "SLC6A16",
@@ -108057,7 +108842,10 @@ miRNA_meta_data = {
             "MI0015866"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100422945"
+            "ENTREZGENE:100422945",
+            "HGNC:HGNC:38314",
+            "Ensembl:ENSG00000266104",
+            "miRBase:MI0015866"
         ],
         "Description": "Homo sapiens miR-4326 stem-loop",
         "Host Gene": "ARFGAP1",
@@ -108137,7 +108925,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:26069",
-            "ENTREZGENE:554212"
+            "ENTREZGENE:554212",
+            "MIM:300686",
+            "HGNC:HGNC:26069",
+            "Ensembl:ENSG00000199001",
+            "miRBase:MI0001637"
         ],
         "Description": "Homo sapiens miR-448 stem-loop",
         "Host Gene": "HTR2C",
@@ -108183,7 +108975,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:27645",
-            "ENTREZGENE:554213"
+            "ENTREZGENE:554213",
+            "MIM:613131",
+            "HGNC:HGNC:27645",
+            "Ensembl:ENSG00000198983",
+            "miRBase:MI0001648"
         ],
         "Description": "Homo sapiens miR-449a stem-loop",
         "Host Gene": "CDC20B",
@@ -108299,7 +109095,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32794",
-            "ENTREZGENE:693123"
+            "ENTREZGENE:693123",
+            "MIM:613132",
+            "HGNC:HGNC:32794",
+            "Ensembl:ENSG00000207728",
+            "miRBase:MI0003673"
         ],
         "Description": "Homo sapiens miR-449b stem-loop",
         "Host Gene": "CDC20B",
@@ -108388,7 +109188,10 @@ miRNA_meta_data = {
             "MI0003823"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100313923"
+            "ENTREZGENE:100313923",
+            "HGNC:HGNC:37302",
+            "Ensembl:ENSG00000251856",
+            "miRBase:MI0003823"
         ],
         "Description": "Homo sapiens miR-449c stem-loop",
         "Host Gene": "CDC20B",
@@ -108438,7 +109241,10 @@ miRNA_meta_data = {
             "MI0003823"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100313923"
+            "ENTREZGENE:100313923",
+            "HGNC:HGNC:37302",
+            "Ensembl:ENSG00000251856",
+            "miRBase:MI0003823"
         ],
         "Description": "Homo sapiens miR-449c stem-loop",
         "Host Gene": "CDC20B",
@@ -108499,7 +109305,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33137",
-            "ENTREZGENE:768216"
+            "ENTREZGENE:768216",
+            "HGNC:HGNC:33137",
+            "Ensembl:ENSG00000211514",
+            "miRBase:MI0003820"
         ],
         "Description": "Homo sapiens miR-454 stem-loop",
         "Host Gene": "SKA2",
@@ -108710,7 +109519,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33137",
-            "ENTREZGENE:768216"
+            "ENTREZGENE:768216",
+            "HGNC:HGNC:33137",
+            "Ensembl:ENSG00000211514",
+            "miRBase:MI0003820"
         ],
         "Description": "Homo sapiens miR-454 stem-loop",
         "Host Gene": "SKA2",
@@ -108781,7 +109593,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32344",
-            "ENTREZGENE:619556"
+            "ENTREZGENE:619556",
+            "HGNC:HGNC:32344",
+            "Ensembl:ENSG00000207726",
+            "miRBase:MI0003513"
         ],
         "Description": "Homo sapiens miR-455 stem-loop",
         "Host Gene": "COL27A1",
@@ -109382,7 +110197,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32344",
-            "ENTREZGENE:619556"
+            "ENTREZGENE:619556",
+            "HGNC:HGNC:32344",
+            "Ensembl:ENSG00000207726",
+            "miRBase:MI0003513"
         ],
         "Description": "Homo sapiens miR-455 stem-loop",
         "Host Gene": "COL27A1",
@@ -109453,7 +110271,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32340",
-            "ENTREZGENE:619552"
+            "ENTREZGENE:619552",
+            "HGNC:HGNC:32340",
+            "miRBase:MI0002467"
         ],
         "Description": "Homo sapiens miR-483 stem-loop",
         "Host Gene": "INS-IGF2",
@@ -109519,7 +110339,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32340",
-            "ENTREZGENE:619552"
+            "ENTREZGENE:619552",
+            "HGNC:HGNC:32340",
+            "miRBase:MI0002467"
         ],
         "Description": "Homo sapiens miR-483 stem-loop",
         "Host Gene": "INS-IGF2",
@@ -109568,7 +110390,10 @@ miRNA_meta_data = {
         "Accession ID": [
             "MI0023622"
         ],
-        "Database cross-references": [],
+        "Database cross-references": [
+            "HGNC:HGNC:50213",
+            "miRBase:MI0023622"
+        ],
         "Description": "Homo sapiens miR-486-2 stem-loop",
         "Host Gene": "AC113133.1",
         "Host Gene Transcript Count": 1,
@@ -109615,7 +110440,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32073",
-            "ENTREZGENE:574441"
+            "ENTREZGENE:574441",
+            "HGNC:HGNC:32073",
+            "miRBase:MI0003123"
         ],
         "Description": "Homo sapiens miR-488 stem-loop",
         "Host Gene": "ASTN1",
@@ -109671,7 +110498,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32073",
-            "ENTREZGENE:574441"
+            "ENTREZGENE:574441",
+            "HGNC:HGNC:32073",
+            "miRBase:MI0003123"
         ],
         "Description": "Homo sapiens miR-488 stem-loop",
         "Host Gene": "ASTN1",
@@ -109727,7 +110556,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32074",
-            "ENTREZGENE:574442"
+            "ENTREZGENE:574442",
+            "MIM:614523",
+            "HGNC:HGNC:32074",
+            "Ensembl:ENSG00000207656",
+            "miRBase:MI0003124"
         ],
         "Description": "Homo sapiens miR-489 stem-loop",
         "Host Gene": "CALCR",
@@ -109783,7 +110616,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32075",
-            "ENTREZGENE:574443"
+            "ENTREZGENE:574443",
+            "HGNC:HGNC:32075",
+            "Ensembl:ENSG00000207597",
+            "miRBase:MI0003125"
         ],
         "Description": "Homo sapiens miR-490 stem-loop",
         "Host Gene": "AC009264.1",
@@ -109838,7 +110674,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32076",
-            "ENTREZGENE:574444"
+            "ENTREZGENE:574444",
+            "HGNC:HGNC:32076",
+            "miRBase:MI0003126"
         ],
         "Description": "Homo sapiens miR-491 stem-loop",
         "Host Gene": "FOCAD",
@@ -109904,7 +110742,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32088",
-            "ENTREZGENE:574456"
+            "ENTREZGENE:574456",
+            "MIM:615672",
+            "HGNC:HGNC:32088",
+            "Ensembl:ENSG00000273895",
+            "miRBase:MI0003138"
         ],
         "Description": "Homo sapiens miR-497 stem-loop",
         "Host Gene": "RP11-589P10.7",
@@ -110004,7 +110846,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32133",
-            "ENTREZGENE:574501"
+            "ENTREZGENE:574501",
+            "MIM:613614",
+            "HGNC:HGNC:32133",
+            "Ensembl:ENSG00000207635",
+            "miRBase:MI0003183"
         ],
         "Description": "Homo sapiens miR-499a stem-loop",
         "Host Gene": "MYH7B",
@@ -110065,7 +110911,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32134",
-            "ENTREZGENE:574502"
+            "ENTREZGENE:574502",
+            "HGNC:HGNC:32134",
+            "Ensembl:ENSG00000207785",
+            "miRBase:MI0003184"
         ],
         "Description": "Homo sapiens miR-500a stem-loop",
         "Host Gene": "CLCN5",
@@ -110180,7 +111029,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32134",
-            "ENTREZGENE:574502"
+            "ENTREZGENE:574502",
+            "HGNC:HGNC:32134",
+            "Ensembl:ENSG00000207785",
+            "miRBase:MI0003184"
         ],
         "Description": "Homo sapiens miR-500a stem-loop",
         "Host Gene": "CLCN5",
@@ -110285,7 +111137,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32135",
-            "ENTREZGENE:574503"
+            "ENTREZGENE:574503",
+            "HGNC:HGNC:32135",
+            "Ensembl:ENSG00000211538",
+            "miRBase:MI0003185"
         ],
         "Description": "Homo sapiens miR-501 stem-loop",
         "Host Gene": "CLCN5",
@@ -110360,7 +111215,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32135",
-            "ENTREZGENE:574503"
+            "ENTREZGENE:574503",
+            "HGNC:HGNC:32135",
+            "Ensembl:ENSG00000211538",
+            "miRBase:MI0003185"
         ],
         "Description": "Homo sapiens miR-501 stem-loop",
         "Host Gene": "CLCN5",
@@ -110455,7 +111313,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32136",
-            "ENTREZGENE:574504"
+            "ENTREZGENE:574504",
+            "MIM:300893",
+            "HGNC:HGNC:32136",
+            "Ensembl:ENSG00000272080",
+            "miRBase:MI0003186"
         ],
         "Description": "Homo sapiens miR-502 stem-loop",
         "Host Gene": "CLCN5",
@@ -110541,7 +111403,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32138",
-            "ENTREZGENE:574506"
+            "ENTREZGENE:574506",
+            "MIM:300865",
+            "HGNC:HGNC:32138",
+            "Ensembl:ENSG00000208005",
+            "miRBase:MI0003188"
         ],
         "Description": "Homo sapiens miR-503 stem-loop",
         "Name": "hsa-mir-503",
@@ -110879,7 +111745,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32139",
-            "ENTREZGENE:574507"
+            "ENTREZGENE:574507",
+            "HGNC:HGNC:32139",
+            "miRBase:MI0003189"
         ],
         "Description": "Homo sapiens miR-504 stem-loop",
         "Host Gene": "FGF13",
@@ -111090,7 +111958,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32140",
-            "ENTREZGENE:574508"
+            "ENTREZGENE:574508",
+            "HGNC:HGNC:32140",
+            "miRBase:MI0003190"
         ],
         "Description": "Homo sapiens miR-505 stem-loop",
         "Host Gene": "ATP11C",
@@ -111586,7 +112456,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32140",
-            "ENTREZGENE:574508"
+            "ENTREZGENE:574508",
+            "HGNC:HGNC:32140",
+            "miRBase:MI0003190"
         ],
         "Description": "Homo sapiens miR-505 stem-loop",
         "Host Gene": "ATP11C",
@@ -111867,7 +112739,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32077",
-            "ENTREZGENE:574445"
+            "ENTREZGENE:574445",
+            "HGNC:HGNC:32077",
+            "Ensembl:ENSG00000207938",
+            "miRBase:MI0003127"
         ],
         "Description": "Homo sapiens miR-511 stem-loop",
         "Host Gene": "MRC1",
@@ -111917,7 +112792,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32795",
-            "ENTREZGENE:693124"
+            "ENTREZGENE:693124",
+            "HGNC:HGNC:32795",
+            "Ensembl:ENSG00000207758",
+            "miRBase:MI0003205"
         ],
         "Description": "Homo sapiens miR-532 stem-loop",
         "Host Gene": "CLCN5",
@@ -112067,7 +112945,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32795",
-            "ENTREZGENE:693124"
+            "ENTREZGENE:693124",
+            "HGNC:HGNC:32795",
+            "Ensembl:ENSG00000207758",
+            "miRBase:MI0003205"
         ],
         "Description": "Homo sapiens miR-532 stem-loop",
         "Host Gene": "CLCN5",
@@ -112142,7 +113023,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32531",
-            "ENTREZGENE:664614"
+            "ENTREZGENE:664614",
+            "HGNC:HGNC:32531",
+            "Ensembl:ENSG00000207820",
+            "miRBase:MI0003516"
         ],
         "Description": "Homo sapiens miR-545 stem-loop",
         "Host Gene": "FTX",
@@ -112202,7 +113086,10 @@ miRNA_meta_data = {
             "MI0016689"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100500863"
+            "ENTREZGENE:100500863",
+            "HGNC:HGNC:38944",
+            "Ensembl:ENSG00000207704",
+            "miRBase:MI0016689"
         ],
         "Description": "Homo sapiens miR-548aa-1 stem-loop",
         "Host Gene": "ATAD2",
@@ -112247,7 +113134,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32799",
-            "ENTREZGENE:693128"
+            "ENTREZGENE:693128",
+            "HGNC:HGNC:32799",
+            "Ensembl:ENSG00000207982",
+            "miRBase:MI0003596"
         ],
         "Description": "Homo sapiens miR-548b stem-loop",
         "Host Gene": "FAM184A",
@@ -112407,7 +113297,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32801",
-            "ENTREZGENE:693130"
+            "ENTREZGENE:693130",
+            "HGNC:HGNC:32801",
+            "miRBase:MI0003668"
         ],
         "Description": "Homo sapiens miR-548d-1 stem-loop",
         "Host Gene": "ATAD2",
@@ -112457,7 +113349,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32801",
-            "ENTREZGENE:693130"
+            "ENTREZGENE:693130",
+            "HGNC:HGNC:32801",
+            "miRBase:MI0003668"
         ],
         "Description": "Homo sapiens miR-548d-1 stem-loop",
         "Host Gene": "ATAD2",
@@ -112512,7 +113406,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35345",
-            "ENTREZGENE:100313884"
+            "ENTREZGENE:100313884",
+            "HGNC:HGNC:35345",
+            "Ensembl:ENSG00000221616",
+            "miRBase:MI0006414"
         ],
         "Description": "Homo sapiens miR-548h-4 stem-loop",
         "Name": "hsa-mir-548h-4",
@@ -112555,7 +113452,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35276",
-            "ENTREZGENE:100313914"
+            "ENTREZGENE:100313914",
+            "HGNC:HGNC:35276",
+            "Ensembl:ENSG00000221760",
+            "miRBase:MI0006345"
         ],
         "Description": "Homo sapiens miR-548j stem-loop",
         "Host Gene": "TPST2",
@@ -112604,7 +113504,9 @@ miRNA_meta_data = {
             "MI0016746"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100616190"
+            "ENTREZGENE:100616190",
+            "HGNC:HGNC:41882",
+            "miRBase:MI0016746"
         ],
         "Description": "Homo sapiens miR-548o-2 stem-loop",
         "Host Gene": "PRKRIP1",
@@ -112648,7 +113550,10 @@ miRNA_meta_data = {
             "MI0014174"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100422850"
+            "ENTREZGENE:100422850",
+            "HGNC:HGNC:38302",
+            "Ensembl:ENSG00000265520",
+            "miRBase:MI0014174"
         ],
         "Description": "Homo sapiens miR-548v stem-loop",
         "Host Gene": "MTUS1",
@@ -112693,7 +113598,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32804",
-            "ENTREZGENE:693133"
+            "ENTREZGENE:693133",
+            "HGNC:HGNC:32804",
+            "Ensembl:ENSG00000207771",
+            "miRBase:MI0003600"
         ],
         "Description": "Homo sapiens miR-550a-1 stem-loop",
         "Host Gene": "DPY19L1P1",
@@ -112748,7 +113656,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32804",
-            "ENTREZGENE:693133"
+            "ENTREZGENE:693133",
+            "HGNC:HGNC:32804",
+            "Ensembl:ENSG00000207771",
+            "miRBase:MI0003600"
         ],
         "Description": "Homo sapiens miR-550a-1 stem-loop",
         "Host Gene": "DPY19L1P1",
@@ -112803,7 +113714,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32807",
-            "ENTREZGENE:693136"
+            "ENTREZGENE:693136",
+            "HGNC:HGNC:32807",
+            "Ensembl:ENSG00000207717",
+            "miRBase:MI0003575"
         ],
         "Description": "Homo sapiens miR-551b stem-loop",
         "Host Gene": "EGFEM1P",
@@ -112863,7 +113777,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32815",
-            "ENTREZGENE:693144"
+            "ENTREZGENE:693144",
+            "HGNC:HGNC:32815",
+            "Ensembl:ENSG00000207923",
+            "miRBase:MI0003565"
         ],
         "Description": "Homo sapiens miR-559 stem-loop",
         "Host Gene": "EPCAM",
@@ -112928,7 +113845,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32818",
-            "ENTREZGENE:693147"
+            "ENTREZGENE:693147",
+            "HGNC:HGNC:32818",
+            "Ensembl:ENSG00000207626",
+            "miRBase:MI0003568"
         ],
         "Description": "Homo sapiens miR-562 stem-loop",
         "Host Gene": "DIS3L2",
@@ -112983,7 +113903,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32825",
-            "ENTREZGENE:693154"
+            "ENTREZGENE:693154",
+            "HGNC:HGNC:32825",
+            "Ensembl:ENSG00000207963",
+            "miRBase:MI0003576"
         ],
         "Description": "Homo sapiens miR-569 stem-loop",
         "Host Gene": "TNIK",
@@ -113028,7 +113951,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32830",
-            "ENTREZGENE:693159"
+            "ENTREZGENE:693159",
+            "MIM:615469",
+            "HGNC:HGNC:32830",
+            "Ensembl:ENSG00000207944",
+            "miRBase:MI0003581"
         ],
         "Description": "Homo sapiens miR-574 stem-loop",
         "Host Gene": "FAM114A1",
@@ -113094,7 +114021,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32830",
-            "ENTREZGENE:693159"
+            "ENTREZGENE:693159",
+            "MIM:615469",
+            "HGNC:HGNC:32830",
+            "Ensembl:ENSG00000207944",
+            "miRBase:MI0003581"
         ],
         "Description": "Homo sapiens miR-574 stem-loop",
         "Host Gene": "FAM114A1",
@@ -113150,7 +114081,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32832",
-            "ENTREZGENE:693161"
+            "ENTREZGENE:693161",
+            "HGNC:HGNC:32832",
+            "Ensembl:ENSG00000207988",
+            "miRBase:MI0003583"
         ],
         "Description": "Homo sapiens miR-576 stem-loop",
         "Host Gene": "SEC24B",
@@ -113206,7 +114140,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32833",
-            "ENTREZGENE:693162"
+            "ENTREZGENE:693162",
+            "HGNC:HGNC:32833",
+            "Ensembl:ENSG00000207931",
+            "miRBase:MI0003584"
         ],
         "Description": "Homo sapiens miR-577 stem-loop",
         "Host Gene": "UGT8",
@@ -113259,7 +114196,11 @@ miRNA_meta_data = {
         "Accession ID": [
             "MI0019797"
         ],
-        "Database cross-references": [],
+        "Database cross-references": [
+            "HGNC:HGNC:49930",
+            "Ensembl:ENSG00000275334",
+            "miRBase:MI0019797"
+        ],
         "Description": "Homo sapiens miR-5787 stem-loop",
         "Host Gene": "GNAI2",
         "Host Gene Transcript Count": 12,
@@ -113303,7 +114244,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32838",
-            "ENTREZGENE:693167"
+            "ENTREZGENE:693167",
+            "HGNC:HGNC:32838",
+            "Ensembl:ENSG00000202601",
+            "miRBase:MI0003589"
         ],
         "Description": "Homo sapiens miR-582 stem-loop",
         "Host Gene": "PDE4D",
@@ -113358,7 +114302,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32840",
-            "ENTREZGENE:693169"
+            "ENTREZGENE:693169",
+            "HGNC:HGNC:32840",
+            "Ensembl:ENSG00000207714",
+            "miRBase:MI0003591"
         ],
         "Description": "Homo sapiens miR-584 stem-loop",
         "Host Gene": "SH3TC2",
@@ -113413,7 +114360,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32845",
-            "ENTREZGENE:693174"
+            "ENTREZGENE:693174",
+            "HGNC:HGNC:32845",
+            "Ensembl:ENSG00000207973",
+            "miRBase:MI0003599"
         ],
         "Description": "Homo sapiens miR-589 stem-loop",
         "Host Gene": "FBXL18",
@@ -113483,7 +114433,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32845",
-            "ENTREZGENE:693174"
+            "ENTREZGENE:693174",
+            "HGNC:HGNC:32845",
+            "Ensembl:ENSG00000207973",
+            "miRBase:MI0003599"
         ],
         "Description": "Homo sapiens miR-589 stem-loop",
         "Host Gene": "FBXL18",
@@ -113548,7 +114501,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32846",
-            "ENTREZGENE:693175"
+            "ENTREZGENE:693175",
+            "MIM:615070",
+            "HGNC:HGNC:32846",
+            "Ensembl:ENSG00000207741",
+            "miRBase:MI0003602"
         ],
         "Description": "Homo sapiens miR-590 stem-loop",
         "Host Gene": "EIF4H",
@@ -113958,7 +114915,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32846",
-            "ENTREZGENE:693175"
+            "ENTREZGENE:693175",
+            "MIM:615070",
+            "HGNC:HGNC:32846",
+            "Ensembl:ENSG00000207741",
+            "miRBase:MI0003602"
         ],
         "Description": "Homo sapiens miR-590 stem-loop",
         "Host Gene": "EIF4H",
@@ -114018,7 +114979,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32851",
-            "ENTREZGENE:693180"
+            "ENTREZGENE:693180",
+            "HGNC:HGNC:32851",
+            "Ensembl:ENSG00000207637",
+            "miRBase:MI0003607"
         ],
         "Description": "Homo sapiens miR-595 stem-loop",
         "Host Gene": "PTPRN2",
@@ -114063,7 +115027,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32853",
-            "ENTREZGENE:693182"
+            "ENTREZGENE:693182",
+            "HGNC:HGNC:32853",
+            "Ensembl:ENSG00000207701",
+            "miRBase:MI0003609"
         ],
         "Description": "Homo sapiens miR-597 stem-loop",
         "Host Gene": "TNKS",
@@ -114118,7 +115085,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32854",
-            "ENTREZGENE:693183"
+            "ENTREZGENE:693183",
+            "HGNC:HGNC:32854",
+            "Ensembl:ENSG00000207600",
+            "miRBase:MI0003610"
         ],
         "Description": "Homo sapiens miR-598 stem-loop",
         "Host Gene": "XKR6",
@@ -114243,7 +115213,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32859",
-            "ENTREZGENE:693188"
+            "ENTREZGENE:693188",
+            "HGNC:HGNC:32859",
+            "Ensembl:ENSG00000207930",
+            "miRBase:MI0003616"
         ],
         "Description": "Homo sapiens miR-603 stem-loop",
         "Host Gene": "KIAA1217",
@@ -114288,7 +115261,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32861",
-            "ENTREZGENE:693190"
+            "ENTREZGENE:693190",
+            "HGNC:HGNC:32861",
+            "Ensembl:ENSG00000207813",
+            "miRBase:MI0003618"
         ],
         "Description": "Homo sapiens miR-605 stem-loop",
         "Host Gene": "PRKG1",
@@ -114383,7 +115359,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32864",
-            "ENTREZGENE:693193"
+            "ENTREZGENE:693193",
+            "HGNC:HGNC:32864",
+            "Ensembl:ENSG00000207551",
+            "miRBase:MI0003621"
         ],
         "Description": "Homo sapiens miR-608 stem-loop",
         "Host Gene": "MRPL43",
@@ -114438,7 +115417,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32869",
-            "ENTREZGENE:693198"
+            "ENTREZGENE:693198",
+            "HGNC:HGNC:32869",
+            "Ensembl:ENSG00000207983",
+            "miRBase:MI0003626"
         ],
         "Description": "Homo sapiens miR-613 stem-loop",
         "Host Gene": "APOLD1",
@@ -114483,7 +115465,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32871",
-            "ENTREZGENE:693200"
+            "ENTREZGENE:693200",
+            "HGNC:HGNC:32871",
+            "Ensembl:ENSG00000207571",
+            "miRBase:MI0003628"
         ],
         "Description": "Homo sapiens miR-615 stem-loop",
         "Host Gene": "HOXC4",
@@ -118944,7 +119929,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32871",
-            "ENTREZGENE:693200"
+            "ENTREZGENE:693200",
+            "HGNC:HGNC:32871",
+            "Ensembl:ENSG00000207571",
+            "miRBase:MI0003628"
         ],
         "Description": "Homo sapiens miR-615 stem-loop",
         "Host Gene": "HOXC4",
@@ -118995,7 +119983,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32872",
-            "ENTREZGENE:693201"
+            "ENTREZGENE:693201",
+            "MIM:614489",
+            "HGNC:HGNC:32872",
+            "Ensembl:ENSG00000208028",
+            "miRBase:MI0003629"
         ],
         "Description": "Homo sapiens miR-616 stem-loop",
         "Host Gene": "DDIT3",
@@ -119050,7 +120042,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32872",
-            "ENTREZGENE:693201"
+            "ENTREZGENE:693201",
+            "MIM:614489",
+            "HGNC:HGNC:32872",
+            "Ensembl:ENSG00000208028",
+            "miRBase:MI0003629"
         ],
         "Description": "Homo sapiens miR-616 stem-loop",
         "Host Gene": "DDIT3",
@@ -119105,7 +120101,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32873",
-            "ENTREZGENE:693202"
+            "ENTREZGENE:693202",
+            "HGNC:HGNC:32873",
+            "Ensembl:ENSG00000207763",
+            "miRBase:MI0003631"
         ],
         "Description": "Homo sapiens miR-617 stem-loop",
         "Host Gene": "LIN7A",
@@ -119150,7 +120149,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32874",
-            "ENTREZGENE:693203"
+            "ENTREZGENE:693203",
+            "HGNC:HGNC:32874",
+            "Ensembl:ENSG00000208022",
+            "miRBase:MI0003632"
         ],
         "Description": "Homo sapiens miR-618 stem-loop",
         "Host Gene": "LIN7A",
@@ -119200,7 +120202,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32876",
-            "ENTREZGENE:693205"
+            "ENTREZGENE:693205",
+            "HGNC:HGNC:32876",
+            "Ensembl:ENSG00000207967",
+            "miRBase:MI0003634"
         ],
         "Description": "Homo sapiens miR-620 stem-loop",
         "Host Gene": "MED13L",
@@ -119245,7 +120250,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32880",
-            "ENTREZGENE:693209"
+            "ENTREZGENE:693209",
+            "HGNC:HGNC:32880",
+            "Ensembl:ENSG00000207952",
+            "miRBase:MI0003638"
         ],
         "Description": "Homo sapiens miR-624 stem-loop",
         "Host Gene": "STRN3",
@@ -119295,7 +120303,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32880",
-            "ENTREZGENE:693209"
+            "ENTREZGENE:693209",
+            "HGNC:HGNC:32880",
+            "Ensembl:ENSG00000207952",
+            "miRBase:MI0003638"
         ],
         "Description": "Homo sapiens miR-624 stem-loop",
         "Host Gene": "STRN3",
@@ -119345,7 +120356,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32881",
-            "ENTREZGENE:693210"
+            "ENTREZGENE:693210",
+            "HGNC:HGNC:32881",
+            "Ensembl:ENSG00000207781",
+            "miRBase:MI0003639"
         ],
         "Description": "Homo sapiens miR-625 stem-loop",
         "Host Gene": "FUT8",
@@ -119396,7 +120410,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32881",
-            "ENTREZGENE:693210"
+            "ENTREZGENE:693210",
+            "HGNC:HGNC:32881",
+            "Ensembl:ENSG00000207781",
+            "miRBase:MI0003639"
         ],
         "Description": "Homo sapiens miR-625 stem-loop",
         "Host Gene": "FUT8",
@@ -119517,7 +120534,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32882",
-            "ENTREZGENE:693211"
+            "ENTREZGENE:693211",
+            "HGNC:HGNC:32882",
+            "Ensembl:ENSG00000207766",
+            "miRBase:MI0003640"
         ],
         "Description": "Homo sapiens miR-626 stem-loop",
         "Host Gene": "MGA",
@@ -119562,7 +120582,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32884",
-            "ENTREZGENE:693213"
+            "ENTREZGENE:693213",
+            "HGNC:HGNC:32884",
+            "Ensembl:ENSG00000207964",
+            "miRBase:MI0003642"
         ],
         "Description": "Homo sapiens miR-628 stem-loop",
         "Host Gene": "CCPG1",
@@ -119628,7 +120651,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32884",
-            "ENTREZGENE:693213"
+            "ENTREZGENE:693213",
+            "HGNC:HGNC:32884",
+            "Ensembl:ENSG00000207964",
+            "miRBase:MI0003642"
         ],
         "Description": "Homo sapiens miR-628 stem-loop",
         "Host Gene": "CCPG1",
@@ -119679,7 +120705,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32885",
-            "ENTREZGENE:693214"
+            "ENTREZGENE:693214",
+            "HGNC:HGNC:32885",
+            "Ensembl:ENSG00000207965",
+            "miRBase:MI0003643"
         ],
         "Description": "Homo sapiens miR-629 stem-loop",
         "Host Gene": "TLE3",
@@ -119734,7 +120763,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32885",
-            "ENTREZGENE:693214"
+            "ENTREZGENE:693214",
+            "HGNC:HGNC:32885",
+            "Ensembl:ENSG00000207965",
+            "miRBase:MI0003643"
         ],
         "Description": "Homo sapiens miR-629 stem-loop",
         "Host Gene": "TLE3",
@@ -119799,7 +120831,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32888",
-            "ENTREZGENE:693217"
+            "ENTREZGENE:693217",
+            "HGNC:HGNC:32888",
+            "Ensembl:ENSG00000207928",
+            "miRBase:MI0003647"
         ],
         "Description": "Homo sapiens miR-632 stem-loop",
         "Host Gene": "RP11-227G15.3",
@@ -119844,7 +120879,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32894",
-            "ENTREZGENE:693223"
+            "ENTREZGENE:693223",
+            "HGNC:HGNC:32894",
+            "Ensembl:ENSG00000207972",
+            "miRBase:MI0003653"
         ],
         "Description": "Homo sapiens miR-638 stem-loop",
         "Host Gene": "DNM2",
@@ -119889,7 +120927,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32895",
-            "ENTREZGENE:693224"
+            "ENTREZGENE:693224",
+            "HGNC:HGNC:32895",
+            "Ensembl:ENSG00000207707",
+            "miRBase:MI0003654"
         ],
         "Description": "Homo sapiens miR-639 stem-loop",
         "Host Gene": "DNAJB1",
@@ -119934,7 +120975,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32897",
-            "ENTREZGENE:693226"
+            "ENTREZGENE:693226",
+            "HGNC:HGNC:32897",
+            "Ensembl:ENSG00000207631",
+            "miRBase:MI0003656"
         ],
         "Description": "Homo sapiens miR-641 stem-loop",
         "Host Gene": "AKT2",
@@ -119979,7 +121023,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32898",
-            "ENTREZGENE:693227"
+            "ENTREZGENE:693227",
+            "HGNC:HGNC:32898",
+            "Ensembl:ENSG00000207773",
+            "miRBase:MI0003657"
         ],
         "Description": "Homo sapiens miR-642a stem-loop",
         "Host Gene": "GIPR",
@@ -120044,7 +121091,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32900",
-            "ENTREZGENE:693229"
+            "ENTREZGENE:693229",
+            "HGNC:HGNC:32900",
+            "Ensembl:ENSG00000207997",
+            "miRBase:MI0003659"
         ],
         "Description": "Homo sapiens miR-644a stem-loop",
         "Host Gene": "ITCH",
@@ -120094,7 +121144,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32908",
-            "ENTREZGENE:724022"
+            "ENTREZGENE:724022",
+            "HGNC:HGNC:32908",
+            "Ensembl:ENSG00000208013",
+            "miRBase:MI0003667"
         ],
         "Description": "Homo sapiens miR-652 stem-loop",
         "Host Gene": "TMEM164",
@@ -120720,7 +121773,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32913",
-            "ENTREZGENE:724027"
+            "ENTREZGENE:724027",
+            "HGNC:HGNC:32913",
+            "Ensembl:ENSG00000207736",
+            "miRBase:MI0003681"
         ],
         "Description": "Homo sapiens miR-657 stem-loop",
         "Host Gene": "AATK",
@@ -120775,7 +121831,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32915",
-            "ENTREZGENE:724029"
+            "ENTREZGENE:724029",
+            "MIM:613556",
+            "HGNC:HGNC:32915",
+            "Ensembl:ENSG00000207696",
+            "miRBase:MI0003683"
         ],
         "Description": "Homo sapiens miR-659 stem-loop",
         "Host Gene": "ANKRD54",
@@ -120820,7 +121880,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32916",
-            "ENTREZGENE:724030"
+            "ENTREZGENE:724030",
+            "HGNC:HGNC:32916",
+            "Ensembl:ENSG00000207970",
+            "miRBase:MI0003684"
         ],
         "Description": "Homo sapiens miR-660 stem-loop",
         "Host Gene": "CLCN5",
@@ -120870,7 +121933,11 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32917",
-            "ENTREZGENE:724031"
+            "ENTREZGENE:724031",
+            "MIM:613716",
+            "HGNC:HGNC:32917",
+            "Ensembl:ENSG00000207574",
+            "miRBase:MI0003669"
         ],
         "Description": "Homo sapiens miR-661 stem-loop",
         "Host Gene": "PLEC",
@@ -120940,7 +122007,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:32919",
-            "ENTREZGENE:724033"
+            "ENTREZGENE:724033",
+            "HGNC:HGNC:32919",
+            "Ensembl:ENSG00000273684",
+            "miRBase:MI0003672"
         ],
         "Description": "Homo sapiens miR-663a stem-loop",
         "Name": "hsa-mir-663a",
@@ -121003,7 +122073,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35270",
-            "ENTREZGENE:100313824"
+            "ENTREZGENE:100313824",
+            "HGNC:HGNC:35270",
+            "Ensembl:ENSG00000221288",
+            "miRBase:MI0006336"
         ],
         "Description": "Homo sapiens miR-663b stem-loop",
         "Host Gene": "ANKRD30BL",
@@ -121048,7 +122121,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:35370",
-            "ENTREZGENE:100302234"
+            "ENTREZGENE:100302234",
+            "HGNC:HGNC:35370",
+            "Ensembl:ENSG00000281696",
+            "miRBase:MI0006442"
         ],
         "Description": "Homo sapiens miR-664 stem-loop",
         "Host Gene": "RAB3GAP2",
@@ -121099,7 +122175,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33351",
-            "ENTREZGENE:100033819"
+            "ENTREZGENE:100033819",
+            "MIM:615509",
+            "HGNC:HGNC:33351",
+            "miRBase:MI0005416"
         ],
         "Description": "Homo sapiens miR-675 stem-loop",
         "Host Gene": "H19",
@@ -121151,7 +122230,11 @@ miRNA_meta_data = {
             "RFAM:RF00053",
             "TARGETS:PICTAR-VERT:hsa-miR-7",
             "HGNC:31638",
-            "ENTREZGENE:407043"
+            "ENTREZGENE:407043",
+            "MIM:615239",
+            "HGNC:HGNC:31638",
+            "Ensembl:ENSG00000207603",
+            "miRBase:MI0000263"
         ],
         "Description": "Homo sapiens miR-7-1 stem-loop",
         "Host Gene": "HNRNPK",
@@ -121239,7 +122322,11 @@ miRNA_meta_data = {
             "RFAM:RF00053",
             "TARGETS:PICTAR-VERT:hsa-miR-7",
             "HGNC:31638",
-            "ENTREZGENE:407043"
+            "ENTREZGENE:407043",
+            "MIM:615239",
+            "HGNC:HGNC:31638",
+            "Ensembl:ENSG00000207603",
+            "miRBase:MI0000263"
         ],
         "Description": "Homo sapiens miR-7-1 stem-loop",
         "Host Gene": "HNRNPK",
@@ -123208,7 +124295,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33654",
-            "ENTREZGENE:100126333"
+            "ENTREZGENE:100126333",
+            "HGNC:HGNC:33654",
+            "Ensembl:ENSG00000211997",
+            "miRBase:MI0005543"
         ],
         "Description": "Homo sapiens miR-708 stem-loop",
         "Host Gene": "TENM4",
@@ -123273,7 +124363,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33654",
-            "ENTREZGENE:100126333"
+            "ENTREZGENE:100126333",
+            "HGNC:HGNC:33654",
+            "Ensembl:ENSG00000211997",
+            "miRBase:MI0005543"
         ],
         "Description": "Homo sapiens miR-708 stem-loop",
         "Host Gene": "TENM4",
@@ -123413,7 +124506,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33658",
-            "ENTREZGENE:100126313"
+            "ENTREZGENE:100126313",
+            "HGNC:HGNC:33658",
+            "Ensembl:ENSG00000266297",
+            "miRBase:MI0005559"
         ],
         "Description": "Homo sapiens miR-744 stem-loop",
         "Host Gene": "MAP2K4",
@@ -123484,7 +124580,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33658",
-            "ENTREZGENE:100126313"
+            "ENTREZGENE:100126313",
+            "HGNC:HGNC:33658",
+            "Ensembl:ENSG00000266297",
+            "miRBase:MI0005559"
         ],
         "Description": "Homo sapiens miR-744 stem-loop",
         "Host Gene": "MAP2K4",
@@ -125349,7 +126448,10 @@ miRNA_meta_data = {
             "MI0003892"
         ],
         "Database cross-references": [
-            "ENTREZGENE:100313837"
+            "ENTREZGENE:100313837",
+            "HGNC:HGNC:37303",
+            "Ensembl:ENSG00000211591",
+            "miRBase:MI0003892"
         ],
         "Description": "Homo sapiens miR-762 stem-loop",
         "Host Gene": "AC106782.20",
@@ -125403,7 +126505,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33141",
-            "ENTREZGENE:768220"
+            "ENTREZGENE:768220",
+            "HGNC:HGNC:33141",
+            "Ensembl:ENSG00000211581",
+            "miRBase:MI0005116"
         ],
         "Description": "Homo sapiens miR-765 stem-loop",
         "Host Gene": "ARHGEF11",
@@ -125453,7 +126558,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33139",
-            "ENTREZGENE:768218"
+            "ENTREZGENE:768218",
+            "HGNC:HGNC:33139",
+            "Ensembl:ENSG00000211578",
+            "miRBase:MI0003836"
         ],
         "Description": "Homo sapiens miR-766 stem-loop",
         "Host Gene": "Sep-06",
@@ -125753,7 +126861,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33138",
-            "ENTREZGENE:768217"
+            "ENTREZGENE:768217",
+            "HGNC:HGNC:33138",
+            "Ensembl:ENSG00000211580",
+            "miRBase:MI0003834"
         ],
         "Description": "Homo sapiens miR-769 stem-loop",
         "Host Gene": "CCDC61",
@@ -126203,7 +127314,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33138",
-            "ENTREZGENE:768217"
+            "ENTREZGENE:768217",
+            "HGNC:HGNC:33138",
+            "Ensembl:ENSG00000211580",
+            "miRBase:MI0003834"
         ],
         "Description": "Homo sapiens miR-769 stem-loop",
         "Host Gene": "CCDC61",
@@ -126703,7 +127817,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33643",
-            "ENTREZGENE:100126343"
+            "ENTREZGENE:100126343",
+            "HGNC:HGNC:33643",
+            "miRBase:MI0005532"
         ],
         "Description": "Homo sapiens miR-874 stem-loop",
         "Host Gene": "KLHL3",
@@ -126803,7 +127919,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33660",
-            "ENTREZGENE:100126314"
+            "ENTREZGENE:100126314",
+            "MIM:611619",
+            "HGNC:HGNC:33660",
+            "miRBase:MI0005561"
         ],
         "Description": "Homo sapiens miR-877 stem-loop",
         "Host Gene": "ABCF1",
@@ -128854,7 +129973,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33660",
-            "ENTREZGENE:100126314"
+            "ENTREZGENE:100126314",
+            "MIM:611619",
+            "HGNC:HGNC:33660",
+            "miRBase:MI0005561"
         ],
         "Description": "Homo sapiens miR-877 stem-loop",
         "Host Gene": "ABCF1",
@@ -129770,7 +130892,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33659",
-            "ENTREZGENE:100126334"
+            "ENTREZGENE:100126334",
+            "HGNC:HGNC:33659",
+            "miRBase:MI0005560"
         ],
         "Description": "Homo sapiens miR-885 stem-loop",
         "Host Gene": "ATP2B2",
@@ -129824,7 +130948,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33661",
-            "ENTREZGENE:100126347"
+            "ENTREZGENE:100126347",
+            "HGNC:HGNC:33661",
+            "miRBase:MI0005562"
         ],
         "Description": "Homo sapiens miR-887 stem-loop",
         "Host Gene": "FBXL7",
@@ -129882,7 +131008,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-9",
             "TARGETS:PICTAR-VERT:hsa-miR-9*",
             "HGNC:31642",
-            "ENTREZGENE:407047"
+            "ENTREZGENE:407047",
+            "MIM:611187",
+            "HGNC:HGNC:31642",
+            "Ensembl:ENSG00000273878",
+            "miRBase:MI0000467"
         ],
         "Description": "Homo sapiens miR-9-2 stem-loop",
         "Host Gene": "LINC00461",
@@ -129942,7 +131072,11 @@ miRNA_meta_data = {
             "TARGETS:PICTAR-VERT:hsa-miR-9",
             "TARGETS:PICTAR-VERT:hsa-miR-9*",
             "HGNC:31642",
-            "ENTREZGENE:407047"
+            "ENTREZGENE:407047",
+            "MIM:611187",
+            "HGNC:HGNC:31642",
+            "Ensembl:ENSG00000273878",
+            "miRBase:MI0000467"
         ],
         "Description": "Homo sapiens miR-9-2 stem-loop",
         "Host Gene": "LINC00461",
@@ -130971,7 +132105,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-92",
             "HGNC:31643",
-            "ENTREZGENE:407048"
+            "ENTREZGENE:407048",
+            "MIM:609422",
+            "HGNC:HGNC:31643",
+            "Ensembl:ENSG00000276018",
+            "miRBase:MI0000093"
         ],
         "Description": "Homo sapiens miR-92a-1 stem-loop",
         "Name": "hsa-mir-92a-1",
@@ -131106,7 +132244,10 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-92",
             "HGNC:31644",
-            "ENTREZGENE:407049"
+            "ENTREZGENE:407049",
+            "HGNC:HGNC:31644",
+            "Ensembl:ENSG00000208034",
+            "miRBase:MI0000094"
         ],
         "Description": "Homo sapiens miR-92a-2 stem-loop",
         "Name": "hsa-mir-92a-2",
@@ -135926,7 +137067,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-93",
             "HGNC:31645",
-            "ENTREZGENE:407050"
+            "ENTREZGENE:407050",
+            "MIM:612984",
+            "HGNC:HGNC:31645",
+            "Ensembl:ENSG00000207757",
+            "miRBase:MI0000095"
         ],
         "Description": "Homo sapiens miR-93 stem-loop",
         "Host Gene": "MCM7",
@@ -136978,7 +138123,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-93",
             "HGNC:31645",
-            "ENTREZGENE:407050"
+            "ENTREZGENE:407050",
+            "MIM:612984",
+            "HGNC:HGNC:31645",
+            "Ensembl:ENSG00000207757",
+            "miRBase:MI0000095"
         ],
         "Description": "Homo sapiens miR-93 stem-loop",
         "Host Gene": "MCM7",
@@ -139189,7 +140338,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33680",
-            "ENTREZGENE:100126338"
+            "ENTREZGENE:100126338",
+            "HGNC:HGNC:33680",
+            "Ensembl:ENSG00000216090",
+            "miRBase:MI0005759"
         ],
         "Description": "Homo sapiens miR-937 stem-loop",
         "Host Gene": "SCRIB",
@@ -139244,7 +140396,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33682",
-            "ENTREZGENE:100126351"
+            "ENTREZGENE:100126351",
+            "HGNC:HGNC:33682",
+            "Ensembl:ENSG00000216133",
+            "miRBase:MI0005761"
         ],
         "Description": "Homo sapiens miR-939 stem-loop",
         "Host Gene": "CPSF1",
@@ -139294,7 +140449,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33683",
-            "ENTREZGENE:100126328"
+            "ENTREZGENE:100126328",
+            "HGNC:HGNC:33683",
+            "Ensembl:ENSG00000274753",
+            "miRBase:MI0005762"
         ],
         "Description": "Homo sapiens miR-940 stem-loop",
         "Host Gene": "RP11-304L19.13",
@@ -139574,7 +140732,9 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33684",
-            "ENTREZGENE:100126329"
+            "ENTREZGENE:100126329",
+            "HGNC:HGNC:33684",
+            "miRBase:MI0005763"
         ],
         "Description": "Homo sapiens miR-941-1 stem-loop",
         "Host Gene": "DNAJC5",
@@ -139749,7 +140909,10 @@ miRNA_meta_data = {
         ],
         "Database cross-references": [
             "HGNC:33688",
-            "ENTREZGENE:100126331"
+            "ENTREZGENE:100126331",
+            "HGNC:HGNC:33688",
+            "Ensembl:ENSG00000215930",
+            "miRBase:MI0005767"
         ],
         "Description": "Homo sapiens miR-942 stem-loop",
         "Host Gene": "TTF2",
@@ -139815,7 +140978,11 @@ miRNA_meta_data = {
         "Database cross-references": [
             "TARGETS:PICTAR-VERT:hsa-miR-95",
             "HGNC:31647",
-            "ENTREZGENE:407052"
+            "ENTREZGENE:407052",
+            "MIM:613185",
+            "HGNC:HGNC:31647",
+            "Ensembl:ENSG00000207807",
+            "miRBase:MI0000097"
         ],
         "Description": "Homo sapiens miR-95 stem-loop",
         "Host Gene": "ABLIM2",
@@ -139873,7 +141040,11 @@ miRNA_meta_data = {
             "RFAM:RF00027",
             "TARGETS:PICTAR-VERT:hsa-miR-98",
             "HGNC:31649",
-            "ENTREZGENE:407054"
+            "ENTREZGENE:407054",
+            "MIM:300810",
+            "HGNC:HGNC:31649",
+            "Ensembl:ENSG00000271886",
+            "miRBase:MI0000100"
         ],
         "Description": "Homo sapiens miR-98 stem-loop",
         "Host Gene": "HUWE1",
@@ -142426,7 +143597,11 @@ miRNA_meta_data = {
             "RFAM:RF00104",
             "TARGETS:PICTAR-VERT:hsa-miR-99a",
             "HGNC:31650",
-            "ENTREZGENE:407055"
+            "ENTREZGENE:407055",
+            "MIM:614509",
+            "HGNC:HGNC:31650",
+            "Ensembl:ENSG00000207638",
+            "miRBase:MI0000101"
         ],
         "Description": "Homo sapiens miR-99a stem-loop",
         "Name": "hsa-mir-99a",
@@ -142492,7 +143667,11 @@ miRNA_meta_data = {
             "RFAM:RF00104",
             "TARGETS:PICTAR-VERT:hsa-miR-99a",
             "HGNC:31650",
-            "ENTREZGENE:407055"
+            "ENTREZGENE:407055",
+            "MIM:614509",
+            "HGNC:HGNC:31650",
+            "Ensembl:ENSG00000207638",
+            "miRBase:MI0000101"
         ],
         "Description": "Homo sapiens miR-99a stem-loop",
         "Name": "hsa-mir-99a",
