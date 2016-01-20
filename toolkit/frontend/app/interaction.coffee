@@ -1,10 +1,13 @@
 
 rivets = require('rivets').rvt
 _ = require('lodash')
+g = require('utils/graph')
 
 class Graph
   constructor: (opts)->
     @G = new jsnx.DiGraph
+    @nodes = []
+    @edges = []
     @r = {}
 
   fetch: (dat, func) ->
@@ -19,40 +22,42 @@ class Graph
       @G.addEdgesFrom target_list
       @G.addEdgesFrom host_list
 
+      console.log @G.nodesIter()
       @r = jsnx.toDictOfLists(@G)
+
+      @i_nodes()
+      @i_edges()
 
       if func then func()
 
-  nodes: () ->
-    ret = []
-
+  i_nodes: () ->
     for k, v of @r
-      ret.push
-        name: k
-        type: if _.indexOf(@miRNAs, k) > -1 then 'miRNA' else 'Gene'
-        weight: v.length
+      id = _.findIndex(@nodes, ['name', k])
+      if id is -1
+        @nodes.push
+          name: k
+          type: if _.indexOf(@miRNAs, k) > -1 then 'miRNA' else 'Gene'
+          weight: v.length
+      else
+        @nodes[id].weight = v.length
 
-    ret
 
-  edges: () ->
-    n = @nodes()
-    ret = []
+  i_edges: () ->
     for src, v of @r
       for target in v
-        ret.push
-          source: _.findIndex n, (d) -> d.name is src
-          target: _.findIndex n, (d) -> d.name is target
-
-    ret
+        dat =
+          source: _.find @nodes, (d) -> d.name is src
+          target: _.find @nodes, (d) -> d.name is target
+        id = _.findIndex @edges, dat
+        if id is -1 then @edges.push dat
 
 class GraphView
   constructor: (opts)->
     {@width, @height, @elem} = opts
-    @nodes = []
-    @links = []
-    @miRNAs = []
-
     @G = new Graph
+    @nodes = @G.nodes
+    @links = @G.edges
+    @miRNAs = []
 
     @nodemousedn = no
     @fill = d3.scale.category20()
@@ -121,9 +126,7 @@ class GraphView
   get_graph: (dat) ->
 
     @G.fetch dat, =>
-      @nodes = @G.nodes()
-      @links = @G.edges()
-
+      console.log @links
       @routine()
 
   graph_factory: (dat) ->
@@ -323,14 +326,65 @@ exports.interaction =
     width = $(".overlay-terra").width()
     height = $(".overlay-terra").height()
 
-    ui = new UserView
-
-    g = new GraphView
-      width: width
-      height: height
+    graph = new g.Graph
+      w: width
+      h: height
       elem: '#graphcanvas'
 
-    g.get_graph ui.select_val()
+    ui = new UserView
+
+
+    graph.addNode 'Sophia'
+    graph.addNode 'Daniel'
+    graph.addNode 'Ryan'
+    graph.addNode 'Lila'
+    graph.addNode 'Suzie'
+    graph.addNode 'Riley'
+    graph.addNode 'Grace'
+    graph.addNode 'Dylan'
+    graph.addNode 'Mason'
+    graph.addNode 'Emma'
+    graph.addNode 'Alex'
+    graph.addLink 'Alex', 'Ryan', '20'
+    graph.addLink 'Sophia', 'Ryan', '20'
+    graph.addLink 'Daniel', 'Ryan', '20'
+    graph.addLink 'Ryan', 'Lila', '30'
+    graph.addLink 'Lila', 'Suzie', '20'
+    graph.addLink 'Suzie', 'Riley', '10'
+    graph.addLink 'Suzie', 'Grace', '30'
+    graph.addLink 'Grace', 'Dylan', '10'
+    graph.addLink 'Dylan', 'Mason', '20'
+    graph.addLink 'Dylan', 'Emma', '20'
+    graph.addLink 'Emma', 'Mason', '10'
+
+    setTimeout (->
+      graph.addNode 'Prashant'
+      graph.addLink 'Prashant', 'Lila', '6'
+      graph.addLink 'Alex', 'Sophia', '20'
+      graph.keepNodesOnTop()
+    ), 2000
+    setTimeout (->
+      graph.addLink 'Sophia', 'Daniel', '20'
+      graph.keepNodesOnTop()
+    ), 4000
+    setTimeout (->
+      graph.addLink 'Daniel', 'Alex', '20'
+      graph.removeNode 'Prashant'
+      graph.keepNodesOnTop()
+    ), 5000
+
+    setTimeout (->
+      graph.removeLink 'Dylan', 'Mason'
+      graph.addLink 'Dylan', 'Mason', '8'
+      graph.keepNodesOnTop()
+    ), 8000
+
+    # g = new GraphView
+    #   width: width
+    #   height: height
+    #   elem: '#graphcanvas'
+
+    # g.get_graph ui.select_val()
 
     # g.routine()
     # $('select.rivets').on 'change', ->
