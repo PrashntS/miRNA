@@ -2,6 +2,7 @@ class Graph
   constructor: (opts) ->
     {@w, @h, elem} = opts
     @color = d3.scale.category10()
+    @initZoomAndPan()
     @svg = d3.select elem
       .append 'svg:svg'
         .attr 'width', @w
@@ -10,9 +11,9 @@ class Graph
         .attr 'pointer-events', 'all'
         .attr 'viewBox', "0 0 #{@w} #{@h}"
         .attr 'perserveAspectRatio', 'xMinYMid'
+      .call @zoom
 
     @vis = @svg.append 'svg:g'
-
     @initDefs()
 
     @force = d3.layout.force()
@@ -21,6 +22,25 @@ class Graph
 
   addNode: (id) ->
     @nodes.push 'id': id
+
+  initZoomAndPan: ->
+    @zoom = d3.behavior.zoom()
+      .scaleExtent [1, 10]
+      .on "zoom", =>
+        @vis.attr "transform",
+          "translate(#{d3.event.translate}) scale(#{d3.event.scale})"
+
+    @drag = d3.behavior.drag()
+      .origin (d) -> d
+      .on "dragstart", (d) ->
+        d3.event.sourceEvent.stopPropagation()
+        d3.select(@).classed "dragging", true
+      .on "drag", (d) ->
+        d3.select(@)
+          .attr "cx", d.x = d3.event.x
+          .attr "cy", d.y = d3.event.y
+      .on "dragend", (d) ->
+        d3.select(@).classed "dragging", false
 
   initDefs: ->
     @svg.append('svg:defs').append('svg:marker')
@@ -120,7 +140,7 @@ class Graph
       .enter()
       .append 'g'
         .attr 'class', 'node'
-      .call @force.drag
+      .call @drag
 
     nodeEnter
       .append 'svg:circle'
