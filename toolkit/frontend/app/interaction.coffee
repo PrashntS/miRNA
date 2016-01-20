@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
+#.--. .-. ... .... -. - ... .-.-.- .. -.
 
-rivets = require('rivets').rvt
+rivets      = require('rivets').rvt
+GraphUtils  = require('utils/graph')
 _ = require('lodash')
-GraphUtils = require('utils/graph')
 
 class Graph
   constructor: (opts)->
@@ -184,31 +186,6 @@ exports.interaction =
     $('select.rivets').on 'change', ->
       graph.fetch_and_update(ui.select_val())
 
-
-
-    # g = new GraphView
-    #   width: width
-    #   height: height
-    #   elem: '#graphcanvas'
-
-    # g.get_graph ui.select_val()
-
-    # g.routine()
-    # $('select.rivets').on 'change', ->
-    #   g.get_graph ui.select_val()
-
-    # g2 = new jsnx.DiGraph
-
-    # $.getJSON "/api/graph?genes=CDKN1A"
-    # .done (dat) ->
-    #   {target_list, host_list, miRNA_store, genes_store} = dat
-
-    #   g2.addNodesFrom miRNA_store
-    #   g2.addNodesFrom genes_store
-    #   g2.addEdgesFrom target_list
-    #   g2.addEdgesFrom host_list
-
-    #   console.log g2.edges()
 
   init: ->
     class Fanck

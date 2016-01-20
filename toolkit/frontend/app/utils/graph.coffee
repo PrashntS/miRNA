@@ -1,8 +1,6 @@
 class Graph
   constructor: (opts) ->
-    # set up the D3 visualisation in the specified element
     {@w, @h, elem} = opts
-    console.log opts
     @color = d3.scale.category10()
     @svg = d3.select elem
       .append 'svg:svg'
@@ -23,7 +21,6 @@ class Graph
 
   addNode: (id) ->
     @nodes.push 'id': id
-    # @update()
 
   initDefs: ->
     @svg.append('svg:defs').append('svg:marker')
@@ -81,7 +78,6 @@ class Graph
       'source': @findNode(source)
       'target': @findNode(target)
       'value': value
-    # @update()
 
   findNode: (id) ->
     for i of @nodes
@@ -109,8 +105,6 @@ class Graph
         .attr 'id', (d) -> "#{d.source.id}-#{d.target.id}"
         .attr 'stroke-width', (d) -> d.value / 10
         .attr 'stroke', '#000'
-        # .attr 'class', 'link'
-      # .append 'line'
 
     link
       .append 'title'
@@ -147,11 +141,13 @@ class Graph
     @force.on 'tick', ->
       node.attr 'transform', (d) -> "translate(#{d.x}, #{d.y})"
 
+      #: Use below when the links are "lines"
       # link
       #   .attr 'x1', (d) -> d.source.x
       #   .attr 'y1', (d) -> d.source.y
       #   .attr 'x2', (d) -> d.target.x
       #   .attr 'y2', (d) -> d.target.y
+
       link.attr 'points', (d) ->
         sx = d.source.x
         sy = d.source.y
@@ -174,51 +170,3 @@ class Graph
       gnode.parentNode.appendChild gnode
 
 module.exports = Graph: Graph
-
-drawGraph = ->
-  graph = new myGraph('#svgdiv')
-
-  graph.addNode 'Sophia'
-  graph.addNode 'Daniel'
-  graph.addNode 'Ryan'
-  graph.addNode 'Lila'
-  graph.addNode 'Suzie'
-  graph.addNode 'Riley'
-  graph.addNode 'Grace'
-  graph.addNode 'Dylan'
-  graph.addNode 'Mason'
-  graph.addNode 'Emma'
-  graph.addNode 'Alex'
-  graph.addLink 'Alex', 'Ryan', '20'
-  graph.addLink 'Sophia', 'Ryan', '20'
-  graph.addLink 'Daniel', 'Ryan', '20'
-  graph.addLink 'Ryan', 'Lila', '30'
-  graph.addLink 'Lila', 'Suzie', '20'
-  graph.addLink 'Suzie', 'Riley', '10'
-  graph.addLink 'Suzie', 'Grace', '30'
-  graph.addLink 'Grace', 'Dylan', '10'
-  graph.addLink 'Dylan', 'Mason', '20'
-  graph.addLink 'Dylan', 'Emma', '20'
-  graph.addLink 'Emma', 'Mason', '10'
-
-  # callback for the changes in the network
-  setTimeout (->
-    graph.addLink 'Alex', 'Sophia', '20'
-    graph.keepNodesOnTop()
-  ), 2000
-  setTimeout (->
-    graph.addLink 'Sophia', 'Daniel', '20'
-    graph.keepNodesOnTop()
-  ), 4000
-  setTimeout (->
-    graph.addLink 'Daniel', 'Alex', '20'
-    graph.keepNodesOnTop()
-  ), 5000
-
-  setTimeout (->
-    graph.removeLink 'Dylan', 'Mason'
-    graph.addLink 'Dylan', 'Mason', '8'
-    graph.keepNodesOnTop()
-  ), 8000
-
-
