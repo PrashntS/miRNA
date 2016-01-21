@@ -13,6 +13,7 @@ module.exports = config:
         'css/app.css': /^(app)/
       order:
         before: ['bower_components/normalize-css/normalize.css']
+    templates: joinTo: 'js/app.js'
   plugins:
     coffeescript:
       bare: yes

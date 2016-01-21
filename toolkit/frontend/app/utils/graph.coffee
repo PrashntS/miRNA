@@ -2,7 +2,7 @@ class Graph
   constructor: (opts) ->
     {@w, @h, elem} = opts
     @color = d3.scale.category10()
-    @initZoomAndPan()
+    @initEvents()
     @svg = d3.select elem
       .append 'svg:svg'
         .attr 'width', @w
@@ -23,7 +23,7 @@ class Graph
   addNode: (n) ->
     @nodes.push n
 
-  initZoomAndPan: ->
+  initEvents: ->
     self = @
     @zoom = d3.behavior.zoom()
       .scaleExtent [-10, 10]
@@ -34,27 +34,29 @@ class Graph
     @drag = d3.behavior.drag()
       .origin (d) -> d
       .on "dragstart", (d) ->
-        d3.select(@).classed "dragging", true
-        #: Sticky node
         d3.select(@).classed "fixed", d.fixed = no
-        self.force.resume()
+        self.resume()
         d3.event.sourceEvent.stopPropagation()
 
       .on "drag", (d) ->
         d3.select(@)
           .attr "cx", d.x = d3.event.x
           .attr "cy", d.y = d3.event.y
-        d3.select(@).classed "fixed", d.fixed = no
+        self.resume()
         d3.event.sourceEvent.stopPropagation()
 
       .on "dragend", (d) ->
-        d3.select(@).classed "dragging", no
-        #: Sticky node
         d3.select(@).classed "fixed", d.fixed = yes
         d3.event.sourceEvent.stopPropagation()
 
+    @click_def = (e, f) =>
+      @node_click_handle(e, f)
+
     @dblclk = (d) ->
       d3.select(@).classed "fixed", d.fixed = no
+
+  resume: ->
+    unless @force.alpha() > 0 then @force.resume()
 
   initDefs: ->
     @svg.append('svg:defs').append('svg:marker')
@@ -156,6 +158,7 @@ class Graph
       .append 'g'
         .attr 'class', 'node'
         .on 'dblclick', @dblclk
+        .on 'click', @click_def
       .call @drag
 
     nodeEnter

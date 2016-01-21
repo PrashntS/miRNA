@@ -1,0 +1,15 @@
+.dropdown-card
+  h1= obj.symbol
+  p=obj.description
+  ul
+    li
+      strong Targeted By
+      span : #{obj.targeted_by.length} miRNAs
+
+    if (obj.host_of)
+      li
+        strong Host of
+        span : #{obj.host_of.symbol} miRNAs
+    li
+      strong ESID
+      span : #{obj.names[0]}

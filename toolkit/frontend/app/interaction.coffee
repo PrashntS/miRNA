@@ -4,83 +4,54 @@
 rivets      = require('rivets').rvt
 GraphUtils  = require('utils/graph')
 _ = require('lodash')
+templates =
+  geneselect: require('views/geneselect')
 
-class Graph
+class Graph extends GraphUtils.Graph
   constructor: (opts)->
-    @G = new jsnx.DiGraph
-    @nodes = []
-    @edges = []
-    @r = {}
-
-  fetch: (dat, func) ->
-    $.getJSON "/api/graph?#{dat}"
-    .done (dat) =>
-      {target_list, host_list, miRNA_store, genes_store} = dat
-
-      @miRNAs = _.union @miRNAs, miRNA_store
-
-      @G.addNodesFrom miRNA_store
-      @G.addNodesFrom genes_store
-      @G.addEdgesFrom target_list
-      @G.addEdgesFrom host_list
-
-      console.log @G.nodesIter()
-      @r = jsnx.toDictOfLists(@G)
-
-      @i_nodes()
-      @i_edges()
-
-      if func then func()
-
-  i_nodes: () ->
-    for k, v of @r
-      id = _.findIndex(@nodes, ['name', k])
-      if id is -1
-        @nodes.push
-          name: k
-          type: if _.indexOf(@miRNAs, k) > -1 then 'miRNA' else 'Gene'
-          weight: v.length
-      else
-        @nodes[id].weight = v.length
-
-  i_edges: () ->
-    for src, v of @r
-      for target in v
-        dat =
-          source: _.find @nodes, (d) -> d.name is src
-          target: _.find @nodes, (d) -> d.name is target
-        id = _.findIndex @edges, dat
-        if id is -1 then @edges.push dat
-
-class GraphView
-  constructor: (opts) ->
-    @graph = new GraphUtils.Graph opts
+    super opts
     @bindings = opts.ui_binding
+    @_G = new jsnx.DiGraph
+
+  node_click_handle: (node, f) =>
+    if @bindings.toolbar_btm.eraser
+      @removeNode(node.id)
+      @_G.removeNode(node.id)
+
+    if @bindings.toolbar_btm.info
+      vex.dialog.alert
+        message: node.id
+        className: 'vex-theme-default'
 
   fetch_and_update: ->
     $.getJSON "/api/graph?#{@bindings.select2box.serialize()}"
       .done (data) =>
+        @_G.addNodesFrom(data.genes_store)
+        @_G.addNodesFrom(data.miRNA_store)
+        @_G.addEdgesFrom(data.target_list)
+        @_G.addEdgesFrom(data.host_list)
+
         for gene in data.genes_store
-          @graph.addNode
+          @addNode
             id: gene
             type: 'Gene'
             color: '#8C6CDA'
             inreq: _.indexOf(@bindings.select2box.genes, gene) >= 0
 
         for mirna in data.miRNA_store
-          @graph.addNode
+          @addNode
             id: mirna
             type: 'miRNA'
             color: '#88EB58'
             inreq: _.indexOf(@bindings.select2box.mirna, mirna) >= 0
 
         for edge in data.target_list
-          @graph.addLink edge[0], edge[1], '10', 'target'
+          @addLink edge[0], edge[1], '10', 'target'
 
         for edge in data.host_list
-          @graph.addLink edge[0], edge[1], '10', 'host'
+          @addLink edge[0], edge[1], '10', 'host'
 
-        @graph.update()
+        @update()
 
 class UserParam
   constructor: (opts) ->
@@ -101,6 +72,7 @@ class UserView
     @graph_init()
     @param_init()
     @graph.fetch_and_update()
+    @select2_event_init()
 
   param_init: ->
     @user_param = new UserParam
@@ -110,7 +82,7 @@ class UserView
     @data_gui.dat = new dat.GUI
       autoPlace: false
 
-    @data_gui.f_conc = @data_gui.dat.addFolder 'Conc'
+    @data_gui.f_conc = @data_gui.dat.addFolder 'Concentration'
     @data_gui.f_color = @data_gui.dat.addFolder 'Colors'
 
     @data_gui.f_conc.add @user_param, 'message'
@@ -120,9 +92,9 @@ class UserView
     $(@edat).html(@data_gui.dat.domElement)
 
   graph_init: ->
-    @graph = new GraphView
+    @graph = new Graph
       w: $(@elem).width()
-      h: $(@elem).width()
+      h: $(@elem).height()
       elem: @elem
       ui_binding: @
 
@@ -139,7 +111,15 @@ class UserView
 
     toggle: (e, f) ->
       key = e.currentTarget.dataset['target']
-      f.toolbar[key] = not f.toolbar[key]
+      new_state = not f.toolbar[key]
+
+      #: Reset all other
+      f.toolbar.eraser = false
+      f.toolbar.observe = false
+      f.toolbar.simulate = false
+      f.toolbar.info = false
+
+      f.toolbar[key] = new_state
 
     emit: (e, f) ->
 
@@ -152,6 +132,25 @@ class UserView
         genes: @genes
         mirna: @mirna
       , yes
+
+  select2_event_init: ->
+    $('select.rivets').on 'select2:select', =>
+      @graph.fetch_and_update()
+
+    $('select.rivets').on 'select2:unselecting', =>
+      @cache =
+        genes: @select2box.genes
+        mirna: @select2box.mirna
+
+    $('select.rivets').on 'select2:unselect', (a, b)=>
+      genes_rem = _.xor @cache.genes, @select2box.genes
+      mirna_rem = _.xor @cache.mirna, @select2box.mirna
+
+      for n in genes_rem
+        @graph.removeNode(n)
+
+      for n in mirna_rem
+        @graph.removeNode(n)
 
   select_init: ->
     factory_select = (opts) ->
@@ -190,25 +189,7 @@ class UserView
       placeholder: "Please Enter a Few Genes"
       templateResult: (obj) ->
         return obj.text if obj.loading
-        markup = """
-          <div class="dropdown-card">
-            <h1>#{obj.symbol}</h1>
-            <p>#{obj.description}</p>
-            <ul>
-              <li>
-                <strong>Targeted By</strong>: #{obj.targeted_by.length} miRNAs
-              </li>
-              <li>
-                <strong>Host of (miRNA)</strong>:
-                  #{obj.host_of?.symbol || 'N.A.'}
-              </li>
-              <li>
-                <strong>ESID</strong>: #{obj.names[0]}
-              </li>
-            </ul>
-          </div>
-        """
-        markup
+        templates.geneselect obj: obj
 
     $('.mirna_select').select2 factory_select
       uri: '/api/mirna'
