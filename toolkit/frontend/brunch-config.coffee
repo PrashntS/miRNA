@@ -3,14 +3,14 @@ module.exports = config:
     public: '../miRNA/static'
   files:
     javascripts: joinTo:
-      'libraries.js': (path) ->
+      'js/libraries.js': (path) ->
         /^(bower_components)|(lodash)\//.test path
-      'app.js': (path) ->
+      'js/app.js': (path) ->
         /^(app)\//.test path
     stylesheets:
       joinTo:
-        'libraries.css': /^bower_components\//
-        'app.css': /^(app)/
+        'css/libraries.css': /^bower_components\//
+        'css/app.css': /^(app)/
       order:
         before: ['bower_components/normalize-css/normalize.css']
   plugins:
@@ -30,7 +30,4 @@ module.exports = config:
   npm:
     enabled: yes
     whitelist: ['lodash']
-  conventions:
-    ignored: [
-      /fontawesome/
-    ]
+

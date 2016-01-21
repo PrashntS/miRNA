@@ -87,16 +87,23 @@ class UserView
     @bound_select_input = {}
     @select_init()
     @rivets_init()
-    @toolbar_init()
+    @toolbar_btm = @toolbar_btm
 
   rivets_init: ->
     @rivets_view = rivets.bind($('#nodes'), {nodes: @bound_select_input})
     @bound_select_input.genes = ['RIN2']
+    @rv_toolbar_view = rivets.bind $('#toolbar'), {toolbar: @toolbar_btm}
 
-  toolbar_init: ->
-    @toolbar = $('.cd-stretchy-nav')
-    @toolbar.find('.cd-nav-trigger').on 'click', =>
-      @toolbar.toggleClass 'nav-is-visible'
+  toolbar_btm:
+    show: yes
+    eraser: no
+    observe: no
+    simulate: no
+    info: no
+
+    toggle: (e, f)->
+      key = e.currentTarget.dataset['target']
+      f.toolbar[key] = not f.toolbar[key]
 
   select_val: ->
     $.param(@bound_select_input, true)
@@ -193,7 +200,7 @@ exports.interaction =
       elem: '#graphcanvas'
       dat: ui.select_val
 
-    graph.fetch_and_update("genes=CDKN1A")
+    # graph.fetch_and_update("genes=CDKN1A")
 
     $('select.rivets').on 'change', ->
       graph.fetch_and_update(ui.select_val())

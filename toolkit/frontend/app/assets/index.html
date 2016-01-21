@@ -9,8 +9,8 @@
   <meta name="keywords" content="miRNA, Gene, Regulation, Simulation" >
   <meta name="description" content="">
 
-  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='libraries.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='app.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/libraries.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/app.css')}}">
 </head>
 <body>
   <header>
@@ -49,17 +49,52 @@
         <div id="data_gui"></div>
       </div>
 
-      <div class="cd-stretchy-nav">
-        <a class="cd-nav-trigger" href="#0">
+      <div class="cd-stretchy-nav"
+           id="toolbar"
+           rv-class-nav-is-visible="toolbar.show">
+
+        <a  class="cd-nav-trigger"
+            href="javascript:void(0);"
+            rv-on-click="toolbar.toggle"
+            data-target="show">
           Menu
           <span aria-hidden="true"></span>
         </a>
 
         <ul>
-          <li><a href="#0" class="active"><span>Knockout</span><i class="fa fa-eraser"></i></a></li>
-          <li><a href="#0"><span>Observe</span><i class="fa fa-crosshairs"></i></a></li>
-          <li><a href="#0"><span>Simulate</span><i class="fa fa-dot-circle-o"></i></a></li>
-          <li><a href="#0"><span>Information</span><i class="fa fa-info-circle"></i></a></li>
+          <li>
+            <a href="javascript:void(0);"
+               rv-class-active="toolbar.eraser"
+               rv-on-click="toolbar.toggle"
+               data-target="eraser">
+              <span>Knockout</span>
+              <i class="fa fa-eraser"></i>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" rv-class-active="toolbar.observe"
+               rv-on-click="toolbar.toggle"
+               data-target="observe">
+              <span>Observe</span>
+              <i class="fa fa-crosshairs"></i>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" rv-class-active="toolbar.simulate"
+               rv-on-click="toolbar.toggle"
+               data-target="simulate">
+              <span>Simulate</span>
+              <i class="fa fa-dot-circle-o"></i>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" rv-class-active="toolbar.info"
+               rv-on-click="toolbar.toggle"
+               data-target="info">
+              <span>Information</span>
+              <i class="fa fa-info-circle"></i>
+            </a>
+          </li>
         </ul>
 
         <span aria-hidden="true" class="stretchy-nav-bg"></span>
@@ -88,8 +123,8 @@
 
   </section>
 
-  <script type="text/javascript" src="{{url_for('static', filename='libraries.js')}}"></script>
-  <script type="text/javascript" src="{{url_for('static', filename='app.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/libraries.js')}}"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='js/app.js')}}"></script>
   <script>app = require('app');app.init();</script>
 </body>
 </html>
