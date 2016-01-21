@@ -20,8 +20,8 @@ class Graph
     @nodes = @force.nodes()
     @links = @force.links()
 
-  addNode: (id) ->
-    @nodes.push 'id': id
+  addNode: (n) ->
+    @nodes.push n
 
   initZoomAndPan: ->
     self = @
@@ -107,11 +107,12 @@ class Graph
     @nodes.splice 0, @links.length
     @update()
 
-  addLink: (source, target, value) ->
+  addLink: (source, target, value, kind) ->
     @links.push
-      'source': @findNode(source)
-      'target': @findNode(target)
-      'value': value
+      source: @findNode(source)
+      target: @findNode(target)
+      value: value
+      kind: kind
 
   findNode: (id) ->
     for i of @nodes
@@ -138,7 +139,7 @@ class Graph
         .style('marker-mid', 'url(#start-arrow)')
         .attr 'id', (d) -> "#{d.source.id}-#{d.target.id}"
         .attr 'stroke-width', (d) -> d.value / 10
-        .attr 'stroke', '#000'
+        .attr 'stroke', (d) -> if d.kind is 'host' then '#049372' else '#AAA'
 
     link
       .append 'title'
@@ -159,10 +160,10 @@ class Graph
 
     nodeEnter
       .append 'svg:circle'
-        .attr 'r', 12
+        .attr 'r', (d) -> if d.inreq then 20 else 6
         .attr 'id', (d) -> "Node;#{d.id}"
         .attr 'class', 'nodeStrokeClass'
-        .attr 'fill', (d) => @color(d.id)
+        .attr 'fill', (d) -> d.color
 
     nodeEnter
       .append 'svg:text'
@@ -191,6 +192,8 @@ class Graph
       .linkDistance (d) -> d.value * 10
       .size [@w, @h]
       .start()
+
+    @keepNodesOnTop()
 
   keepNodesOnTop: ->
     $('.nodeStrokeClass').each (index) ->

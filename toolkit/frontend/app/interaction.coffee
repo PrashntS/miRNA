@@ -60,14 +60,24 @@ class GraphView
     $.getJSON "/api/graph?#{dat}"
       .done (data) =>
         for gene in data.genes_store
-          @graph.addNode gene
+          @graph.addNode
+            id: gene
+            type: 'Gene'
+            color: '#8C6CDA'
+            inreq: gene is 'CDKN1A'
+
         for mirna in data.miRNA_store
-          @graph.addNode mirna
+          @graph.addNode
+            id: mirna
+            type: 'miRNA'
+            color: '#88EB58'
+            inreq: mirna is 'CDKN1A'
 
         for edge in data.target_list
-          @graph.addLink edge[0], edge[1], '10'
+          @graph.addLink edge[0], edge[1], '10', 'target'
+
         for edge in data.host_list
-          @graph.addLink edge[0], edge[1], '10'
+          @graph.addLink edge[0], edge[1], '10', 'host'
 
         @graph.update()
 
