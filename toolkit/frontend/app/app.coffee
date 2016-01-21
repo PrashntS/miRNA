@@ -6,7 +6,7 @@ App =
   init: ->
     @interaction = interaction
     @automaton = automaton
-    @interaction.mmn()
+    @interaction.init()
     # @automaton.init()
 
 module.exports = App

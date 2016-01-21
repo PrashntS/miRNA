@@ -55,23 +55,25 @@ class Graph
 class GraphView
   constructor: (opts)->
     @graph = new GraphUtils.Graph opts
+    @bindings = opts.ui_binding
 
-  fetch_and_update: (dat) ->
-    $.getJSON "/api/graph?#{dat}"
+  fetch_and_update: ->
+    console.log @bindings.select2box.serialize()
+    $.getJSON "/api/graph?#{@bindings.select2box.serialize()}"
       .done (data) =>
         for gene in data.genes_store
           @graph.addNode
             id: gene
             type: 'Gene'
             color: '#8C6CDA'
-            inreq: gene is 'CDKN1A'
+            inreq: _.indexOf(@bindings.select2box.genes, gene) >= 0
 
         for mirna in data.miRNA_store
           @graph.addNode
             id: mirna
             type: 'miRNA'
             color: '#88EB58'
-            inreq: mirna is 'CDKN1A'
+            inreq: _.indexOf(@bindings.select2box.mirna, mirna) >= 0
 
         for edge in data.target_list
           @graph.addLink edge[0], edge[1], '10', 'target'
@@ -83,15 +85,25 @@ class GraphView
 
 class UserView
   constructor: (opts) ->
-    @select_init()
-    @bound_select_input = {}
+    @select2box = @select2box
+    @toolbar_btm = @toolbar_btm
+    @elem = opts.elem
+
+  init: ->
     @select_init()
     @rivets_init()
-    @toolbar_btm = @toolbar_btm
+    @graph_init()
+    @graph.fetch_and_update()
+
+  graph_init: ->
+    @graph = new GraphView
+      w: $(@elem).width()
+      h: $(@elem).width()
+      elem: @elem
+      ui_binding: @
 
   rivets_init: ->
-    @rivets_view = rivets.bind($('#nodes'), {nodes: @bound_select_input})
-    @bound_select_input.genes = ['RIN2']
+    @rv_select_view = rivets.bind($('#nodes'), {nodes: @select2box})
     @rv_toolbar_view = rivets.bind $('#toolbar'), {toolbar: @toolbar_btm}
 
   toolbar_btm:
@@ -101,12 +113,21 @@ class UserView
     simulate: no
     info: no
 
-    toggle: (e, f)->
+    toggle: (e, f) ->
       key = e.currentTarget.dataset['target']
       f.toolbar[key] = not f.toolbar[key]
 
-  select_val: ->
-    $.param(@bound_select_input, true)
+    emit: (e, f) ->
+
+  select2box:
+    genes: ['RIN2']
+    mirna: []
+
+    serialize: ->
+      $.param
+        genes: @genes
+        mirna: @mirna
+      , yes
 
   select_init: ->
     factory_select = (opts) ->
@@ -189,24 +210,16 @@ class UserView
         markup
 
 exports.interaction =
-  mmn: ->
+  init: ->
     width = $(".overlay-terra").width()
     height = $(".overlay-terra").height()
-    ui = new UserView
 
-    graph = new GraphView
-      w: width
-      h: height
+    uiview = new UserView
       elem: '#graphcanvas'
-      dat: ui.select_val
 
-    # graph.fetch_and_update("genes=CDKN1A")
+    uiview.init()
 
-    $('select.rivets').on 'change', ->
-      graph.fetch_and_update(ui.select_val())
-
-
-  init: ->
+  inist: ->
     class Fanck
       constructor: ->
         @message = ''
