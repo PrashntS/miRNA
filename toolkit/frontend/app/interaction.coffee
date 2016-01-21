@@ -53,12 +53,11 @@ class Graph
         if id is -1 then @edges.push dat
 
 class GraphView
-  constructor: (opts)->
+  constructor: (opts) ->
     @graph = new GraphUtils.Graph opts
     @bindings = opts.ui_binding
 
   fetch_and_update: ->
-    console.log @bindings.select2box.serialize()
     $.getJSON "/api/graph?#{@bindings.select2box.serialize()}"
       .done (data) =>
         for gene in data.genes_store
@@ -83,17 +82,42 @@ class GraphView
 
         @graph.update()
 
+class UserParam
+  constructor: (opts) ->
+    @message = ''
+    @speed = 0
+    @col = '#FFFFFF'
+
 class UserView
   constructor: (opts) ->
     @select2box = @select2box
     @toolbar_btm = @toolbar_btm
     @elem = opts.elem
+    @edat = opts.edat
 
   init: ->
     @select_init()
     @rivets_init()
     @graph_init()
+    @param_init()
     @graph.fetch_and_update()
+
+  param_init: ->
+    @user_param = new UserParam
+
+    @data_gui = {}
+
+    @data_gui.dat = new dat.GUI
+      autoPlace: false
+
+    @data_gui.f_conc = @data_gui.dat.addFolder 'Conc'
+    @data_gui.f_color = @data_gui.dat.addFolder 'Colors'
+
+    @data_gui.f_conc.add @user_param, 'message'
+    @data_gui.f_conc.add @user_param, 'speed', -10, 10
+    @data_gui.f_color.addColor @user_param, 'col', -10, 10
+
+    $(@edat).html(@data_gui.dat.domElement)
 
   graph_init: ->
     @graph = new GraphView
@@ -216,36 +240,6 @@ exports.interaction =
 
     uiview = new UserView
       elem: '#graphcanvas'
+      edat: '#data_gui'
 
     uiview.init()
-
-  inist: ->
-    class Fanck
-      constructor: ->
-        @message = ''
-        @speed = 0
-        @col = '#FFFFFF'
-        @explode = () ->
-          console.log "Hey"
-
-    func = new Fanck
-
-    gui = new dat.GUI
-      autoPlace: false
-    f1 = gui.addFolder 'conc'
-    f2 = gui.addFolder 'colors'
-    f1.add func, 'message'
-    f1.add func, 'speed', -5, 5
-    f2.add func, 'explode'
-    f2.addColor func, 'col'
-
-
-    $('#data_gui').html(gui.domElement)
-
-    $('select.rivets').on 'change', =>
-      graph_factory()
-
-    graph_factory()
-
-  node_val: ->
-    @nodes
