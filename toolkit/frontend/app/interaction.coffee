@@ -70,7 +70,7 @@ class UserView
     @select_init()
     @rivets_init()
     @graph_init()
-    @param_init()
+    # @param_init()
     @graph.fetch_and_update()
     @select2_event_init()
 
@@ -191,28 +191,28 @@ class UserView
         return obj.text if obj.loading
         templates.geneselect obj: obj
 
-    $('.mirna_select').select2 factory_select
-      uri: '/api/mirna'
-      placeholder: "Please Enter a Few miRNA"
-      templateResult: (obj) ->
-        return obj.text if obj.loading
-        markup = """
-          <div class="dropdown-card">
-            <h1>#{obj.symbol}</h1>
-            <ul>
-              <li>
-                <strong>Targets</strong>: #{obj.targets.length} Genes
-              </li>
-              <li>
-                <strong>Host Gene</strong>: #{obj.host?.symbol || 'N.A.'}
-              </li>
-              <li>
-                <strong><a href="#{obj.mirbase_url}">miRBase Link</a></strong>
-              </li>
-            </ul>
-          </div>
-        """
-        markup
+    # $('.mirna_select').select2 factory_select
+    #   uri: '/api/mirna'
+    #   placeholder: "Please Enter a Few miRNA"
+    #   templateResult: (obj) ->
+    #     return obj.text if obj.loading
+    #     markup = """
+    #       <div class="dropdown-card">
+    #         <h1>#{obj.symbol}</h1>
+    #         <ul>
+    #           <li>
+    #             <strong>Targets</strong>: #{obj.targets.length} Genes
+    #           </li>
+    #           <li>
+    #             <strong>Host Gene</strong>: #{obj.host?.symbol || 'N.A.'}
+    #           </li>
+    #           <li>
+    #             <strong><a href="#{obj.mirbase_url}">miRBase Link</a></strong>
+    #           </li>
+    #         </ul>
+    #       </div>
+    #     """
+    #     markup
 
 exports.interaction =
   init: ->

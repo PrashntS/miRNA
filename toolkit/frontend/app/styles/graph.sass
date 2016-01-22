@@ -6,12 +6,28 @@
   cursor: move
 
   text
-    display: inline
     font-size: 11px
-    fill: #222
+    fill: transparent
     stroke: none
     font-family: Montserrat
 
-  &:hover, &.dragging, &.fixed
-    stroke-width: 2
-    stroke: #000
+  // &:hover, &.dragging, &.fixed
+  //   stroke-width: 1
+  //   stroke: #000
+
+  .nodelabel
+    // display: none
+    opacity: 0
+    @include transform(scaleX(0))
+    @include transition(opacity 0.2s, transform 0.2s)
+
+  &:hover, &.fixed
+    .nodelabel
+      // display: inline
+      @include transform(scaleX(1))
+      opacity: 1
+      text
+        fill: #FFF
+
+polyline
+  opacity: 0.5

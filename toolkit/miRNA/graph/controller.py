@@ -80,20 +80,18 @@ class SubGraphController(Resource):
     trn = lambda x: str(x)
     tre = lambda x: [str(x[0]), str(x[1])]
 
-    nodes = miRNA_store | genes_store
-    links = target_list | host_list
-
-    node_fmt = lambda x: {'symbol': str(x), 'type': x._cls}
-    edge_fmt = lambda x: {'symbol': str(x), 'type': x._cls}
-
-
-
     return {
       'target_list': list(map(tre, target_list)),
       'host_list': list(map(tre, host_list)),
       'miRNA_store': list(map(trn, miRNA_store)),
       'genes_store': list(map(trn, genes_store)),
     }
+
+    # nodes = miRNA_store | genes_store
+    # links = target_list | host_list
+
+    # node_fmt = lambda x: {'symbol': str(x), 'type': x._cls}
+    # edge_fmt = lambda x: {'symbol': str(x), 'type': x._cls}
 
     # node_fmt = lambda x: {'name': str(x), 'group': x._cls}
     # nodes = list(map(node_fmt, miRNA_store | genes_store))

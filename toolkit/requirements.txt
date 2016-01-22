@@ -12,3 +12,5 @@ Click==3.3
 meinheld==0.5.8
 pydash==3.4.1
 git+https://github.com/PrashntS/flask-mongorest.git
+redis==2.10.5
+walrus=0.3.2

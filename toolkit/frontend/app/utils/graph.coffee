@@ -162,18 +162,46 @@ class Graph
       .call @drag
 
     nodeEnter
+      .append 'svg:text'
+        .attr 'class', 'textClass'
+        .attr 'x', 0
+        .attr 'y', 0
+        .attr 'text-anchor', 'middle'
+        .text (d) -> d.id
+
+    nodeEnter
       .append 'svg:circle'
-        .attr 'r', (d) -> if d.inreq then 20 else 6
+        .attr 'r', 10
+        .attr 'x', 0
+        .attr 'y', 0
         .attr 'id', (d) -> "Node;#{d.id}"
         .attr 'class', 'nodeStrokeClass'
         .attr 'fill', (d) -> d.color
 
-    nodeEnter
-      .append 'svg:text'
-        .attr 'class', 'textClass'
-        .attr 'x', 14
-        .attr 'y', '.31em'
-        .text (d) -> d.id
+    nodeLabelEnter = nodeEnter.append 'g'
+        .attr 'class', 'nodelabel'
+
+    nodeLabelEnter
+        .append 'svg:rect'
+          .attr 'rx', 2
+          .attr 'ry', 2
+          .attr 'x', (d) -> -(@parentNode.parentNode.getBBox().width + 10) / 2
+          .attr 'y', -9
+          .attr 'width', (d) -> @parentNode.parentNode.getBBox().width + 10
+          .attr 'height', 18
+          .attr 'id', (d) -> "Rect;#{d.id}"
+          .attr 'class', 'nodeStrokeClass'
+          .attr 'fill', (d) -> d.color
+
+    nodeLabelEnter
+        .append 'svg:text'
+          .attr 'class', 'label-main'
+          .attr 'x', 0
+          .attr 'y', 4
+          .attr 'text-anchor', 'middle'
+          .text (d) -> d.id
+
+    nodeEnter.attr 'x', (d) -> -@.getBBox().width/2
 
     node.exit().remove()
 
@@ -181,10 +209,64 @@ class Graph
       node.attr 'transform', (d) -> "translate(#{d.x}, #{d.y})"
 
       link.attr 'points', (d) ->
-        sx = d.source.x
-        sy = d.source.y
-        tx = d.target.x
-        ty = d.target.y
+        #: Correct the magic paddings that were added manually, above.
+        sx = d.source.x #- 5
+        sy = d.source.y #- 13
+        tx = d.target.x #- 5
+        ty = d.target.y #- 13
+
+        #: Find The Width and height
+        # sw = d3.select("rect[id='Node;#{d.source.id}']").attr("width")
+        # sh = d3.select("rect[id='Node;#{d.source.id}']").attr("height")
+
+        # tw = d3.select("rect[id='Node;#{d.target.id}']").attr("width")
+        # th = d3.select("rect[id='Node;#{d.target.id}']").attr("height")
+
+        # p_s = [
+        #   [sx + (sw / 2), (sy / 1)]
+        #   [sx + (sw / 1), sy + (sh / 2)]
+        #   [sx + (sw / 2), sy + (sh / 1)]
+        #   [(sx / 1),      sy + (sh / 2)]
+        # ]
+
+        # p_t = [
+        #   [tx + (tw / 2), (ty / 1)]
+        #   [tx + (tw / 1), ty + (th / 2)]
+        #   [tx + (tw / 2), ty + (th / 1)]
+        #   [(tx / 1),      ty + (th / 2)]
+        # ]
+
+        # pairs = [
+        #   [p_s[0], p_t[1]]
+        #   [p_s[0], p_t[2]]
+        #   [p_s[0], p_t[3]]
+        #   [p_s[1], p_t[0]]
+        #   [p_s[1], p_t[2]]
+        #   [p_s[1], p_t[3]]
+        #   [p_s[2], p_t[1]]
+        #   [p_s[2], p_t[0]]
+        #   [p_s[2], p_t[3]]
+        #   [p_s[3], p_t[1]]
+        #   [p_s[3], p_t[2]]
+        #   [p_s[3], p_t[0]]
+        # ]
+
+        # #: Find shortest edge.
+        # cp = _.minBy pairs, (d) ->
+        #   ((d[0][0] - d[1][0])**2 + (d[0][1] - d[1][1])**2)
+
+        # sx = sx + (sw / 2)
+        # sy = sy + (sh / 2)
+        # tx = tx + (tw / 2)
+        # ty = ty + (th / 2)
+
+        # sx = cp[0][0]
+        # sy = cp[0][1]
+        # tx = cp[1][0]
+        # ty = cp[1][1]
+
+        #: Make the node coordinates for source.
+
         "#{sx},#{sy} #{(sx + tx)/2},#{(sy + ty)/2} #{tx},#{ty}"
 
     # Restart the force layout.
