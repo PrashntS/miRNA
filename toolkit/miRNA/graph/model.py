@@ -4,7 +4,8 @@
 
 import networkx as nx
 
-from miRNA.polynucleotide.model import Gene, miRNA, miRNAGeneTargetComplex
+from miRNA import rd
+from miRNA.polynucleotide.model import Gene, miRNA
 
 class Graph(object):
   def __init__(self, node_list):
