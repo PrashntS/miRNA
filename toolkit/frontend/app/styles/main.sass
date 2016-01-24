@@ -116,50 +116,20 @@ header
               background: #000
               height: 2px
 
-  section
-    position: absolute
-    z-index: 100
-    margin-top: 35px
-    height: 100vh
-    padding: 10px
-    color: #000
-    // background: $primary-color
-    width: $sidebar-width
-    max-width: $sidebar-width
-
-    select.rivets
-      border: none
-
-    &::before
-      clear: both
-      content: ""
-      display: table
-      height: 0
-
     .cd-stretchy-nav
       font-family: $fonthead
       // @include calc(left, "50% + #{$sidebar-width}/2")
       left: 50%
-      bottom: 50px
+      bottom: 150px
 
-section
-  .form-field
-    margin-bottom: 10px
+section[role="interaction"]
+  position: fixed
+  z-index: 100
 
-    label
-      margin-left: 15px
-      letter-spacing: 1px
-      font-size: 14px
-
-    .select2
-      margin-top: 5px
-
-section.main
+section[role="viewport"]
   background: #FFF
   min-width: 100%
   min-height: 100vh
-  // padding-left: $sidebar-width
-  // padding-top: 35px
   position: relative
 
   .overlay-info

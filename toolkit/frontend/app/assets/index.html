@@ -46,70 +46,72 @@
         <li><a href="#">Github</a></li>
       </ul>
     </nav>
-    <section class="sidebar">
-      <div id="nodes">
-        <div class="form-field">
-          <!-- <label>Gene</label> -->
-          <select class="gene_select rivets"
-                  placeholder="Select a Gene"
-                  multiple="true"
-                  rv-value="nodes.genes"
-                  ></select>
-        </div>
-      </div>
-
-      <div class="cd-stretchy-nav" id="toolbar" rv-class-nav-is-visible="toolbar.show">
-
-        <a class="cd-nav-trigger"
-          href="javascript:void(0);"
-          rv-on-click="toolbar.toggle"
-          data-target="show">
-          Menu
-          <span aria-hidden="true"></span>
-        </a>
-
-        <ul>
-          <li>
-            <a href="javascript:void(0);"
-               rv-class-active="toolbar.eraser"
-               rv-on-click="toolbar.toggle"
-               data-target="eraser">
-              <span>Knockout</span>
-              <i class="fa fa-eraser"></i>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0);" rv-class-active="toolbar.observe"
-               rv-on-click="toolbar.toggle"
-               data-target="observe">
-              <span>Observe</span>
-              <i class="fa fa-crosshairs"></i>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0);" rv-class-active="toolbar.simulate"
-               rv-on-click="toolbar.toggle"
-               data-target="simulate">
-              <span>Simulate</span>
-              <i class="fa fa-dot-circle-o"></i>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0);" rv-class-active="toolbar.info"
-               rv-on-click="toolbar.toggle"
-               data-target="info">
-              <span>Information</span>
-              <i class="fa fa-info-circle"></i>
-            </a>
-          </li>
-        </ul>
-
-        <span aria-hidden="true" class="stretchy-nav-bg"></span>
-      </div>
-    </section>
   </header>
 
-  <section class="main">
+  <section role="interaction">
+    <div class="cd-stretchy-nav" id="toolbar" rv-class-nav-is-visible="toolbar.show">
+
+      <a class="cd-nav-trigger"
+        href="javascript:void(0);"
+        rv-on-click="toolbar.toggle"
+        data-target="show">
+        Menu
+        <span aria-hidden="true"></span>
+      </a>
+
+      <ul>
+        <li>
+          <a href="javascript:void(0);"
+             rv-class-active="toolbar.eraser"
+             rv-on-click="toolbar.toggle"
+             data-target="eraser">
+            <span>Knockout</span>
+            <i class="fa fa-eraser"></i>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" rv-class-active="toolbar.observe"
+             rv-on-click="toolbar.toggle"
+             data-target="observe">
+            <span>Observe</span>
+            <i class="fa fa-crosshairs"></i>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" rv-class-active="toolbar.simulate"
+             rv-on-click="toolbar.toggle"
+             data-target="simulate">
+            <span>Simulate</span>
+            <i class="fa fa-dot-circle-o"></i>
+          </a>
+        </li>
+        <li>
+          <a href="javascript:void(0);" rv-class-active="toolbar.info"
+             rv-on-click="toolbar.toggle"
+             data-target="info">
+            <span>Information</span>
+            <i class="fa fa-info-circle"></i>
+          </a>
+        </li>
+      </ul>
+
+      <span aria-hidden="true" class="stretchy-nav-bg"></span>
+    </div>
+
+    <div id="nodes">
+      <div class="form-field">
+        <label>Gene</label>
+        <select class="gene_select rivets"
+                placeholder="Select a Gene"
+                multiple="true"
+                rv-value="nodes.genes"
+                ></select>
+      </div>
+    </div>
+
+  </section>
+
+  <section role="viewport">
     <div class="overlay-info">
       <h1>Modelling and Network Analysis of Intronic miRNA mediated Gene Expression Regulation</h1>
 
