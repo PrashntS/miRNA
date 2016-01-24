@@ -42,7 +42,7 @@ class Graph extends GraphUtils.Graph
           @addNode
             id: mirna
             type: 'miRNA'
-            color: '#88EB58'
+            color: '#91B93E'
             inreq: _.indexOf(@bindings.select2box.mirna, mirna) >= 0
 
         for edge in data.target_list

@@ -5,18 +5,16 @@
 from miRNA import rd
 
 #: Nodes Store. Simply stores the Symbols
-miRNA_nodes = rd.Set('miRNANodes')
-gene_nodes  = rd.Set('geneNodes')
+miRNA_nodes = rd.Hash('miRNANodes')
+gene_nodes  = rd.Hash('geneNodes')
 
 #: Edges. Edges are stored as List of Dicts
 #: Multiple redundancy is provided as a trade-off between time and space
-#1 miRNA --(Targets)---> Gene
-#2 Gene  --(Produces)--> miRNA
-#3 Gene  <-(Target of)-- miRNA
-#4 miRNA <-(Product of)- Gene
+#1 miRNA --(Targets)---> Gene  (Outward Edge)
+#2 Gene  --(Produces)--> miRNA (Outward Edge)
+#3 Gene  <-(Target of)-- miRNA (Inward Edge)
+#4 miRNA <-(Product of)- Gene  (Inward Edge)
 #: Each of these Edges are implemented as Hashes of Touples.
 
-miRNA_targets_genes   = rd.Hash('miRNATargetsGene')
-gene_produces_mirna   = rd.Hash('GeneProducesmiRNA')
-gene_target_of_mirna  = rd.Hash('GeneTargetOfmiRNA')
-miRNA_product_of_gene = rd.Hash('miRNAProductOfGene')
+in_edge   = rd.Hash('InEdge')
+out_edge  = rd.Hash('OutEdge')

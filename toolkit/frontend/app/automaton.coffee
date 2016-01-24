@@ -59,7 +59,7 @@ exports.automaton =
       [g3(), g2(), g3(), g3(), g3(), g3(), g3()]
     ]
 
-    @t.animate 10, => console.log @t.grid
+    @t.animate 30, => console.log @t.grid
 
     $(".overlay-terra").find("canvas")
     .height(dim.h).width(dim.w)

@@ -120,7 +120,7 @@ header
     position: absolute
     z-index: 100
     margin-top: 35px
-    @include calc(height, "100vh - 35px")
+    height: 100vh
     padding: 10px
     color: #000
     // background: $primary-color
@@ -191,13 +191,13 @@ section.main
     opacity: 1
     left: $sidebar-width
     right: 0
-    @include calc(height, "100vh - 35px")
+    height: 100vh
     z-index: 1
 
   .graphcanvassvg
     position: relative
     overflow: hidden
-    @include calc(height, "100vh - 37px")
+    height: 100vh
     width: 100%
 
 a

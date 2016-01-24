@@ -65,6 +65,7 @@ entities are expected to degrade into the constituents after they are either
 too old, or have a "poor" health.
 
       degrade: (x, y, opts) ->
+        return false
         return false if not @degrades_to
 
         if @age > 100 # or _.random(10**5) < 100
@@ -144,16 +145,18 @@ This function, similar to the "move" function, inspects its neighbors.
             x.symbol is binding_mir.creature.symbol
 
           complex_mir = new miRNAGeneComplex
-            symbol: "#{@.symbol}-#{binding_mir.symbol}"
+            symbol: "#{@.symbol}-#{binding_mir.creature.symbol}"
             gene_ref: @.symbol
             mirna_ref: binding_mir.creature.symbol
-          binding_mir.creature.age = 200
+            color: [255, 255, 0]
+          # binding_mir.creature.age = 200
+          console.log binding_mir
 
           return [{
             x: binding_mir.coords.x
             y: binding_mir.coords.y
             creature: complex_mir
-            observed: no
+            observed: yes
           }]
 
         return false
@@ -197,6 +200,8 @@ If none of the above, happens, then we simply move.
       process: (neighbors, x, y) ->
         @age += 1
 
+        return @miRNA_Gene_Complex(neighbors)
+
         performance = [
           @miRNA_Gene_Complex(neighbors)
           # @rrna_gene_complex
@@ -208,8 +213,11 @@ If none of the above, happens, then we simply move.
         accepted = _.compact performance
         accepted = if degrade_act then [degrade_act] else accepted
 
+        console.log accepted
+
         if accepted.length
           step = accepted[_.random(accepted.length - 1)]
+          console.log step
           return step
 
         return false
