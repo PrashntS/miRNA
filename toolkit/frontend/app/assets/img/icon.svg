@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.1 (12002) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="colored" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Circuitboard" sketch:type="MSLayerGroup" transform="translate(3.000000, 7.000000)" stroke="#314E55" stroke-width="2">
+            <circle id="Oval-373" fill="#5ECC66" sketch:type="MSShapeGroup" cx="12" cy="12" r="5"></circle>
+            <circle id="Oval-373" fill="#E65F58" sketch:type="MSShapeGroup" cx="49" cy="19" r="5"></circle>
+            <circle id="Oval-373" fill="#5ECC66" sketch:type="MSShapeGroup" cx="49" cy="33" r="5"></circle>
+            <circle id="Oval-373" fill="#5ECC66" sketch:type="MSShapeGroup" cx="5" cy="28" r="5"></circle>
+            <path d="M17,13 L22,13 C24.7614237,13 27,15.2383594 27,18.0056458 L27,49" id="Rectangle-314" sketch:type="MSShapeGroup"></path>
+            <path d="M10,28 L15,28 C17.7614237,28 20,30.2473679 20,33.0033431 L20,49" id="Rectangle-314" sketch:type="MSShapeGroup"></path>
+            <path d="M34,33 L39,33 C41.7614237,33 44,35.2415785 44,37.9966858 L44,49" id="Rectangle-314" sketch:type="MSShapeGroup" transform="translate(39.000000, 41.000000) scale(-1, 1) translate(-39.000000, -41.000000) "></path>
+            <path d="M36,0 L39.8551065,0 C41.984223,0 43.7102129,1.71963386 43.7102129,3.8563785 L43.7102127,19" id="Rectangle-314" sketch:type="MSShapeGroup" transform="translate(39.860132, 9.500000) rotate(-180.000000) translate(-39.860132, -9.500000) "></path>
+        </g>
+    </g>
+</svg>

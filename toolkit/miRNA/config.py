@@ -4,9 +4,9 @@
 
 DEBUG       = True
 SECRET_KEY  = 'super-secret'
-HOST        = 'http://localhost:6000'
+HOST        = 'http://localhost:9000'
 SERVE_HOST  = '0.0.0.0'
-SERVE_PORT  = 8000
+SERVE_PORT  = 9000
 MEINHELD    = False
 THREADED    = True
 
