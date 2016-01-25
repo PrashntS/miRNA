@@ -4,13 +4,10 @@
 @import "select2"
 @import "mixins"
 
-@import url(https://fonts.googleapis.com/css?family=Inconsolata:400,700|Montserrat)
-@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,600)
-
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,600|Montserrat)
 
 $fonthead: 'Montserrat', sans-serif
-// $fontbody: 'Inconsolata', courier
-$fontbody: 'Source Code Pro'
+$fontbody: 'Source Code Pro', courier
 
 $sidebar-width: 250px
 
@@ -124,7 +121,7 @@ header
 
 section[role="interaction"]
   position: fixed
-  z-index: 100
+  z-index: 10
 
 section[role="viewport"]
   background: #FFF
@@ -182,189 +179,3 @@ a
 
 p
   margin: 0
-
-div.dg
-  color: $primary-color-text
-  text-shadow: none
-  font-family: $fontbody
-  font-size: 14px
-  letter-spacing: 0.5px
-
-  li
-    background: transparent
-    border-bottom: none
-
-    &.title
-      background: $ebony-clay
-      border-bottom: inherit
-      margin: 0
-
-      &::before
-        content: "-"
-        position: absolute
-        margin-left: -10px
-
-    &.folder
-      background: transparent
-      border: 1px solid $ebony-clay
-
-      border-radius: 2px
-      // overflow: hidden
-
-      margin: 5px 0
-
-      .cr
-        padding-left: 14px
-
-    &.cr
-      background: inherit
-      border-bottom: inherit
-      position: relative
-
-      div:not([class])
-        position: relative
-        height: 100%
-
-      &.color
-        overflow: visible
-
-        input
-          font-family: inherit
-          font-weight: inherit !important
-          text-shadow: none !important
-
-
-        div.selector
-          margin: 0
-          padding: 0 !important
-          border-radius: 0px 0 3px 3px
-          width: 100% !important
-          // overflow: hidden
-          @include calc(top, "100% - 5px")
-
-          .field-knob
-            box-shadow: none !important
-
-          .saturation-field
-            border: none !important
-            margin: 0 !important
-            width: 100px !important
-            height: 100px !important
-            border-bottom-left-radius: 3px
-
-          .hue-field
-            height: 100% !important
-            border: none !important
-            margin: none
-            position: absolute
-            right: 0
-            border-bottom-right-radius: 3px
-            -webkit-width: calc(100% - 100px) !important
-            width: calc(100% - 100px) !important
-
-          .hue-knob
-            width: 100% !important
-            height: 2px !important
-            border: none !important
-            background: #FFFFFF
-
-            &::after
-              content: "*"
-              position: absolute
-              right: 50%
-              top: -2px
-              width: 15px
-              height: 15px
-              line-height: 15px
-              text-align: center
-              margin: -5px -7.5px
-              border-radius: 50%
-              color: $ebony-clay
-              background: #FFFFFF
-
-      &.function:hover
-        background: inherit
-
-        .property-name
-          text-decoration: underline
-
-    .c
-      position: relative
-      height: 100%
-      padding: 5px 0
-
-      input[type=text]
-        background: transparent
-        margin: 0
-        border: 1px solid $ebony-clay
-        padding: 2px 5px
-        border-radius: 2px
-        font-size: inherit
-        font-family: $fontbody
-        height: 100%
-
-        &:active, &:hover, &:focus
-          color: none !important
-          background: $ebony-clay
-
-      .slider
-        margin: 0
-        position: relative
-
-        @include calc(top, "-50% - 2.5px")
-
-        height: 5px
-        background: $ebony-clay
-        border-radius: 10px
-
-        &:hover
-          background: $ebony-clay
-
-        .slider-fg
-          position: relative
-          border-radius: 10px
-          height: 100%
-
-          &::after
-            content: "*"
-            position: absolute
-            right: 0
-            top: 0
-            width: 15px
-            height: 15px
-            line-height: 15px
-            text-align: center
-            margin: -5px -7.5px
-            border-radius: 50%
-            background: $ebony-clay
-
-          &:hover
-            &::after
-              background: inherit
-
-
-  &.main
-    max-width: 100%
-
-    & > ul
-      background: transparent
-
-  ul
-    background: $madison
-
-  ul.closed
-    background: transparent
-    li.title
-      background: inherit
-
-      &::before
-        content: "+"
-
-    .cr.color
-      overflow: hidden
-
-  .close-button
-    display: none
-
-section.canvas
-  // background: #EEE

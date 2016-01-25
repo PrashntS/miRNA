@@ -8,7 +8,7 @@ HOST        = 'http://localhost:9000'
 SERVE_HOST  = '0.0.0.0'
 SERVE_PORT  = 9000
 MEINHELD    = False
-THREADED    = True
+THREADED    = False
 
 # MongoDB Config
 MONGODB_DB      = 'mirna'
@@ -21,3 +21,5 @@ REDIS = {
   'port': 6379,
   'db': 0,
 }
+
+ZODB_PATH = '/data/zodb/mirna.fs'

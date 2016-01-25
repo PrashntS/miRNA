@@ -29,10 +29,15 @@ def migrate():
   create_app()
 
   import json
+  import networkx as nx
+  import transaction
 
   from mongoengine.queryset import DoesNotExist
 
-  from miRNA.polynucleotide.model import Gene, miRNA as miRNAModel, miRNAGeneTargetComplex, miRNAGeneTargetedByComplex
+  from miRNA import zdb
+  from miRNA.polynucleotide.model import Gene, miRNA as miRNAModel
+
+  G = nx.DiGraph()
 
   #: Insert the Gene Data.
   with open('data_dump/gene_metadata.json') as minion:
@@ -43,10 +48,11 @@ def migrate():
       g.symbol = gene_id
       g.names  = meta.get('names', [])
       g.description = meta.get('description', '')
-      g.searchable = meta.get('description', '') + ' '.join(meta.get('names', []))
-
       g.save()
-      print("Inserted Gene: {0}".format(str(g)))
+
+      G.add_node(gene_id, kind='Gene')
+
+      print("Inserted Gene: {0} in MongoDB and Redis".format(str(g)))
 
   #: Insert the miRNA Data.
   with open('data_dump/miRNA_metadata.json') as minion:
@@ -56,93 +62,45 @@ def migrate():
       m = miRNAModel()
       m.symbol = mir_id
       m.FASTA  = meta.get('miRNA Sequence', '')
-
-      m.searchable = mir_id + meta.get('miRNA Sequence', '')
-
-      try:
-        g = Gene.objects.get(symbol = meta.get('Host Gene'))
-        m.host = g
-        m.searchable += g.searchable
-
-        h_tc = meta.get('Host Gene Transcript Count', 0)
-        if h_tc > 0:
-          g.transcript_count = h_tc
-          g.save()
-      except DoesNotExist:
-        "No Host Gene"
-        pass
-
-      count = 0
-
       m.mirbase_url = meta.get('mature miRNA entry', '')
-      mtc = meta.get('miRNA Transcript Count', 0)
-      try:
-        mtc = int(mtc)
-      except ValueError:
-        mtc = 0
-      m.transcript_count = mtc
       m.save()
 
-      try:
-        g = Gene.objects.get(symbol = meta.get('Host Gene'))
-        g.host_of = m
-        g.save()
-      except DoesNotExist:
-        "No Host Gene"
-        pass
+      G.add_node(mir_id, kind='miRNA')
 
-      #: We'll add targets later, first, we gotta just save transcript counts and host_of
-      for gene in meta.get('Target Gene with Transcript Count', []):
-        try:
-          g = Gene.objects.get(symbol = gene[0])
-          g.transcript_count = gene[1]
-          g.save()
-          count += 1
-        except DoesNotExist:
-          #: Move on
-          pass
+      if len(meta.get('Host Gene', '')) > 0:
+        gene_id = meta.get('Host Gene', '')
+        weight = meta.get('Host Gene Transcript Count', 0.5)
 
-      print("Inserted miRNA: {0}, and updated {1} genes".format(str(m), str(count)))
+        G.add_edge(gene_id, mir_id, weight = weight)
+
+      print("Inserted miRNA: {0}".format(str(m)))
 
   #: Insert miRNA targets
   with open('data_dump/mirna_target_gene_affinity.json') as minion:
     targets = json.load(minion)
 
     for mir_id, trg in targets.items():
-      try:
-        m = miRNAModel.objects.get(symbol = mir_id)
-        count = 0
-        for i in trg:
-          try:
-            g = Gene.objects.get(symbol = i[0])
-            e = miRNAGeneTargetComplex()
-            e.gene = g
-            e.affinity = i[1]
+      #: Add the miRNA node
 
-            f = miRNAGeneTargetedByComplex()
-            f.miRNA = m
-            f.affinity = i[1]
+      count = 0
+      for gene_id, weight in trg:
+        G.add_edge(mir_id, gene_id, weight = weight)
+        count += 1
 
-            g.targeted_by.append(f)
-            g.save()
+      print("Updated miRNA: {0} with {1} targets".format(str(m), str(count)))
 
-            m.searchable += " {0}".format(i[0])
-            m.targets.append(e)
-            count += 1
-          except DoesNotExist:
-            pass
-        m.save()
-        print("Updated miRNA: {0} with {1} targets".format(str(m), str(count)))
-
-      except DoesNotExist:
-        pass
+  root = zdb.open().root()
+  root['nxGraph'] = G
+  transaction.commit()
 
 @manager.command
 def setup_db():
   from pymongo import MongoClient
   from miRNA.config import MONGODB_DB, MONGODB_HOST, MONGODB_PORT
+
   client = MongoClient(MONGODB_HOST, MONGODB_PORT)
   client.drop_database(MONGODB_DB)
+
   migrate()
 
 if __name__ == "__main__":
