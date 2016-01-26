@@ -38,6 +38,10 @@ def migrate():
   from miRNA.polynucleotide.model import Gene, miRNA as miRNAModel
 
   G = nx.DiGraph()
+  miRNANodes = set()
+  geneNodes = set()
+  InEdge = {}
+  OutEdge = {}
 
   #: Insert the Gene Data.
   with open('data_dump/gene_metadata.json') as minion:
@@ -52,7 +56,9 @@ def migrate():
 
       G.add_node(gene_id, kind='Gene')
 
-      print("Inserted Gene: {0} in MongoDB and Redis".format(str(g)))
+      geneNodes.add(gene_id)
+
+      print("Inserted Gene: {0}".format(str(g)))
 
   #: Insert the miRNA Data.
   with open('data_dump/miRNA_metadata.json') as minion:
@@ -67,11 +73,22 @@ def migrate():
 
       G.add_node(mir_id, kind='miRNA')
 
+      miRNANodes.add(mir_id)
+
       if len(meta.get('Host Gene', '')) > 0:
         gene_id = meta.get('Host Gene', '')
         weight = meta.get('Host Gene Transcript Count', 0.5)
 
         G.add_edge(gene_id, mir_id, weight = weight)
+
+        if not mir_id in InEdge.keys():
+          InEdge[mir_id] = {}
+        InEdge[mir_id][gene_id] = [weight,]
+
+        if not gene_id in OutEdge.keys():
+          OutEdge[gene_id] = {}
+
+        OutEdge[gene_id][mir_id] = [weight, ]
 
       print("Inserted miRNA: {0}".format(str(m)))
 
@@ -80,17 +97,33 @@ def migrate():
     targets = json.load(minion)
 
     for mir_id, trg in targets.items():
-      #: Add the miRNA node
-
       count = 0
       for gene_id, weight in trg:
         G.add_edge(mir_id, gene_id, weight = weight)
         count += 1
 
+        if not gene_id in InEdge.keys():
+          InEdge[gene_id] = {}
+        InEdge[gene_id][mir_id] = [weight,]
+
+        if not mir_id in OutEdge.keys():
+          OutEdge[mir_id] = {}
+        OutEdge[mir_id][gene_id] = [weight, ]
+
       print("Updated miRNA: {0} with {1} targets".format(str(m), str(count)))
 
   root = zdb.open().root()
   root['nxGraph'] = G
+  root['Nodes'] = {
+    'miRNA': miRNANodes,
+    'Gene': geneNodes,
+  }
+
+  root['Edges'] = {
+    'In': InEdge,
+    'Out': OutEdge,
+  }
+
   transaction.commit()
 
 @manager.command
