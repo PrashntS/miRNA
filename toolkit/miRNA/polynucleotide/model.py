@@ -6,7 +6,7 @@ from flask import request
 
 from miRNA import db, app
 
-class BaseDocument(db.Document):
+class Polynucleotide(db.Document):
   symbol = db.StringField(unique = True)
   FASTA  = db.StringField()
 
@@ -20,8 +20,8 @@ class BaseDocument(db.Document):
   def __unicode__(self):
     return self.symbol
 
-class Gene(BaseDocument):
+class Gene(Polynucleotide):
   names = db.ListField(db.StringField())
 
-class miRNA(BaseDocument):
+class miRNA(Polynucleotide):
   mirbase_url = db.StringField()
