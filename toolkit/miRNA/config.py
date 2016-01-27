@@ -22,4 +22,4 @@ REDIS = {
   'db': 0,
 }
 
-ZODB_PATH = '/data/zodb/mirna.fs'
+WHOOSH_INDEX = "/data/whooshindex"

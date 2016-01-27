@@ -110,7 +110,7 @@ def migrate():
           OutEdge[mir_id] = {}
         OutEdge[mir_id][gene_id] = [weight, ]
 
-      print("Updated miRNA: {0} with {1} targets".format(str(m), str(count)))
+      print("Updated miRNA: {0} with {1} targets".format(str(mir_id), str(count)))
 
   root = zdb.open().root()
   root['nxGraph'] = G
@@ -125,6 +125,17 @@ def migrate():
   }
 
   transaction.commit()
+
+@manager.command
+def setup_index():
+  create_app()
+
+  from miRNA.polynucleotide.model import Gene, miRNA as miRNAModel
+  from miRNA.search.indexer import Indexer
+
+  print("Indexing Data")
+  i = Indexer.index_setup([Gene, miRNAModel])
+  print(i)
 
 @manager.command
 def setup_db():

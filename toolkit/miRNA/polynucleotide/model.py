@@ -20,8 +20,23 @@ class Polynucleotide(db.Document):
   def __unicode__(self):
     return self.symbol
 
+  @property
+  def _repr(self):
+    return {
+      'symbol': self.symbol,
+      'description': self.description,
+    }
+
 class Gene(Polynucleotide):
   names = db.ListField(db.StringField())
+
+  @property
+  def _repr(self):
+    desc = self.description + ' '.join(self.names)
+    return {
+      'symbol': self.symbol,
+      'description': desc,
+    }
 
 class miRNA(Polynucleotide):
   mirbase_url = db.StringField()
