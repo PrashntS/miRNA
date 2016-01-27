@@ -112,7 +112,7 @@ def migrate():
 
       print("Updated miRNA: {0} with {1} targets".format(str(mir_id), str(count)))
 
-  root = zdb.open().root()
+  root = zdb.root()
   root['nxGraph'] = G
   root['Nodes'] = {
     'miRNA': miRNANodes,

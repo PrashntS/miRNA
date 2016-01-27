@@ -2,12 +2,19 @@
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
-from whoosh.fields import SchemaClass, TEXT, KEYWORD, ID, STORED
-from whoosh.analysis import StemmingAnalyzer
+from whoosh.fields import SchemaClass, TEXT, KEYWORD, ID, STORED, NUMERIC, NGRAM
+from whoosh.analysis import StemmingAnalyzer, NgramFilter
+
+ngt = NgramFilter(minsize = 2, maxsize = 20)
 
 class PolynucleotideSchema(SchemaClass):
-  symbol = ID(stored = True, unique = True, field_boost = 10)
-  description = TEXT(field_boost = 5)
+  id = ID(stored = True, unique = True)
+  symbol = NGRAM(minsize = 2, maxsize = 20)
+  description = TEXT(field_boost = 5,
+                     analyzer = StemmingAnalyzer(),
+                     spelling = True)
+  degree = NUMERIC(sortable = True)
+  kind = KEYWORD()
 
 class NotIndexedException(Exception):
   message = "The Index hasn't been created."

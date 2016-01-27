@@ -12,7 +12,7 @@ app.config.from_pyfile('config.py')
 
 db = MongoEngine(app)
 rd = Walrus(**app.config.get('REDIS'))
-zdb = ZODB.config.databaseFromURL('./miRNA/zeo.client.config')
+zdb = ZODB.config.databaseFromURL('./miRNA/zeo.client.config').open()
 
 def create_app():
   from .admin.controller import admin

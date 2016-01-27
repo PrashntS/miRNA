@@ -4,7 +4,9 @@
 
 from flask import request
 
-from miRNA import db, app
+from miRNA import db, app, zdb
+
+graph = zdb.root.nxGraph
 
 class Polynucleotide(db.Document):
   symbol = db.StringField(unique = True)
@@ -20,13 +22,6 @@ class Polynucleotide(db.Document):
   def __unicode__(self):
     return self.symbol
 
-  @property
-  def _repr(self):
-    return {
-      'symbol': self.symbol,
-      'description': self.description,
-    }
-
 class Gene(Polynucleotide):
   names = db.ListField(db.StringField())
 
@@ -34,9 +29,22 @@ class Gene(Polynucleotide):
   def _repr(self):
     desc = self.description + ' '.join(self.names)
     return {
+      'id': self.symbol,
       'symbol': self.symbol,
       'description': desc,
+      'degree': graph.degree(self.symbol),
+      'kind': 'Gene',
     }
 
 class miRNA(Polynucleotide):
   mirbase_url = db.StringField()
+
+  @property
+  def _repr(self):
+    return {
+      'id': self.symbol,
+      'symbol': self.symbol,
+      'description': self.description,
+      'degree': graph.degree(self.symbol),
+      'kind': 'miRNA',
+    }
