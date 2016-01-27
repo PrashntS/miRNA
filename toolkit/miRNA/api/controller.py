@@ -11,6 +11,7 @@ from flask.ext.mongorest import methods
 
 from miRNA.polynucleotide.controller import GeneResource, miRNAResource
 from miRNA.graph.controller import SubGraphController
+from miRNA.search.controller import SearchController
 from miRNA import app, db
 
 api = Blueprint('api', __name__)
@@ -28,4 +29,5 @@ class miRNAREST(ResourceView):
   resource = miRNAResource
   methods = [methods.Fetch, methods.List]
 
+restful.add_resource(SearchController, '/search')
 restful.add_resource(SubGraphController, '/graph')
