@@ -22,12 +22,12 @@ restful = Api(app, prefix = '/api')
 @mongo_rest.register(name = 'gene', url = '/gene/')
 class GeneRest(ResourceView):
   resource = GeneResource
-  methods = [methods.Fetch, methods.List]
+  methods = [methods.Fetch]
 
 @mongo_rest.register(name = 'miRNA', url = '/mirna/')
 class miRNAREST(ResourceView):
   resource = miRNAResource
-  methods = [methods.Fetch, methods.List]
+  methods = [methods.Fetch]
 
 restful.add_resource(SearchController, '/search')
 restful.add_resource(SubGraphController, '/graph')
