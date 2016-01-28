@@ -24,6 +24,25 @@ def runserver():
             threaded = app.config['THREADED'])
 
 @manager.command
+def precompute():
+  "Computes and Persists the Complex Data."
+  create_app()
+
+  import json
+  from miRNA.procedure.migration import graph
+
+  with open('data_dump/catalogue.json') as m:
+    data_path = json.load(m)
+
+  graph_path = data_path['mir_gene_graph']['path']
+
+  app.logger.info('Precomputing the network at {0}'.format(graph_path))
+
+  with open(graph_path) as minion:
+    host_map_dat = json.load(minion)
+    graph(host_map_dat)
+
+@manager.command
 def migrate():
   "Populates the MongoDB database using the data_dump JSON"
   create_app()

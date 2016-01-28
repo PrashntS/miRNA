@@ -13,8 +13,6 @@ def graph(dat):
   """
   g = nx.DiGraph()
 
-  app.logger.info('Building the network')
-
   for m_key, m_dat in dat.items():
     fam = m_dat.get('family')
     mtc = m_dat.get('miRNA Transcript Count')
