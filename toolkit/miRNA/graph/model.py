@@ -4,7 +4,14 @@
 
 import networkx as nx
 
-class Graph(object):
-  def __init__(self):
-    self.G = nx.DiGraph()
+from miRNA import zdb
 
+graph = zdb.root.nxGraph
+
+class Graph(object):
+
+  def node_neighbor(node):
+    """
+    Returns the neighbours of the given node.
+    """
+    pass

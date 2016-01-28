@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
+import logging
+from logging.handlers import RotatingFileHandler
+
 DEBUG       = True
 SECRET_KEY  = 'super-secret'
 HOST        = 'http://localhost:9000'
@@ -23,3 +26,12 @@ REDIS = {
 }
 
 WHOOSH_INDEX = "/data/whooshindex"
+
+_formatter = logging.Formatter(
+        "[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s")
+
+HANDLER = RotatingFileHandler('/data/mirna.log',
+                              maxBytes = 10000,
+                              backupCount = 1)
+HANDLER.setLevel(logging.DEBUG)
+HANDLER.setFormatter(_formatter)
