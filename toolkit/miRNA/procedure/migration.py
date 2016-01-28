@@ -4,6 +4,7 @@
 
 import transaction
 import networkx as nx
+from tqdm import tqdm
 
 from miRNA import zdb, app
 
@@ -13,7 +14,7 @@ def graph(dat):
   """
   g = nx.DiGraph()
 
-  for m_key, m_dat in dat.items():
+  for m_key, m_dat in tqdm(dat.items()):
     fam = m_dat.get('family')
     mtc = m_dat.get('miRNA Transcript Count')
     g.add_node(m_key, kind = 'MIR', family = fam, tc = mtc)
@@ -30,9 +31,10 @@ def graph(dat):
       g.add_node(g_id, kind = 'GEN', tc = gtc)
       g.add_edge(g_id, m_key, kind = 'G>M')
 
-    app.logger.info('Added miRNA Node {0} with {1} targets.'.format(m_key, len(targets)))
-
   zdb.root()['nxGraph'] = nx.freeze(g)
   app.logger.info('Frozen graph object added to Zeo DB instance')
 
   transaction.commit()
+
+def metadata_generator():
+  pass
