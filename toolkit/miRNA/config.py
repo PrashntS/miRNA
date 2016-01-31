@@ -18,13 +18,6 @@ MONGODB_DB      = 'mirna'
 MONGODB_HOST    = 'localhost'
 MONGODB_PORT    = 27017
 
-# Redis Config
-REDIS = {
-  'host': 'localhost',
-  'port': 6379,
-  'db': 0,
-}
-
 WHOOSH_INDEX = "/data/whooshindex"
 
 _formatter = logging.Formatter(

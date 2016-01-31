@@ -3,6 +3,7 @@
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
 import click
+import json
 import meinheld
 
 from flask.ext.script import Manager
@@ -27,8 +28,6 @@ def runserver():
 def precompute():
   "Computes and Persists the Complex Data."
   create_app()
-
-  import json
   from miRNA.procedure.migration import graph
 
   with open('data_dump/catalogue.json') as m:
@@ -37,10 +36,44 @@ def precompute():
   graph_path = data_path['mir_gene_graph']['path']
 
   app.logger.info('Precomputing the network at {0}'.format(graph_path))
-
   with open(graph_path) as minion:
     host_map_dat = json.load(minion)
     graph(host_map_dat)
+
+@manager.command
+def datadownload():
+  create_app()
+
+  from pandas import DataFrame
+
+  from miRNA import zdb
+  from packrat import scrape
+  from packrat.scrapers import ncbigene
+
+  g = zdb.root.nxGraph
+
+  with open('data_dump/catalogue.json') as m:
+    data_path = json.load(m)
+  gene_map = data_path['gene_mapping']['path']
+
+  app.logger.info('Initializing the Gene Mapping Routine')
+  df = DataFrame.from_csv(gene_map, sep="\t").to_dict()['Entrez Gene ID']
+  gene_nodes = [k for k, v in g.node.items() if v.get('kind') == 'GEN']
+
+  missed = set()
+  ezids = set()
+
+  c1, c2 = [0, 0]
+  for eid in gene_nodes:
+    try:
+      url = 'http://www.ncbi.nlm.nih.gov/gene/{0}'.format(int(df[eid]))
+      scrape(url, ncbigene, eid, 'ncbigene')
+      c1 += 1
+    except (ValueError, IndexError, KeyError):
+      missed.add(eid)
+      c2 += 1
+
+  app.logger.info('Scheduled {0} Download Routines, Missed {1}.'.format(c1, c2))
 
 @manager.command
 def migrate():

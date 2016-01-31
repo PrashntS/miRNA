@@ -6,5 +6,10 @@
   },
   "ncbi_gene": {
     "path": "data_dump/scraped/ncbi_gene"
+  },
+  "gene_mapping": {
+    "version": 1,
+    "added": 20160125,
+    "path": "data_dump/computed/geneids.tsv"
   }
 }
