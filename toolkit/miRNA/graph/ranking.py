@@ -4,7 +4,9 @@
 
 import networkx as nx
 
+from miRNA import memcache
 from miRNA.graph.model import graph
+from miRNA.graph.triads import Motif
 
 class Ranking(object):
   def _rank_nbunch(self, nbunch):
@@ -29,3 +31,8 @@ class DegreeRanking(Ranking):
         i_d = graph.in_degree(node) * self.MIRNAINX
         o_d = graph.out_degree(node)
       deg = i_d + o_d
+
+@memcache.cached()
+def motif_score_reference():
+  mtf = Motif(graph)
+  return {_: len(mtf.find_all(_)) for _ in mtf.kinds.keys()}
