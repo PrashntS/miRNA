@@ -4,6 +4,8 @@
 
 import networkx as nx
 
+from pydash import py_
+
 from miRNA import memcache
 from miRNA.graph.model import graph
 from miRNA.graph.triads import Motif
@@ -21,16 +23,19 @@ class DegreeRanking(Ranking):
     self.MIRNAINX = 2
     self.GENEOUTX = 20
 
+  def __node_value(self, node):
+    nkind = graph.node[node]['kind']
+    if nkind == 'GEN':
+      i_d = graph.in_degree(node)
+      o_d = graph.out_degree(node) * self.GENEOUTX
+    elif nkind == 'MIR':
+      i_d = graph.in_degree(node) * self.MIRNAINX
+      o_d = graph.out_degree(node)
+    deg = i_d + o_d
+    return deg
+
   def _organic_rank_nbunch(self, nbunch):
-    for node in nbunch:
-      nkind = graph.node[node]['kind']
-      if nkind == 'GEN':
-        i_d = graph.in_degree(node)
-        o_d = graph.out_degree(node) * self.GENEOUTX
-      elif nkind == 'MIR':
-        i_d = graph.in_degree(node) * self.MIRNAINX
-        o_d = graph.out_degree(node)
-      deg = i_d + o_d
+    return py_.sort(nbunch, key=self.__node_value, reverse=True)
 
 @memcache.cached()
 def motif_score_reference():

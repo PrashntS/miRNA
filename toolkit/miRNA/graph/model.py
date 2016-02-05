@@ -24,15 +24,14 @@ class DepthLimitedVisit(object):
     self.depth_limit = depth
 
   def depth_limited_visits(self, node, depth = 0):
-    if depth == self.depth_limit:
-      return self.visited
-
-    neighbors = graph.predecessors(node) + graph.successors(node)
-
+    neighbors = []
+    if depth < self.depth_limit:
+      neighbors = graph.predecessors(node) + graph.successors(node)
     for n_node in neighbors:
       if n_node not in self.visited:
         self.visited.add(n_node)
         self.depth_limited_visits(n_node, depth + 1)
+    return self.visited
 
   def ranked_visits(self, parameter):
     return py_.sort(self.visited, parameter)
