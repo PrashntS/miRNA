@@ -28,7 +28,10 @@ module.exports = config:
         )()
     autoReload:
       enabled: yes
+    lodash_template:
+      variable: null
+      namespace: "module.exports"
   npm:
-    enabled: yes
+    enabled: no
     whitelist: ['lodash']
 

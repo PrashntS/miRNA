@@ -27,5 +27,4 @@ def create_app():
 
   @app.route('/')
   def home():
-    print()
     return render_template('index.html')
