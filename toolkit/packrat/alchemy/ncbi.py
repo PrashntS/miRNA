@@ -5,14 +5,18 @@ import requests
 import xmltodict
 
 ncbi_session = requests.Session()
-ensembl_session = requests.Session()
 
 user_agent = {'User-agent': (
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36'
   ' (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
 )}
 
-def ncbi_search_id(symbol):
+def _find_key_in_odict(hook, key, val):
+  for dat in hook:
+    if dat[key] == val:
+      return dat
+
+def ncbi_search_id(symbol, **kwargs):
   access_url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi'
   parameters = {
     'db': 'gene',
@@ -20,14 +24,10 @@ def ncbi_search_id(symbol):
   }
   r = ncbi_session.get(access_url, params=parameters, headers=user_agent)
   d = xmltodict.parse(r.text)
-  return d['eSearchResult']['IdList']['Id']
+  kwargs['eid'] = d['eSearchResult']['IdList']['Id']
+  return kwargs
 
-def _find_key_in_odict(hook, key, val):
-  for dat in hook:
-    if dat[key] == val:
-      return dat
-
-def ncbi_get_summary(eid):
+def ncbi_get_summary(eid, **kwargs):
   access_url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi'
   parameters = {
     'db': 'gene',
@@ -75,18 +75,7 @@ def ncbi_get_summary(eid):
     'processes': processes
   }
 
-  return out_dict
+  kwargs['doc'] = out_dict
+  kwargs['symbol'] = symbol
 
-def ensembl_sequence(eid):
-  access_url = 'http://rest.ensembl.org/sequence/id/{0}?'.format(eid)
-  parameters = {
-    'type': 'cdna',
-    'multiple_sequences': 1,
-  }
-  for k, v in parameters.items():
-    access_url += '{0}={1};'.format(k, v)
-
-  headers = user_agent.update({'accept': 'application/json'})
-
-  r = ensembl_session.get(access_url, headers=user_agent)
-  return r.json()
+  return kwargs

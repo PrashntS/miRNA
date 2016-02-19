@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
@@ -10,4 +10,7 @@ HUEY = {
   'db': 0,
 }
 
-TINYDB = 'data_dump/tiny.json'
+MONGO = {
+  'host': 'localhost',
+  'port': 27017
+}

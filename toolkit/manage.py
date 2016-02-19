@@ -44,28 +44,20 @@ def precompute():
 def datadownload():
   create_app()
 
-  from miRNA import zdb
-  from packrat import scrape
-  from packrat.scrapers import ncbigene
+  from miRNA.graph.model import graph
+  from packrat import spawn_gene_dat
 
-  g = zdb.root.nxGraph
-  genes = g.node[]
-  for eid in gene_nodes:
-    try:
-      url = 'http://www.ncbi.nlm.nih.gov/gene/{0}'.format(int(df[eid]))
-      scrape(url, ncbigene, eid, 'ncbigene')
-      c1 += 1
-    except (ValueError, IndexError, KeyError):
-      missed.add(eid)
-      c2 += 1
+  genes = [g for g, v in graph.node.items() if v['kind'] == 'GEN']
 
-  app.logger.info('Scheduled {0} Download Routines, Missed {1}.'.format(c1, c2))
+  for gene in genes:
+    spawn_gene_dat(gene)
+
+  app.logger.info('Scheduled {0} Download Routines.'.format(len(genes)))
 
 @manager.command
 def migrate():
   "Populates the MongoDB database using the data_dump JSON"
   create_app()
-
 
 @manager.command
 def setup_index():
