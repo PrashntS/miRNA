@@ -4,10 +4,13 @@
 import requests
 import xmltodict
 
-user_agent = {'User-agent':
-  ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36')
-  (' (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36')
-}
+ncbi_session = requests.Session()
+ensembl_session = requests.Session()
+
+user_agent = {'User-agent': (
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36'
+  ' (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
+)}
 
 def ncbi_search_id(symbol):
   access_url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi'
@@ -15,7 +18,7 @@ def ncbi_search_id(symbol):
     'db': 'gene',
     'term': '{0}[GENE] AND "Homo Sapiens"[ORGN]'.format(symbol)
   }
-  r = requests.get(access_url, params=parameters, headers=user_agent)
+  r = ncbi_session.get(access_url, params=parameters, headers=user_agent)
   d = xmltodict.parse(r.text)
   return d['eSearchResult']['IdList']['Id']
 
@@ -31,7 +34,7 @@ def ncbi_get_summary(eid):
     'id': eid,
     'format': 'xml',
   }
-  r = requests.get(access_url, params=parameters, headers=user_agent)
+  r = ncbi_session.get(access_url, params=parameters, headers=user_agent)
   d = xmltodict.parse(r.text)
   xdoc = d['Entrezgene-Set']['Entrezgene']
 
@@ -73,3 +76,17 @@ def ncbi_get_summary(eid):
   }
 
   return out_dict
+
+def ensembl_sequence(eid):
+  access_url = 'http://rest.ensembl.org/sequence/id/{0}?'.format(eid)
+  parameters = {
+    'type': 'cdna',
+    'multiple_sequences': 1,
+  }
+  for k, v in parameters.items():
+    access_url += '{0}={1};'.format(k, v)
+
+  headers = user_agent.update({'accept': 'application/json'})
+
+  r = ensembl_session.get(access_url, headers=user_agent)
+  return r.json()
