@@ -3,8 +3,7 @@
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 import requests
 import xmltodict
-
-ncbi_session = requests.Session()
+import functools
 
 user_agent = {'User-agent': (
   'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36'
@@ -12,9 +11,24 @@ user_agent = {'User-agent': (
 )}
 
 def _find_key_in_odict(hook, key, val):
-  for dat in hook:
-    if dat[key] == val:
-      return dat
+  try:
+    for dat in hook:
+      if dat[key] == val:
+        return dat
+  except Exception:
+    pass
+  return {}
+
+def rget(obj, attr, default=None):
+  try:
+    return functools.reduce(lambda x, y: x.get(y), [obj] + attr.split('.'))
+  except (AttributeError, KeyError) as e:
+    if default is not None:
+      return default
+    else:
+      raise e
+
+rgets = lambda o, a: rget(o, a, '')
 
 def ncbi_search_id(symbol, **kwargs):
   access_url = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi'
@@ -22,9 +36,9 @@ def ncbi_search_id(symbol, **kwargs):
     'db': 'gene',
     'term': '{0}[GENE] AND "Homo Sapiens"[ORGN]'.format(symbol)
   }
-  r = ncbi_session.get(access_url, params=parameters, headers=user_agent)
+  r = requests.get(access_url, params=parameters, headers=user_agent)
   d = xmltodict.parse(r.text)
-  kwargs['eid'] = d['eSearchResult']['IdList']['Id']
+  kwargs['eid'] = rget(d, 'eSearchResult.IdList.Id')
   return kwargs
 
 def ncbi_get_summary(eid, **kwargs):
@@ -34,34 +48,41 @@ def ncbi_get_summary(eid, **kwargs):
     'id': eid,
     'format': 'xml',
   }
-  r = ncbi_session.get(access_url, params=parameters, headers=user_agent)
+  r = requests.get(access_url, params=parameters, headers=user_agent)
   d = xmltodict.parse(r.text)
-  xdoc = d['Entrezgene-Set']['Entrezgene']
+  xdoc = rget(d, 'Entrezgene-Set.Entrezgene')
 
-  symbol = xdoc['Entrezgene_gene']['Gene-ref']['Gene-ref_locus']
-  name = xdoc['Entrezgene_gene']['Gene-ref']['Gene-ref_desc']
-  summary = xdoc['Entrezgene_summary']
-  syn = xdoc['Entrezgene_gene']['Gene-ref']['Gene-ref_syn']['Gene-ref_syn_E']
-  ensembl_id = _find_key_in_odict(
-    xdoc['Entrezgene_gene']['Gene-ref']['Gene-ref_db']['Dbtag'],
+  symbol = rgets(xdoc, 'Entrezgene_gene.Gene-ref.Gene-ref_locus')
+  name = rgets(xdoc, 'Entrezgene_gene.Gene-ref.Gene-ref_desc')
+  summary = rgets(xdoc, 'Entrezgene_summary')
+  syn = rgets(xdoc, 'Entrezgene_gene.Gene-ref.Gene-ref_syn.Gene-ref_syn_E')
+  ensembl_id = rgets(_find_key_in_odict(
+    rget(xdoc, 'Entrezgene_gene.Gene-ref.Gene-ref_db.Dbtag', []),
     key='Dbtag_db',
     val='Ensembl'
-  )['Dbtag_tag']['Object-id']['Object-id_str']
-  ncbi_id = xdoc['Entrezgene_track-info']['Gene-track']['Gene-track_geneid']
-  prot_ref_hook = xdoc['Entrezgene_prot']['Prot-ref']['Prot-ref_name']
-  prot_refs = prot_ref_hook['Prot-ref_name_E']
+  ), 'Dbtag_tag.Object-id.Object-id_str')
 
-  prop_hook = xdoc['Entrezgene_properties']['Gene-commentary']
+  ncbi_id = rgets(xdoc, 'Entrezgene_track-info.Gene-track.Gene-track_geneid')
+  prot_ref_hook = rgets(xdoc, 'Entrezgene_prot.Prot-ref.Prot-ref_name')
+  prot_refs = rgets(prot_ref_hook, 'Prot-ref_name_E')
 
-  val_get = lambda x: x['Gene-commentary_source']['Other-source']
+  prop_hook = rgets(xdoc, 'Entrezgene_properties.Gene-commentary')
 
-  func_hook = prop_hook[2]['Gene-commentary_comment']['Gene-commentary'][0]
-  func_list = func_hook['Gene-commentary_comment']['Gene-commentary']
-  functions = [val_get(_)['Other-source_anchor'] for _ in func_list]
+  val_get = lambda x: rgets(x, 'Gene-commentary_source.Other-source')
 
-  proc_hook = prop_hook[2]['Gene-commentary_comment']['Gene-commentary'][1]
-  proc_list = proc_hook['Gene-commentary_comment']['Gene-commentary']
-  processes = [val_get(_)['Other-source_anchor'] for _ in proc_list]
+  try:
+    func_hook = rget(prop_hook[2], 'Gene-commentary_comment.Gene-commentary')[0]
+    func_list = rget(func_hook, 'Gene-commentary_comment.Gene-commentary')
+    functions = [val_get(_)['Other-source_anchor'] for _ in func_list]
+  except Exception:
+    functions = []
+
+  try:
+    proc_hook = rget(prop_hook[2], 'Gene-commentary_comment.Gene-commentary')[1]
+    proc_list = rget(proc_hook, 'Gene-commentary_comment.Gene-commentary')
+    processes = [val_get(_)['Other-source_anchor'] for _ in proc_list]
+  except Exception:
+    processes = []
 
   out_dict = {
     'symbol': symbol,

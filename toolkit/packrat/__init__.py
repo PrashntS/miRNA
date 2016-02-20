@@ -15,7 +15,7 @@ huey = RedisHuey(**HUEY)
 moncli = MongoClient(**MONGO)
 db = moncli['packrat']
 
-@huey.task(retries=50, retry_delay=3)
+@huey.task(retries=10, retry_delay=10)
 def spawn_gene_dat(gene_id):
   tb = db['ncbi_gene_docs']
 
@@ -29,7 +29,7 @@ def spawn_gene_dat(gene_id):
 
   logging.info("Gene Done: {0}".format(gene_id))
 
-@huey.task(retries=50, retry_delay=3)
+@huey.task(retries=10, retry_delay=10)
 def spawn_ensembl_dat(gene_id, ensebl_id):
   tb = db['ensembl_seq']
 

@@ -21,7 +21,7 @@ def ensembl_sequence(emblid, **kwargs):
   for k, v in parameters.items():
     access_url += '{0}={1};'.format(k, v)
 
-  r = ensembl_session.get(access_url, headers=headers)
+  r = requests.get(access_url, headers=headers)
   kwargs['doc'] = {
     'emblid': emblid,
     'fasta': r.json(),
