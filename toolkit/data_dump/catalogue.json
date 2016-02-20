@@ -4,12 +4,9 @@
     "added": 20160127,
     "path": "data_dump/computed/mirna_gene_host_20160127.json"
   },
-  "ncbi_gene": {
-    "path": "data_dump/scraped/ncbi_gene"
-  },
-  "gene_mapping": {
+  "mir_seq": {
     "version": 1,
-    "added": 20160125,
-    "path": "data_dump/computed/geneids.tsv"
+    "added": 20160220,
+    "path": "data_dump/computed/miRBase_mature_sequences.fa"
   }
 }

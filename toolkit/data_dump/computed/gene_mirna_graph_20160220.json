@@ -1,0 +1,6498 @@
+{
+  "hsa-miR-3140-5p": [
+    "FBXW7",
+    13
+  ],
+  "hsa-miR-6824-3p": [
+    "SLC26A6",
+    23
+  ],
+  "hsa-miR-590-5p": [
+    "EIF4H",
+    5
+  ],
+  "hsa-miR-3157-5p": [
+    "ENTPD1-AS1",
+    12
+  ],
+  "hsa-miR-5698": [
+    "NUP210L",
+    3
+  ],
+  "hsa-miR-3191-3p": [
+    "BBC3",
+    6
+  ],
+  "hsa-miR-6800-3p": [
+    "MED25",
+    15
+  ],
+  "hsa-miR-6801-3p": [
+    "PPP2R1A",
+    12
+  ],
+  "hsa-miR-6845-3p": [
+    "NRBP2",
+    10
+  ],
+  "hsa-miR-615-3p": [
+    "HOXC5",
+    1
+  ],
+  "hsa-miR-217": [
+    "RP11-481J13.1",
+    1
+  ],
+  "hsa-miR-6508-3p": [
+    "SH3BGR",
+    9
+  ],
+  "hsa-miR-4633-3p": [
+    "ISOC1",
+    2
+  ],
+  "hsa-miR-1915-5p": [
+    "CASC10",
+    1
+  ],
+  "hsa-miR-4668-5p": [
+    "UGCG",
+    5
+  ],
+  "hsa-miR-657": [
+    "AATK",
+    10
+  ],
+  "hsa-miR-7110-5p": [
+    "PDIA5",
+    8
+  ],
+  "hsa-miR-6779-5p": [
+    "LASP1",
+    9
+  ],
+  "hsa-miR-4476": [
+    "PAX5",
+    16
+  ],
+  "hsa-miR-574-3p": [
+    "FAM114A1",
+    6
+  ],
+  "hsa-miR-224-5p": [
+    "GABRE",
+    12
+  ],
+  "hsa-miR-6880-3p": [
+    "NCOR2",
+    24
+  ],
+  "hsa-miR-32-5p": [
+    "TMEM245",
+    5
+  ],
+  "hsa-miR-6892-3p": [
+    "ZYX",
+    10
+  ],
+  "hsa-miR-675-5p": [
+    "H19",
+    13
+  ],
+  "hsa-miR-1180-3p": [
+    "B9D1",
+    15
+  ],
+  "hsa-miR-3978": [
+    "TMEM164",
+    8
+  ],
+  "hsa-miR-548o-3p": [
+    "PRKRIP1",
+    8
+  ],
+  "hsa-miR-126-5p": [
+    "EGFL7",
+    7
+  ],
+  "hsa-miR-4439": [
+    "DOCK10",
+    13
+  ],
+  "hsa-miR-548w": [
+    "HS3ST4",
+    2
+  ],
+  "hsa-miR-548q": [
+    "CAMK1D",
+    4
+  ],
+  "hsa-miR-1184": [
+    "F8A3",
+    1
+  ],
+  "hsa-miR-338-5p": [
+    "AC115099.1",
+    1
+  ],
+  "hsa-miR-4783-3p": [
+    "PROC",
+    10
+  ],
+  "hsa-miR-139-3p": [
+    "PDE2A",
+    27
+  ],
+  "hsa-miR-664a-5p": [
+    "SNORA36B",
+    1
+  ],
+  "hsa-miR-6828-3p": [
+    "CLDN11",
+    9
+  ],
+  "hsa-miR-184": [
+    "ANKRD34C-AS1",
+    8
+  ],
+  "hsa-miR-942-3p": [
+    "TTF2",
+    7
+  ],
+  "hsa-miR-593-5p": [
+    "SND1",
+    16
+  ],
+  "hsa-miR-4315": [
+    "PLEKHM1P",
+    6
+  ],
+  "hsa-miR-3677-3p": [
+    "RP11-304L19.13",
+    3
+  ],
+  "hsa-miR-6866-5p": [
+    "CASC3",
+    10
+  ],
+  "hsa-miR-4722-3p": [
+    "PIEZO1",
+    15
+  ],
+  "hsa-miR-6862-3p": [
+    "EIF3C",
+    14
+  ],
+  "hsa-miR-548l": [
+    "MRE11A",
+    10
+  ],
+  "hsa-miR-550b-2-5p": [
+    "DPY19L1P1",
+    1
+  ],
+  "hsa-miR-3194-5p": [
+    "NFATC2",
+    7
+  ],
+  "hsa-miR-3196": [
+    "BIRC7",
+    3
+  ],
+  "hsa-miR-4310": [
+    "SPTBN5",
+    2
+  ],
+  "hsa-miR-6071": [
+    "ATOH8",
+    5
+  ],
+  "hsa-miR-1288-5p": [
+    "PIGL",
+    17
+  ],
+  "hsa-miR-499b-3p": [
+    "MYH7B",
+    9
+  ],
+  "hsa-miR-1178-5p": [
+    "CIT",
+    19
+  ],
+  "hsa-miR-6729-3p": [
+    "MIIP",
+    7
+  ],
+  "hsa-miR-135b-5p": [
+    "LEMD1",
+    11
+  ],
+  "hsa-miR-208a-5p": [
+    "MYH6",
+    3
+  ],
+  "hsa-miR-3684": [
+    "METAP1",
+    12
+  ],
+  "hsa-miR-3160-5p": [
+    "AMBRA1",
+    12
+  ],
+  "hsa-miR-5699-3p": [
+    "DIP2C",
+    5
+  ],
+  "hsa-miR-6877-5p": [
+    "GTF3C5",
+    10
+  ],
+  "hsa-miR-1245b-3p": [
+    "COL3A1",
+    6
+  ],
+  "hsa-miR-4261": [
+    "C2orf48",
+    2
+  ],
+  "hsa-miR-6737-3p": [
+    "SLC39A1",
+    11
+  ],
+  "hsa-miR-3613-3p": [
+    "TRIM13",
+    8
+  ],
+  "hsa-miR-6788-3p": [
+    "PIEZO2",
+    14
+  ],
+  "hsa-miR-548ba": [
+    "FSHR",
+    5
+  ],
+  "hsa-miR-3692-5p": [
+    "ZDHHC14",
+    9
+  ],
+  "hsa-miR-3617-5p": [
+    "WFDC13",
+    1
+  ],
+  "hsa-miR-128-1-5p": [
+    "R3HDM1",
+    20
+  ],
+  "hsa-miR-8073": [
+    "COL4A2",
+    10
+  ],
+  "hsa-miR-3123": [
+    "RGS7",
+    8
+  ],
+  "hsa-miR-3920": [
+    "TRPC6",
+    7
+  ],
+  "hsa-miR-561-3p": [
+    "LINC01090",
+    3
+  ],
+  "hsa-miR-6754-3p": [
+    "NADSYN1",
+    23
+  ],
+  "hsa-miR-4326": [
+    "ARFGAP1",
+    23
+  ],
+  "hsa-miR-2355-3p": [
+    "KLF7",
+    10
+  ],
+  "hsa-miR-6090": [
+    "ETS1",
+    9
+  ],
+  "hsa-miR-6740-3p": [
+    "RNPEP",
+    14
+  ],
+  "hsa-miR-6860": [
+    "SYT12",
+    7
+  ],
+  "hsa-miR-4764-5p": [
+    "LARGE",
+    16
+  ],
+  "hsa-let-7e-5p": [
+    "SPACA6P-AS",
+    1
+  ],
+  "hsa-miR-1227-3p": [
+    "PLEKHJ1",
+    13
+  ],
+  "hsa-miR-1256": [
+    "EIF4G3",
+    13
+  ],
+  "hsa-miR-4794": [
+    "CACHD1",
+    4
+  ],
+  "hsa-miR-6885-5p": [
+    "CTB-180A7.6",
+    1
+  ],
+  "hsa-miR-204-5p": [
+    "TRPM3",
+    16
+  ],
+  "hsa-miR-1273g-5p": [
+    "SCP2",
+    16
+  ],
+  "hsa-miR-199a-3p": [
+    "DNM2",
+    22
+  ],
+  "hsa-miR-15a-3p": [
+    "DLEU2",
+    8
+  ],
+  "hsa-miR-3691-3p": [
+    "LYRM4",
+    9
+  ],
+  "hsa-miR-1288-3p": [
+    "PIGL",
+    17
+  ],
+  "hsa-miR-4451": [
+    "AC097108.1",
+    1
+  ],
+  "hsa-miR-16-5p": [
+    "SMC4",
+    27
+  ],
+  "hsa-miR-6760-3p": [
+    "CUX2",
+    3
+  ],
+  "hsa-miR-6734-5p": [
+    "ELOVL1",
+    16
+  ],
+  "hsa-miR-548ax": [
+    "ARHGAP6",
+    8
+  ],
+  "hsa-miR-663b": [
+    "ANKRD30BL",
+    6
+  ],
+  "hsa-miR-5706": [
+    "DMXL1",
+    15
+  ],
+  "hsa-miR-1236-3p": [
+    "NELFE",
+    14
+  ],
+  "hsa-miR-7113-5p": [
+    "NDUFS8",
+    15
+  ],
+  "hsa-miR-374b-5p": [
+    "FTX",
+    10
+  ],
+  "hsa-miR-194-5p": [
+    "AP001187.9",
+    1
+  ],
+  "hsa-miR-1233-5p": [
+    "GOLGA8B",
+    11
+  ],
+  "hsa-miR-664b-3p": [
+    "DKC1",
+    13
+  ],
+  "hsa-miR-6716-3p": [
+    "PHLDB1",
+    29
+  ],
+  "hsa-miR-6826-5p": [
+    "COPG1",
+    10
+  ],
+  "hsa-miR-151a-3p": [
+    "PTK2",
+    57
+  ],
+  "hsa-miR-6799-5p": [
+    "AP2A1",
+    8
+  ],
+  "hsa-miR-3175": [
+    "CHD2",
+    20
+  ],
+  "hsa-miR-4798-3p": [
+    "SORCS2",
+    4
+  ],
+  "hsa-miR-6727-5p": [
+    "CPSF3L",
+    51
+  ],
+  "hsa-miR-6862-5p": [
+    "EIF3C",
+    14
+  ],
+  "hsa-miR-15a-5p": [
+    "DLEU2",
+    8
+  ],
+  "hsa-miR-6817-3p": [
+    "CRYBB2P1",
+    6
+  ],
+  "hsa-miR-4651": [
+    "POR",
+    24
+  ],
+  "hsa-miR-1255b-2-3p": [
+    "DCAF6",
+    12
+  ],
+  "hsa-miR-6816-3p": [
+    "TRMT2A",
+    20
+  ],
+  "hsa-miR-5090": [
+    "LRWD1",
+    9
+  ],
+  "hsa-miR-3938": [
+    "ERC2",
+    14
+  ],
+  "hsa-miR-374c-3p": [
+    "FTX",
+    10
+  ],
+  "hsa-miR-6815-5p": [
+    "COL18A1",
+    7
+  ],
+  "hsa-miR-5196-3p": [
+    "CD22",
+    35
+  ],
+  "hsa-miR-153-3p": [
+    "PTPRN2",
+    5
+  ],
+  "hsa-miR-548aj-3p": [
+    "SYTL5",
+    2
+  ],
+  "hsa-miR-4513": [
+    "CSK",
+    14
+  ],
+  "hsa-miR-941": [
+    "DNAJC5",
+    2
+  ],
+  "hsa-miR-6824-5p": [
+    "SLC26A6",
+    23
+  ],
+  "hsa-miR-1203": [
+    "SKAP1",
+    8
+  ],
+  "hsa-miR-551b-3p": [
+    "EGFEM1P",
+    13
+  ],
+  "hsa-miR-3915": [
+    "DMD",
+    30
+  ],
+  "hsa-miR-574-5p": [
+    "FAM114A1",
+    6
+  ],
+  "hsa-miR-1262": [
+    "GNG12-AS1",
+    4
+  ],
+  "hsa-miR-3653-5p": [
+    "SNORD125",
+    1
+  ],
+  "hsa-miR-374c-5p": [
+    "FTX",
+    10
+  ],
+  "hsa-miR-4667-3p": [
+    "AL357874.1",
+    1
+  ],
+  "hsa-miR-6757-5p": [
+    "TNS2",
+    20
+  ],
+  "hsa-miR-383-3p": [
+    "SGCZ",
+    3
+  ],
+  "hsa-miR-548ak": [
+    "SEC61A2",
+    14
+  ],
+  "hsa-miR-4796-3p": [
+    "ZBTB20",
+    20
+  ],
+  "hsa-miR-4804-3p": [
+    "TNPO1",
+    14
+  ],
+  "hsa-miR-367-5p": [
+    "RP11-148B6.1",
+    3
+  ],
+  "hsa-miR-1911-5p": [
+    "HTR2C",
+    3
+  ],
+  "hsa-miR-551b-5p": [
+    "EGFEM1P",
+    13
+  ],
+  "hsa-miR-6889-3p": [
+    "RANGAP1",
+    7
+  ],
+  "hsa-miR-4699-3p": [
+    "ACSS3",
+    8
+  ],
+  "hsa-miR-4257": [
+    "ADAMTSL4",
+    7
+  ],
+  "hsa-miR-675-3p": [
+    "H19",
+    13
+  ],
+  "hsa-miR-553": [
+    "RTCA",
+    5
+  ],
+  "hsa-miR-1908-3p": [
+    "FADS1",
+    21
+  ],
+  "hsa-miR-454-5p": [
+    "SKA2",
+    10
+  ],
+  "hsa-miR-1911-3p": [
+    "HTR2C",
+    3
+  ],
+  "hsa-miR-6776-3p": [
+    "CLUH",
+    14
+  ],
+  "hsa-miR-6133": [
+    "EXOC4",
+    24
+  ],
+  "hsa-miR-1972": [
+    "PDXDC2P",
+    6
+  ],
+  "hsa-miR-6750-3p": [
+    "ATG2A",
+    6
+  ],
+  "hsa-miR-148b-5p": [
+    "COPZ1",
+    18
+  ],
+  "hsa-miR-3941": [
+    "PLEKHA1",
+    8
+  ],
+  "hsa-let-7f-5p": [
+    "HUWE1",
+    15
+  ],
+  "hsa-miR-6868-5p": [
+    "EXOC7",
+    20
+  ],
+  "hsa-miR-1343-3p": [
+    "PDHX",
+    8
+  ],
+  "hsa-miR-6759-3p": [
+    "TSPAN31",
+    14
+  ],
+  "hsa-miR-3919": [
+    "IQCJ-SCHIP1",
+    14
+  ],
+  "hsa-miR-3117-5p": [
+    "SGIP1",
+    14
+  ],
+  "hsa-miR-6765-3p": [
+    "JAG2",
+    5
+  ],
+  "hsa-miR-3126-3p": [
+    "ANTXR1",
+    7
+  ],
+  "hsa-miR-7151-3p": [
+    "CTNNA3",
+    5
+  ],
+  "hsa-miR-5009-3p": [
+    "C15orf38-AP3S2",
+    4
+  ],
+  "hsa-miR-1250-3p": [
+    "AATK",
+    10
+  ],
+  "hsa-miR-3194-3p": [
+    "NFATC2",
+    7
+  ],
+  "hsa-miR-617": [
+    "LIN7A",
+    4
+  ],
+  "hsa-miR-875-3p": [
+    "VPS13B",
+    12
+  ],
+  "hsa-miR-608": [
+    "MRPL43",
+    14
+  ],
+  "hsa-miR-3606-3p": [
+    "COL3A1",
+    6
+  ],
+  "hsa-miR-7108-5p": [
+    "LMNB2",
+    6
+  ],
+  "hsa-miR-3173-5p": [
+    "DICER1",
+    15
+  ],
+  "hsa-miR-4646-5p": [
+    "ABHD16A",
+    16
+  ],
+  "hsa-miR-3621": [
+    "RP11-350O14.18",
+    1
+  ],
+  "hsa-miR-142-3p": [
+    "RP5-1171I10.5",
+    1
+  ],
+  "hsa-miR-4736": [
+    "BZRAP1-AS1",
+    11
+  ],
+  "hsa-miR-99b-3p": [
+    "SPACA6P-AS",
+    1
+  ],
+  "hsa-miR-1178-3p": [
+    "CIT",
+    19
+  ],
+  "hsa-miR-937-5p": [
+    "SCRIB",
+    8
+  ],
+  "hsa-miR-1273g-3p": [
+    "SCP2",
+    16
+  ],
+  "hsa-miR-186-3p": [
+    "ZRANB2",
+    8
+  ],
+  "hsa-miR-653-5p": [
+    "CALCR",
+    7
+  ],
+  "hsa-miR-4729": [
+    "YPEL2",
+    5
+  ],
+  "hsa-miR-598-3p": [
+    "XKR6",
+    4
+  ],
+  "hsa-miR-6836-3p": [
+    "SNX8",
+    9
+  ],
+  "hsa-miR-4486": [
+    "NAV2",
+    16
+  ],
+  "hsa-miR-597-5p": [
+    "TNKS",
+    13
+  ],
+  "hsa-miR-320b": [
+    "NVL",
+    24
+  ],
+  "hsa-miR-6830-3p": [
+    "P4HA2",
+    21
+  ],
+  "hsa-miR-3657": [
+    "NAA25",
+    8
+  ],
+  "hsa-miR-6751-5p": [
+    "SYVN1",
+    15
+  ],
+  "hsa-miR-548aj-5p": [
+    "SYTL5",
+    2
+  ],
+  "hsa-miR-3131": [
+    "IHH",
+    1
+  ],
+  "hsa-miR-6808-5p": [
+    "DVL1",
+    8
+  ],
+  "hsa-miR-1207-5p": [
+    "PVT1",
+    25
+  ],
+  "hsa-miR-576-3p": [
+    "SEC24B",
+    3
+  ],
+  "hsa-miR-1231": [
+    "IPO9-AS1",
+    3
+  ],
+  "hsa-miR-6773-5p": [
+    "ESRP2",
+    12
+  ],
+  "hsa-miR-215-5p": [
+    "IARS2",
+    4
+  ],
+  "hsa-miR-4760-5p": [
+    "DSCAM",
+    3
+  ],
+  "hsa-miR-3620-3p": [
+    "ARF1",
+    14
+  ],
+  "hsa-miR-1238-5p": [
+    "ATG4D",
+    12
+  ],
+  "hsa-miR-4473": [
+    "MLLT3",
+    10
+  ],
+  "hsa-miR-324-5p": [
+    "ACADVL",
+    39
+  ],
+  "hsa-miR-106b-3p": [
+    "MCM7",
+    13
+  ],
+  "hsa-miR-5583-5p": [
+    "RP11-244M2.1",
+    2
+  ],
+  "hsa-miR-1269b": [
+    "ARHGAP44",
+    12
+  ],
+  "hsa-miR-6792-5p": [
+    "CAMSAP3",
+    4
+  ],
+  "hsa-miR-511-5p": [
+    "MRC1",
+    1
+  ],
+  "hsa-miR-5008-3p": [
+    "WNT9A",
+    1
+  ],
+  "hsa-miR-6872-5p": [
+    "SEMA3B",
+    16
+  ],
+  "hsa-miR-4428": [
+    "RYR2",
+    7
+  ],
+  "hsa-miR-4766-5p": [
+    "SLC25A17",
+    17
+  ],
+  "hsa-miR-216b-5p": [
+    "RP11-481J13.1",
+    1
+  ],
+  "hsa-miR-5008-5p": [
+    "WNT9A",
+    1
+  ],
+  "hsa-miR-6776-5p": [
+    "CLUH",
+    14
+  ],
+  "hsa-miR-4766-3p": [
+    "SLC25A17",
+    17
+  ],
+  "hsa-miR-6794-3p": [
+    "HOOK2",
+    24
+  ],
+  "hsa-miR-648": [
+    "MICAL3",
+    19
+  ],
+  "hsa-miR-4323": [
+    "POU2F2",
+    19
+  ],
+  "hsa-miR-3192-5p": [
+    "AL121893.2",
+    1
+  ],
+  "hsa-miR-4642": [
+    "CDC5L",
+    1
+  ],
+  "hsa-miR-4252": [
+    "ESPN",
+    15
+  ],
+  "hsa-miR-4742-3p": [
+    "WDR26",
+    9
+  ],
+  "hsa-miR-7107-5p": [
+    "KDM2B",
+    19
+  ],
+  "hsa-miR-3184-5p": [
+    "NSRP1",
+    17
+  ],
+  "hsa-miR-302d-5p": [
+    "RP11-148B6.1",
+    3
+  ],
+  "hsa-miR-103a-2-5p": [
+    "PANK2",
+    10
+  ],
+  "hsa-miR-3184-3p": [
+    "NSRP1",
+    17
+  ],
+  "hsa-miR-26a-5p": [
+    "CTDSPL",
+    8
+  ],
+  "hsa-miR-548ah-3p": [
+    "SHROOM3",
+    10
+  ],
+  "hsa-miR-4653-3p": [
+    "AP1S1",
+    3
+  ],
+  "hsa-miR-208a-3p": [
+    "MYH6",
+    3
+  ],
+  "hsa-miR-3934-3p": [
+    "UQCC2",
+    4
+  ],
+  "hsa-miR-6768-3p": [
+    "C16orf59",
+    13
+  ],
+  "hsa-miR-199a-5p": [
+    "DNM2",
+    22
+  ],
+  "hsa-miR-8080": [
+    "CTNNA2",
+    19
+  ],
+  "hsa-miR-383-5p": [
+    "SGCZ",
+    3
+  ],
+  "hsa-miR-6797-5p": [
+    "RPS19",
+    8
+  ],
+  "hsa-miR-4450": [
+    "SHROOM3",
+    10
+  ],
+  "hsa-miR-550a-3-5p": [
+    "DPY19L2P3",
+    3
+  ],
+  "hsa-miR-4696": [
+    "CHRDL2",
+    10
+  ],
+  "hsa-miR-5088-3p": [
+    "PRMT1",
+    21
+  ],
+  "hsa-miR-3142": [
+    "CTC-231O11.1",
+    1
+  ],
+  "hsa-miR-593-3p": [
+    "SND1",
+    16
+  ],
+  "hsa-miR-1296-5p": [
+    "JMJD1C",
+    11
+  ],
+  "hsa-miR-4525": [
+    "RAB40B",
+    11
+  ],
+  "hsa-let-7g-5p": [
+    "WDR82",
+    4
+  ],
+  "hsa-miR-5002-3p": [
+    "KALRN",
+    22
+  ],
+  "hsa-miR-548ac": [
+    "CD58",
+    5
+  ],
+  "hsa-miR-7108-3p": [
+    "LMNB2",
+    6
+  ],
+  "hsa-miR-4474-5p": [
+    "MLLT3",
+    10
+  ],
+  "hsa-miR-421": [
+    "FTX",
+    10
+  ],
+  "hsa-miR-302d-3p": [
+    "RP11-148B6.1",
+    3
+  ],
+  "hsa-miR-142-5p": [
+    "RP5-1171I10.5",
+    1
+  ],
+  "hsa-miR-4469": [
+    "RNF170",
+    9
+  ],
+  "hsa-miR-3605-3p": [
+    "RP11-415J8.3",
+    11
+  ],
+  "hsa-miR-6777-3p": [
+    "SREBF1",
+    23
+  ],
+  "hsa-miR-576-5p": [
+    "SEC24B",
+    3
+  ],
+  "hsa-miR-6800-5p": [
+    "MED25",
+    15
+  ],
+  "hsa-miR-1292-3p": [
+    "NOP56",
+    20
+  ],
+  "hsa-miR-548at-3p": [
+    "ATP6V0A1",
+    25
+  ],
+  "hsa-miR-4529-5p": [
+    "TCF4",
+    75
+  ],
+  "hsa-miR-4758-5p": [
+    "LAMA5",
+    14
+  ],
+  "hsa-miR-874-5p": [
+    "KLHL3",
+    14
+  ],
+  "hsa-miR-7848-3p": [
+    "TG",
+    20
+  ],
+  "hsa-miR-3135a": [
+    "KAT2B",
+    5
+  ],
+  "hsa-miR-4264": [
+    "CTNNA2",
+    19
+  ],
+  "hsa-miR-3147": [
+    "RP11-114G11.5",
+    2
+  ],
+  "hsa-miR-6793-3p": [
+    "DNM2",
+    22
+  ],
+  "hsa-miR-3620-5p": [
+    "ARF1",
+    14
+  ],
+  "hsa-miR-26a-1-3p": [
+    "CTDSPL",
+    8
+  ],
+  "hsa-miR-511-3p": [
+    "MRC1",
+    1
+  ],
+  "hsa-miR-1228-5p": [
+    "LRP1",
+    12
+  ],
+  "hsa-miR-3935": [
+    "GNAO1",
+    11
+  ],
+  "hsa-miR-339-3p": [
+    "C7orf50",
+    8
+  ],
+  "hsa-miR-548p": [
+    "ST8SIA4",
+    4
+  ],
+  "hsa-miR-4251": [
+    "PRDM16",
+    10
+  ],
+  "hsa-miR-4669": [
+    "RXRA",
+    3
+  ],
+  "hsa-miR-7109-5p": [
+    "PISD",
+    17
+  ],
+  "hsa-miR-3189-3p": [
+    "GDF15",
+    5
+  ],
+  "hsa-miR-3921": [
+    "CMSS1",
+    9
+  ],
+  "hsa-miR-1914-3p": [
+    "UCKL1",
+    7
+  ],
+  "hsa-miR-6799-3p": [
+    "AP2A1",
+    8
+  ],
+  "hsa-miR-1294": [
+    "GALNT10",
+    10
+  ],
+  "hsa-miR-548d-3p": [
+    "ATAD2",
+    8
+  ],
+  "hsa-miR-4284": [
+    "STX1A",
+    14
+  ],
+  "hsa-miR-3606-5p": [
+    "COL3A1",
+    6
+  ],
+  "hsa-miR-3192-3p": [
+    "AL121893.2",
+    1
+  ],
+  "hsa-miR-5685": [
+    "ELOVL5",
+    7
+  ],
+  "hsa-miR-5590-3p": [
+    "CCNT2-AS1",
+    3
+  ],
+  "hsa-miR-7106-5p": [
+    "DDX54",
+    10
+  ],
+  "hsa-miR-185-3p": [
+    "TANGO2",
+    26
+  ],
+  "hsa-miR-4713-5p": [
+    "RP11-108K3.1",
+    1
+  ],
+  "hsa-miR-1249-5p": [
+    "KIAA0930",
+    16
+  ],
+  "hsa-miR-342-5p": [
+    "EVL",
+    24
+  ],
+  "hsa-miR-4772-5p": [
+    "IL18RAP",
+    4
+  ],
+  "hsa-miR-4768-5p": [
+    "NHS",
+    5
+  ],
+  "hsa-miR-3146": [
+    "TWISTNB",
+    2
+  ],
+  "hsa-miR-566": [
+    "SEMA3F",
+    9
+  ],
+  "hsa-miR-302c-3p": [
+    "RP11-148B6.1",
+    3
+  ],
+  "hsa-miR-585-3p": [
+    "SLIT3",
+    8
+  ],
+  "hsa-miR-1205": [
+    "PVT1",
+    25
+  ],
+  "hsa-miR-374a-5p": [
+    "FTX",
+    10
+  ],
+  "hsa-miR-4511": [
+    "DENND4A",
+    8
+  ],
+  "hsa-miR-6893-5p": [
+    "TONSL",
+    3
+  ],
+  "hsa-miR-455-3p": [
+    "COL27A1",
+    8
+  ],
+  "hsa-miR-1278": [
+    "CDC73",
+    3
+  ],
+  "hsa-miR-7112-3p": [
+    "BOP1",
+    6
+  ],
+  "hsa-miR-4748": [
+    "DNM2",
+    22
+  ],
+  "hsa-miR-567": [
+    "C3orf52",
+    7
+  ],
+  "hsa-miR-6854-3p": [
+    "TBC1D2",
+    6
+  ],
+  "hsa-miR-5009-5p": [
+    "C15orf38-AP3S2",
+    4
+  ],
+  "hsa-miR-642b-5p": [
+    "GIPR",
+    8
+  ],
+  "hsa-miR-4714-5p": [
+    "IGF1R",
+    17
+  ],
+  "hsa-miR-4290": [
+    "RP11-406A20.4",
+    1
+  ],
+  "hsa-miR-4297": [
+    "EBF3",
+    3
+  ],
+  "hsa-miR-3646": [
+    "HNF4A",
+    9
+  ],
+  "hsa-miR-4791": [
+    "KCNH8",
+    3
+  ],
+  "hsa-miR-6893-3p": [
+    "TONSL",
+    3
+  ],
+  "hsa-miR-211-3p": [
+    "TRPM1",
+    12
+  ],
+  "hsa-miR-25-3p": [
+    "MCM7",
+    13
+  ],
+  "hsa-miR-6513-3p": [
+    "TMBIM1",
+    23
+  ],
+  "hsa-miR-610": [
+    "KIF18A",
+    4
+  ],
+  "hsa-miR-4529-3p": [
+    "TCF4",
+    75
+  ],
+  "hsa-miR-6756-3p": [
+    "MCAM",
+    17
+  ],
+  "hsa-miR-6884-3p": [
+    "MED24",
+    34
+  ],
+  "hsa-miR-105-3p": [
+    "GABRA3",
+    4
+  ],
+  "hsa-miR-216b-3p": [
+    "RP11-481J13.1",
+    1
+  ],
+  "hsa-miR-6733-3p": [
+    "EBNA1BP2",
+    9
+  ],
+  "hsa-miR-6771-5p": [
+    "ADCY7",
+    15
+  ],
+  "hsa-miR-6753-3p": [
+    "TCIRG1",
+    16
+  ],
+  "hsa-miR-6861-3p": [
+    "HECTD4",
+    14
+  ],
+  "hsa-miR-208b-3p": [
+    "MYH7",
+    1
+  ],
+  "hsa-miR-548am-5p": [
+    "CTPS2",
+    5
+  ],
+  "hsa-miR-5787": [
+    "GNAI2",
+    12
+  ],
+  "hsa-miR-6746-3p": [
+    "FADS3",
+    13
+  ],
+  "hsa-miR-6499-5p": [
+    "FAT2",
+    2
+  ],
+  "hsa-miR-4755-3p": [
+    "RALY",
+    10
+  ],
+  "hsa-miR-7850-5p": [
+    "GNG7",
+    2
+  ],
+  "hsa-miR-6895-5p": [
+    "KDM5C",
+    15
+  ],
+  "hsa-miR-4760-3p": [
+    "DSCAM",
+    3
+  ],
+  "hsa-miR-3667-3p": [
+    "C22orf34",
+    7
+  ],
+  "hsa-miR-6755-3p": [
+    "EED",
+    11
+  ],
+  "hsa-miR-1204": [
+    "PVT1",
+    25
+  ],
+  "hsa-miR-550a-3p": [
+    "DPY19L1P1",
+    1
+  ],
+  "hsa-miR-4681": [
+    "GRK5",
+    2
+  ],
+  "hsa-miR-6726-3p": [
+    "ACAP3",
+    13
+  ],
+  "hsa-miR-4505": [
+    "ELMSAN1",
+    11
+  ],
+  "hsa-miR-3189-5p": [
+    "GDF15",
+    5
+  ],
+  "hsa-miR-7843-3p": [
+    "RGS6",
+    19
+  ],
+  "hsa-miR-6716-5p": [
+    "PHLDB1",
+    29
+  ],
+  "hsa-miR-561-5p": [
+    "LINC01090",
+    3
+  ],
+  "hsa-miR-6846-3p": [
+    "OPLAH",
+    4
+  ],
+  "hsa-miR-4306": [
+    "CLYBL",
+    7
+  ],
+  "hsa-miR-4646-3p": [
+    "ABHD16A",
+    16
+  ],
+  "hsa-miR-3153": [
+    "CKS2",
+    1
+  ],
+  "hsa-miR-609": [
+    "CFAP43",
+    7
+  ],
+  "hsa-miR-4672": [
+    "AK1",
+    6
+  ],
+  "hsa-miR-3613-5p": [
+    "TRIM13",
+    8
+  ],
+  "hsa-miR-3607-5p": [
+    "COX7C",
+    7
+  ],
+  "hsa-miR-500a-5p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-3943": [
+    "HECW1",
+    11
+  ],
+  "hsa-miR-6822-3p": [
+    "TTC21A",
+    18
+  ],
+  "hsa-miR-3155a": [
+    "PFKFB3",
+    17
+  ],
+  "hsa-miR-6871-5p": [
+    "PLCG1",
+    22
+  ],
+  "hsa-miR-378g": [
+    "LINC01057",
+    8
+  ],
+  "hsa-miR-4742-5p": [
+    "WDR26",
+    9
+  ],
+  "hsa-miR-548bb-3p": [
+    "FHIT",
+    8
+  ],
+  "hsa-miR-6504-3p": [
+    "CMIP",
+    12
+  ],
+  "hsa-miR-877-5p": [
+    "ABCF1",
+    7
+  ],
+  "hsa-miR-6737-5p": [
+    "SLC39A1",
+    11
+  ],
+  "hsa-miR-4526": [
+    "LDLRAD4",
+    19
+  ],
+  "hsa-miR-3136-3p": [
+    "TMF1",
+    5
+  ],
+  "hsa-miR-4781-5p": [
+    "TCEANC2",
+    4
+  ],
+  "hsa-miR-194-3p": [
+    "AP001187.9",
+    1
+  ],
+  "hsa-miR-3120-3p": [
+    "DNM3",
+    8
+  ],
+  "hsa-miR-4699-5p": [
+    "ACSS3",
+    8
+  ],
+  "hsa-miR-6075": [
+    "LPCAT1",
+    6
+  ],
+  "hsa-miR-4655-3p": [
+    "AC110781.3",
+    2
+  ],
+  "hsa-miR-367-3p": [
+    "RP11-148B6.1",
+    3
+  ],
+  "hsa-miR-4490": [
+    "DISC1FP1",
+    5
+  ],
+  "hsa-miR-556-3p": [
+    "NOS1AP",
+    6
+  ],
+  "hsa-miR-640": [
+    "GATAD2A",
+    13
+  ],
+  "hsa-miR-3133": [
+    "FARP2",
+    23
+  ],
+  "hsa-miR-3654": [
+    "CHCHD3",
+    8
+  ],
+  "hsa-miR-1224-5p": [
+    "VWA5B2",
+    6
+  ],
+  "hsa-miR-6508-5p": [
+    "SH3BGR",
+    9
+  ],
+  "hsa-miR-346": [
+    "GRID1",
+    4
+  ],
+  "hsa-miR-8077": [
+    "MEGF8",
+    7
+  ],
+  "hsa-miR-328-5p": [
+    "ELMO3",
+    5
+  ],
+  "hsa-miR-3160-3p": [
+    "AMBRA1",
+    12
+  ],
+  "hsa-miR-6501-3p": [
+    "SON",
+    20
+  ],
+  "hsa-miR-548as-5p": [
+    "GPC5-IT1",
+    1
+  ],
+  "hsa-miR-488-5p": [
+    "ASTN1",
+    5
+  ],
+  "hsa-miR-642b-3p": [
+    "GIPR",
+    8
+  ],
+  "hsa-miR-218-2-3p": [
+    "SLIT3",
+    8
+  ],
+  "hsa-miR-4726-3p": [
+    "MLLT6",
+    11
+  ],
+  "hsa-miR-6751-3p": [
+    "SYVN1",
+    15
+  ],
+  "hsa-miR-4503": [
+    "SLC25A21",
+    6
+  ],
+  "hsa-miR-1183": [
+    "SP4",
+    4
+  ],
+  "hsa-miR-1276": [
+    "KLHL25",
+    3
+  ],
+  "hsa-miR-4670-3p": [
+    "CENPP",
+    4
+  ],
+  "hsa-miR-6868-3p": [
+    "EXOC7",
+    20
+  ],
+  "hsa-miR-6874-3p": [
+    "RNF216",
+    9
+  ],
+  "hsa-miR-6786-3p": [
+    "HGS",
+    17
+  ],
+  "hsa-miR-4512": [
+    "SNAPC5",
+    8
+  ],
+  "hsa-miR-224-3p": [
+    "GABRE",
+    12
+  ],
+  "hsa-miR-191-5p": [
+    "NDUFAF3",
+    6
+  ],
+  "hsa-miR-7107-3p": [
+    "KDM2B",
+    19
+  ],
+  "hsa-miR-550b-3p": [
+    "DPY19L1P1",
+    1
+  ],
+  "hsa-miR-3667-5p": [
+    "C22orf34",
+    7
+  ],
+  "hsa-miR-6745": [
+    "PACSIN3",
+    11
+  ],
+  "hsa-miR-378a-5p": [
+    "PPARGC1B",
+    7
+  ],
+  "hsa-miR-6828-5p": [
+    "CLDN11",
+    9
+  ],
+  "hsa-miR-4664-3p": [
+    "FAM83H",
+    2
+  ],
+  "hsa-miR-7156-5p": [
+    "ST6GALNAC5",
+    5
+  ],
+  "hsa-miR-1915-3p": [
+    "CASC10",
+    1
+  ],
+  "hsa-miR-6848-3p": [
+    "DGAT1",
+    8
+  ],
+  "hsa-miR-570-5p": [
+    "LINC00969",
+    142
+  ],
+  "hsa-miR-6891-3p": [
+    "HLA-B",
+    7
+  ],
+  "hsa-miR-5581-5p": [
+    "MEAF6",
+    9
+  ],
+  "hsa-miR-4755-5p": [
+    "RALY",
+    10
+  ],
+  "hsa-miR-548ao-5p": [
+    "SFRP1",
+    2
+  ],
+  "hsa-miR-6825-3p": [
+    "TPRA1",
+    11
+  ],
+  "hsa-miR-4671-3p": [
+    "SLC35F3",
+    2
+  ],
+  "hsa-miR-103b": [
+    "PANK3",
+    3
+  ],
+  "hsa-miR-628-5p": [
+    "CCPG1",
+    13
+  ],
+  "hsa-miR-8063": [
+    "MEIS2",
+    27
+  ],
+  "hsa-miR-3162-3p": [
+    "OSBP",
+    3
+  ],
+  "hsa-miR-499b-5p": [
+    "MYH7B",
+    9
+  ],
+  "hsa-miR-548c-5p": [
+    "RASSF3",
+    4
+  ],
+  "hsa-miR-24-1-5p": [
+    "C9orf3",
+    22
+  ],
+  "hsa-miR-589-3p": [
+    "FBXL18",
+    5
+  ],
+  "hsa-miR-548j-5p": [
+    "TPST2",
+    9
+  ],
+  "hsa-miR-4446-3p": [
+    "SIDT1",
+    12
+  ],
+  "hsa-miR-6825-5p": [
+    "TPRA1",
+    11
+  ],
+  "hsa-miR-6789-3p": [
+    "PLEKHJ1",
+    13
+  ],
+  "hsa-miR-6132": [
+    "ST7-OT4",
+    6
+  ],
+  "hsa-miR-6811-3p": [
+    "MLPH",
+    23
+  ],
+  "hsa-miR-3152-3p": [
+    "ADAMTSL1",
+    14
+  ],
+  "hsa-miR-4684-5p": [
+    "EPHB2",
+    7
+  ],
+  "hsa-miR-6875-5p": [
+    "TRIP6",
+    10
+  ],
+  "hsa-miR-95-3p": [
+    "ABLIM2",
+    16
+  ],
+  "hsa-miR-6805-5p": [
+    "RPL28",
+    11
+  ],
+  "hsa-miR-1238-3p": [
+    "ATG4D",
+    12
+  ],
+  "hsa-miR-4281": [
+    "SNCB",
+    6
+  ],
+  "hsa-miR-3934-5p": [
+    "UQCC2",
+    4
+  ],
+  "hsa-miR-6731-3p": [
+    "RUNX3",
+    5
+  ],
+  "hsa-miR-4301": [
+    "DRD2",
+    10
+  ],
+  "hsa-miR-770-5p": [
+    "RP11-123M6.2",
+    1
+  ],
+  "hsa-miR-497-3p": [
+    "RP11-589P10.7",
+    1
+  ],
+  "hsa-miR-455-5p": [
+    "COL27A1",
+    8
+  ],
+  "hsa-miR-5191": [
+    "IPO9-AS1",
+    3
+  ],
+  "hsa-miR-583": [
+    "RP11-254I22.1",
+    1
+  ],
+  "hsa-miR-548am-3p": [
+    "CTPS2",
+    5
+  ],
+  "hsa-miR-548b-3p": [
+    "FAM184A",
+    14
+  ],
+  "hsa-miR-4695-5p": [
+    "RP13-279N23.2",
+    1
+  ],
+  "hsa-miR-1200": [
+    "ELMO1",
+    19
+  ],
+  "hsa-miR-449a": [
+    "CDC20B",
+    5
+  ],
+  "hsa-miR-627-3p": [
+    "VPS39",
+    14
+  ],
+  "hsa-miR-761": [
+    "NRD1",
+    15
+  ],
+  "hsa-miR-5582-5p": [
+    "CKAP5",
+    12
+  ],
+  "hsa-miR-6514-3p": [
+    "NXF1",
+    17
+  ],
+  "hsa-miR-618": [
+    "LIN7A",
+    4
+  ],
+  "hsa-miR-571": [
+    "ZNF141",
+    6
+  ],
+  "hsa-miR-6869-3p": [
+    "FKBP1A",
+    11
+  ],
+  "hsa-miR-5739": [
+    "TTC28",
+    8
+  ],
+  "hsa-miR-4705": [
+    "FGF14",
+    4
+  ],
+  "hsa-miR-501-3p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-28-5p": [
+    "LPP",
+    21
+  ],
+  "hsa-miR-6813-3p": [
+    "RGS19",
+    4
+  ],
+  "hsa-miR-26b-3p": [
+    "CTDSP1",
+    15
+  ],
+  "hsa-miR-181b-5p": [
+    "NR6A1",
+    5
+  ],
+  "hsa-miR-4796-5p": [
+    "ZBTB20",
+    20
+  ],
+  "hsa-miR-629-5p": [
+    "TLE3",
+    26
+  ],
+  "hsa-miR-1243": [
+    "ANK2",
+    26
+  ],
+  "hsa-miR-6722-5p": [
+    "RP11-216L13.16",
+    2
+  ],
+  "hsa-miR-27b-3p": [
+    "C9orf3",
+    22
+  ],
+  "hsa-miR-6830-5p": [
+    "P4HA2",
+    21
+  ],
+  "hsa-miR-125a-5p": [
+    "SPACA6P-AS",
+    1
+  ],
+  "hsa-miR-33b-5p": [
+    "SREBF1",
+    23
+  ],
+  "hsa-miR-423-5p": [
+    "NSRP1",
+    17
+  ],
+  "hsa-miR-500b-3p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-548s": [
+    "LPIN1",
+    19
+  ],
+  "hsa-miR-933": [
+    "ATF2",
+    21
+  ],
+  "hsa-miR-6760-5p": [
+    "CUX2",
+    3
+  ],
+  "hsa-miR-6778-5p": [
+    "SHMT1",
+    11
+  ],
+  "hsa-miR-6813-5p": [
+    "RGS19",
+    4
+  ],
+  "hsa-miR-1249-3p": [
+    "KIAA0930",
+    16
+  ],
+  "hsa-miR-582-5p": [
+    "PDE4D",
+    27
+  ],
+  "hsa-miR-626": [
+    "MGA",
+    12
+  ],
+  "hsa-miR-191-3p": [
+    "NDUFAF3",
+    6
+  ],
+  "hsa-miR-5579-5p": [
+    "TENM4",
+    12
+  ],
+  "hsa-miR-3191-5p": [
+    "BBC3",
+    6
+  ],
+  "hsa-miR-4759": [
+    "ADAMTS5",
+    1
+  ],
+  "hsa-miR-3116": [
+    "INADL",
+    13
+  ],
+  "hsa-miR-4685-3p": [
+    "HPS1",
+    15
+  ],
+  "hsa-miR-6888-5p": [
+    "TANC1",
+    6
+  ],
+  "hsa-miR-6516-3p": [
+    "SNHG20",
+    5
+  ],
+  "hsa-miR-1225-5p": [
+    "PKD1",
+    40
+  ],
+  "hsa-miR-4747-3p": [
+    "UHRF1",
+    7
+  ],
+  "hsa-miR-7161-3p": [
+    "TMEM181",
+    1
+  ],
+  "hsa-miR-1298-3p": [
+    "HTR2C",
+    3
+  ],
+  "hsa-miR-6876-3p": [
+    "DOCK5",
+    12
+  ],
+  "hsa-miR-7856-5p": [
+    "ODF2L",
+    22
+  ],
+  "hsa-miR-6876-5p": [
+    "DOCK5",
+    12
+  ],
+  "hsa-miR-595": [
+    "PTPRN2",
+    5
+  ],
+  "hsa-miR-4690-3p": [
+    "PCNXL3",
+    5
+  ],
+  "hsa-miR-4701-5p": [
+    "ADCY6",
+    9
+  ],
+  "hsa-miR-423-3p": [
+    "NSRP1",
+    17
+  ],
+  "hsa-miR-4718": [
+    "CPPED1",
+    4
+  ],
+  "hsa-miR-199b-5p": [
+    "DNM1",
+    15
+  ],
+  "hsa-miR-6890-3p": [
+    "QARS",
+    25
+  ],
+  "hsa-miR-934": [
+    "VGLL1",
+    4
+  ],
+  "hsa-miR-4722-5p": [
+    "PIEZO1",
+    15
+  ],
+  "hsa-miR-6715a-3p": [
+    "TECTB",
+    2
+  ],
+  "hsa-miR-193b-5p": [
+    "RP11-65J21.3",
+    3
+  ],
+  "hsa-miR-6780a-5p": [
+    "EZH1",
+    24
+  ],
+  "hsa-miR-6787-3p": [
+    "SLC16A3",
+    22
+  ],
+  "hsa-miR-4671-5p": [
+    "SLC35F3",
+    2
+  ],
+  "hsa-miR-4524b-5p": [
+    "ABCA6",
+    7
+  ],
+  "hsa-miR-6833-5p": [
+    "RNF5",
+    2
+  ],
+  "hsa-miR-6807-3p": [
+    "TRIM28",
+    15
+  ],
+  "hsa-miR-216a-3p": [
+    "RP11-481J13.1",
+    1
+  ],
+  "hsa-miR-767-5p": [
+    "GABRA3",
+    4
+  ],
+  "hsa-miR-326": [
+    "ARRB1",
+    12
+  ],
+  "hsa-miR-483-3p": [
+    "INS-IGF2",
+    4
+  ],
+  "hsa-miR-558": [
+    "BIRC6",
+    12
+  ],
+  "hsa-miR-4694-5p": [
+    "NAV2",
+    16
+  ],
+  "hsa-miR-6831-5p": [
+    "APBB3",
+    24
+  ],
+  "hsa-miR-5189-5p": [
+    "ZFPM1",
+    5
+  ],
+  "hsa-miR-3064-3p": [
+    "DDX5",
+    35
+  ],
+  "hsa-miR-4769-3p": [
+    "SYN1",
+    2
+  ],
+  "hsa-miR-1289": [
+    "FSTL4",
+    7
+  ],
+  "hsa-miR-135b-3p": [
+    "LEMD1",
+    11
+  ],
+  "hsa-miR-4670-5p": [
+    "CENPP",
+    4
+  ],
+  "hsa-miR-499a-3p": [
+    "MYH7B",
+    9
+  ],
+  "hsa-miR-3139": [
+    "GAB1",
+    14
+  ],
+  "hsa-miR-4676-3p": [
+    "MCU",
+    11
+  ],
+  "hsa-miR-3121-5p": [
+    "ACBD6",
+    6
+  ],
+  "hsa-miR-6781-5p": [
+    "BECN1",
+    22
+  ],
+  "hsa-miR-4692": [
+    "ARAP1",
+    21
+  ],
+  "hsa-miR-4777-5p": [
+    "ARMC9",
+    15
+  ],
+  "hsa-miR-30c-1-3p": [
+    "NFYC",
+    25
+  ],
+  "hsa-miR-548aa": [
+    "ATAD2",
+    8
+  ],
+  "hsa-miR-4659a-5p": [
+    "AGPAT5",
+    7
+  ],
+  "hsa-miR-606": [
+    "C10orf11",
+    16
+  ],
+  "hsa-miR-4438": [
+    "SPAG16",
+    12
+  ],
+  "hsa-miR-6886-5p": [
+    "LDLR",
+    14
+  ],
+  "hsa-miR-6763-5p": [
+    "FBRSL1",
+    8
+  ],
+  "hsa-miR-4518": [
+    "ITGAL",
+    19
+  ],
+  "hsa-miR-6736-3p": [
+    "PIAS3",
+    9
+  ],
+  "hsa-miR-6739-3p": [
+    "IPO9",
+    4
+  ],
+  "hsa-miR-302b-5p": [
+    "RP11-148B6.1",
+    3
+  ],
+  "hsa-miR-8053": [
+    "CORIN",
+    11
+  ],
+  "hsa-miR-6743-3p": [
+    "RIC8A",
+    17
+  ],
+  "hsa-miR-1284": [
+    "FOXP1",
+    23
+  ],
+  "hsa-miR-3942-5p": [
+    "DPH6",
+    9
+  ],
+  "hsa-miR-3155b": [
+    "PFKFB3",
+    17
+  ],
+  "hsa-miR-575": [
+    "SCD5",
+    2
+  ],
+  "hsa-miR-452-5p": [
+    "GABRE",
+    12
+  ],
+  "hsa-miR-6735-5p": [
+    "SZT2-AS1",
+    1
+  ],
+  "hsa-miR-6834-5p": [
+    "PFDN6",
+    7
+  ],
+  "hsa-miR-6505-5p": [
+    "PFKM",
+    32
+  ],
+  "hsa-miR-7973": [
+    "CYP19A1",
+    21
+  ],
+  "hsa-miR-4441": [
+    "HDAC4",
+    17
+  ],
+  "hsa-miR-6883-3p": [
+    "PER1",
+    19
+  ],
+  "hsa-miR-6730-3p": [
+    "DHRS3",
+    4
+  ],
+  "hsa-miR-6743-5p": [
+    "RIC8A",
+    17
+  ],
+  "hsa-miR-6742-5p": [
+    "TRIM11",
+    6
+  ],
+  "hsa-miR-338-3p": [
+    "AC115099.1",
+    1
+  ],
+  "hsa-miR-548as-3p": [
+    "GPC5-IT1",
+    1
+  ],
+  "hsa-miR-877-3p": [
+    "ABCF1",
+    7
+  ],
+  "hsa-miR-4480": [
+    "CAMK1D",
+    4
+  ],
+  "hsa-miR-6509-5p": [
+    "AC009542.2",
+    4
+  ],
+  "hsa-miR-6882-5p": [
+    "ULK3",
+    23
+  ],
+  "hsa-miR-4644": [
+    "FAM120B",
+    5
+  ],
+  "hsa-miR-8066": [
+    "PPP3CA",
+    9
+  ],
+  "hsa-miR-3145-3p": [
+    "NHSL1",
+    9
+  ],
+  "hsa-miR-6859-3p": [
+    "WASH4P",
+    1
+  ],
+  "hsa-miR-3653-3p": [
+    "SNORD125",
+    1
+  ],
+  "hsa-miR-644a": [
+    "ITCH",
+    9
+  ],
+  "hsa-miR-4635": [
+    "SLC12A7",
+    5
+  ],
+  "hsa-miR-6770-3p": [
+    "PKD1P5",
+    6
+  ],
+  "hsa-miR-3656": [
+    "TRAPPC4",
+    14
+  ],
+  "hsa-miR-6841-3p": [
+    "NEFL",
+    3
+  ],
+  "hsa-miR-3612": [
+    "TMEM132C",
+    1
+  ],
+  "hsa-miR-6796-3p": [
+    "PLD3",
+    25
+  ],
+  "hsa-miR-580-3p": [
+    "LMBRD2",
+    3
+  ],
+  "hsa-miR-6788-5p": [
+    "PIEZO2",
+    14
+  ],
+  "hsa-miR-7160-3p": [
+    "MYOM2",
+    15
+  ],
+  "hsa-miR-6083": [
+    "KALRN",
+    22
+  ],
+  "hsa-miR-2276-5p": [
+    "SPATA13",
+    12
+  ],
+  "hsa-miR-101-3p": [
+    "RCL1",
+    9
+  ],
+  "hsa-miR-3682-3p": [
+    "GPR75-ASB3",
+    3
+  ],
+  "hsa-miR-6719-3p": [
+    "DYRK1B",
+    8
+  ],
+  "hsa-miR-33b-3p": [
+    "SREBF1",
+    23
+  ],
+  "hsa-miR-6512-3p": [
+    "NFE2L2",
+    14
+  ],
+  "hsa-miR-1307-3p": [
+    "USMG5",
+    5
+  ],
+  "hsa-miR-6727-3p": [
+    "CPSF3L",
+    51
+  ],
+  "hsa-miR-6814-5p": [
+    "RIPK4",
+    2
+  ],
+  "hsa-miR-4308": [
+    "GCH1",
+    7
+  ],
+  "hsa-miR-454-3p": [
+    "SKA2",
+    10
+  ],
+  "hsa-miR-6851-3p": [
+    "NOL6",
+    6
+  ],
+  "hsa-miR-6748-5p": [
+    "TMEM223",
+    4
+  ],
+  "hsa-miR-3183": [
+    "ABR",
+    36
+  ],
+  "hsa-miR-6852-5p": [
+    "TLN1",
+    8
+  ],
+  "hsa-miR-4714-3p": [
+    "IGF1R",
+    17
+  ],
+  "hsa-miR-548o-5p": [
+    "AL049868.1",
+    1
+  ],
+  "hsa-miR-6881-3p": [
+    "SEMA7A",
+    5
+  ],
+  "hsa-miR-548bb-5p": [
+    "FHIT",
+    8
+  ],
+  "hsa-miR-3945": [
+    "RP11-701P16.5",
+    2
+  ],
+  "hsa-miR-647": [
+    "UCKL1",
+    7
+  ],
+  "hsa-miR-760": [
+    "BCAR3",
+    10
+  ],
+  "hsa-miR-556-5p": [
+    "NOS1AP",
+    6
+  ],
+  "hsa-miR-6810-5p": [
+    "CATIP-AS2",
+    1
+  ],
+  "hsa-miR-1291": [
+    "KANSL2",
+    15
+  ],
+  "hsa-miR-7843-5p": [
+    "RGS6",
+    19
+  ],
+  "hsa-miR-6069": [
+    "TOM1",
+    19
+  ],
+  "hsa-miR-4316": [
+    "Sep-09",
+    47
+  ],
+  "hsa-miR-1273a": [
+    "RGS22",
+    18
+  ],
+  "hsa-miR-342-3p": [
+    "EVL",
+    24
+  ],
+  "hsa-miR-1322": [
+    "CTD-2135J3.4",
+    1
+  ],
+  "hsa-miR-211-5p": [
+    "TRPM1",
+    12
+  ],
+  "hsa-miR-5194": [
+    "FAM49B",
+    29
+  ],
+  "hsa-miR-6784-5p": [
+    "PLCD3",
+    12
+  ],
+  "hsa-miR-4706": [
+    "CHURC1-FNTB",
+    4
+  ],
+  "hsa-miR-6738-5p": [
+    "ARHGEF2",
+    20
+  ],
+  "hsa-miR-4319": [
+    "SETBP1",
+    3
+  ],
+  "hsa-miR-6832-5p": [
+    "PRRC2A",
+    14
+  ],
+  "hsa-miR-7157-3p": [
+    "LRP1B",
+    6
+  ],
+  "hsa-miR-3130-5p": [
+    "FASTKD2",
+    6
+  ],
+  "hsa-miR-1227-5p": [
+    "PLEKHJ1",
+    13
+  ],
+  "hsa-miR-7855-5p": [
+    "SPTB",
+    8
+  ],
+  "hsa-miR-4260": [
+    "LAMB3",
+    5
+  ],
+  "hsa-miR-943": [
+    "NELFA",
+    16
+  ],
+  "hsa-miR-1295a": [
+    "FMO3",
+    6
+  ],
+  "hsa-miR-3122": [
+    "DTL",
+    6
+  ],
+  "hsa-miR-4459": [
+    "ARL15",
+    7
+  ],
+  "hsa-miR-6853-5p": [
+    "CREB3",
+    3
+  ],
+  "hsa-miR-6748-3p": [
+    "TMEM223",
+    4
+  ],
+  "hsa-miR-1295b-3p": [
+    "FMO3",
+    6
+  ],
+  "hsa-miR-6755-5p": [
+    "EED",
+    11
+  ],
+  "hsa-miR-937-3p": [
+    "SCRIB",
+    8
+  ],
+  "hsa-miR-1237-3p": [
+    "RPS6KA4",
+    8
+  ],
+  "hsa-miR-6818-3p": [
+    "MTMR3",
+    12
+  ],
+  "hsa-miR-489-3p": [
+    "CALCR",
+    7
+  ],
+  "hsa-miR-6754-5p": [
+    "NADSYN1",
+    23
+  ],
+  "hsa-miR-6774-3p": [
+    "IRF8",
+    11
+  ],
+  "hsa-miR-6761-5p": [
+    "ALDH2",
+    5
+  ],
+  "hsa-miR-449c-3p": [
+    "CDC20B",
+    5
+  ],
+  "hsa-miR-4312": [
+    "ANP32A",
+    11
+  ],
+  "hsa-miR-6850-3p": [
+    "RPL8",
+    14
+  ],
+  "hsa-miR-8064": [
+    "TMEM110",
+    6
+  ],
+  "hsa-miR-4772-3p": [
+    "IL18RAP",
+    4
+  ],
+  "hsa-miR-6829-5p": [
+    "TNK2",
+    22
+  ],
+  "hsa-miR-3165": [
+    "NUMA1",
+    34
+  ],
+  "hsa-miR-659-3p": [
+    "ANKRD54",
+    12
+  ],
+  "hsa-miR-1266-5p": [
+    "MYO5C",
+    9
+  ],
+  "hsa-miR-4804-5p": [
+    "TNPO1",
+    14
+  ],
+  "hsa-miR-6847-3p": [
+    "EXOSC4",
+    3
+  ],
+  "hsa-miR-6883-5p": [
+    "PER1",
+    19
+  ],
+  "hsa-miR-3190-3p": [
+    "BBC3",
+    6
+  ],
+  "hsa-miR-5095": [
+    "SCP2",
+    16
+  ],
+  "hsa-miR-181a-2-3p": [
+    "NR6A1",
+    5
+  ],
+  "hsa-miR-1292-5p": [
+    "NOP56",
+    20
+  ],
+  "hsa-miR-4531": [
+    "PVR",
+    6
+  ],
+  "hsa-miR-4650-5p": [
+    "TYW1B",
+    3
+  ],
+  "hsa-miR-4282": [
+    "KCNQ5",
+    13
+  ],
+  "hsa-miR-6856-5p": [
+    "FUBP3",
+    6
+  ],
+  "hsa-miR-3944-5p": [
+    "ECHS1",
+    1
+  ],
+  "hsa-miR-3152-5p": [
+    "ADAMTSL1",
+    14
+  ],
+  "hsa-miR-938": [
+    "SVIL",
+    13
+  ],
+  "hsa-miR-623": [
+    "UBAC2",
+    11
+  ],
+  "hsa-miR-1270": [
+    "ZNF826P",
+    7
+  ],
+  "hsa-miR-3117-3p": [
+    "SGIP1",
+    14
+  ],
+  "hsa-miR-4434": [
+    "AFTPH",
+    7
+  ],
+  "hsa-miR-362-3p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-766-3p": [
+    "Sep-06",
+    9
+  ],
+  "hsa-miR-6873-3p": [
+    "WDR46",
+    9
+  ],
+  "hsa-miR-6514-5p": [
+    "NXF1",
+    17
+  ],
+  "hsa-miR-554": [
+    "RP11-74C1.4",
+    1
+  ],
+  "hsa-miR-6857-3p": [
+    "SMC1A",
+    6
+  ],
+  "hsa-miR-30e-3p": [
+    "NFYC",
+    25
+  ],
+  "hsa-miR-4419a": [
+    "KDM1A",
+    6
+  ],
+  "hsa-miR-676-3p": [
+    "EDA",
+    13
+  ],
+  "hsa-miR-548d-5p": [
+    "ATAD2",
+    8
+  ],
+  "hsa-miR-6731-5p": [
+    "RUNX3",
+    5
+  ],
+  "hsa-miR-6507-5p": [
+    "HPSE2",
+    6
+  ],
+  "hsa-miR-6499-3p": [
+    "FAT2",
+    2
+  ],
+  "hsa-miR-6742-3p": [
+    "TRIM11",
+    6
+  ],
+  "hsa-miR-3154": [
+    "AL590708.2",
+    1
+  ],
+  "hsa-miR-497-5p": [
+    "RP11-589P10.7",
+    1
+  ],
+  "hsa-miR-152-5p": [
+    "COPZ2",
+    10
+  ],
+  "hsa-miR-7156-3p": [
+    "ST6GALNAC5",
+    5
+  ],
+  "hsa-miR-4740-5p": [
+    "BAHCC1",
+    8
+  ],
+  "hsa-miR-4266": [
+    "SH3RF3",
+    1
+  ],
+  "hsa-miR-6721-5p": [
+    "AGPAT1",
+    8
+  ],
+  "hsa-miR-708-3p": [
+    "TENM4",
+    12
+  ],
+  "hsa-miR-448": [
+    "HTR2C",
+    3
+  ],
+  "hsa-miR-4440": [
+    "HDAC4",
+    17
+  ],
+  "hsa-miR-6787-5p": [
+    "SLC16A3",
+    22
+  ],
+  "hsa-miR-3174": [
+    "ZNF710",
+    5
+  ],
+  "hsa-miR-6511a-3p": [
+    "RP11-1212A22.1",
+    6
+  ],
+  "hsa-miR-7160-5p": [
+    "MYOM2",
+    15
+  ],
+  "hsa-miR-4467": [
+    "LRWD1",
+    9
+  ],
+  "hsa-miR-1277-5p": [
+    "WDR44",
+    5
+  ],
+  "hsa-miR-6791-3p": [
+    "GPR108",
+    17
+  ],
+  "hsa-miR-548av-5p": [
+    "NETO1",
+    7
+  ],
+  "hsa-miR-6804-3p": [
+    "PPP6R1",
+    8
+  ],
+  "hsa-miR-887-3p": [
+    "FBXL7",
+    3
+  ],
+  "hsa-miR-6850-5p": [
+    "RPL8",
+    14
+  ],
+  "hsa-miR-6827-3p": [
+    "AMOTL2",
+    13
+  ],
+  "hsa-miR-6747-5p": [
+    "EEF1G",
+    4
+  ],
+  "hsa-miR-5704": [
+    "CPNE4",
+    14
+  ],
+  "hsa-miR-6809-5p": [
+    "TNS1",
+    21
+  ],
+  "hsa-miR-580-5p": [
+    "LMBRD2",
+    3
+  ],
+  "hsa-miR-107": [
+    "PANK1",
+    5
+  ],
+  "hsa-miR-6504-5p": [
+    "CMIP",
+    12
+  ],
+  "hsa-miR-3200-5p": [
+    "OSBP2",
+    19
+  ],
+  "hsa-miR-1273h-5p": [
+    "PRKCB",
+    10
+  ],
+  "hsa-miR-195-3p": [
+    "RP11-589P10.7",
+    1
+  ],
+  "hsa-miR-5003-3p": [
+    "NEURL1B",
+    3
+  ],
+  "hsa-miR-335-3p": [
+    "RP11-2E11.6",
+    1
+  ],
+  "hsa-miR-3177-5p": [
+    "MAPK8IP3",
+    16
+  ],
+  "hsa-miR-548ao-3p": [
+    "SFRP1",
+    2
+  ],
+  "hsa-miR-425-3p": [
+    "DALRD3",
+    15
+  ],
+  "hsa-miR-616-5p": [
+    "DDIT3",
+    7
+  ],
+  "hsa-miR-3923": [
+    "ROBO1",
+    13
+  ],
+  "hsa-miR-7112-5p": [
+    "BOP1",
+    6
+  ],
+  "hsa-miR-3677-5p": [
+    "RP11-304L19.13",
+    3
+  ],
+  "hsa-miR-6838-3p": [
+    "POLM",
+    18
+  ],
+  "hsa-miR-3692-3p": [
+    "ZDHHC14",
+    9
+  ],
+  "hsa-miR-7-5p": [
+    "HNRNPK",
+    11
+  ],
+  "hsa-miR-4322": [
+    "DNMT1",
+    29
+  ],
+  "hsa-miR-5010-5p": [
+    "ATP6V0A1",
+    25
+  ],
+  "hsa-miR-5585-5p": [
+    "TMEM39B",
+    9
+  ],
+  "hsa-miR-3120-5p": [
+    "DNM3",
+    8
+  ],
+  "hsa-miR-2355-5p": [
+    "KLF7",
+    10
+  ],
+  "hsa-miR-4777-3p": [
+    "ARMC9",
+    15
+  ],
+  "hsa-miR-4534": [
+    "POLR2F",
+    14
+  ],
+  "hsa-miR-6757-3p": [
+    "TNS2",
+    20
+  ],
+  "hsa-miR-6793-5p": [
+    "DNM2",
+    22
+  ],
+  "hsa-miR-181b-2-3p": [
+    "NR6A1",
+    5
+  ],
+  "hsa-miR-604": [
+    "SVIL",
+    13
+  ],
+  "hsa-let-7d-3p": [
+    "RP11-2B6.3",
+    1
+  ],
+  "hsa-miR-6835-5p": [
+    "HMGA1",
+    6
+  ],
+  "hsa-miR-4329": [
+    "AMOT",
+    6
+  ],
+  "hsa-miR-6070": [
+    "HSF2BP",
+    2
+  ],
+  "hsa-miR-6739-5p": [
+    "IPO9",
+    4
+  ],
+  "hsa-miR-16-2-3p": [
+    "SMC4",
+    27
+  ],
+  "hsa-miR-4797-5p": [
+    "DLG1",
+    28
+  ],
+  "hsa-miR-4517": [
+    "NFATC2IP",
+    7
+  ],
+  "hsa-miR-93-5p": [
+    "MCM7",
+    13
+  ],
+  "hsa-miR-4677-3p": [
+    "SDCCAG8",
+    11
+  ],
+  "hsa-miR-5690": [
+    "FKBP5",
+    4
+  ],
+  "hsa-miR-8087": [
+    "BDNF-AS",
+    9
+  ],
+  "hsa-miR-3190-5p": [
+    "BBC3",
+    6
+  ],
+  "hsa-miR-548b-5p": [
+    "FAM184A",
+    14
+  ],
+  "hsa-miR-378b": [
+    "ATP2B2",
+    9
+  ],
+  "hsa-miR-6763-3p": [
+    "FBRSL1",
+    8
+  ],
+  "hsa-miR-6729-5p": [
+    "MIIP",
+    7
+  ],
+  "hsa-miR-3651": [
+    "SNORA84",
+    1
+  ],
+  "hsa-miR-660-5p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-4743-3p": [
+    "AC048380.1",
+    1
+  ],
+  "hsa-miR-98-3p": [
+    "HUWE1",
+    15
+  ],
+  "hsa-miR-6857-5p": [
+    "SMC1A",
+    6
+  ],
+  "hsa-miR-1271-3p": [
+    "ARL10",
+    4
+  ],
+  "hsa-miR-767-3p": [
+    "GABRA3",
+    4
+  ],
+  "hsa-miR-4254": [
+    "ADGRB2",
+    15
+  ],
+  "hsa-miR-548c-3p": [
+    "RASSF3",
+    4
+  ],
+  "hsa-miR-4746-5p": [
+    "UBXN6",
+    10
+  ],
+  "hsa-miR-5193": [
+    "UBA7",
+    11
+  ],
+  "hsa-miR-6717-5p": [
+    "NDRG2",
+    77
+  ],
+  "hsa-miR-6086": [
+    "EGFL6",
+    3
+  ],
+  "hsa-miR-105-5p": [
+    "GABRA3",
+    4
+  ],
+  "hsa-miR-1909-3p": [
+    "REXO1",
+    7
+  ],
+  "hsa-miR-7849-3p": [
+    "SLC10A7",
+    9
+  ],
+  "hsa-miR-628-3p": [
+    "CCPG1",
+    13
+  ],
+  "hsa-miR-486-5p": [
+    "AC113133.1",
+    1
+  ],
+  "hsa-miR-204-3p": [
+    "TRPM3",
+    16
+  ],
+  "hsa-miR-4783-5p": [
+    "PROC",
+    10
+  ],
+  "hsa-miR-1250-5p": [
+    "AATK",
+    10
+  ],
+  "hsa-miR-6773-3p": [
+    "ESRP2",
+    12
+  ],
+  "hsa-miR-587": [
+    "RP1-60O19.1",
+    12
+  ],
+  "hsa-miR-93-3p": [
+    "MCM7",
+    13
+  ],
+  "hsa-miR-3173-3p": [
+    "DICER1",
+    15
+  ],
+  "hsa-miR-4437": [
+    "AC104820.2",
+    5
+  ],
+  "hsa-miR-15b-3p": [
+    "SMC4",
+    27
+  ],
+  "hsa-miR-139-5p": [
+    "PDE2A",
+    27
+  ],
+  "hsa-miR-4731-3p": [
+    "PMP22",
+    9
+  ],
+  "hsa-miR-214-5p": [
+    "DNM3",
+    8
+  ],
+  "hsa-miR-449b-5p": [
+    "CDC20B",
+    5
+  ],
+  "hsa-miR-6778-3p": [
+    "SHMT1",
+    11
+  ],
+  "hsa-miR-3162-5p": [
+    "OSBP",
+    3
+  ],
+  "hsa-miR-3186-3p": [
+    "BAHCC1",
+    8
+  ],
+  "hsa-miR-5004-5p": [
+    "XXbac-BPG294E21.9",
+    2
+  ],
+  "hsa-miR-4271": [
+    "C3orf62",
+    4
+  ],
+  "hsa-miR-4504": [
+    "L2HGDH",
+    7
+  ],
+  "hsa-miR-6780a-3p": [
+    "EZH1",
+    24
+  ],
+  "hsa-miR-1268b": [
+    "CCDC40",
+    16
+  ],
+  "hsa-miR-6798-5p": [
+    "RUVBL2",
+    12
+  ],
+  "hsa-miR-4789-5p": [
+    "NAALADL2",
+    13
+  ],
+  "hsa-miR-3936": [
+    "AC034220.3",
+    4
+  ],
+  "hsa-miR-5591-3p": [
+    "KLB",
+    1
+  ],
+  "hsa-miR-1226-5p": [
+    "DHX30",
+    15
+  ],
+  "hsa-miR-6809-3p": [
+    "TNS1",
+    21
+  ],
+  "hsa-miR-548x-3p": [
+    "AL109763.2",
+    3
+  ],
+  "hsa-miR-6507-3p": [
+    "HPSE2",
+    6
+  ],
+  "hsa-miR-4753-5p": [
+    "ARID4B",
+    13
+  ],
+  "hsa-miR-374b-3p": [
+    "FTX",
+    10
+  ],
+  "hsa-miR-545-5p": [
+    "FTX",
+    10
+  ],
+  "hsa-miR-875-5p": [
+    "VPS13B",
+    12
+  ],
+  "hsa-miR-4659a-3p": [
+    "AGPAT5",
+    7
+  ],
+  "hsa-miR-7151-5p": [
+    "CTNNA3",
+    5
+  ],
+  "hsa-miR-611": [
+    "TMEM258",
+    8
+  ],
+  "hsa-miR-548aq-5p": [
+    "IGF2BP2",
+    11
+  ],
+  "hsa-miR-192-3p": [
+    "AP001187.9",
+    1
+  ],
+  "hsa-miR-5096": [
+    "BMP2K",
+    8
+  ],
+  "hsa-miR-6812-5p": [
+    "PIGT",
+    7
+  ],
+  "hsa-miR-3972": [
+    "PADI3",
+    1
+  ],
+  "hsa-miR-216a-5p": [
+    "RP11-481J13.1",
+    1
+  ],
+  "hsa-miR-4685-5p": [
+    "HPS1",
+    15
+  ],
+  "hsa-miR-4481": [
+    "CAMK1D",
+    4
+  ],
+  "hsa-miR-708-5p": [
+    "TENM4",
+    12
+  ],
+  "hsa-miR-3177-3p": [
+    "MAPK8IP3",
+    16
+  ],
+  "hsa-miR-548aw": [
+    "GFI1B",
+    4
+  ],
+  "hsa-miR-491-5p": [
+    "FOCAD",
+    17
+  ],
+  "hsa-miR-5689": [
+    "RP1-290I10.7",
+    2
+  ],
+  "hsa-miR-6774-5p": [
+    "IRF8",
+    11
+  ],
+  "hsa-miR-4728-5p": [
+    "ERBB2",
+    22
+  ],
+  "hsa-miR-6886-3p": [
+    "LDLR",
+    14
+  ],
+  "hsa-miR-4999-5p": [
+    "ELAVL1",
+    6
+  ],
+  "hsa-miR-548k": [
+    "AP000487.6",
+    1
+  ],
+  "hsa-miR-4639-5p": [
+    "MYLIP",
+    2
+  ],
+  "hsa-miR-6749-5p": [
+    "ATG2A",
+    6
+  ],
+  "hsa-miR-1908-5p": [
+    "FADS1",
+    21
+  ],
+  "hsa-miR-499a-5p": [
+    "MYH7B",
+    9
+  ],
+  "hsa-miR-4691-3p": [
+    "NDUFS8",
+    15
+  ],
+  "hsa-miR-625-5p": [
+    "FUT8",
+    15
+  ],
+  "hsa-miR-6762-3p": [
+    "TPCN1",
+    23
+  ],
+  "hsa-miR-6736-5p": [
+    "PIAS3",
+    9
+  ],
+  "hsa-miR-874-3p": [
+    "KLHL3",
+    14
+  ],
+  "hsa-miR-4743-5p": [
+    "AC048380.1",
+    1
+  ],
+  "hsa-miR-4765": [
+    "TTC27",
+    6
+  ],
+  "hsa-miR-6855-3p": [
+    "USP20",
+    9
+  ],
+  "hsa-miR-7114-5p": [
+    "NSMF",
+    11
+  ],
+  "hsa-miR-6812-3p": [
+    "PIGT",
+    7
+  ],
+  "hsa-miR-764": [
+    "HTR2C",
+    3
+  ],
+  "hsa-miR-4659b-3p": [
+    "AGPAT5",
+    7
+  ],
+  "hsa-miR-6791-5p": [
+    "GPR108",
+    17
+  ],
+  "hsa-miR-3713": [
+    "SCAPER",
+    23
+  ],
+  "hsa-miR-199b-3p": [
+    "DNM1",
+    15
+  ],
+  "hsa-miR-149-3p": [
+    "GPC1",
+    9
+  ],
+  "hsa-miR-2467-3p": [
+    "HDAC4",
+    17
+  ],
+  "hsa-miR-452-3p": [
+    "GABRE",
+    12
+  ],
+  "hsa-miR-548ar-5p": [
+    "CDC16",
+    11
+  ],
+  "hsa-miR-4655-5p": [
+    "AC110781.3",
+    2
+  ],
+  "hsa-miR-1910-5p": [
+    "C16orf74",
+    7
+  ],
+  "hsa-miR-4735-3p": [
+    "KCNT2",
+    7
+  ],
+  "hsa-miR-218-5p": [
+    "SLIT3",
+    8
+  ],
+  "hsa-miR-6831-3p": [
+    "APBB3",
+    24
+  ],
+  "hsa-miR-7111-3p": [
+    "RPL10A",
+    5
+  ],
+  "hsa-miR-590-3p": [
+    "EIF4H",
+    5
+  ],
+  "hsa-miR-6511b-5p": [
+    "PDXDC1",
+    18
+  ],
+  "hsa-miR-4695-3p": [
+    "RP13-279N23.2",
+    1
+  ],
+  "hsa-miR-9-3p": [
+    "LINC00461",
+    16
+  ],
+  "hsa-miR-6512-5p": [
+    "NFE2L2",
+    14
+  ],
+  "hsa-miR-6165": [
+    "NGFR",
+    3
+  ],
+  "hsa-miR-4285": [
+    "SH2B2",
+    3
+  ],
+  "hsa-miR-8083": [
+    "NPR1",
+    3
+  ],
+  "hsa-miR-548f-3p": [
+    "DMD",
+    30
+  ],
+  "hsa-let-7f-2-3p": [
+    "HUWE1",
+    15
+  ],
+  "hsa-miR-378e": [
+    "DOCK2",
+    17
+  ],
+  "hsa-miR-1248": [
+    "EIF4A2",
+    27
+  ],
+  "hsa-miR-5587-5p": [
+    "CAPN15",
+    7
+  ],
+  "hsa-miR-486-3p": [
+    "AC113133.1",
+    1
+  ],
+  "hsa-miR-190a-5p": [
+    "TLN2",
+    11
+  ],
+  "hsa-miR-3199": [
+    "TTC28-AS1",
+    21
+  ],
+  "hsa-miR-6081": [
+    "C9orf3",
+    22
+  ],
+  "hsa-miR-548au-5p": [
+    "PHF2",
+    3
+  ],
+  "hsa-miR-6836-5p": [
+    "SNX8",
+    9
+  ],
+  "hsa-miR-6889-5p": [
+    "RANGAP1",
+    7
+  ],
+  "hsa-miR-3125": [
+    "TRIB2",
+    4
+  ],
+  "hsa-miR-5584-5p": [
+    "RNF220",
+    18
+  ],
+  "hsa-miR-6859-5p": [
+    "WASH4P",
+    1
+  ],
+  "hsa-miR-1229-5p": [
+    "MGAT4B",
+    23
+  ],
+  "hsa-miR-6804-5p": [
+    "PPP6R1",
+    8
+  ],
+  "hsa-miR-5000-3p": [
+    "TACR1",
+    3
+  ],
+  "hsa-miR-151b": [
+    "EVL",
+    24
+  ],
+  "hsa-miR-33a-3p": [
+    "SREBF2",
+    9
+  ],
+  "hsa-miR-6715b-5p": [
+    "TECTB",
+    2
+  ],
+  "hsa-miR-3922-5p": [
+    "CHST11",
+    6
+  ],
+  "hsa-miR-549a": [
+    "CEMIP",
+    7
+  ],
+  "hsa-miR-1914-5p": [
+    "UCKL1",
+    7
+  ],
+  "hsa-miR-6864-5p": [
+    "CAMTA2",
+    16
+  ],
+  "hsa-miR-5187-5p": [
+    "TOMM40L",
+    9
+  ],
+  "hsa-miR-6772-5p": [
+    "KIFC3",
+    35
+  ],
+  "hsa-miR-551a": [
+    "MEGF6",
+    7
+  ],
+  "hsa-miR-3922-3p": [
+    "CHST11",
+    6
+  ],
+  "hsa-miR-4802-5p": [
+    "RBM47",
+    15
+  ],
+  "hsa-miR-4436b-5p": [
+    "RP11-1223D19.2",
+    1
+  ],
+  "hsa-miR-6854-5p": [
+    "TBC1D2",
+    6
+  ],
+  "hsa-miR-1252-3p": [
+    "RP1-78O14.1",
+    3
+  ],
+  "hsa-miR-6879-5p": [
+    "ARL2",
+    6
+  ],
+  "hsa-miR-4780": [
+    "SMYD1",
+    4
+  ],
+  "hsa-miR-378j": [
+    "DDX52",
+    8
+  ],
+  "hsa-miR-1237-5p": [
+    "RPS6KA4",
+    8
+  ],
+  "hsa-miR-6894-3p": [
+    "KDM5C",
+    15
+  ],
+  "hsa-miR-579-3p": [
+    "ZFR",
+    7
+  ],
+  "hsa-miR-3170": [
+    "FARP1",
+    42
+  ],
+  "hsa-miR-500a-3p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-4746-3p": [
+    "UBXN6",
+    10
+  ],
+  "hsa-miR-548av-3p": [
+    "NETO1",
+    7
+  ],
+  "hsa-miR-6795-3p": [
+    "NOTCH3",
+    6
+  ],
+  "hsa-miR-6728-5p": [
+    "ENO1",
+    6
+  ],
+  "hsa-miR-4540": [
+    "PAX5",
+    16
+  ],
+  "hsa-miR-26a-2-3p": [
+    "CTDSP2",
+    9
+  ],
+  "hsa-miR-7641": [
+    "RNA5SP387",
+    1
+  ],
+  "hsa-miR-652-3p": [
+    "TMEM164",
+    8
+  ],
+  "hsa-miR-6870-3p": [
+    "JAG1",
+    9
+  ],
+  "hsa-miR-25-5p": [
+    "MCM7",
+    13
+  ],
+  "hsa-miR-148b-3p": [
+    "COPZ1",
+    18
+  ],
+  "hsa-miR-616-3p": [
+    "DDIT3",
+    7
+  ],
+  "hsa-miR-939-3p": [
+    "CPSF1",
+    14
+  ],
+  "hsa-miR-4661-3p": [
+    "LRRC69",
+    7
+  ],
+  "hsa-miR-5088-5p": [
+    "PRMT1",
+    21
+  ],
+  "hsa-miR-6735-3p": [
+    "SZT2-AS1",
+    1
+  ],
+  "hsa-miR-501-5p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-4270": [
+    "COLQ",
+    8
+  ],
+  "hsa-miR-3136-5p": [
+    "TMF1",
+    5
+  ],
+  "hsa-miR-6871-3p": [
+    "PLCG1",
+    22
+  ],
+  "hsa-miR-6786-5p": [
+    "HGS",
+    17
+  ],
+  "hsa-miR-3074-3p": [
+    "C9orf3",
+    22
+  ],
+  "hsa-miR-1251-3p": [
+    "RMST",
+    7
+  ],
+  "hsa-miR-548t-3p": [
+    "GALNT7",
+    7
+  ],
+  "hsa-miR-4784": [
+    "MZT2A",
+    6
+  ],
+  "hsa-miR-6835-3p": [
+    "HMGA1",
+    6
+  ],
+  "hsa-miR-4758-3p": [
+    "LAMA5",
+    14
+  ],
+  "hsa-miR-7845-5p": [
+    "KLF7",
+    10
+  ],
+  "hsa-miR-4506": [
+    "ASB2",
+    10
+  ],
+  "hsa-miR-6870-5p": [
+    "JAG1",
+    9
+  ],
+  "hsa-miR-4498": [
+    "GCN1",
+    9
+  ],
+  "hsa-miR-500b-5p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-5699-5p": [
+    "DIP2C",
+    5
+  ],
+  "hsa-miR-3151-3p": [
+    "BAALC",
+    9
+  ],
+  "hsa-miR-4688": [
+    "DGKZ",
+    24
+  ],
+  "hsa-miR-6516-5p": [
+    "SNHG20",
+    5
+  ],
+  "hsa-miR-676-5p": [
+    "EDA",
+    13
+  ],
+  "hsa-miR-4501": [
+    "HS6ST3",
+    2
+  ],
+  "hsa-miR-942-5p": [
+    "TTF2",
+    7
+  ],
+  "hsa-miR-6839-5p": [
+    "ZNF107",
+    6
+  ],
+  "hsa-miR-4730": [
+    "ENDOV",
+    30
+  ],
+  "hsa-miR-4519": [
+    "BCL7C",
+    5
+  ],
+  "hsa-miR-3662": [
+    "HBS1L",
+    16
+  ],
+  "hsa-miR-592": [
+    "GRM8",
+    15
+  ],
+  "hsa-miR-615-5p": [
+    "HOXC5",
+    1
+  ],
+  "hsa-miR-3129-3p": [
+    "COL5A2",
+    3
+  ],
+  "hsa-miR-4311": [
+    "MEGF11",
+    15
+  ],
+  "hsa-miR-1261": [
+    "DISC1FP1",
+    5
+  ],
+  "hsa-miR-4292": [
+    "RABL6",
+    13
+  ],
+  "hsa-miR-4771": [
+    "ANAPC1",
+    10
+  ],
+  "hsa-miR-3138": [
+    "WDR1",
+    18
+  ],
+  "hsa-miR-6777-5p": [
+    "SREBF1",
+    23
+  ],
+  "hsa-miR-6878-3p": [
+    "TARS2",
+    14
+  ],
+  "hsa-miR-152-3p": [
+    "COPZ2",
+    10
+  ],
+  "hsa-miR-6733-5p": [
+    "EBNA1BP2",
+    9
+  ],
+  "hsa-miR-2053": [
+    "CSMD3",
+    10
+  ],
+  "hsa-miR-1537-5p": [
+    "LYST",
+    12
+  ],
+  "hsa-miR-637": [
+    "DAPK3",
+    7
+  ],
+  "hsa-miR-762": [
+    "BCL7C",
+    5
+  ],
+  "hsa-miR-3119": [
+    "METTL11B",
+    2
+  ],
+  "hsa-miR-128-3p": [
+    "ARPP21",
+    35
+  ],
+  "hsa-miR-6790-5p": [
+    "GTF2F1",
+    6
+  ],
+  "hsa-miR-548z": [
+    "RASSF3",
+    4
+  ],
+  "hsa-miR-591": [
+    "SLC25A13",
+    8
+  ],
+  "hsa-miR-6732-5p": [
+    "ZC3H12A",
+    3
+  ],
+  "hsa-miR-6819-3p": [
+    "MYH9",
+    11
+  ],
+  "hsa-let-7d-5p": [
+    "RP11-2B6.3",
+    1
+  ],
+  "hsa-miR-6758-5p": [
+    "MARS",
+    35
+  ],
+  "hsa-miR-489-5p": [
+    "CALCR",
+    7
+  ],
+  "hsa-miR-599": [
+    "VPS13B",
+    12
+  ],
+  "hsa-miR-6873-5p": [
+    "WDR46",
+    9
+  ],
+  "hsa-miR-1285-5p": [
+    "AC000120.7",
+    1
+  ],
+  "hsa-miR-624-3p": [
+    "STRN3",
+    8
+  ],
+  "hsa-miR-3145-5p": [
+    "NHSL1",
+    9
+  ],
+  "hsa-miR-23c": [
+    "MAP7D2",
+    5
+  ],
+  "hsa-miR-4750-3p": [
+    "TBC1D17",
+    9
+  ],
+  "hsa-miR-4632-3p": [
+    "TNFRSF1B",
+    4
+  ],
+  "hsa-miR-6833-3p": [
+    "RNF5",
+    2
+  ],
+  "hsa-miR-7113-3p": [
+    "NDUFS8",
+    15
+  ],
+  "hsa-miR-1251-5p": [
+    "RMST",
+    7
+  ],
+  "hsa-miR-4639-3p": [
+    "MYLIP",
+    2
+  ],
+  "hsa-miR-6849-5p": [
+    "CPSF1",
+    14
+  ],
+  "hsa-miR-1301-3p": [
+    "DNMT3A",
+    15
+  ],
+  "hsa-miR-744-3p": [
+    "MAP2K4",
+    15
+  ],
+  "hsa-miR-548t-5p": [
+    "GALNT7",
+    7
+  ],
+  "hsa-miR-6829-3p": [
+    "TNK2",
+    22
+  ],
+  "hsa-miR-1277-3p": [
+    "WDR44",
+    5
+  ],
+  "hsa-miR-4649-3p": [
+    "AEBP1",
+    9
+  ],
+  "hsa-miR-6877-3p": [
+    "GTF3C5",
+    10
+  ],
+  "hsa-miR-5688": [
+    "CADM2",
+    5
+  ],
+  "hsa-miR-7852-3p": [
+    "VAV3",
+    15
+  ],
+  "hsa-miR-145-3p": [
+    "RP11-394O4.5",
+    1
+  ],
+  "hsa-miR-4446-5p": [
+    "SIDT1",
+    12
+  ],
+  "hsa-miR-4803": [
+    "MAP1B",
+    6
+  ],
+  "hsa-miR-3616-3p": [
+    "EYA2",
+    10
+  ],
+  "hsa-miR-6515-3p": [
+    "CALR",
+    7
+  ],
+  "hsa-miR-6515-5p": [
+    "CALR",
+    7
+  ],
+  "hsa-miR-3200-3p": [
+    "OSBP2",
+    19
+  ],
+  "hsa-miR-8057": [
+    "KCTD1",
+    11
+  ],
+  "hsa-miR-3681-3p": [
+    "AC096559.1",
+    7
+  ],
+  "hsa-miR-3202": [
+    "TMEM187",
+    3
+  ],
+  "hsa-miR-6863": [
+    "SLC12A3",
+    6
+  ],
+  "hsa-miR-1224-3p": [
+    "VWA5B2",
+    6
+  ],
+  "hsa-miR-4747-5p": [
+    "UHRF1",
+    7
+  ],
+  "hsa-miR-190a-3p": [
+    "TLN2",
+    11
+  ],
+  "hsa-miR-619-3p": [
+    "SSH1",
+    9
+  ],
+  "hsa-miR-3176": [
+    "CAPN15",
+    7
+  ],
+  "hsa-miR-4716-5p": [
+    "GALK2",
+    22
+  ],
+  "hsa-miR-7853-5p": [
+    "F13A1",
+    6
+  ],
+  "hsa-miR-5094": [
+    "C15orf38-AP3S2",
+    4
+  ],
+  "hsa-miR-1254": [
+    "CCAR1",
+    18
+  ],
+  "hsa-miR-4659b-5p": [
+    "AGPAT5",
+    7
+  ],
+  "hsa-miR-2116-3p": [
+    "MYO1E",
+    10
+  ],
+  "hsa-miR-1539": [
+    "C18orf32",
+    4
+  ],
+  "hsa-let-7e-3p": [
+    "SPACA6P-AS",
+    1
+  ],
+  "hsa-miR-598-5p": [
+    "XKR6",
+    4
+  ],
+  "hsa-miR-6798-3p": [
+    "RUVBL2",
+    12
+  ],
+  "hsa-miR-1258": [
+    "ZNF385B",
+    13
+  ],
+  "hsa-miR-4782-3p": [
+    "SLC35F5",
+    12
+  ],
+  "hsa-miR-7155-3p": [
+    "CCDC88B",
+    10
+  ],
+  "hsa-miR-5587-3p": [
+    "CAPN15",
+    7
+  ],
+  "hsa-miR-4684-3p": [
+    "EPHB2",
+    7
+  ],
+  "hsa-miR-6806-5p": [
+    "ZSCAN22",
+    1
+  ],
+  "hsa-miR-4305": [
+    "COG6",
+    12
+  ],
+  "hsa-miR-6815-3p": [
+    "COL18A1",
+    7
+  ],
+  "hsa-miR-6823-5p": [
+    "PFKFB4",
+    15
+  ],
+  "hsa-miR-4798-5p": [
+    "SORCS2",
+    4
+  ],
+  "hsa-miR-4658": [
+    "C7orf43",
+    11
+  ],
+  "hsa-miR-6810-3p": [
+    "CATIP-AS2",
+    1
+  ],
+  "hsa-miR-4656": [
+    "AP5Z1",
+    7
+  ],
+  "hsa-miR-4768-3p": [
+    "NHS",
+    5
+  ],
+  "hsa-miR-3650": [
+    "LIFR",
+    9
+  ],
+  "hsa-miR-4474-3p": [
+    "MLLT3",
+    10
+  ],
+  "hsa-miR-502-3p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-4650-3p": [
+    "TYW1B",
+    3
+  ],
+  "hsa-miR-5047": [
+    "DDX5",
+    35
+  ],
+  "hsa-miR-4489": [
+    "SIPA1",
+    12
+  ],
+  "hsa-miR-3163": [
+    "PC",
+    14
+  ],
+  "hsa-miR-6747-3p": [
+    "EEF1G",
+    4
+  ],
+  "hsa-miR-214-3p": [
+    "DNM3",
+    8
+  ],
+  "hsa-miR-6874-5p": [
+    "RNF216",
+    9
+  ],
+  "hsa-miR-4774-5p": [
+    "CERS6",
+    2
+  ],
+  "hsa-let-7a-5p": [
+    "RP11-2B6.3",
+    1
+  ],
+  "hsa-miR-3064-5p": [
+    "DDX5",
+    35
+  ],
+  "hsa-miR-4654": [
+    "NOS1AP",
+    6
+  ],
+  "hsa-miR-4691-5p": [
+    "NDUFS8",
+    15
+  ],
+  "hsa-miR-605-3p": [
+    "PRKG1",
+    5
+  ],
+  "hsa-miR-3914": [
+    "WBSCR17",
+    5
+  ],
+  "hsa-miR-6738-3p": [
+    "ARHGEF2",
+    20
+  ],
+  "hsa-miR-3127-5p": [
+    "AC092636.1",
+    1
+  ],
+  "hsa-miR-653-3p": [
+    "CALCR",
+    7
+  ],
+  "hsa-miR-4756-5p": [
+    "BCAS1",
+    5
+  ],
+  "hsa-miR-3681-5p": [
+    "AC096559.1",
+    7
+  ],
+  "hsa-miR-6762-5p": [
+    "TPCN1",
+    23
+  ],
+  "hsa-miR-330-3p": [
+    "EML2",
+    31
+  ],
+  "hsa-miR-3605-5p": [
+    "AL513327.1",
+    1
+  ],
+  "hsa-miR-548u": [
+    "PRIM2",
+    7
+  ],
+  "hsa-miR-6837-5p": [
+    "DBNL",
+    22
+  ],
+  "hsa-miR-4524a-5p": [
+    "ABCA6",
+    7
+  ],
+  "hsa-miR-4263": [
+    "BRE",
+    11
+  ],
+  "hsa-miR-562": [
+    "DIS3L2",
+    16
+  ],
+  "hsa-miR-7161-5p": [
+    "TMEM181",
+    1
+  ],
+  "hsa-miR-4265": [
+    "SH3RF3",
+    1
+  ],
+  "hsa-miR-3973": [
+    "LDLRAD3",
+    6
+  ],
+  "hsa-miR-1298-5p": [
+    "HTR2C",
+    3
+  ],
+  "hsa-miR-6820-3p": [
+    "POLR2F",
+    14
+  ],
+  "hsa-miR-4701-3p": [
+    "ADCY6",
+    9
+  ],
+  "hsa-miR-6769a-5p": [
+    "MGRN1",
+    18
+  ],
+  "hsa-miR-7111-5p": [
+    "RPL10A",
+    5
+  ],
+  "hsa-miR-6797-3p": [
+    "RPS19",
+    8
+  ],
+  "hsa-miR-6756-5p": [
+    "MCAM",
+    17
+  ],
+  "hsa-miR-4633-5p": [
+    "ISOC1",
+    2
+  ],
+  "hsa-miR-23b-5p": [
+    "C9orf3",
+    22
+  ],
+  "hsa-miR-4484": [
+    "UROS",
+    12
+  ],
+  "hsa-miR-7150": [
+    "DENND1A",
+    13
+  ],
+  "hsa-miR-579-5p": [
+    "ZFR",
+    7
+  ],
+  "hsa-miR-6884-5p": [
+    "MED24",
+    34
+  ],
+  "hsa-miR-6766-3p": [
+    "POLG",
+    13
+  ],
+  "hsa-miR-186-5p": [
+    "ZRANB2",
+    8
+  ],
+  "hsa-miR-6746-5p": [
+    "FADS3",
+    13
+  ],
+  "hsa-miR-4516": [
+    "PKD1",
+    40
+  ],
+  "hsa-miR-6838-5p": [
+    "POLM",
+    18
+  ],
+  "hsa-miR-3666": [
+    "FOXP2",
+    18
+  ],
+  "hsa-miR-1293": [
+    "LIMA1",
+    16
+  ],
+  "hsa-miR-6511a-5p": [
+    "RP11-1212A22.1",
+    6
+  ],
+  "hsa-miR-16-1-3p": [
+    "DLEU2",
+    8
+  ],
+  "hsa-miR-9500": [
+    "PRKAG3",
+    6
+  ],
+  "hsa-miR-532-3p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-2116-5p": [
+    "MYO1E",
+    10
+  ],
+  "hsa-miR-6855-5p": [
+    "USP20",
+    9
+  ],
+  "hsa-miR-4673": [
+    "NOTCH1",
+    3
+  ],
+  "hsa-miR-30c-5p": [
+    "RP3-331H24.5",
+    1
+  ],
+  "hsa-miR-6802-5p": [
+    "PPP6R1",
+    8
+  ],
+  "hsa-miR-6808-3p": [
+    "DVL1",
+    8
+  ],
+  "hsa-miR-339-5p": [
+    "C7orf50",
+    8
+  ],
+  "hsa-miR-6843-3p": [
+    "CLU",
+    17
+  ],
+  "hsa-miR-192-5p": [
+    "AP001187.9",
+    1
+  ],
+  "hsa-miR-4676-5p": [
+    "MCU",
+    11
+  ],
+  "hsa-miR-5190": [
+    "LDLRAD4",
+    19
+  ],
+  "hsa-miR-1233-3p": [
+    "GOLGA8B",
+    11
+  ],
+  "hsa-miR-4427": [
+    "KCNK1",
+    6
+  ],
+  "hsa-miR-3130-3p": [
+    "FASTKD2",
+    6
+  ],
+  "hsa-miR-4269": [
+    "HDAC4",
+    17
+  ],
+  "hsa-miR-921": [
+    "FAM78B",
+    5
+  ],
+  "hsa-miR-6782-3p": [
+    "UBTF",
+    14
+  ],
+  "hsa-miR-548au-3p": [
+    "PHF2",
+    3
+  ],
+  "hsa-miR-128-2-5p": [
+    "ARPP21",
+    35
+  ],
+  "hsa-miR-5687": [
+    "PPAP2A",
+    6
+  ],
+  "hsa-miR-449b-3p": [
+    "CDC20B",
+    5
+  ],
+  "hsa-miR-4744": [
+    "DYM",
+    20
+  ],
+  "hsa-miR-6785-3p": [
+    "KIAA0195",
+    33
+  ],
+  "hsa-miR-559": [
+    "EPCAM",
+    6
+  ],
+  "hsa-miR-3134": [
+    "ANKRD28",
+    16
+  ],
+  "hsa-miR-6718-5p": [
+    "DLGAP1-AS3",
+    2
+  ],
+  "hsa-miR-7114-3p": [
+    "NSMF",
+    11
+  ],
+  "hsa-miR-3198": [
+    "BID",
+    15
+  ],
+  "hsa-miR-6817-5p": [
+    "CRYBB2P1",
+    6
+  ],
+  "hsa-miR-2278": [
+    "C9orf3",
+    22
+  ],
+  "hsa-miR-4762-3p": [
+    "ATXN10",
+    11
+  ],
+  "hsa-miR-548e-3p": [
+    "SHOC2",
+    7
+  ],
+  "hsa-miR-3140-3p": [
+    "FBXW7",
+    13
+  ],
+  "hsa-miR-195-5p": [
+    "RP11-589P10.7",
+    1
+  ],
+  "hsa-miR-6744-3p": [
+    "MUC5B",
+    5
+  ],
+  "hsa-miR-6803-3p": [
+    "PPP6R1",
+    8
+  ],
+  "hsa-miR-6783-5p": [
+    "KIF18B",
+    4
+  ],
+  "hsa-miR-3127-3p": [
+    "AC092636.1",
+    1
+  ],
+  "hsa-miR-4750-5p": [
+    "TBC1D17",
+    9
+  ],
+  "hsa-miR-24-3p": [
+    "C9orf3",
+    22
+  ],
+  "hsa-miR-3065-5p": [
+    "AC115099.1",
+    1
+  ],
+  "hsa-miR-6505-3p": [
+    "PFKM",
+    32
+  ],
+  "hsa-miR-7-1-3p": [
+    "HNRNPK",
+    11
+  ],
+  "hsa-miR-548e-5p": [
+    "SHOC2",
+    7
+  ],
+  "hsa-miR-4632-5p": [
+    "TNFRSF1B",
+    4
+  ],
+  "hsa-miR-586": [
+    "SUPT3H",
+    6
+  ],
+  "hsa-miR-103a-3p": [
+    "PANK3",
+    3
+  ],
+  "hsa-miR-145-5p": [
+    "RP11-394O4.5",
+    1
+  ],
+  "hsa-miR-8055": [
+    "MCPH1",
+    7
+  ],
+  "hsa-miR-3157-3p": [
+    "ENTPD1-AS1",
+    12
+  ],
+  "hsa-miR-3940-3p": [
+    "KHSRP",
+    13
+  ],
+  "hsa-miR-4749-3p": [
+    "AC018766.6",
+    1
+  ],
+  "hsa-miR-330-5p": [
+    "EML2",
+    31
+  ],
+  "hsa-miR-548ar-3p": [
+    "CDC16",
+    11
+  ],
+  "hsa-miR-4432": [
+    "AC007381.2",
+    2
+  ],
+  "hsa-miR-6759-5p": [
+    "TSPAN31",
+    14
+  ],
+  "hsa-miR-4715-3p": [
+    "ATP10A",
+    7
+  ],
+  "hsa-miR-488-3p": [
+    "ASTN1",
+    5
+  ],
+  "hsa-miR-638": [
+    "DNM2",
+    22
+  ],
+  "hsa-miR-6887-3p": [
+    "FXYD3",
+    14
+  ],
+  "hsa-miR-5588-5p": [
+    "EHHADH",
+    6
+  ],
+  "hsa-miR-8058": [
+    "CDH13",
+    17
+  ],
+  "hsa-miR-6866-3p": [
+    "CASC3",
+    10
+  ],
+  "hsa-miR-5004-3p": [
+    "XXbac-BPG294E21.9",
+    2
+  ],
+  "hsa-miR-4288": [
+    "FZD3",
+    4
+  ],
+  "hsa-miR-5683": [
+    "F13A1",
+    6
+  ],
+  "hsa-miR-6767-3p": [
+    "CCNF",
+    5
+  ],
+  "hsa-miR-2681-5p": [
+    "FGF14",
+    4
+  ],
+  "hsa-miR-1295b-5p": [
+    "FMO3",
+    6
+  ],
+  "hsa-miR-6511b-3p": [
+    "PDXDC1",
+    18
+  ],
+  "hsa-miR-5010-3p": [
+    "ATP6V0A1",
+    25
+  ],
+  "hsa-miR-502-5p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-6769b-3p": [
+    "IKBKE",
+    6
+  ],
+  "hsa-miR-1255a": [
+    "PPP3CA",
+    9
+  ],
+  "hsa-miR-6840-5p": [
+    "STAG3L5P-PVRIG2P-PILRB",
+    6
+  ],
+  "hsa-miR-6781-3p": [
+    "BECN1",
+    22
+  ],
+  "hsa-miR-6880-5p": [
+    "NCOR2",
+    24
+  ],
+  "hsa-miR-624-5p": [
+    "STRN3",
+    8
+  ],
+  "hsa-miR-613": [
+    "APOLD1",
+    5
+  ],
+  "hsa-miR-361-3p": [
+    "CHM",
+    5
+  ],
+  "hsa-miR-6858-3p": [
+    "FAM50A",
+    7
+  ],
+  "hsa-miR-585-5p": [
+    "SLIT3",
+    8
+  ],
+  "hsa-miR-4483": [
+    "PLEKHS1",
+    7
+  ],
+  "hsa-miR-1913": [
+    "RPS6KA2",
+    13
+  ],
+  "hsa-miR-4797-3p": [
+    "DLG1",
+    28
+  ],
+  "hsa-miR-5187-3p": [
+    "TOMM40L",
+    9
+  ],
+  "hsa-miR-361-5p": [
+    "CHM",
+    5
+  ],
+  "hsa-miR-7157-5p": [
+    "LRP1B",
+    6
+  ],
+  "hsa-miR-4463": [
+    "FILIP1",
+    4
+  ],
+  "hsa-miR-5588-3p": [
+    "EHHADH",
+    6
+  ],
+  "hsa-miR-301a-3p": [
+    "SKA2",
+    10
+  ],
+  "hsa-miR-99b-5p": [
+    "SPACA6P-AS",
+    1
+  ],
+  "hsa-miR-3940-5p": [
+    "KHSRP",
+    13
+  ],
+  "hsa-miR-6811-5p": [
+    "MLPH",
+    23
+  ],
+  "hsa-miR-6842-3p": [
+    "PTK2B",
+    17
+  ],
+  "hsa-miR-4668-3p": [
+    "UGCG",
+    5
+  ],
+  "hsa-miR-6856-3p": [
+    "FUBP3",
+    6
+  ],
+  "hsa-miR-5579-3p": [
+    "TENM4",
+    12
+  ],
+  "hsa-miR-631": [
+    "NEIL1",
+    24
+  ],
+  "hsa-miR-582-3p": [
+    "PDE4D",
+    27
+  ],
+  "hsa-miR-6852-3p": [
+    "TLN1",
+    8
+  ],
+  "hsa-miR-6891-5p": [
+    "HLA-B",
+    7
+  ],
+  "hsa-miR-4420": [
+    "LAPTM5",
+    3
+  ],
+  "hsa-miR-32-3p": [
+    "TMEM245",
+    5
+  ],
+  "hsa-miR-6741-5p": [
+    "RP4-559A3.7",
+    1
+  ],
+  "hsa-miR-1469": [
+    "NR2F2",
+    5
+  ],
+  "hsa-miR-6765-5p": [
+    "JAG2",
+    5
+  ],
+  "hsa-miR-4640-3p": [
+    "DDR1",
+    58
+  ],
+  "hsa-miR-6869-5p": [
+    "FKBP1A",
+    11
+  ],
+  "hsa-miR-658": [
+    "ANKRD54",
+    12
+  ],
+  "hsa-miR-4296": [
+    "CTBP2",
+    14
+  ],
+  "hsa-miR-548f-5p": [
+    "RP11-257I14.1",
+    1
+  ],
+  "hsa-miR-504-5p": [
+    "FGF13",
+    8
+  ],
+  "hsa-miR-548n": [
+    "DPY19L1",
+    8
+  ],
+  "hsa-miR-4273": [
+    "ZNF717",
+    5
+  ],
+  "hsa-miR-6784-3p": [
+    "PLCD3",
+    12
+  ],
+  "hsa-miR-1273h-3p": [
+    "PRKCB",
+    10
+  ],
+  "hsa-miR-766-5p": [
+    "Sep-06",
+    9
+  ],
+  "hsa-miR-660-3p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-6792-3p": [
+    "CAMSAP3",
+    4
+  ],
+  "hsa-miR-4274": [
+    "SORCS2",
+    4
+  ],
+  "hsa-miR-6820-5p": [
+    "POLR2F",
+    14
+  ],
+  "hsa-miR-3171": [
+    "CTD-3006G17.2",
+    5
+  ],
+  "hsa-miR-6814-3p": [
+    "RIPK4",
+    2
+  ],
+  "hsa-miR-1273d": [
+    "KIF1B",
+    12
+  ],
+  "hsa-miR-5590-5p": [
+    "CCNT2-AS1",
+    3
+  ],
+  "hsa-miR-887-5p": [
+    "FBXL7",
+    3
+  ],
+  "hsa-miR-6795-5p": [
+    "NOTCH3",
+    6
+  ],
+  "hsa-miR-1302": [
+    "RP11-23J9.4",
+    5
+  ],
+  "hsa-miR-548at-5p": [
+    "ATP6V0A1",
+    25
+  ],
+  "hsa-miR-4637": [
+    "ANKH",
+    7
+  ],
+  "hsa-miR-5189-3p": [
+    "ZFPM1",
+    5
+  ],
+  "hsa-miR-6853-3p": [
+    "CREB3",
+    3
+  ],
+  "hsa-miR-6882-3p": [
+    "ULK3",
+    23
+  ],
+  "hsa-miR-6782-5p": [
+    "UBTF",
+    14
+  ],
+  "hsa-miR-6767-5p": [
+    "CCNF",
+    5
+  ],
+  "hsa-miR-6826-3p": [
+    "COPG1",
+    10
+  ],
+  "hsa-miR-6844": [
+    "TATDN1",
+    21
+  ],
+  "hsa-miR-1273f": [
+    "SCP2",
+    16
+  ],
+  "hsa-miR-548ah-5p": [
+    "SHROOM3",
+    10
+  ],
+  "hsa-miR-4324": [
+    "SLC6A16",
+    7
+  ],
+  "hsa-miR-2115-3p": [
+    "SPINK8",
+    1
+  ],
+  "hsa-miR-5583-3p": [
+    "RP11-244M2.1",
+    2
+  ],
+  "hsa-miR-6728-3p": [
+    "ENO1",
+    6
+  ],
+  "hsa-miR-3158-3p": [
+    "DPCD",
+    6
+  ],
+  "hsa-miR-3137": [
+    "XXYLT1",
+    12
+  ],
+  "hsa-miR-597-3p": [
+    "TNKS",
+    13
+  ],
+  "hsa-miR-6865-3p": [
+    "CAMTA2",
+    16
+  ],
+  "hsa-miR-6839-3p": [
+    "ZNF107",
+    6
+  ],
+  "hsa-miR-3609": [
+    "TRRAP",
+    7
+  ],
+  "hsa-miR-7152-5p": [
+    "CDH23",
+    14
+  ],
+  "hsa-miR-6734-3p": [
+    "ELOVL1",
+    16
+  ],
+  "hsa-miR-8076": [
+    "CFAP44",
+    14
+  ],
+  "hsa-miR-6783-3p": [
+    "KIF18B",
+    4
+  ],
+  "hsa-miR-6510-5p": [
+    "KRT15",
+    9
+  ],
+  "hsa-miR-4677-5p": [
+    "SDCCAG8",
+    11
+  ],
+  "hsa-miR-3944-3p": [
+    "ECHS1",
+    1
+  ],
+  "hsa-miR-4698": [
+    "PCED1B",
+    6
+  ],
+  "hsa-miR-6887-5p": [
+    "FXYD3",
+    14
+  ],
+  "hsa-miR-6846-5p": [
+    "OPLAH",
+    4
+  ],
+  "hsa-miR-3121-3p": [
+    "ACBD6",
+    6
+  ],
+  "hsa-miR-4721": [
+    "TUFM",
+    4
+  ],
+  "hsa-miR-625-3p": [
+    "FUT8",
+    15
+  ],
+  "hsa-miR-7110-3p": [
+    "PDIA5",
+    8
+  ],
+  "hsa-miR-4745-5p": [
+    "PTBP1",
+    20
+  ],
+  "hsa-miR-641": [
+    "AKT2",
+    42
+  ],
+  "hsa-miR-6775-3p": [
+    "SLC7A5",
+    3
+  ],
+  "hsa-miR-8085": [
+    "BCL3",
+    9
+  ],
+  "hsa-miR-548an": [
+    "CXorf57",
+    6
+  ],
+  "hsa-miR-504-3p": [
+    "FGF13",
+    8
+  ],
+  "hsa-miR-2467-5p": [
+    "HDAC4",
+    17
+  ],
+  "hsa-miR-4749-5p": [
+    "AC018766.6",
+    1
+  ],
+  "hsa-miR-196b-5p": [
+    "HOXA10-AS",
+    3
+  ],
+  "hsa-miR-7155-5p": [
+    "CCDC88B",
+    10
+  ],
+  "hsa-miR-4307": [
+    "RP11-384J4.1",
+    2
+  ],
+  "hsa-miR-4259": [
+    "CFAP45",
+    6
+  ],
+  "hsa-miR-106b-5p": [
+    "MCM7",
+    13
+  ],
+  "hsa-miR-1282": [
+    "RP11-296A16.1",
+    1
+  ],
+  "hsa-miR-924": [
+    "RP11-244M2.1",
+    2
+  ],
+  "hsa-miR-885-5p": [
+    "ATP2B2",
+    9
+  ],
+  "hsa-miR-6730-5p": [
+    "DHRS3",
+    4
+  ],
+  "hsa-miR-1226-3p": [
+    "DHX30",
+    15
+  ],
+  "hsa-miR-635": [
+    "RP11-120M18.2",
+    4
+  ],
+  "hsa-miR-6732-3p": [
+    "ZC3H12A",
+    3
+  ],
+  "hsa-miR-601": [
+    "DENND1A",
+    13
+  ],
+  "hsa-miR-196b-3p": [
+    "HOXA10-AS",
+    3
+  ],
+  "hsa-miR-664a-3p": [
+    "SNORA36B",
+    1
+  ],
+  "hsa-miR-6802-3p": [
+    "PPP6R1",
+    8
+  ],
+  "hsa-miR-4745-3p": [
+    "PTBP1",
+    20
+  ],
+  "hsa-miR-6821-3p": [
+    "PIM3",
+    2
+  ],
+  "hsa-miR-181a-5p": [
+    "NR6A1",
+    5
+  ],
+  "hsa-miR-1470": [
+    "WIZ",
+    8
+  ],
+  "hsa-miR-4524b-3p": [
+    "ABCA6",
+    7
+  ],
+  "hsa-miR-4649-5p": [
+    "AEBP1",
+    9
+  ],
+  "hsa-miR-449c-5p": [
+    "CDC20B",
+    5
+  ],
+  "hsa-miR-3607-3p": [
+    "COX7C",
+    7
+  ],
+  "hsa-miR-3691-5p": [
+    "LYRM4",
+    9
+  ],
+  "hsa-miR-7109-3p": [
+    "PISD",
+    17
+  ],
+  "hsa-miR-6888-3p": [
+    "TANC1",
+    6
+  ],
+  "hsa-miR-4731-5p": [
+    "PMP22",
+    9
+  ],
+  "hsa-miR-4769-5p": [
+    "SYN1",
+    2
+  ],
+  "hsa-miR-3917": [
+    "STMN1",
+    9
+  ],
+  "hsa-miR-2276-3p": [
+    "SPATA13",
+    12
+  ],
+  "hsa-miR-6780b-5p": [
+    "ABCC10",
+    10
+  ],
+  "hsa-miR-3611": [
+    "CUL2",
+    10
+  ],
+  "hsa-miR-302b-3p": [
+    "RP11-148B6.1",
+    3
+  ],
+  "hsa-miR-3714": [
+    "PLCL2",
+    4
+  ],
+  "hsa-miR-578": [
+    "CPE",
+    5
+  ],
+  "hsa-miR-6770-5p": [
+    "PKD1P5",
+    6
+  ],
+  "hsa-miR-6766-5p": [
+    "POLG",
+    13
+  ],
+  "hsa-miR-320e": [
+    "PRKD2",
+    17
+  ],
+  "hsa-miR-4258": [
+    "CKS1B",
+    7
+  ],
+  "hsa-miR-4740-3p": [
+    "BAHCC1",
+    8
+  ],
+  "hsa-miR-4753-3p": [
+    "ARID4B",
+    13
+  ],
+  "hsa-miR-3686": [
+    "CCDC26",
+    3
+  ],
+  "hsa-miR-584-3p": [
+    "SH3TC2",
+    15
+  ],
+  "hsa-miR-6834-3p": [
+    "PFDN6",
+    7
+  ],
+  "hsa-miR-4723-5p": [
+    "CTB-96E2.3",
+    1
+  ],
+  "hsa-miR-151a-5p": [
+    "PTK2",
+    57
+  ],
+  "hsa-miR-4694-3p": [
+    "NAV2",
+    16
+  ],
+  "hsa-miR-6837-3p": [
+    "DBNL",
+    22
+  ],
+  "hsa-miR-328-3p": [
+    "ELMO3",
+    5
+  ],
+  "hsa-miR-4715-5p": [
+    "ATP10A",
+    7
+  ],
+  "hsa-miR-6764-3p": [
+    "YY1",
+    6
+  ],
+  "hsa-miR-490-3p": [
+    "CHRM2",
+    7
+  ],
+  "hsa-miR-4641": [
+    "FOXP4",
+    6
+  ],
+  "hsa-miR-125a-3p": [
+    "SPACA6P-AS",
+    1
+  ],
+  "hsa-miR-27b-5p": [
+    "C9orf3",
+    22
+  ],
+  "hsa-miR-6752-5p": [
+    "AIP",
+    4
+  ],
+  "hsa-miR-483-5p": [
+    "INS-IGF2",
+    4
+  ],
+  "hsa-miR-4767": [
+    "HDHD1",
+    6
+  ],
+  "hsa-miR-6726-5p": [
+    "ACAP3",
+    13
+  ],
+  "hsa-miR-3065-3p": [
+    "AC115099.1",
+    1
+  ],
+  "hsa-miR-1206": [
+    "PVT1",
+    25
+  ],
+  "hsa-miR-3164": [
+    "TPCN2",
+    5
+  ],
+  "hsa-miR-659-5p": [
+    "ANKRD54",
+    12
+  ],
+  "hsa-miR-6750-5p": [
+    "ATG2A",
+    6
+  ],
+  "hsa-miR-6867-5p": [
+    "RAPGEFL1",
+    12
+  ],
+  "hsa-miR-5691": [
+    "SCUBE2",
+    13
+  ],
+  "hsa-miR-936": [
+    "COL17A1",
+    7
+  ],
+  "hsa-miR-5584-3p": [
+    "RNF220",
+    18
+  ],
+  "hsa-miR-6744-5p": [
+    "MUC5B",
+    5
+  ],
+  "hsa-miR-5591-5p": [
+    "KLB",
+    1
+  ],
+  "hsa-miR-374a-3p": [
+    "FTX",
+    10
+  ],
+  "hsa-miR-4320": [
+    "MYO5B",
+    8
+  ],
+  "hsa-miR-544b": [
+    "UMPS",
+    11
+  ],
+  "hsa-miR-4666b": [
+    "IL1RAPL1",
+    2
+  ],
+  "hsa-miR-548aq-3p": [
+    "IGF2BP2",
+    11
+  ],
+  "hsa-miR-1180-5p": [
+    "B9D1",
+    15
+  ],
+  "hsa-miR-5000-5p": [
+    "TACR1",
+    3
+  ],
+  "hsa-miR-605-5p": [
+    "PRKG1",
+    5
+  ],
+  "hsa-miR-3186-5p": [
+    "BAHCC1",
+    8
+  ],
+  "hsa-miR-569": [
+    "TNIK",
+    15
+  ],
+  "hsa-miR-1244": [
+    "DTWD2",
+    4
+  ],
+  "hsa-miR-4789-3p": [
+    "NAALADL2",
+    13
+  ],
+  "hsa-miR-4528": [
+    "DCC",
+    18
+  ],
+  "hsa-miR-324-3p": [
+    "ACADVL",
+    39
+  ],
+  "hsa-miR-6758-3p": [
+    "MARS",
+    35
+  ],
+  "hsa-miR-7851-3p": [
+    "ZCRB1",
+    5
+  ],
+  "hsa-miR-5585-3p": [
+    "TMEM39B",
+    9
+  ],
+  "hsa-miR-4524a-3p": [
+    "ABCA6",
+    7
+  ],
+  "hsa-miR-126-3p": [
+    "EGFL7",
+    7
+  ],
+  "hsa-miR-634": [
+    "PRKCA",
+    5
+  ],
+  "hsa-miR-6847-5p": [
+    "EXOSC4",
+    3
+  ],
+  "hsa-miR-6816-5p": [
+    "TRMT2A",
+    20
+  ],
+  "hsa-miR-6740-5p": [
+    "RNPEP",
+    14
+  ],
+  "hsa-miR-6840-3p": [
+    "STAG3L5P-PVRIG2P-PILRB",
+    6
+  ],
+  "hsa-miR-4773": [
+    "TNFAIP6",
+    2
+  ],
+  "hsa-miR-642a-3p": [
+    "GIPR",
+    8
+  ],
+  "hsa-miR-335-5p": [
+    "RP11-2E11.6",
+    1
+  ],
+  "hsa-miR-4636": [
+    "SEMA5A",
+    4
+  ],
+  "hsa-miR-664b-5p": [
+    "DKC1",
+    13
+  ],
+  "hsa-miR-3161": [
+    "PTPRJ",
+    8
+  ],
+  "hsa-miR-2909": [
+    "AATF",
+    9
+  ],
+  "hsa-miR-6821-5p": [
+    "PIM3",
+    2
+  ],
+  "hsa-miR-532-5p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-4653-5p": [
+    "AP1S1",
+    3
+  ],
+  "hsa-miR-6823-3p": [
+    "PFKFB4",
+    15
+  ],
+  "hsa-miR-5682": [
+    "STXBP5L",
+    8
+  ],
+  "hsa-miR-6895-3p": [
+    "KDM5C",
+    15
+  ],
+  "hsa-miR-1285-3p": [
+    "AC000120.7",
+    1
+  ],
+  "hsa-miR-4499": [
+    "CRYL1",
+    3
+  ],
+  "hsa-miR-490-5p": [
+    "CHRM2",
+    7
+  ],
+  "hsa-miR-1976": [
+    "RPS6KA1",
+    20
+  ],
+  "hsa-miR-3616-5p": [
+    "EYA2",
+    10
+  ],
+  "hsa-miR-218-1-3p": [
+    "SLIT2",
+    12
+  ],
+  "hsa-miR-365a-5p": [
+    "RP11-65J21.3",
+    3
+  ],
+  "hsa-miR-133b": [
+    "LINCMD1",
+    1
+  ],
+  "hsa-miR-570-3p": [
+    "LINC00969",
+    142
+  ],
+  "hsa-miR-4799-3p": [
+    "ARHGAP10",
+    7
+  ],
+  "hsa-miR-6885-3p": [
+    "CTB-180A7.6",
+    1
+  ],
+  "hsa-miR-3617-3p": [
+    "WFDC13",
+    1
+  ],
+  "hsa-miR-4664-5p": [
+    "FAM83H",
+    2
+  ],
+  "hsa-miR-6851-5p": [
+    "NOL6",
+    6
+  ],
+  "hsa-miR-577": [
+    "UGT8",
+    3
+  ],
+  "hsa-miR-7978": [
+    "KCNIP4",
+    10
+  ],
+  "hsa-miR-140-3p": [
+    "WWP2",
+    20
+  ],
+  "hsa-miR-7976": [
+    "TPRA1",
+    11
+  ],
+  "hsa-miR-215-3p": [
+    "IARS2",
+    4
+  ],
+  "hsa-miR-378a-3p": [
+    "PPARGC1B",
+    7
+  ],
+  "hsa-miR-6753-5p": [
+    "TCIRG1",
+    16
+  ],
+  "hsa-miR-1252-5p": [
+    "RP1-78O14.1",
+    3
+  ],
+  "hsa-miR-15b-5p": [
+    "SMC4",
+    27
+  ],
+  "hsa-miR-153-5p": [
+    "PTPRN2",
+    5
+  ],
+  "hsa-miR-6741-3p": [
+    "RP4-559A3.7",
+    1
+  ],
+  "hsa-miR-1343-5p": [
+    "PDHX",
+    8
+  ],
+  "hsa-miR-2115-5p": [
+    "SPINK8",
+    1
+  ],
+  "hsa-miR-23b-3p": [
+    "C9orf3",
+    22
+  ],
+  "hsa-miR-6849-3p": [
+    "CPSF1",
+    14
+  ],
+  "hsa-miR-4479": [
+    "RABL6",
+    13
+  ],
+  "hsa-miR-4667-5p": [
+    "AL357874.1",
+    1
+  ],
+  "hsa-miR-1236-5p": [
+    "NELFE",
+    14
+  ],
+  "hsa-miR-6842-5p": [
+    "PTK2B",
+    17
+  ],
+  "hsa-miR-3664-3p": [
+    "SHANK2",
+    22
+  ],
+  "hsa-miR-1264": [
+    "HTR2C",
+    3
+  ],
+  "hsa-miR-6805-3p": [
+    "RPL28",
+    11
+  ],
+  "hsa-miR-765": [
+    "ARHGEF11",
+    7
+  ],
+  "hsa-miR-6894-5p": [
+    "KDM5C",
+    15
+  ],
+  "hsa-miR-550a-5p": [
+    "DPY19L1P1",
+    1
+  ],
+  "hsa-miR-3115": [
+    "KDM1A",
+    6
+  ],
+  "hsa-miR-6789-5p": [
+    "PLEKHJ1",
+    13
+  ],
+  "hsa-miR-491-3p": [
+    "FOCAD",
+    17
+  ],
+  "hsa-miR-188-5p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-6867-3p": [
+    "RAPGEFL1",
+    12
+  ],
+  "hsa-miR-1272": [
+    "RBPMS2",
+    2
+  ],
+  "hsa-miR-4317": [
+    "L3MBTL4",
+    9
+  ],
+  "hsa-miR-4728-3p": [
+    "ERBB2",
+    22
+  ],
+  "hsa-miR-636": [
+    "MFSD11",
+    20
+  ],
+  "hsa-miR-208b-5p": [
+    "MYH7",
+    1
+  ],
+  "hsa-miR-3151-5p": [
+    "BAALC",
+    9
+  ],
+  "hsa-miR-7703": [
+    "PSME2",
+    18
+  ],
+  "hsa-miR-6501-5p": [
+    "SON",
+    20
+  ],
+  "hsa-miR-4799-5p": [
+    "ARHGAP10",
+    7
+  ],
+  "hsa-miR-6764-5p": [
+    "YY1",
+    6
+  ],
+  "hsa-miR-6768-5p": [
+    "C16orf59",
+    13
+  ],
+  "hsa-miR-3664-5p": [
+    "SHANK2",
+    22
+  ],
+  "hsa-miR-149-5p": [
+    "GPC1",
+    9
+  ],
+  "hsa-miR-4716-3p": [
+    "GALK2",
+    22
+  ],
+  "hsa-miR-1271-5p": [
+    "ARL10",
+    4
+  ],
+  "hsa-miR-6722-3p": [
+    "RP11-216L13.16",
+    2
+  ],
+  "hsa-miR-1912": [
+    "HTR2C",
+    3
+  ],
+  "hsa-miR-6801-5p": [
+    "PPP2R1A",
+    12
+  ],
+  "hsa-miR-5581-3p": [
+    "MEAF6",
+    9
+  ],
+  "hsa-miR-4304": [
+    "PITPNM2",
+    9
+  ],
+  "hsa-miR-5006-5p": [
+    "VWA8",
+    4
+  ],
+  "hsa-miR-589-5p": [
+    "FBXL18",
+    5
+  ],
+  "hsa-miR-1537-3p": [
+    "LYST",
+    12
+  ],
+  "hsa-miR-5092": [
+    "SLC12A8",
+    16
+  ],
+  "hsa-miR-1207-3p": [
+    "PVT1",
+    25
+  ],
+  "hsa-miR-302a-5p": [
+    "RP11-148B6.1",
+    3
+  ],
+  "hsa-miR-6875-3p": [
+    "TRIP6",
+    10
+  ],
+  "hsa-miR-652-5p": [
+    "TMEM164",
+    8
+  ],
+  "hsa-miR-6819-5p": [
+    "MYH9",
+    11
+  ],
+  "hsa-miR-365a-3p": [
+    "RP11-65J21.3",
+    3
+  ],
+  "hsa-miR-378h": [
+    "FAXDC2",
+    16
+  ],
+  "hsa-miR-6845-5p": [
+    "NRBP2",
+    10
+  ],
+  "hsa-miR-1909-5p": [
+    "REXO1",
+    7
+  ],
+  "hsa-miR-643": [
+    "ZNF766",
+    9
+  ],
+  "hsa-miR-4713-3p": [
+    "RP11-108K3.1",
+    1
+  ],
+  "hsa-miR-125b-1-3p": [
+    "RP11-166D19.1",
+    14
+  ],
+  "hsa-miR-5586-5p": [
+    "RTN1",
+    9
+  ],
+  "hsa-miR-1910-3p": [
+    "C16orf74",
+    7
+  ],
+  "hsa-miR-26b-5p": [
+    "CTDSP1",
+    15
+  ],
+  "hsa-miR-6785-5p": [
+    "KIAA0195",
+    33
+  ],
+  "hsa-miR-3129-5p": [
+    "COL5A2",
+    3
+  ],
+  "hsa-miR-6794-5p": [
+    "HOOK2",
+    24
+  ],
+  "hsa-miR-3181": [
+    "RP11-327F22.1",
+    1
+  ],
+  "hsa-miR-4461": [
+    "PCBD2",
+    4
+  ],
+  "hsa-miR-619-5p": [
+    "SSH1",
+    9
+  ],
+  "hsa-miR-4762-5p": [
+    "ATXN10",
+    11
+  ],
+  "hsa-miR-6803-5p": [
+    "PPP6R1",
+    8
+  ],
+  "hsa-miR-6848-5p": [
+    "DGAT1",
+    8
+  ],
+  "hsa-miR-4298": [
+    "LSP1",
+    17
+  ],
+  "hsa-miR-6807-5p": [
+    "TRIM28",
+    15
+  ],
+  "hsa-miR-28-3p": [
+    "LPP",
+    21
+  ],
+  "hsa-miR-8078": [
+    "ROCK1P1",
+    3
+  ],
+  "hsa-miR-188-3p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-3907": [
+    "CRYGN",
+    5
+  ],
+  "hsa-miR-3682-5p": [
+    "GPR75-ASB3",
+    3
+  ],
+  "hsa-miR-6771-3p": [
+    "ADCY7",
+    15
+  ],
+  "hsa-miR-340-5p": [
+    "RNF130",
+    8
+  ],
+  "hsa-miR-5572": [
+    "ARNT2",
+    10
+  ],
+  "hsa-miR-6509-3p": [
+    "AC009542.2",
+    4
+  ],
+  "hsa-miR-6832-3p": [
+    "PRRC2A",
+    14
+  ],
+  "hsa-miR-6827-5p": [
+    "AMOTL2",
+    13
+  ],
+  "hsa-miR-6790-3p": [
+    "GTF2F1",
+    6
+  ],
+  "hsa-miR-944": [
+    "TP63",
+    14
+  ],
+  "hsa-miR-2681-3p": [
+    "FGF14",
+    4
+  ],
+  "hsa-miR-6858-5p": [
+    "FAM50A",
+    7
+  ],
+  "hsa-miR-4802-3p": [
+    "RBM47",
+    15
+  ],
+  "hsa-miR-4711-3p": [
+    "FGGY",
+    19
+  ],
+  "hsa-miR-4300": [
+    "RP11-179A16.1",
+    3
+  ],
+  "hsa-miR-4648": [
+    "LFNG",
+    7
+  ],
+  "hsa-miR-8082": [
+    "ANK2",
+    26
+  ],
+  "hsa-miR-4279": [
+    "PDZD2",
+    12
+  ],
+  "hsa-miR-4723-3p": [
+    "CTB-96E2.3",
+    1
+  ],
+  "hsa-miR-6872-3p": [
+    "SEMA3B",
+    16
+  ],
+  "hsa-miR-8075": [
+    "CUL4A",
+    12
+  ],
+  "hsa-miR-30e-5p": [
+    "NFYC",
+    25
+  ],
+  "hsa-miR-4711-5p": [
+    "FGGY",
+    19
+  ],
+  "hsa-miR-3942-3p": [
+    "DPH6",
+    9
+  ],
+  "hsa-miR-584-5p": [
+    "SH3TC2",
+    15
+  ],
+  "hsa-miR-6510-3p": [
+    "KRT15",
+    9
+  ],
+  "hsa-miR-4764-3p": [
+    "LARGE",
+    16
+  ],
+  "hsa-miR-301a-5p": [
+    "SKA2",
+    10
+  ],
+  "hsa-miR-1301-5p": [
+    "DNMT3A",
+    15
+  ],
+  "hsa-miR-98-5p": [
+    "HUWE1",
+    15
+  ],
+  "hsa-miR-6769a-3p": [
+    "MGRN1",
+    18
+  ],
+  "hsa-miR-6822-5p": [
+    "TTC21A",
+    18
+  ],
+  "hsa-miR-5693": [
+    "SERPINE3",
+    4
+  ],
+  "hsa-miR-4781-3p": [
+    "TCEANC2",
+    4
+  ],
+  "hsa-miR-4287": [
+    "SCARA5",
+    4
+  ],
+  "hsa-miR-8485": [
+    "NRXN1",
+    32
+  ],
+  "hsa-miR-6775-5p": [
+    "SLC7A5",
+    3
+  ],
+  "hsa-miR-629-3p": [
+    "TLE3",
+    26
+  ],
+  "hsa-miR-4640-5p": [
+    "DDR1",
+    58
+  ],
+  "hsa-miR-4756-3p": [
+    "BCAS1",
+    5
+  ],
+  "hsa-miR-3074-5p": [
+    "C9orf3",
+    22
+  ],
+  "hsa-miR-1228-3p": [
+    "LRP1",
+    12
+  ],
+  "hsa-miR-5006-3p": [
+    "VWA8",
+    4
+  ],
+  "hsa-miR-6806-3p": [
+    "ZSCAN22",
+    1
+  ],
+  "hsa-miR-302a-3p": [
+    "RP11-148B6.1",
+    3
+  ],
+  "hsa-miR-5586-3p": [
+    "RTN1",
+    9
+  ],
+  "hsa-miR-6841-5p": [
+    "NEFL",
+    3
+  ],
+  "hsa-miR-3158-5p": [
+    "DPCD",
+    6
+  ],
+  "hsa-miR-4735-5p": [
+    "KCNT2",
+    7
+  ],
+  "hsa-let-7g-3p": [
+    "WDR82",
+    4
+  ],
+  "hsa-miR-5697": [
+    "NMNAT1",
+    5
+  ],
+  "hsa-miR-4726-5p": [
+    "MLLT6",
+    11
+  ],
+  "hsa-miR-6890-5p": [
+    "QARS",
+    25
+  ],
+  "hsa-miR-548x-5p": [
+    "AL109763.2",
+    3
+  ],
+  "hsa-miR-5192": [
+    "B3GNT2",
+    2
+  ],
+  "hsa-miR-95-5p": [
+    "ABLIM2",
+    16
+  ],
+  "hsa-miR-1234-3p": [
+    "CPSF1",
+    14
+  ],
+  "hsa-miR-6892-5p": [
+    "ZYX",
+    10
+  ],
+  "hsa-miR-603": [
+    "KIAA1217",
+    14
+  ],
+  "hsa-miR-548v": [
+    "MTUS1",
+    28
+  ],
+  "hsa-miR-6878-5p": [
+    "TARS2",
+    14
+  ],
+  "hsa-miR-3182": [
+    "CDH13",
+    17
+  ],
+  "hsa-miR-362-5p": [
+    "CLCN5",
+    5
+  ],
+  "hsa-miR-4690-5p": [
+    "PCNXL3",
+    5
+  ],
+  "hsa-miR-3128": [
+    "NFE2L2",
+    14
+  ],
+  "hsa-miR-6818-5p": [
+    "MTMR3",
+    12
+  ],
+  "hsa-miR-4429": [
+    "GREB1",
+    10
+  ],
+  "hsa-miR-185-5p": [
+    "TANGO2",
+    26
+  ],
+  "hsa-miR-5002-5p": [
+    "KALRN",
+    22
+  ],
+  "hsa-miR-8089": [
+    "BTNL9",
+    10
+  ],
+  "hsa-miR-340-3p": [
+    "RNF130",
+    8
+  ],
+  "hsa-miR-302c-5p": [
+    "RP11-148B6.1",
+    3
+  ],
+  "hsa-miR-6124": [
+    "MICAL2",
+    31
+  ],
+  "hsa-miR-642a-5p": [
+    "GIPR",
+    8
+  ],
+  "hsa-miR-140-5p": [
+    "WWP2",
+    20
+  ],
+  "hsa-miR-1245b-5p": [
+    "COL3A1",
+    6
+  ],
+  "hsa-miR-4785": [
+    "RBMS1",
+    15
+  ],
+  "hsa-miR-6772-3p": [
+    "KIFC3",
+    35
+  ],
+  "hsa-miR-9-5p": [
+    "LINC00461",
+    16
+  ],
+  "hsa-miR-6769b-5p": [
+    "IKBKE",
+    6
+  ],
+  "hsa-miR-6779-3p": [
+    "LASP1",
+    9
+  ],
+  "hsa-miR-744-5p": [
+    "MAP2K4",
+    15
+  ],
+  "hsa-miR-6881-5p": [
+    "SEMA7A",
+    5
+  ],
+  "hsa-miR-4449": [
+    "DANCR",
+    5
+  ],
+  "hsa-miR-4774-3p": [
+    "CERS6",
+    2
+  ],
+  "hsa-miR-4779": [
+    "IMMT",
+    12
+  ],
+  "hsa-miR-6796-5p": [
+    "PLD3",
+    25
+  ],
+  "hsa-miR-1307-5p": [
+    "USMG5",
+    5
+  ],
+  "hsa-miR-3167": [
+    "KIRREL3",
+    10
+  ],
+  "hsa-miR-1290": [
+    "RP13-279N23.2",
+    1
+  ],
+  "hsa-miR-4782-5p": [
+    "SLC35F5",
+    12
+  ],
+  "hsa-miR-3156-3p": [
+    "ANKRD30B",
+    4
+  ],
+  "hsa-miR-548j-3p": [
+    "TPST2",
+    9
+  ],
+  "hsa-miR-6864-3p": [
+    "CAMTA2",
+    16
+  ],
+  "hsa-miR-6861-5p": [
+    "HECTD4",
+    14
+  ],
+  "hsa-miR-6513-5p": [
+    "TMBIM1",
+    23
+  ],
+  "hsa-miR-5196-5p": [
+    "CD22",
+    35
+  ],
+  "hsa-miR-1286": [
+    "RTN4R",
+    6
+  ],
+  "hsa-miR-545-3p": [
+    "FTX",
+    10
+  ],
+  "hsa-miR-6126": [
+    "NAA60",
+    37
+  ],
+  "hsa-miR-7106-3p": [
+    "DDX54",
+    10
+  ],
+  "hsa-miR-3132": [
+    "TMEM198",
+    4
+  ],
+  "hsa-miR-7854-3p": [
+    "CMIP",
+    12
+  ],
+  "hsa-miR-6865-5p": [
+    "CAMTA2",
+    16
+  ],
+  "hsa-miR-6715b-3p": [
+    "TECTB",
+    2
+  ],
+  "hsa-miR-3926": [
+    "LONRF1",
+    9
+  ],
+  "hsa-miR-193b-3p": [
+    "RP11-65J21.3",
+    3
+  ],
+  "hsa-miR-661": [
+    "PLEC",
+    15
+  ],
+  "hsa-miR-4999-3p": [
+    "ELAVL1",
+    6
+  ],
+  "hsa-miR-320c": [
+    "OSBPL1A",
+    16
+  ],
+  "hsa-miR-6079": [
+    "ST3GAL3",
+    39
+  ],
+  "hsa-miR-1229-3p": [
+    "MGAT4B",
+    23
+  ],
+  "hsa-miR-4295": [
+    "VTI1A",
+    9
+  ],
+  "hsa-miR-1296-3p": [
+    "JMJD1C",
+    11
+  ],
+  "hsa-miR-627-5p": [
+    "VPS39",
+    14
+  ],
+  "hsa-miR-6749-3p": [
+    "ATG2A",
+    6
+  ],
+  "hsa-miR-6761-3p": [
+    "ALDH2",
+    5
+  ],
+  "hsa-miR-939-5p": [
+    "CPSF1",
+    14
+  ],
+  "hsa-miR-581": [
+    "ARL15",
+    7
+  ],
+  "hsa-miR-6752-3p": [
+    "AIP",
+    4
+  ],
+  "hsa-miR-885-3p": [
+    "ATP2B2",
+    9
+  ],
+  "hsa-miR-4466": [
+    "ARID1B",
+    9
+  ],
+  "hsa-miR-4761-3p": [
+    "COMT",
+    11
+  ],
+  "hsa-miR-3909": [
+    "TOM1",
+    19
+  ],
+  "hsa-miR-1245a": [
+    "COL3A1",
+    6
+  ],
+  "hsa-miR-4436b-3p": [
+    "RP11-1223D19.2",
+    1
+  ],
+  "hsa-miR-7974": [
+    "CTC-398G3.6",
+    1
+  ],
+  "hsa-miR-5003-5p": [
+    "NEURL1B",
+    3
+  ],
+  "hsa-miR-620": [
+    "MED13L",
+    10
+  ],
+  "hsa-miR-1225-3p": [
+    "PKD1",
+    40
+  ],
+  "hsa-miR-425-5p": [
+    "DALRD3",
+    15
+  ],
+  "hsa-miR-4661-5p": [
+    "LRRC69",
+    7
+  ],
+  "hsa-miR-3156-5p": [
+    "ANKRD30BP1",
+    1
+  ],
+  "hsa-miR-1267": [
+    "FAM155A",
+    1
+  ],
+  "hsa-miR-6879-3p": [
+    "ARL2",
+    6
+  ],
+  "hsa-miR-7152-3p": [
+    "CDH23",
+    14
+  ],
+  "hsa-miR-6780b-3p": [
+    "ABCC10",
+    10
+  ],
+  "hsa-miR-5582-3p": [
+    "CKAP5",
+    12
+  ],
+  "hsa-miR-1266-3p": [
+    "MYO5C",
+    9
+  ],
+  "hsa-miR-3126-5p": [
+    "ANTXR1",
+    7
+  ],
+  "hsa-miR-33a-5p": [
+    "SREBF2",
+    9
+  ]
+}

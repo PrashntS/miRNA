@@ -5,6 +5,7 @@
 import click
 import json
 import meinheld
+import logging
 
 from flask.ext.script import Manager
 from miRNA import create_app, app
@@ -45,14 +46,50 @@ def datadownload():
   create_app()
 
   from miRNA.graph.model import graph
-  from packrat import spawn_gene_dat
+  from packrat import spawn_gene_dat, spawn_ensembl_dat
 
   genes = [g for g, v in graph.node.items() if v['kind'] == 'GEN']
 
   for gene in genes:
     spawn_gene_dat(gene)
+    spawn_ensembl_dat(gene)
 
-  app.logger.info('Scheduled {0} Download Routines.'.format(len(genes)))
+  app.logger.info('Scheduled {0} Download Routines.'.format(len(genes) * 2))
+
+@manager.command
+def migrate_mirna():
+  from Bio import SeqIO
+  from miRNA.graph.model import graph
+  from packrat import db
+  collection = db['mirna_seq']
+
+  with open('data_dump/catalogue.json') as m:
+    data_path = json.load(m)
+
+  fasta_path = data_path['mir_seq']['path']
+
+  mirnas = [m for m, v in graph.node.items() if v['kind'] == 'MIR']
+
+  with open(fasta_path) as m:
+    fastas =  SeqIO.to_dict(SeqIO.parse(m, 'fasta'))
+
+    for mirna in mirnas:
+      try:
+        doc = {
+          'mir_id': mirna,
+          'fasta': [{
+            'seq': str(fastas[mirna].seq),
+            'id': str(fastas[mirna].id),
+          }]
+        }
+        collection.update({'mir_id': mirna}, doc, True)
+      except KeyError as e:
+        print('Missed miRNA {0}'.format(mirna))
+
+@manager.command
+def datapostdownload():
+  from packrat import post_run_spawns
+  post_run_spawns()
 
 @manager.command
 def migrate():

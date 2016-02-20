@@ -12,6 +12,22 @@ headers = {
   'accept': 'application/json',
 }
 
+def ensembl_gene_id(symbol, **kwargs):
+  url = 'http://rest.ensembl.org/lookup/symbol/homo_sapiens/{}?'.format(symbol)
+  parameters = {
+    'content-type': 'application/json',
+    'expand': 1
+  }
+  for k, v in parameters.items():
+    url += '{0}={1};'.format(k, v)
+
+  r = requests.get(url, headers=headers)
+  dat = r.json()
+  kwargs['doc'] = {
+    'emblid': dat.get('id', ''),
+  }
+  return kwargs
+
 def ensembl_sequence(emblid, **kwargs):
   access_url = 'http://rest.ensembl.org/sequence/id/{0}?'.format(emblid)
   parameters = {
