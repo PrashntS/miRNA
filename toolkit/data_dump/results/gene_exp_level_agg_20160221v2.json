@@ -1,0 +1,224 @@
+{
+  "least": [
+    "pancreas",
+    5860.900000000004
+  ],
+  "sums": [
+    [
+      "pancreas",
+      5860.900000000004
+    ],
+    [
+      "spinal cord (cervical c-1)",
+      6767.199999999999
+    ],
+    [
+      "liver",
+      6881.300000000001
+    ],
+    [
+      "substantia nigra",
+      6885.300000000002
+    ],
+    [
+      "hypothalamus",
+      7325.700000000001
+    ],
+    [
+      "putamen (basal ganglia)",
+      7426.900000000007
+    ],
+    [
+      "amygdala",
+      7543.799999999998
+    ],
+    [
+      "hippocampus",
+      7547.9
+    ],
+    [
+      "cortex of kidney",
+      7811.600000000005
+    ],
+    [
+      "stomach",
+      7832.099999999999
+    ],
+    [
+      "caudate (basal ganglia) of brain",
+      7964.600000000005
+    ],
+    [
+      "nucleus accumbens (basal ganglia)",
+      8224.200000000006
+    ],
+    [
+      "skeletal muscle",
+      8405.600000000008
+    ],
+    [
+      "anterior cingulate cortex (BA24) of brain",
+      8675.3
+    ],
+    [
+      "frontal cortex (BA9)",
+      8758.700000000003
+    ],
+    [
+      "mucosa of esophagus",
+      8893.500000000004
+    ],
+    [
+      "whole blood",
+      8907.00000000002
+    ],
+    [
+      "cerebral cortex",
+      8987.900000000009
+    ],
+    [
+      "heart left ventricle",
+      9030.300000000012
+    ],
+    [
+      "minor salivary gland",
+      9060.800000000007
+    ],
+    [
+      "terminal ileum of small intestine",
+      9127.000000000005
+    ],
+    [
+      "cerebellar hemisphere of brain",
+      9341.000000000005
+    ],
+    [
+      "transformed fibroblast",
+      9467.700000000006
+    ],
+    [
+      "transverse colon",
+      9488.7
+    ],
+    [
+      "cerebellum",
+      9520.200000000008
+    ],
+    [
+      "adrenal gland",
+      9525.300000000012
+    ],
+    [
+      "visceral (omentum) adipose tissue",
+      9559.199999999997
+    ],
+    [
+      "esophagus muscularis mucosa",
+      9627.80000000001
+    ],
+    [
+      "atrial appendage of heart",
+      9712.300000000008
+    ],
+    [
+      "subcutaneous adipose tissue",
+      9784.500000000005
+    ],
+    [
+      "sigmoid colon",
+      9804.099999999999
+    ],
+    [
+      "pituitary gland",
+      9814.600000000008
+    ],
+    [
+      "urinary bladder",
+      9827.000000000002
+    ],
+    [
+      "skin of lower leg",
+      9850.000000000004
+    ],
+    [
+      "testis",
+      9900.100000000002
+    ],
+    [
+      "gastroesophageal junction",
+      9914.30000000001
+    ],
+    [
+      "vagina",
+      9916.500000000002
+    ],
+    [
+      "breast (mammary tissue)",
+      10031.300000000005
+    ],
+    [
+      "skin of suprapubic region",
+      10036.200000000004
+    ],
+    [
+      "lung",
+      10055.200000000008
+    ],
+    [
+      "prostate gland",
+      10102.300000000003
+    ],
+    [
+      "fallopian tube",
+      10247.9
+    ],
+    [
+      "ectocervix",
+      10555.000000000007
+    ],
+    [
+      "ovary",
+      10692.700000000008
+    ],
+    [
+      "coronary artery",
+      10767.000000000005
+    ],
+    [
+      "tibial artery",
+      10770.70000000002
+    ],
+    [
+      "uterus",
+      10831.7
+    ],
+    [
+      "tibial nerve",
+      11044.800000000012
+    ],
+    [
+      "aorta",
+      11465.90000000001
+    ],
+    [
+      "spleen",
+      11824.300000000007
+    ],
+    [
+      "thyroid",
+      12191.70000000001
+    ],
+    [
+      "EBV-transformed lymphocyte",
+      12421.000000000022
+    ],
+    [
+      "leukemia cell line",
+      12426.900000000014
+    ]
+  ],
+  "max": [
+    "leukemia cell line",
+    12426.900000000014
+  ]
+}

@@ -14,29 +14,33 @@ class Thermodynamics(object):
     self.__process_seq()
     self.__mirmap_init(**kwargs)
 
-  def __preprocess_seq(self, seqs):
-    return ''.join([_['seq'] for _ in seqs]).replace('T', 'U')
+  def __preprocess_gen_seq(self, seqs):
+    key = max(seqs, key=lambda x: len(x['seq']))
+    return key['seq'].replace('T', 'U')
+
+  def __preprocess_mir_seq(self, seqs):
+    return seqs[0]['seq']
 
   def __mirmap_init(self, **kwargs):
     miRmap_args = {
       'seq_mir': self.mir_seq,
       'seq_mrn': self.gen_seq,
       'seed_args': {
-        'allowed_lengths': [6, 7],
-        'allowed_gu_wobbles': {6: 0, 7: 0},
-        'allowed_mismatches': {6: 0, 7: 0},
+        'allowed_lengths': [6, 7, 8],
+        'allowed_gu_wobbles': {6: 0, 7: 0, 8: 0},
+        'allowed_mismatches': {6: 0, 7: 0, 8: 0},
         'take_best': True
       },
       'thermo_args': {
-        'temperature': 25.0
+        'temperature': 36.0
       }
     }
     miRmap_args.update(kwargs.get('miRmap_args', {}))
     self.miRmap = miRmap(**miRmap_args)
 
   def __process_seq(self):
-    self.gen_seq = self.__preprocess_seq(self.gen['fasta'])
-    self.mir_seq = self.__preprocess_seq(self.mir['fasta'])
+    self.gen_seq = self.__preprocess_gen_seq(self.gen['fasta'])
+    self.mir_seq = self.__preprocess_mir_seq(self.mir['fasta'])
 
   @property
   def delta_g_binding(self):
