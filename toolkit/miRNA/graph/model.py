@@ -10,13 +10,59 @@ from miRNA import zdb
 
 graph = zdb.root.nxGraph
 
-class Graph(object):
+class GraphKit(object):
+  def __init__(self, graph):
+    self.g = graph
 
-  def node_neighbor(node):
+  @property
+  def mirnas(self):
+    return [k for k, v in self.g.node.items() if v['kind'] == 'MIR']
+
+  @property
+  def genes(self):
+    return [k for k, v in self.g.node.items() if v['kind'] == 'GEN']
+
+  def host(self, node, *a, **kwa):
     """
-    Returns the neighbours of the given node.
+    Return the Host Gene, if `node` is miRNA, or, the miRNAs produced by the
+    gene if `node` is a Gene.
+
+    Args:
+      node (str): Node Name
+
+    Example:
+      >>> g.host('MCM7') # is a gene
+      ['hsa-miR-106b-5p', 'hsa-miR-93-5p', ...]
     """
-    pass
+
+    if self.g.node[node]['kind'] == 'MIR':
+      return self.g.predecessors(node)
+    elif self.g.node[node]['kind'] == 'GEN':
+      return self.g.successors(node)
+    else:
+      raise ValueError("Node is unsupported kind.")
+
+  def target(self, node, *a, **kwa):
+    """
+    Return the target genes, if `node` is miRNA, or, the miRNAs that target this
+    gene if `node` is a Gene.
+
+    Args:
+      node (str): Node Name
+    """
+
+    if self.g.node[node]['kind'] == 'MIR':
+      return self.g.successors(node)
+    elif self.g.node[node]['kind'] == 'GEN':
+      return self.g.predecessors(node)
+    else:
+      raise ValueError("Node is unsupported kind.")
+
+  def transc_count(self, node, *a, **kwa):
+    if self.g.node[node]['kind'] == 'GEN':
+      return self.g.node[node]['tc']
+    elif self.g.node[node]['kind'] == 'MIR':
+      return self.transc_count(*self.host(node))
 
 class DepthLimitedVisit(object):
   def __init__(self, depth):

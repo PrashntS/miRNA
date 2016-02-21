@@ -8,5 +8,19 @@
     "version": 1,
     "added": 20160220,
     "path": "data_dump/computed/miRBase_mature_sequences.fa"
-  }
+  },
+  "expression": [
+    {
+      "version": 1,
+      "added": 20160220,
+      "path": "data_dump/exported/E-MTAB-2919-query-results.tsv",
+      "namespace": "EMTAB2919"
+    },
+    {
+      "version": 1,
+      "added": 20160220,
+      "path": "data_dump/exported/E-MTAB-2770-query-results.tsv",
+      "namespace": "EMTAB2770"
+    }
+  ]
 }

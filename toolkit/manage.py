@@ -87,6 +87,20 @@ def migrate_mirna():
         print('Missed miRNA {0}'.format(mirna))
 
 @manager.command
+def migrate_expression():
+  from miRNA.graph.model import graph
+  from packrat.mango.expression import dump_expression_dat
+
+  with open('data_dump/catalogue.json') as m:
+    data_path = json.load(m)
+
+  exprs = data_path['expression']
+  genes = [g for g, v in graph.node.items() if v['kind'] == 'GEN']
+
+  for expr in exprs:
+    dump_expression_dat(expr['path'], expr['namespace'], bunch=genes)
+
+@manager.command
 def datapostdownload():
   from packrat import post_run_spawns
   post_run_spawns()

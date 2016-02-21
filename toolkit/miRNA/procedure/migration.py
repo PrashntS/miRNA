@@ -35,6 +35,3 @@ def graph(dat):
   app.logger.info('Frozen graph object added to Zeo DB instance')
 
   transaction.commit()
-
-def metadata_generator():
-  pass
