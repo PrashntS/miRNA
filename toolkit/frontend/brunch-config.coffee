@@ -4,7 +4,7 @@ module.exports = config:
   files:
     javascripts: joinTo:
       'js/libraries.js': (path) ->
-        /^(bower_components)|(lodash)\//.test path
+        /^(bower_components)\//.test path
       'js/app.js': (path) ->
         /^(app)\//.test path
     stylesheets:

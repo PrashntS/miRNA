@@ -11,6 +11,20 @@ from miRNA import zdb
 graph = zdb.root.nxGraph
 
 class GraphKit(object):
+  """
+  Abstraction over the networkx graph.
+
+  API:
+    - Return list of miRNAs: GraphKit.mirnas
+    - Return list of genes: GraphKit.genes
+    - Return the host genes of miRNA, or miRNA the gene is host of:
+      GraphKit.host
+    - Return the targets of miRNA, or the miRNAs that target the gene:
+      GraphKit.target
+    - Return the transcript count of the miRNA Host, or Gene:
+      GraphKit.transc_count
+  """
+
   def __init__(self, graph):
     self.g = graph
 

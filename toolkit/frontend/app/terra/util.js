@@ -1,6 +1,5 @@
 
 Math.seedrandom('terra :)');
-var _ = require('lodash');
 
 /**
  * Takes a cell and returns the coordinates of its neighbors

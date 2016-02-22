@@ -3,7 +3,6 @@
 
 rivets      = require('rivets').rvt
 GraphUtils  = require('utils/graph')
-_ = require('lodash')
 templates =
   geneselect: require('views/geneselect')
 
