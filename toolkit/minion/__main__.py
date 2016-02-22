@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
-import click
+import minion.feb2202
+from minion import mincli
 
-@click.group(name="minion")
-def mincli():
-  """Minion CLI"""
-  pass
+if __name__ == "__main__":
+  mincli()

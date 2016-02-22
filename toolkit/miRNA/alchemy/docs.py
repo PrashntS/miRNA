@@ -11,6 +11,9 @@ class Gene(object):
     self.gid = gene_id
     self.doc = coll.find_one({'gene_id': gene_id})
 
+    if self.doc is None:
+      raise KeyError("{0} is not in the collection.".format(gene_id))
+
   @property
   def targets(self):
     return g.target(self.gid)
