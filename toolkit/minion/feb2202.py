@@ -24,7 +24,7 @@ def routine(output):
   atlas = ExpressionAtlas()
   atlas.tissue = 'pancreas'
 
-  mirna_known_host = [_ for _ in g.mirnas if len(g.host(_))]
+  mirna_known_host = [_ for _ in g.mirnas if len(g.host(_)) and g.host(_)[0] in atlas.nbunch(g.host(_))['available']]
   mirna_known_host.sort(key=lambda x: len(g.target(x)), reverse=True)
 
   fieldnames = ['MIRNA', 'HOST', 'HOST_EXPR', 'HOST_TC', 'TARGET', 'TAR_EXPR',
@@ -50,7 +50,7 @@ def routine(output):
     filt = atlas.nbunch(targets)['available']
 
     for target in filt:
-      row = [mirna, host_expr, host_trns, target, atlas.expr_level(target)]
+      row = [mirna, host, host_expr, host_trns, target, atlas.expr_level(target)]
       try:
         tar_trns = g.transc_count(target)
       except Exception:
