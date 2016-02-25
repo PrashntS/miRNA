@@ -4,6 +4,8 @@
 # 22 Feb 2016
 import click
 import csv
+import math
+import pandas as pd
 
 from minion import mincli
 from miRNA.graph import g
@@ -15,8 +17,11 @@ from miRNA.stats.thermodynamics import Thermodynamics
 # -- miRNAs that are expressed in the tissue
 # -- Generate a table of the miRNAs targets and corresponding delta g.
 
+R = 8.314
+T = 303
+
 @mincli.command("feb22")
-@click.argument('output', type=click.File('w'))
+@click.argument('output')
 def routine(output):
   """
   Tabulate the expressed miRNAs, and genes with the expression values.
@@ -24,15 +29,19 @@ def routine(output):
   atlas = ExpressionAtlas()
   atlas.tissue = 'pancreas'
 
-  mirna_known_host = [_ for _ in g.mirnas if len(g.host(_)) and g.host(_)[0] in atlas.nbunch(g.host(_))['available']]
+  mirna_known_host = [_ for _ in g.mirnas if len(g.host(_))]
   mirna_known_host.sort(key=lambda x: len(g.target(x)), reverse=True)
 
   fieldnames = ['MIRNA', 'HOST', 'HOST_EXPR', 'HOST_TC', 'TARGET', 'TAR_EXPR',
-    'TAR_TC', 'DELTAG',
+    'TAR_TC', 'DELTAG', 'DEGM', 'DEGT', 'DEGHOS'
   ]
-  csvsheet = csv.writer(output, delimiter='\t')
-  csvsheet.writerow(fieldnames)
+  rows = []
   click.echo("Starting Routine")
+
+  thermo = Thermodynamics()
+
+  max_m = len(mirna_known_host)
+  curr_m = 0
 
   for mirna in mirna_known_host:
     targets = g.target(mirna)
@@ -45,26 +54,44 @@ def routine(output):
     try:
       host_trns = g.transc_count(host)
     except Exception:
-      host_trns = -1.0
+      host_trns = 1.0
 
-    filt = atlas.nbunch(targets)['available']
+    curr_m += 1
+    max_t = len(targets)
+    curr_t = 0
 
-    for target in filt:
-      row = [mirna, host, host_expr, host_trns, target, atlas.expr_level(target)]
+    for target in targets:
+      row = [mirna, host, host_expr, host_trns, target]
+      curr_t += 1
+
+      try:
+        row.append(atlas.expr_level(target))
+      except ValueError:
+        row.append(-1.0)
+
       try:
         tar_trns = g.transc_count(target)
-      except Exception:
-        tar_trns = -1.0
+      except ValueError:
+        tar_trns = 1.0
 
       row.append(tar_trns)
 
       try:
-        dg = Thermodynamics(target, mirna).delta_g_binding
-        row.append(dg)
-        csvsheet.writerow(row)
-        click.echo("Done: {0},\t\t{1}".format(mirna, target))
+        dg = thermo.delta_g(target, mirna)
       except Exception as e:
-        click.echo("Missed: {0},\t\t{1}".format(mirna, target))
-        continue
+        dg = 1
+      row.append(dg)
+      row.append(max_t)
+      row.append(len(g.target(target)))
+      row.append(len(g.host(target)))
+      rows.append(row)
+
+      if curr_t % (int(max_t/10) + 1) is 0:
+        click.echo("Done: M({0}/{1}),\t\t\t G({2}/{3})".format(
+            curr_m, max_m, curr_t, max_t))
+
+  dat = pd.DataFrame(rows, columns=fieldnames)
+  dat.to_pickle(output+".pkl")
+  dat.to_csv(output+".csv")
 
   return 0

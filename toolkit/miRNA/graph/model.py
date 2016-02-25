@@ -74,9 +74,16 @@ class GraphKit(object):
 
   def transc_count(self, node, *a, **kwa):
     if self.g.node[node]['kind'] == 'GEN':
-      return self.g.node[node]['tc']
+      tc = self.g.node[node]['tc']
     elif self.g.node[node]['kind'] == 'MIR':
-      return self.transc_count(*self.host(node))
+      tc = self.transc_count(*self.host(node))
+    else:
+      raise ValueError("Node is unsupported kind.")
+
+    if type(tc) is int:
+      return tc
+    else:
+      raise ValueError("Transcript Count is not available.")
 
 class DepthLimitedVisit(object):
   def __init__(self, depth):

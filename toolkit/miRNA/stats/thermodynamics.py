@@ -5,38 +5,36 @@
 import json
 
 from miRNA import memcache
-from libpymiranda import find_targets as miranda_targets
+from pymiranda import find_targets as miranda_targets
 from miRNA.alchemy.docs import Gene, MiRNA
 
 class Thermodynamics(object):
-  def __init__(self, gene_id, mirna_id, **kwargs):
-    #: Get Gene Sequences
-    self.gen = Gene(gene_id)
-    self.mir = MiRNA(mirna_id)
-    self.__process_seq()
-    miranda_args = {
-      'gene_seq': self.gen_seq,
-      'mirna_seq': self.mir_seq,
+  def __init__(self, **kwargs):
+    self.miranda_args = {
       'scale': 4.0,
       'strict': 0,
       'gap_open': -9.0,
       'gap_extend': -4.0,
-      'score_threshold': 10.0,
+      'score_threshold': 50.0,
       'energy_threshold': 1.0,
       'length_5p_for_weighting': 8,
       'temperature': 30,
+      'alignment_len_threshold': 8,
     }
-    miranda_args.update(kwargs.get("miranda_args", {}))
-    self.result = json.loads(miranda_targets(**miranda_args))
+    self.miranda_args.update(kwargs.get("miranda_args", {}))
 
-  def __process_seq(self):
-    self.gen_seq = self.gen.canonical
-    self.mir_seq = self.mir.sequence[::-1]
+  def __obtain_args(self, gene_id, mirna_id):
+    gen = Gene(gene_id)
+    mir = MiRNA(mirna_id)
+    self.miranda_args['gene_seq'] = gen.canonical
+    self.miranda_args['mirna_seq'] = mir.sequence[::-1]
 
-  @property
-  def delta_g_binding(self):
+  def delta_g(self, gene_id, mirna_id):
     try:
-      return self.result['digest']['max_energy']
+      gen = Gene(gene_id).canonical
+      mir = MiRNA(mirna_id).sequence[::-1]
+      result = json.loads(miranda_targets(gen, mir, **self.miranda_args))
+      return result['digest']['max_energy']
     except KeyError:
       raise ValueError("No targets found with given parameters.")
 
