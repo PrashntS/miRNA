@@ -3,13 +3,14 @@
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
 import logging
+import os
 from logging.handlers import RotatingFileHandler
 
 DEBUG       = True
 SECRET_KEY  = 'super-secret'
 HOST        = 'http://localhost:9000'
 SERVE_HOST  = '0.0.0.0'
-SERVE_PORT  = 9000
+SERVE_PORT  = int(os.environ.get("PORT", 9000))
 MEINHELD    = False
 THREADED    = False
 

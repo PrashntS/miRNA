@@ -86,3 +86,7 @@ class ExpressionAtlas(object):
       'p_unavailable': len(out['unavailable']) / len(nbunch) * 100
     }
     return out
+
+class ExpressionStats(object):
+  def __init__(self, namespace):
+    pass

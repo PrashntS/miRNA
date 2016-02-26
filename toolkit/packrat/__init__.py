@@ -15,10 +15,6 @@ huey = RedisHuey(**HUEY)
 moncli = MongoClient(**MONGO)
 db = moncli['packrat']
 
-c_ncbi_gene = db['ncbi_gene_docs']
-c_ensembl_seq = db['ensembl_seq']
-c_mirna_seq = db['mirna_seq']
-
 @huey.task(retries=10, retry_delay=10)
 def spawn_gene_dat(gene_id):
   tb = db['ncbi_gene_docs']

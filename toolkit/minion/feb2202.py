@@ -22,12 +22,13 @@ T = 303
 
 @mincli.command("feb22")
 @click.argument('output')
-def routine(output):
+@click.option('--tissue', default='pancreas')
+def routine(output, tissue):
   """
   Tabulate the expressed miRNAs, and genes with the expression values.
   """
   atlas = ExpressionAtlas()
-  atlas.tissue = 'pancreas'
+  atlas.tissue = tissue
 
   mirna_known_host = [_ for _ in g.mirnas if len(g.host(_))]
   mirna_known_host.sort(key=lambda x: len(g.target(x)), reverse=True)
@@ -91,7 +92,7 @@ def routine(output):
             curr_m, max_m, curr_t, max_t))
 
   dat = pd.DataFrame(rows, columns=fieldnames)
-  dat.to_pickle(output+".pkl")
-  dat.to_csv(output+".csv")
+  dat.to_pickle("{0}_{1}.pkl".format(output, tissue))
+  dat.to_csv("{0}_{1}.csv".format(output, tissue))
 
   return 0
