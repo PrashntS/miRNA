@@ -40,12 +40,22 @@ class Motif(object):
   def _iter_kind(self, kind):
     motifs = self.g_k[kind].subgraph_isomorphisms_iter()
     for motif in motifs:
-      yield list(motif.keys())
+      yield motif
+
+  @staticmethod
+  def __duplicates(v, *args):
+    nodes = list(v.keys())
+    nodes.sort()
+    return "".join(nodes)
+
+  @staticmethod
+  def __post_process(dat):
+    return [{v: k for k, v in d.items()} for d in dat]
 
   def find_all(self, kind):
     out = [_ for _ in self._iter_kind(kind)]
     if kind in self.no_order:
-      sortd_out = [sorted(_) for _ in out]
-      return py_.uniq(out)
+      out_pre = py_.uniq(out, callback=Motif.__duplicates)
     else:
-      return out
+      out_pre = out
+    return Motif.__post_process(out_pre)
