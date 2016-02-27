@@ -101,11 +101,6 @@ def migrate_expression():
     dump_expression_dat(expr['path'], expr['namespace'], bunch=genes)
 
 @manager.command
-def datapostdownload():
-  from packrat import post_run_spawns
-  post_run_spawns()
-
-@manager.command
 def migrate():
   "Populates the MongoDB database using the data_dump JSON"
   create_app()

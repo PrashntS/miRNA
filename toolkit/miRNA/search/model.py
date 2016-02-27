@@ -10,12 +10,10 @@ from whoosh import qparser
 from whoosh.qparser import MultifieldParser
 
 class PolynucleotideSchema(SchemaClass):
-  id = ID(stored = True, unique = True)
-  symbol = NGRAM(minsize = 2, maxsize = 20)
-  description = TEXT(analyzer = StemmingAnalyzer(),
-                     spelling = True)
-  degree = NUMERIC(sortable = True)
-  kind = KEYWORD(stored = True)
+  id      = ID(stored=True, unique=True)
+  symbol  = NGRAM(minsize=2, maxsize=20, field_boost=10.0)
+  kwd_doc = TEXT(analyzer=StemmingAnalyzer(), spelling=True, field_boost=2.0)
+  sum_doc = TEXT(analyzer=StemmingAnalyzer(), spelling=True)
 
 class NotIndexedException(Exception):
   message = "The Index hasn't been created."

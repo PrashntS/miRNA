@@ -1,50 +1,79 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
-from flask import request
+from packrat import db
+from miRNA.graph import g
 
-from miRNA import db, app, zdb
+class Gene(object):
+  def __init__(self, gene_id):
+    coll = db['ncbi_gene_docs']
+    self.gid = gene_id
+    self.doc = coll.find_one({'gene_id': gene_id})
 
-graph = zdb.root.nxGraph
-
-class Polynucleotide(db.Document):
-  symbol = db.StringField(unique = True)
-  FASTA  = db.StringField()
-
-  description = db.StringField()
-
-  meta = {
-    'allow_inheritance': True,
-    'strict': False,
-  }
-
-  def __unicode__(self):
-    return self.symbol
-
-class Gene(Polynucleotide):
-  names = db.ListField(db.StringField())
+    if self.doc is None:
+      raise KeyError("{0} is not in the collection.".format(gene_id))
 
   @property
-  def _repr(self):
-    desc = self.description + ' '.join(self.names)
-    return {
-      'id': self.symbol,
-      'symbol': self.symbol,
-      'description': desc,
-      'degree': graph.degree(self.symbol),
-      'kind': 'Gene',
-    }
-
-class miRNA(Polynucleotide):
-  mirbase_url = db.StringField()
+  def targets(self):
+    return g.target(self.gid)
 
   @property
-  def _repr(self):
+  def synonyms(self):
+    out = self.doc['synonyms']
+    if type(out) is str:
+      out = [out]
+    return out
+
+  @property
+  def repr(self):
     return {
-      'id': self.symbol,
-      'symbol': self.symbol,
-      'description': self.description,
-      'degree': graph.degree(self.symbol),
-      'kind': 'miRNA',
+      'symbol': self.gid,
+      'name': self.doc.get('name'),
+      'synonyms': self.synonyms,
+      'summary': self.doc.get('summary'),
+      'protein_ref': self.doc.get('protein_ref'),
+      'functions': self.doc.get('functions'),
+      'processes': self.doc.get('processes'),
     }
+
+  @property
+  def sequences(self):
+    seq = db['ensembl_seq'].find_one({'gene_id': self.gid})
+    return seq['fasta']
+
+  @property
+  def canonical(self):
+    return max(self.sequences, key=lambda x: len(x['seq']))['seq']
+
+  @property
+  def host_of(self):
+    return g.host(self.gid)
+
+  @property
+  def targeted_by(self):
+    return g.target(self.gid)
+
+class MiRNA(object):
+  def __init__(self, mir_id):
+    coll = db['mirna_seq']
+    self.mid = mir_id
+
+  @property
+  def sequence(self):
+    seqd = db['mirna_seq'].find_one({'mir_id': self.mid})
+    return seqd['fasta'][0]['seq']
+
+  @property
+  def repr(self):
+    return {
+      'symbol': self.mid,
+    }
+
+  @property
+  def targets(self):
+    return g.target(self.mid)
+
+  @property
+  def host_gene(self):
+    return g.host(self.mid)

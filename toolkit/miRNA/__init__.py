@@ -2,22 +2,18 @@
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
-from flask import Flask, render_template
-from flask.ext.mongoengine import MongoEngine
-
-from walrus import Database as WalrusDB
 import ZODB.config
+
+from flask import Flask, render_template
+from walrus import Database as WalrusDB
 
 app = Flask(__name__, template_folder='static')
 app.config.from_pyfile('config.py')
 
-db        = MongoEngine(app)
 walrus    = WalrusDB(**app.config.get('REDIS'))
 memcache  = walrus.cache()
-zdb = ZODB.config.databaseFromURL('./miRNA/zeo.client.config').open()
 
 def create_app():
-  from .admin.controller import admin
   from .api.controller import api
 
   app.logger.addHandler(app.config.get('HANDLER'))

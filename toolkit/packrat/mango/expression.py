@@ -29,6 +29,5 @@ def dump_expression_dat(filename, namespace, bunch=None):
         coll.update({'gene_id': gene_name}, row, True)
         logging.info("Inserted: {0}".format(gene_name))
 
-
   doc['fields'] = fields
   expre_meta.update({'namespace': namespace}, doc, True)

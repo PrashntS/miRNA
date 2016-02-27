@@ -7,9 +7,7 @@ import networkx as nx
 from pydash import py_
 from flask_restful import Resource, reqparse
 
-from miRNA.polynucleotide.model import Gene, miRNA, zdb
-
-graph = zdb.root.nxGraph
+from miRNA.graph import g
 
 class SubGraphController(Resource):
   def args(self):

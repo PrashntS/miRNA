@@ -14,3 +14,5 @@ MONGO = {
   'host': 'localhost',
   'port': 27017
 }
+
+ZEOCONF = ['localhost', 8090]

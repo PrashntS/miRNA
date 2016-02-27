@@ -6,7 +6,7 @@ import networkx as nx
 
 from pydash import py_
 
-from miRNA import zdb
+from packrat import zdb
 
 graph = zdb.root.nxGraph
 

@@ -6,14 +6,19 @@ import logging
 
 from huey import RedisHuey
 from pymongo import MongoClient
+from ZODB import DB as ZDB
+from ZEO.ClientStorage import ClientStorage as ZeoClientStorage
 
-from packrat.config import HUEY, MONGO
+from packrat.config import HUEY, MONGO, ZEOCONF
 from packrat.alchemy.ensembl import ensembl_sequence, ensembl_gene_id
 from packrat.alchemy.ncbi import ncbi_search_id, ncbi_get_summary
 
-huey = RedisHuey(**HUEY)
-moncli = MongoClient(**MONGO)
-db = moncli['packrat']
+huey    = RedisHuey(**HUEY)
+moncli  = MongoClient(**MONGO)
+db      = moncli['packrat']
+
+storage = ZeoClientStorage(ZEOCONF)
+zdb     = ZDB(storage).open()
 
 @huey.task(retries=10, retry_delay=10)
 def spawn_gene_dat(gene_id):
@@ -54,12 +59,3 @@ def spawn_ensembl_dat(gene_id):
     tb.update({'gene_id': gene_id}, doc, True)
 
   logging.info("Sequences Done: {0}".format(gene_id))
-
-def post_run_spawns():
-  tb = db['ncbi_gene_docs']
-  genes = tb.find()
-  for gene_doc in genes:
-    synonym = gene_doc.get('synonyms', [])
-    for alias in synonym:
-      spawn_gene_dat(alias)
-      spawn_ensembl_dat(alias)
