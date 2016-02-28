@@ -35,6 +35,12 @@
 
   <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/libraries.css')}}">
   <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/app.css')}}">
+
+  <script>
+    window.brunch = window.brunch || {};
+    window.brunch.server = 'localhost';
+  </script>
+
 </head>
 <body>
   <header>
@@ -99,18 +105,10 @@
     </div>
 
     <div id="nodes">
-      <div class="form-field">
-        <label>Gene</label>
-        <select class="gene_select rivets"
-                placeholder="Select a Gene"
-                multiple="true"
-                rv-value="nodes.genes"
-                ></select>
-      </div>
     </div>
 
     <div id="bloodhound">
-      <input class="typeahead" type="text" placeholder="States of USA">
+      <select id="uni_search"></select>
     </div>
 
   </section>

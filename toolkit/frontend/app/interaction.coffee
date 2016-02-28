@@ -152,66 +152,26 @@ class UserView
         @graph.removeNode(n)
 
   select_init: ->
-    factory_select = (opts) ->
-      ajax:
-        url: opts.uri,
-        dataType: 'json',
-        delay: 250,
-        data: (param) ->
-          return {
-            q__icontains: param.term
-            _skip: (param.page - 1) * 20 if param.page and param.page > 0
-            _limit: 20
-          }
-        processResults: (data, params) ->
-          params.page = params.page || 1
+    $('#uni_search').selectize
+      valueField: 'url'
+      labelField: 'name'
+      searchField: 'name'
+      create: false,
+      render:
+        option: (item, escape) ->
+          "<p>#{escape(item.username)} #{escape(item.name)}</p>"
+      score: (search) =>
+        score = @getScoreFunction search
+        (item) -> score(item) * (1 + Math.min(item.watchers / 100, 1))
 
-          return {
-            results: _.map data.data, (dat) ->
-              dat.id = dat.symbol
-              dat.text = dat.symbol
-              dat
-            pagination:
-              more: data.has_more
-          }
-        cache: true
-      escapeMarkup: (markup) -> markup
-      placeholder: opts.placeholder
-      minimumInputLength: 2
-      maximumSelectionLength: 5
-      templateResult: opts.templateResult
-      templateSelection: (obj) -> obj.symbol or obj.text
-
-    $('.gene_select').select2 factory_select
-      uri: '/api/gene'
-      value: 'CDKN1A'
-      placeholder: "Please Enter a Few Genes"
-      templateResult: (obj) ->
-        return obj.text if obj.loading
-        templates.geneselect obj: obj
-
-    # $('.mirna_select').select2 factory_select
-    #   uri: '/api/mirna'
-    #   placeholder: "Please Enter a Few miRNA"
-    #   templateResult: (obj) ->
-    #     return obj.text if obj.loading
-    #     markup = """
-    #       <div class="dropdown-card">
-    #         <h1>#{obj.symbol}</h1>
-    #         <ul>
-    #           <li>
-    #             <strong>Targets</strong>: #{obj.targets.length} Genes
-    #           </li>
-    #           <li>
-    #             <strong>Host Gene</strong>: #{obj.host?.symbol || 'N.A.'}
-    #           </li>
-    #           <li>
-    #             <strong><a href="#{obj.mirbase_url}">miRBase Link</a></strong>
-    #           </li>
-    #         </ul>
-    #       </div>
-    #     """
-    #     markup
+      load: (query, callback) ->
+        if not query.length
+          return callback()
+        $.ajax
+          url: 'https://api.github.com/legacy/repos/search/' + encodeURIComponent(query),
+          type: 'GET',
+          error: -> callback()
+          success: (res) -> callback(res.repositories.slice(0, 10))
 
 exports.interaction =
   init: ->

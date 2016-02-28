@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
@@ -19,7 +19,7 @@ class NotIndexedException(Exception):
   message = "The Index hasn't been created."
 
 def query_parser():
-  parser = MultifieldParser(["symbol", "description", "kind"],
+  parser = MultifieldParser(["symbol", "kwd_doc", "sum_doc"],
                             schema = PolynucleotideSchema())
 
   parser.remove_plugin_class(qparser.WildcardPlugin)

@@ -8,7 +8,7 @@ import meinheld
 import logging
 
 from flask.ext.script import Manager
-from miRNA import create_app, app
+from miRNA import create_app, app, logger
 
 manager = Manager(app)
 
@@ -107,24 +107,39 @@ def migrate():
 
 @manager.command
 def setup_index():
-  create_app()
+  """
+  Sets up the Search Index from MongoDB collections.
+  """
 
-  from miRNA.polynucleotide.model import Gene, miRNA as miRNAModel
   from miRNA.search.indexer import Indexer
+  from packrat import db
 
-  print("Indexing Data")
-  i = Indexer.index_setup([Gene, miRNAModel])
-  print(i)
+  def normalise_gene_doc(doc):
+    """
+    Normalise the docs.
+    """
+    kwd_fields = ['protein_ref', 'functions', 'processes', 'synonyms']
+    join_list = lambda x: ', '.join(doc.get(x, []))
+    return {
+      'id': doc.get('gene_id'),
+      'symbol': doc.get('symbol', doc['gene_id']),
+      'kwd_doc': ' '.join([join_list(_) for _ in kwd_fields]),
+      'sum_doc': doc.get('summary', ''),
+    }
 
-@manager.command
-def setup_db():
-  from pymongo import MongoClient
-  from miRNA.config import MONGODB_DB, MONGODB_HOST, MONGODB_PORT
+  normalise_mirna_doc = lambda doc: {
+    'id': doc['mir_id'],
+    'symbol': doc['mir_id'],
+  }
 
-  client = MongoClient(MONGODB_HOST, MONGODB_PORT)
-  client.drop_database(MONGODB_DB)
+  logger.info("Starting Indexing.")
 
-  migrate()
+  Indexer.index([
+    [db['ncbi_gene_docs'].find(), normalise_gene_doc],
+    [db['mirna_seq'].find(), normalise_mirna_doc]
+  ])
+
+  logger.info("Indexing Complete.")
 
 if __name__ == "__main__":
   manager.run()

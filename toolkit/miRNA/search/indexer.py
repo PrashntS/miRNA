@@ -6,11 +6,12 @@ import os, os.path
 
 from whoosh.index import create_in, open_dir
 
-from miRNA import app
+from miRNA import app, logger
 from miRNA.search.model import PolynucleotideSchema, NotIndexedException
 
 class Indexer(object):
-  def index_setup(collections):
+  @staticmethod
+  def index(doc_sets):
     index_path = app.config.get('WHOOSH_INDEX')
     if not os.path.exists(index_path):
       os.mkdir(index_path)
@@ -18,19 +19,21 @@ class Indexer(object):
     ix = create_in(index_path, schema = PolynucleotideSchema)
     writer = ix.writer()
 
-    x = 0
-    for collection in collections:
-      docs = collection.objects
-      for doc in docs:
-        x += 1
-        writer.add_document(**doc._repr)
+    coll_count = 0
+    for collection, normaliser in doc_sets:
+      coll_count += 1
+      logger.info("Indexing Collection #{0}.".format(coll_count))
+
+      count = 0
+      for doc in collection:
+        count += 1
+        writer.add_document(**normaliser(doc))
+      logger.info("Indexed {0} documents.".format(count))
 
     writer.commit()
+    logger.info("Index Commited.")
 
-    return {
-      'indexed_doc_count': x,
-    }
-
+  @staticmethod
   def get_index():
     index_path = app.config.get('WHOOSH_INDEX')
     if not os.path.exists(index_path):
