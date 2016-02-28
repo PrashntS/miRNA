@@ -15,10 +15,6 @@ class Gene(object):
       raise KeyError("{0} is not in the collection.".format(gene_id))
 
   @property
-  def targets(self):
-    return g.target(self.gid)
-
-  @property
   def synonyms(self):
     out = self.doc['synonyms']
     if type(out) is str:
@@ -35,6 +31,8 @@ class Gene(object):
       'protein_ref': self.doc.get('protein_ref'),
       'functions': self.doc.get('functions'),
       'processes': self.doc.get('processes'),
+      'len_targeted_by': len(self.targeted_by),
+      'len_host_of': len(self.host_of),
       'kind': 'Gene',
     }
 
@@ -69,6 +67,8 @@ class MiRNA(object):
   def repr(self):
     return {
       'symbol': self.mid,
+      'len_targets': len(self.targets),
+      'host': self.host_gene,
       'kind': 'MiRNA',
     }
 
