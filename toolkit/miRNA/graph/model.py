@@ -8,7 +8,7 @@ from pydash import py_
 
 from packrat import zdb
 
-graph = zdb.root.nxGraph
+graph = zdb.root.BaseGraph
 
 class GraphKit(object):
   """

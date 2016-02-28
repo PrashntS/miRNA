@@ -18,24 +18,30 @@ def runserver():
   socketio.run(
     app,
     host=app.config['SERVE_HOST'],
-    port=app.config['SERVE_PORT']
+    port=app.config['SERVE_PORT'],
+    log_output=True
   )
 
 @manager.command
-def precompute():
+def compute_graph():
   "Computes and Persists the Complex Data."
-  create_app()
-  from miRNA.procedure.migration import graph
+  import transaction
+  import networkx as nx
+
+  from packrat.migration.graph import grow_network
+  from packrat import zdb
 
   with open('data_dump/catalogue.json') as m:
-    data_path = json.load(m)
+    catalogue = json.load(m)
 
-  graph_path = data_path['mir_gene_graph']['path']
+  target_file = catalogue['network']['targets']['path']
+  host_file = catalogue['network']['hosts']['path']
+  graph = grow_network(target_file, host_file)
 
-  app.logger.info('Precomputing the network at {0}'.format(graph_path))
-  with open(graph_path) as minion:
-    host_map_dat = json.load(minion)
-    graph(host_map_dat)
+  zdb.root()['BaseGraph'] = nx.freeze(graph)
+
+  logger.info("Completed building graph and storing.")
+  transaction.commit()
 
 @manager.command
 def datadownload():
@@ -85,7 +91,7 @@ def migrate_mirna():
 @manager.command
 def migrate_expression():
   from miRNA.graph.model import graph
-  from packrat.mango.expression import dump_expression_dat
+  from packrat.migration.expression import dump_expression_dat
 
   with open('data_dump/catalogue.json') as m:
     data_path = json.load(m)

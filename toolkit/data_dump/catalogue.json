@@ -22,5 +22,17 @@
       "path": "data_dump/exported/E-MTAB-2770-query-results.tsv",
       "namespace": "EMTAB2770"
     }
-  ]
+  ],
+  "network": {
+    "hosts": {
+      "version": 3,
+      "added": 20160228,
+      "path": "data_dump/computed/gene_mirna_graph_20160220.json"
+    },
+    "targets": {
+      "version": 3,
+      "added": 20160228,
+      "path": "data_dump/computed/mirna_gene_graph_20160220v2.json"
+    }
+  }
 }
