@@ -6,7 +6,7 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, send as sock_send, emit
 from walrus import Database as WalrusDB
 
-from miRNA.config import logging_handle, console_handle
+from miriam.config import logging_handle, console_handle
 
 app = Flask(__name__, template_folder='static')
 app.config.from_pyfile('config.py')

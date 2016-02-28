@@ -9,7 +9,7 @@ from pymongo import MongoClient
 from ZODB import DB as ZDB
 from ZEO.ClientStorage import ClientStorage as ZeoClientStorage
 
-from miRNA import logger
+from miriam import logger
 
 from packrat.config import HUEY, MONGO, ZEOCONF
 from packrat.alchemy.ensembl import ensembl_sequence, ensembl_gene_id

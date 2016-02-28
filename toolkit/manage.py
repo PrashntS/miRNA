@@ -7,7 +7,7 @@ import json
 import logging
 
 from flask.ext.script import Manager
-from miRNA import create_app, app, logger, socketio
+from miriam import create_app, app, logger, socketio
 
 manager = Manager(app)
 
@@ -47,7 +47,7 @@ def compute_graph():
 def datadownload():
   create_app()
 
-  from miRNA.graph.model import graph
+  from miriam.graph.model import graph
   from packrat import spawn_gene_dat, spawn_ensembl_dat
 
   genes = [g for g, v in graph.node.items() if v['kind'] == 'GEN']
@@ -61,7 +61,7 @@ def datadownload():
 @manager.command
 def migrate_mirna():
   from Bio import SeqIO
-  from miRNA.graph.model import graph
+  from miriam.graph.model import graph
   from packrat import db
   collection = db['mirna_seq']
 
@@ -90,7 +90,7 @@ def migrate_mirna():
 
 @manager.command
 def migrate_expression():
-  from miRNA.graph.model import graph
+  from miriam.graph.model import graph
   from packrat.migration.expression import dump_expression_dat
 
   with open('data_dump/catalogue.json') as m:
@@ -113,7 +113,7 @@ def setup_index():
   Sets up the Search Index from MongoDB collections.
   """
 
-  from miRNA.search.indexer import Indexer
+  from miriam.search.indexer import Indexer
   from packrat import db
 
   def normalise_gene_doc(doc):

@@ -3,8 +3,8 @@
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 # 28 Feb 2016
 
-from miRNA.graph.triads import Motif
-from miRNA.graph import g
+from miriam.graph.triads import Motif
+from miriam.graph import g
 
 from minion.feb2702 import routine as feb2702_routine
 

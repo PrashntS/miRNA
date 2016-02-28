@@ -2,6 +2,6 @@
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
-from miRNA.graph.model import GraphKit, graph
+from miriam.graph.model import GraphKit, graph
 
 g = GraphKit(graph)

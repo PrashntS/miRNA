@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
@@ -6,8 +6,8 @@ import os, os.path
 
 from whoosh.index import create_in, open_dir
 
-from miRNA import app, logger
-from miRNA.search.model import PolynucleotideSchema, NotIndexedException
+from miriam import app, logger
+from miriam.search.model import PolynucleotideSchema, NotIndexedException
 
 class Indexer(object):
   @staticmethod

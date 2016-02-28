@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
@@ -7,7 +7,7 @@ import networkx as nx
 from pydash import py_
 from flask_restful import Resource, reqparse
 
-from miRNA.graph import g
+from miriam.graph import g
 
 class SubGraphController(Resource):
   def args(self):

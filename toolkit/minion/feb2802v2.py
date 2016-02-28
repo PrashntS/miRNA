@@ -6,8 +6,8 @@
 from minion import mincli
 from packrat import db
 
-from miRNA import logger
-from miRNA.graph import g
+from miriam import logger
+from miriam.graph import g
 
 @mincli.command("feb28")
 def routine():

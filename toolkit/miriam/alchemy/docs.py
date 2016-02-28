@@ -3,7 +3,7 @@
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
 from packrat import db
-from miRNA.graph import g
+from miriam.graph import g
 
 class Gene(object):
   def __init__(self, gene_id):

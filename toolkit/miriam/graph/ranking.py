@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
@@ -6,9 +6,9 @@ import networkx as nx
 
 from pydash import py_
 
-from miRNA import memcache
-from miRNA.graph.model import graph
-from miRNA.graph.triads import Motif
+from miriam import memcache
+from miriam.graph.model import graph
+from miriam.graph.triads import Motif
 
 class Ranking(object):
   def _rank_nbunch(self, nbunch):

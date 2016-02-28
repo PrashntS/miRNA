@@ -3,8 +3,8 @@
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 # 21 Feb 2016
 
-from miRNA.graph import g
-from miRNA.alchemy.expression import ExpressionAtlas
+from miriam.graph import g
+from miriam.alchemy.expression import ExpressionAtlas
 
 def routine_sorted_expr(namespace=None):
   """

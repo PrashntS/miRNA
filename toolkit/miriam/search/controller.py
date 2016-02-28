@@ -4,11 +4,11 @@
 
 from flask_restful import Resource, reqparse
 
-from miRNA import logger
+from miriam import logger
 
-from miRNA.alchemy.docs import MiRNA, Gene
-from miRNA.search.indexer import Indexer
-from miRNA.search.model import query_parser
+from miriam.alchemy.docs import MiRNA, Gene
+from miriam.search.indexer import Indexer
+from miriam.search.model import query_parser
 
 ix = Indexer.get_index()
 parser = query_parser()

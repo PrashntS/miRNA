@@ -4,9 +4,9 @@
 
 import json
 
-from miRNA import memcache
+from miriam import memcache
 from pymiranda import find_targets as miranda_targets
-from miRNA.alchemy.docs import Gene, MiRNA
+from miriam.alchemy.docs import Gene, MiRNA
 
 class Thermodynamics(object):
   def __init__(self, **kwargs):

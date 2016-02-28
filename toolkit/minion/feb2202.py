@@ -8,9 +8,9 @@ import math
 import pandas as pd
 
 from minion import mincli
-from miRNA.graph import g
-from miRNA.alchemy.expression import ExpressionAtlas
-from miRNA.stats.thermodynamics import Thermodynamics
+from miriam.graph import g
+from miriam.alchemy.expression import ExpressionAtlas
+from miriam.stats.thermodynamics import Thermodynamics
 
 # I have to do the following here
 # - For the tissue, "pancreas", I have to generate:
