@@ -4,6 +4,9 @@
 
 from flask_restful import Resource, reqparse
 
+from miRNA import logger
+
+from miRNA.alchemy.docs import MiRNA, Gene
 from miRNA.search.indexer import Indexer
 from miRNA.search.model import query_parser
 
@@ -26,8 +29,12 @@ class SearchController(Resource):
     with ix.searcher() as s:
       query = parser.parse(q)
       results = s.search_page(query, page)
+
+      collec = lambda x: Gene if x['kind'] == 'Gene' else MiRNA
+      repr_doc = lambda x: collec(x)(x['id']).repr
+
       return {
-        'data': [_['id'] for _ in results],
+        'data': list(map(repr_doc, results)),
         'len': results.pagecount,
         'total': results.total,
         'page': page,

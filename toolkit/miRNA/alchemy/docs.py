@@ -35,6 +35,7 @@ class Gene(object):
       'protein_ref': self.doc.get('protein_ref'),
       'functions': self.doc.get('functions'),
       'processes': self.doc.get('processes'),
+      'kind': 'Gene',
     }
 
   @property
@@ -68,6 +69,7 @@ class MiRNA(object):
   def repr(self):
     return {
       'symbol': self.mid,
+      'kind': 'MiRNA',
     }
 
   @property

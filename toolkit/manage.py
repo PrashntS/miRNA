@@ -122,6 +122,7 @@ def setup_index():
     join_list = lambda x: ', '.join(doc.get(x, []))
     return {
       'id': doc.get('gene_id'),
+      'kind': 'Gene',
       'symbol': doc.get('symbol', doc['gene_id']),
       'kwd_doc': ' '.join([join_list(_) for _ in kwd_fields]),
       'sum_doc': doc.get('summary', ''),
@@ -129,6 +130,7 @@ def setup_index():
 
   normalise_mirna_doc = lambda doc: {
     'id': doc['mir_id'],
+    'kind': 'MiRNA',
     'symbol': doc['mir_id'],
   }
 

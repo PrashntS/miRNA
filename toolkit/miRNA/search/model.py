@@ -11,6 +11,7 @@ from whoosh.qparser import MultifieldParser
 
 class PolynucleotideSchema(SchemaClass):
   id      = ID(stored=True, unique=True)
+  kind    = ID(stored=True)
   symbol  = NGRAM(minsize=2, maxsize=20, field_boost=10.0)
   kwd_doc = TEXT(analyzer=StemmingAnalyzer(), spelling=True, field_boost=2.0)
   sum_doc = TEXT(analyzer=StemmingAnalyzer(), spelling=True)

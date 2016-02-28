@@ -20,31 +20,21 @@
   ],
   "dependencies": {
     "jquery": "~2.2.0",
-    "jsnetworkx": "https://raw.githubusercontent.com/fkling/JSNetworkX/0b58cdea96477a9285609385597c31b3b031cfe8/jsnetworkx.js",
     "normalize-css": "normalize.css#~3.0.3",
-    "select2": "~4.0.1",
+    "jsnetworkx": "https://raw.githubusercontent.com/fkling/JSNetworkX/0b58cdea96477a9285609385597c31b3b031cfe8/jsnetworkx.js",
     "font-awesome": "fontawesome#~4.5.0",
     "dat-gui": "~0.5.1",
     "bower-jquery-sparkline": "~2.1.3",
     "vex": "~2.3.3",
-    "fullpage.js": "~2.7.6",
     "d3": "~3.5.12",
     "rivets": "~0.8.1",
     "PACE": "pace#~1.0.2",
     "seedrandom": "~2.4.2",
-    "webcola": "~3.1.0",
-    "material-design-lite": "~1.0.6",
-    "typeahead.js": "~0.11.1",
     "lodash": "^4.5.1",
-    "selectize": "^0.12.1"
+    "selectize": "^0.12.1",
+    "selectize-scss": "^0.9.0"
   },
   "overrides": {
-    "select2": {
-      "main": [
-        "dist/js/select2.full.js",
-        "src/scss/core.scss"
-      ]
-    },
     "PACE": {
       "main": [
         "pace.js",
@@ -63,6 +53,12 @@
     "lodash": {
       "main": [
         "lodash.js"
+      ]
+    },
+    "selectize-scss": {
+      "main": [
+        "src/selectize.default.scss",
+        "src/selectize.scss"
       ]
     }
   }

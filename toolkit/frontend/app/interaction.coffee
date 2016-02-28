@@ -70,8 +70,7 @@ class UserView
     @rivets_init()
     @graph_init()
     # @param_init()
-    @graph.fetch_and_update()
-    @select2_event_init()
+    # @graph.fetch_and_update()
 
   param_init: ->
     @user_param = new UserParam
@@ -123,7 +122,7 @@ class UserView
     emit: (e, f) ->
 
   select2box:
-    genes: ['RIN2']
+    genes: []
     mirna: []
 
     serialize: ->
@@ -132,46 +131,34 @@ class UserView
         mirna: @mirna
       , yes
 
-  select2_event_init: ->
-    $('select.rivets').on 'select2:select', =>
-      @graph.fetch_and_update()
-
-    $('select.rivets').on 'select2:unselecting', =>
-      @cache =
-        genes: @select2box.genes
-        mirna: @select2box.mirna
-
-    $('select.rivets').on 'select2:unselect', (a, b)=>
-      genes_rem = _.xor @cache.genes, @select2box.genes
-      mirna_rem = _.xor @cache.mirna, @select2box.mirna
-
-      for n in genes_rem
-        @graph.removeNode(n)
-
-      for n in mirna_rem
-        @graph.removeNode(n)
-
   select_init: ->
     $('#uni_search').selectize
-      valueField: 'url'
-      labelField: 'name'
-      searchField: 'name'
+      valueField: 'symbol'
+      labelField: 'symbol'
+      searchField: ['symbol', 'name', 'summary']
       create: false,
       render:
+        item: (item, escape) ->
+          console.log item, escape
+          "<p>#{escape(item.symbol)}</p>"
         option: (item, escape) ->
-          "<p>#{escape(item.username)} #{escape(item.name)}</p>"
-      score: (search) =>
+          """
+          <div>
+            <p>#{escape(item.symbol)} - #{item.name}</p>
+          </div>
+          """
+      score: (search) ->
         score = @getScoreFunction search
-        (item) -> score(item) * (1 + Math.min(item.watchers / 100, 1))
+        (item) -> score(item) * 1
 
       load: (query, callback) ->
         if not query.length
           return callback()
         $.ajax
-          url: 'https://api.github.com/legacy/repos/search/' + encodeURIComponent(query),
+          url: "/api/search?q=#{encodeURIComponent(query)}",
           type: 'GET',
           error: -> callback()
-          success: (res) -> callback(res.repositories.slice(0, 10))
+          success: (res) -> callback(res.data)
 
 exports.interaction =
   init: ->

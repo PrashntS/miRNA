@@ -1,7 +1,6 @@
 @import "bourbon"
 @import "neat"
 @import "nav"
-@import "select2"
 @import "mixins"
 
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,600|Montserrat)
@@ -122,6 +121,12 @@ header
 section[role="interaction"]
   position: fixed
   z-index: 10
+
+  .search
+    position: relative
+    top: 50px
+    left: 20px
+    width: 250px
 
 section[role="viewport"]
   background: #FFF

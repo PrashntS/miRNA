@@ -55,8 +55,13 @@
   </header>
 
   <section role="interaction">
-    <div class="cd-stretchy-nav" id="toolbar" rv-class-nav-is-visible="toolbar.show">
+    <div class="search">
+      <input type="text" id="uni_search" placeholder="Search">
+    </div>
 
+    <div class="cd-stretchy-nav"
+         id="toolbar"
+         rv-class-nav-is-visible="toolbar.show">
       <a class="cd-nav-trigger"
         href="javascript:void(0);"
         rv-on-click="toolbar.toggle"
@@ -64,7 +69,6 @@
         Menu
         <span aria-hidden="true"></span>
       </a>
-
       <ul>
         <li>
           <a href="javascript:void(0);"
@@ -100,17 +104,8 @@
           </a>
         </li>
       </ul>
-
       <span aria-hidden="true" class="stretchy-nav-bg"></span>
     </div>
-
-    <div id="nodes">
-    </div>
-
-    <div id="bloodhound">
-      <select id="uni_search"></select>
-    </div>
-
   </section>
 
   <section role="viewport">
