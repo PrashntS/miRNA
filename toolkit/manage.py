@@ -4,11 +4,10 @@
 
 import click
 import json
-import meinheld
 import logging
 
 from flask.ext.script import Manager
-from miRNA import create_app, app, logger
+from miRNA import create_app, app, logger, socketio
 
 manager = Manager(app)
 
@@ -16,14 +15,11 @@ manager = Manager(app)
 def runserver():
   "Runs the App"
   create_app()
-  if app.config['MEINHELD']:
-    meinheld.listen((app.config['SERVE_HOST'],
-                     app.config['SERVE_PORT']))
-    meinheld.run(app)
-  else:
-    app.run(host     = app.config['SERVE_HOST'],
-            port     = app.config['SERVE_PORT'],
-            threaded = app.config['THREADED'])
+  socketio.run(
+    app,
+    host=app.config['SERVE_HOST'],
+    port=app.config['SERVE_PORT']
+  )
 
 @manager.command
 def precompute():

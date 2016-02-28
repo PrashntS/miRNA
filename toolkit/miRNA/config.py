@@ -12,7 +12,6 @@ SECRET_KEY  = 'super-secret'
 HOST        = 'http://localhost:9000'
 SERVE_HOST  = '0.0.0.0'
 SERVE_PORT  = int(os.environ.get("PORT", 9000))
-MEINHELD    = False
 THREADED    = False
 
 REDIS = {
