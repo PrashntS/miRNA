@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
+import pandas as pd
+
 from packrat import db
 
 class ExpressionAtlas(object):
@@ -16,9 +18,10 @@ class ExpressionAtlas(object):
     Access obj.tissues to list the tissues available.
   """
 
-  def __init__(self, namespace=None):
+  def __init__(self, namespace=None, bulk=False):
     if namespace is None:
       namespace = 'EMTAB2919'
+    self.bulk = bulk
     self.__init_db(namespace)
 
   def __init_db(self, namespace):
@@ -28,12 +31,14 @@ class ExpressionAtlas(object):
     self.meta_doc = meta_doc
     self.namespace = namespace
     self.collecn = db[meta_doc['db']]
+    if self.bulk:
+      self.df = pd.DataFrame(list(self.collecn.find()))
 
   @property
   def tissues(self):
     return self.meta_doc['fields']
 
-  def expr_level(self, node):
+  def __expr_level_single(self, node):
     doc = self.collecn.find_one({'gene_id': node})
     try:
       del doc['_id']
@@ -45,6 +50,23 @@ class ExpressionAtlas(object):
       return float(doc[self.tissue])
     else:
       return {k: float(v) for k, v in doc.items()}
+
+  def __expr_level_bulk(self, node):
+    row = self.df.query("gene_id=='{0}'".format(node))
+
+    if len(row) == 0:
+      raise ValueError("Data for {0} is not available.".format(node))
+
+    if self.tissue is not None:
+      return float(row[self.tissue].values[0])
+    else:
+      return {k: float(row[k].values[0]) for k in self.tissues}
+
+  def expr_level(self, node):
+    if self.bulk:
+      return self.__expr_level_bulk(node)
+    else:
+      return self.__expr_level_single(node)
 
   @property
   def tissue(self):
@@ -60,33 +82,3 @@ class ExpressionAtlas(object):
     else:
       raise ValueError("{0} is not a valid tissue name.".format(value))
 
-  def nbunch(self, nbunch):
-    """
-    Generate stats about the Genes that aren't present in this namespace.
-    Use to filter the candidate genes, etc.
-
-    Args:
-      nbunch (list): The gene ids of the staged genes.
-    """
-    out = {
-      'unavailable': [],
-      'available': [],
-    }
-    for node in nbunch:
-      try:
-        self.expr_level(node)
-      except ValueError:
-        out['unavailable'].append(node)
-      else:
-        out['available'].append(node)
-    out['stats'] = {
-      'l_available': len(out['available']),
-      'l_unavailable': len(out['unavailable']),
-      'p_available': len(out['available']) / len(nbunch) * 100,
-      'p_unavailable': len(out['unavailable']) / len(nbunch) * 100
-    }
-    return out
-
-class ExpressionStats(object):
-  def __init__(self, namespace):
-    pass

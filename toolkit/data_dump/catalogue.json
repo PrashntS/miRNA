@@ -1,9 +1,4 @@
 {
-  "mir_gene_graph": {
-    "version": 2,
-    "added": 20160127,
-    "path": "data_dump/computed/mirna_gene_host_20160127.json"
-  },
   "mir_seq": {
     "version": 1,
     "added": 20160220,
@@ -21,6 +16,12 @@
       "added": 20160220,
       "path": "data_dump/exported/E-MTAB-2770-query-results.tsv",
       "namespace": "EMTAB2770"
+    },
+    {
+      "version": 1,
+      "added": 20160228,
+      "path": "data_dump/exported/E-MTAB-2706-query-results.tsv",
+      "namespace": "EMTAB2706"
     }
   ],
   "network": {
@@ -33,6 +34,47 @@
       "version": 3,
       "added": 20160228,
       "path": "data_dump/computed/mirna_gene_graph_20160220v2.json"
+    },
+    "computed": {
+      "host_version": 3,
+      "target_version": 3,
+      "path": "data_dump/computed/nxgraph_obj_20160228.pkl"
     }
-  }
+  },
+  "computed_ranks": [
+    {
+      "cid": "EMTAB2919_pancreas",
+      "tissue_specific": true,
+      "namespace": "EMTAB2919",
+      "tissue_name": "pancreas",
+      "added": 20160228,
+      "version": 1,
+      "path": "data_dump/computed/pancreas_precomputed_20160228.pkl"
+    },
+    {
+      "cid": "EMTAB2919_hippocampus",
+      "tissue_specific": true,
+      "namespace": "EMTAB2919",
+      "tissue_name": "hippocampus",
+      "added": 20160228,
+      "version": 1,
+      "path": "data_dump/computed/hippocampus_precomputed_20160228.pkl"
+    },
+    {
+      "cid": "EMTAB2919_spleen",
+      "tissue_specific": true,
+      "namespace": "EMTAB2919",
+      "tissue_name": "spleen",
+      "added": 20160228,
+      "version": 1,
+      "path": "data_dump/computed/spleen_precomputed_20160228.pkl"
+    },
+    {
+      "cid": "transcript_count",
+      "tissue_specific": false,
+      "added": 20160228,
+      "version": 1,
+      "path": "data_dump/computed/transcript_precomputed_20160228.pkl"
+    }
+  ]
 }

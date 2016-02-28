@@ -4,11 +4,14 @@
 
 import networkx as nx
 
+from packrat import catalogue
 from pydash import py_
 
-from packrat import zdb
-
-graph = zdb.root.BaseGraph
+try:
+  graph = nx.read_gpickle(catalogue["network"]["computed"]["path"])
+except KeyError:
+  logger.warn("Graph object unavailable.")
+  graph = None
 
 class GraphKit(object):
   """

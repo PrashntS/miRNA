@@ -23,25 +23,22 @@ def runserver():
   )
 
 @manager.command
-def compute_graph():
+@manager.option('-o', '--out', help='Path to store the computed graph')
+def compute_graph(out):
   "Computes and Persists the Complex Data."
-  import transaction
-  import networkx as nx
-
   from packrat.migration.graph import grow_network
-  from packrat import zdb
 
   with open('data_dump/catalogue.json') as m:
     catalogue = json.load(m)
 
   target_file = catalogue['network']['targets']['path']
   host_file = catalogue['network']['hosts']['path']
-  graph = grow_network(target_file, host_file)
+  grow_network(target_file, host_file, out)
 
-  zdb.root()['BaseGraph'] = nx.freeze(graph)
-
-  logger.info("Completed building graph and storing.")
-  transaction.commit()
+@manager.command
+def compute_ranks(output, namespace, tissue):
+  from packrat.computation.ranking import ranking_routine
+  ranking_routine(output, tissue, namespace)
 
 @manager.command
 def datadownload():
@@ -103,9 +100,14 @@ def migrate_expression():
     dump_expression_dat(expr['path'], expr['namespace'], bunch=genes)
 
 @manager.command
-def migrate():
-  "Populates the MongoDB database using the data_dump JSON"
-  create_app()
+def migrate_ranks():
+  "Migrates the Computed Ranks to the Metadata and Object DB"
+  from packrat.migration.ranking import register_precomputed_ranking
+
+  with open('data_dump/catalogue.json') as m:
+    catalogue = json.load(m)
+
+  register_precomputed_ranking(catalogue['computed_ranks'])
 
 @manager.command
 def setup_index():

@@ -4,9 +4,10 @@
 
 import json
 import networkx as nx
+
 from packrat import logger
 
-def grow_network(target_file, host_file):
+def grow_network(target_file, host_file, write_out_loc):
   """
   Grow NetworkX graph object for persistence.
   """
@@ -35,4 +36,7 @@ def grow_network(target_file, host_file):
 
   logger.info("Graph object generated.")
 
-  return g
+  nx.write_gpickle(g, write_out)
+
+  logger.info(("Graph Migration Finished. "
+               "Add {0} in catalogue.json.").format(write_out_loc))

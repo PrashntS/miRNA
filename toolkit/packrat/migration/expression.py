@@ -17,6 +17,8 @@ def dump_expression_dat(filename, namespace, bunch=None):
   }
   fields = []
   coll = db['expre_' + namespace]
+  coll.drop()
+  docs = []
   with open(filename) as m:
     rows = csv.DictReader(m, delimiter='\t')
     for row in rows:
@@ -26,8 +28,9 @@ def dump_expression_dat(filename, namespace, bunch=None):
         del row['Gene ID']
         fields = list(row.keys())
         row['gene_id'] = gene_name
-        coll.update({'gene_id': gene_name}, row, True)
-        logging.info("Inserted: {0}".format(gene_name))
+        docs.append(row)
+
+  coll.insert_many(docs,  ordered=False)
 
   doc['fields'] = fields
   expre_meta.update({'namespace': namespace}, doc, True)

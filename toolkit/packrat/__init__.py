@@ -3,15 +3,14 @@
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 import requests
 import logging
+import json
 
 from huey import RedisHuey
 from pymongo import MongoClient
-from ZODB import DB as ZDB
-from ZEO.ClientStorage import ClientStorage as ZeoClientStorage
 
 from miriam import logger
 
-from packrat.config import HUEY, MONGO, ZEOCONF
+from packrat.config import HUEY, MONGO, ZEOCONF, CATALOGUE
 from packrat.alchemy.ensembl import ensembl_sequence, ensembl_gene_id
 from packrat.alchemy.ncbi import ncbi_search_id, ncbi_get_summary
 
@@ -19,8 +18,8 @@ huey    = RedisHuey(**HUEY)
 moncli  = MongoClient(**MONGO)
 db      = moncli['packrat']
 
-storage = ZeoClientStorage(ZEOCONF)
-zdb     = ZDB(storage).open()
+with open(CATALOGUE, 'r') as fp:
+  catalogue = json.load(fp)
 
 @huey.task(retries=10, retry_delay=10)
 def spawn_gene_dat(gene_id):

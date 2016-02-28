@@ -16,3 +16,6 @@ MONGO = {
 }
 
 ZEOCONF = ['localhost', 8090]
+
+CATALOGUE = ("/repository/project/mir-to-gene/toolkit/"
+             "data_dump/catalogue.json")

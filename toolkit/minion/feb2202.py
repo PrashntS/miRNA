@@ -23,23 +23,24 @@ T = 303
 @mincli.command("feb22")
 @click.argument('output')
 @click.option('--tissue', default='pancreas')
-def routine(output, tissue):
+@click.option('--namespace', default='EMTAB2919')
+def routine(output, tissue, namespace):
   """
   Tabulate the expressed miRNAs, and genes with the expression values.
   """
-  atlas = ExpressionAtlas()
+  atlas = ExpressionAtlas(namespace, bulk=True)
   atlas.tissue = tissue
 
   mirna_known_host = [_ for _ in g.mirnas if len(g.host(_))]
   mirna_known_host.sort(key=lambda x: len(g.target(x)), reverse=True)
 
   fieldnames = ['MIRNA', 'HOST', 'HOST_EXPR', 'HOST_TC', 'TARGET', 'TAR_EXPR',
-    'TAR_TC', 'DELTAG', 'DEGM', 'DEGT', 'DEGHOS'
+    'TAR_TC', 'DELTAG', 'DEGM', 'DEGT', 'DEGHOS',
   ]
   rows = []
   click.echo("Starting Routine")
 
-  thermo = Thermodynamics()
+  thermo = Thermodynamics(bulk=True)
 
   max_m = len(mirna_known_host)
   curr_m = 0
@@ -50,7 +51,7 @@ def routine(output, tissue):
     try:
       host_expr = atlas.expr_level(host)
     except ValueError:
-      host_expr = -1.0
+      host_expr = 0.0
 
     try:
       host_trns = g.transc_count(host)
@@ -68,7 +69,7 @@ def routine(output, tissue):
       try:
         row.append(atlas.expr_level(target))
       except ValueError:
-        row.append(-1.0)
+        row.append(0.0)
 
       try:
         tar_trns = g.transc_count(target)
@@ -91,8 +92,17 @@ def routine(output, tissue):
         click.echo("Done: M({0}/{1}),\t\t\t G({2}/{3})".format(
             curr_m, max_m, curr_t, max_t))
 
-  dat = pd.DataFrame(rows, columns=fieldnames)
-  dat.to_pickle("{0}_{1}.pkl".format(output, tissue))
-  dat.to_csv("{0}_{1}.csv".format(output, tissue))
+  df = pd.DataFrame(rows, columns=fieldnames)
 
-  return 0
+  rank_func = lambda x: math.exp((-1 * x[7]) / (R * T)) * (x[2] / x[5]) * (x[9] / x[8]) if (x[5] > 0 and x[2] > 0) else None
+
+  df['RANK'] = df.apply(rank_func, axis=1)
+
+  log_r = lambda x: math.log10(x[11])
+  df['RANK_LG'] = df.apply(log_r, axis=1)
+
+  df = df.sort_values("RANK", ascending=False)
+  df.index=range(1, len(df) + 1)
+
+  df.to_pickle("{0}_{1}_{2}.pkl".format(output, namespace, tissue))
+
