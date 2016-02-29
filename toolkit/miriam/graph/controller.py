@@ -8,6 +8,7 @@ from pydash import py_
 from flask_restful import Resource, reqparse
 
 from miriam.graph import g
+from miriam.graph.model import depth_limited_nodes, GraphKit
 
 class SubGraphController(Resource):
   def args(self):
@@ -18,35 +19,17 @@ class SubGraphController(Resource):
 
   def get(self):
     swag = self.args()
-    genes = self._gather(Gene, swag.get('genes'))
-    mirna = self._gather(miRNA, swag.get('mirna'))
+    genes = swag.get('genes')
+    mirna = swag.get('mirna')
 
-    return self._get(mirna, genes)
+    return self.induce_subgraph(genes)
 
   def induce_subgraph(self, nodes):
-    nbunch1 = []
-    for node in nodes:
-      nbunch1 += graph.successors(node)
-      nbunch1 += graph.predecessors(node)
-
-    nbunch2 = []
-    for node in nbunch1:
-      nbunch2 += graph.successors(node)
-      nbunch2 += graph.predecessors(node)
-
-    nbunch = py_.uniq(nbunch2)
-    subgraph = graph.subgraph(nbunch)
-
-    #: Rank the nodes, and eliminate them.
-
-  def _gather(self, collection, arr):
-    doc = []
-
-    if not arr:
-      return doc
-    for sym in arr:
-      try:
-        doc.append(collection.objects.get(symbol = sym))
-      except Exception:
-        pass
-    return doc
+    subgraph = g.g.subgraph(depth_limited_nodes(nodes, g, 1))
+    sub = GraphKit(subgraph)
+    return {
+      'genes_store': sub.genes,
+      'miRNA_store': sub.mirnas,
+      'target_list': [_ for _ in sub.g.edges(data=True) if _[2]['kind']=='M>G'],
+      'host_list': [_ for _ in sub.g.edges(data=True) if _[2]['kind']=='G>M'],
+    }

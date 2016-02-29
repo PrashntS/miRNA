@@ -1,6 +1,6 @@
 module.exports = config:
   paths:
-    public: '../miRNA/static'
+    public: '../miriam/static'
   files:
     javascripts: joinTo:
       'js/libraries.js': (path) ->

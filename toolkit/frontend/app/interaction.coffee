@@ -8,6 +8,7 @@ templates =
 
 class Graph extends GraphUtils.Graph
   constructor: (opts)->
+    console.log opts
     super opts
     @bindings = opts.ui_binding
     @_G = new jsnx.DiGraph
@@ -23,7 +24,7 @@ class Graph extends GraphUtils.Graph
         className: 'vex-theme-default'
 
   fetch_and_update: ->
-    $.getJSON "/api/graph?#{@bindings.select2box.serialize()}"
+    $.getJSON "/api/graph?genes=SOX4"
       .done (data) =>
         @_G.addNodesFrom(data.genes_store)
         @_G.addNodesFrom(data.miRNA_store)
@@ -35,14 +36,14 @@ class Graph extends GraphUtils.Graph
             id: gene
             type: 'Gene'
             color: '#8C6CDA'
-            inreq: _.indexOf(@bindings.select2box.genes, gene) >= 0
+            inreq: gene == 'SOX4'
 
         for mirna in data.miRNA_store
           @addNode
             id: mirna
             type: 'miRNA'
             color: '#91B93E'
-            inreq: _.indexOf(@bindings.select2box.mirna, mirna) >= 0
+            inreq: false
 
         for edge in data.target_list
           @addLink edge[0], edge[1], '10', 'target'
@@ -70,7 +71,7 @@ class UserView
     @rivets_init()
     @graph_init()
     # @param_init()
-    # @graph.fetch_and_update()
+    @graph.fetch_and_update()
 
   param_init: ->
     @user_param = new UserParam
@@ -122,7 +123,7 @@ class UserView
     emit: (e, f) ->
 
   select2box:
-    genes: []
+    genes: ['MCM7']
     mirna: []
 
     serialize: ->

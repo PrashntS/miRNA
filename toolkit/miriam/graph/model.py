@@ -88,20 +88,29 @@ class GraphKit(object):
     else:
       raise ValueError("Transcript Count is not available.")
 
-class DepthLimitedVisit(object):
-  def __init__(self, depth):
-    self.visited = set()
-    self.depth_limit = depth
 
-  def depth_limited_visits(self, node, depth = 0):
-    neighbors = []
-    if depth < self.depth_limit:
-      neighbors = graph.predecessors(node) + graph.successors(node)
-    for n_node in neighbors:
-      if n_node not in self.visited:
-        self.visited.add(n_node)
-        self.depth_limited_visits(n_node, depth + 1)
-    return self.visited
+def depth_limited_nodes(inducers, graph, depth_limit=1):
+  def _depth_limited_visits(nbunch, depth=0):
+    new_bunch = nbunch[:]
+    for node in nbunch:
+      c1 = 0
+      for h_nei in graph.host(node):
+        c1 += 1
+        if h_nei not in new_bunch:
+          new_bunch.append(h_nei)
+        if c1 == 20:
+          break
 
-  def ranked_visits(self, parameter):
-    return py_.sort(self.visited, parameter)
+      c2 = 0
+      for t_nei in graph.target(node):
+        c2 += 1
+        if t_nei not in new_bunch:
+          new_bunch.append(t_nei)
+        if c2 == 20:
+          break
+
+    if depth < depth_limit:
+      return _depth_limited_visits(new_bunch, depth + 1)
+    else:
+      return new_bunch
+  return _depth_limited_visits(inducers)

@@ -13,6 +13,11 @@ from miriam.stats.thermodynamics import Thermodynamics
 R = 8.314
 T = 303
 
+"""
+Ranking Equation:
+r = exp(-𝝙G/RT) * ([host] / [target]) * (deg(target) / deg(mirna))
+"""
+
 def ranking_routine(output, tissue='pancreas', namespace='EMTAB2919'):
   """
   Tabulate the expressed miRNAs, and genes with the expression values.
@@ -79,7 +84,7 @@ def ranking_routine(output, tissue='pancreas', namespace='EMTAB2919'):
     if (row[4] > 0 and row[3] > 0):
       keq = math.exp((-1 * row[5]) / (R * T))
       ex_ratio = (row[3] / row[4])
-      deg_ratio = (row[6] / row[7])
+      deg_ratio = (row[7] / row[6])
       return keq * ex_ratio * deg_ratio
     else:
       return None
