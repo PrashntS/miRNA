@@ -59,6 +59,60 @@ class UserParam
     @speed = 0
     @col = '#FFFFFF'
 
+class VisGraph
+  init: (nodes, edges) ->
+    container = document.getElementById("graphcanvas")
+    options =
+      nodes:
+        shape: 'dot'
+        scaling:
+          min: 1
+          max: 1
+        font:
+          size: 12
+          face: 'Montserrat'
+      edges:
+        hidden: false
+        color:
+          inherit: 'from'
+        width: 0.15
+        smooth:
+          type: 'continuous'
+          forceDirection: 'none'
+          roundness: 0
+      interaction:
+        hideEdgesOnDrag: true
+        tooltipDelay: 200
+      layout:
+        improvedLayout: false
+      physics:
+        stabilization: false
+        # forceAtlas2Based:
+        #   gravitationalConstant: -800
+        #   centralGravity: 0.2
+        #   springLength: 300
+        #   springConstant: 0.001
+        #   damping: 0.5
+
+        forceAtlas2Based:
+          gravitationalConstant: -807
+          centralGravity: 0.025
+          springLength: 200
+          springConstant: 0.82
+          damping: 0.73
+          avoidOverlap: 0.12
+        maxVelocity: 15
+        minVelocity: 0.75
+          # avoidOverlap: 0.31
+        solver: 'forceAtlas2Based'
+        # maxVelocity: 20
+        # minVelocity: 0.67
+        timestep: 1
+    data =
+      nodes: nodes
+      edges: edges
+    @network = new vis.Network(container, data, options)
+
 class UserView
   constructor: (opts) ->
     @select2box = @select2box
@@ -69,9 +123,15 @@ class UserView
   init: ->
     @select_init()
     @rivets_init()
-    @graph_init()
+    # @graph_init()
     # @param_init()
-    @graph.fetch_and_update()
+    # @graph.fetch_and_update()
+    @vg = new VisGraph
+    $.getJSON "/api/graph?genes=SOX4"
+    .done (dat) =>
+      nodes = new vis.DataSet(dat.nodes)
+      edges = new vis.DataSet(dat.edges)
+      @vg.init(nodes, edges)
 
   param_init: ->
     @user_param = new UserParam
