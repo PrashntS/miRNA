@@ -8,7 +8,7 @@ from packrat import catalogue
 from pydash import py_
 
 try:
-  graph = nx.read_gpickle(catalogue["network"]["computed"]["path"])
+  graph = nx.read_gpickle(catalogue["network"]["computed_sm"]["path"])
 except KeyError:
   logger.warn("Graph object unavailable.")
   graph = None

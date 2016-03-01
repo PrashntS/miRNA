@@ -25,8 +25,9 @@ class SubGraphController(Resource):
     return self.induce_subgraph(genes)
 
   def induce_subgraph(self, nodes):
-    subgraph = g.g.subgraph(depth_limited_nodes(nodes, g, 1))
-    sub = GraphKit(subgraph)
+    # subgraph = g.g.subgraph(depth_limited_nodes(nodes, g, 1))
+    # sub = GraphKit(subgraph)
+    sub = g
     return {
       'genes_store': sub.genes,
       'miRNA_store': sub.mirnas,
