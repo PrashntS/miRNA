@@ -1,17 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#.--. .-. ... .... -. - ... .-.-.- .. -.
-
+# MiRiam
 import networkx as nx
-
-from packrat import catalogue
-from pydash import py_
-
-try:
-  graph = nx.read_gpickle(catalogue["network"]["computed_sm"]["path"])
-except KeyError:
-  logger.warn("Graph object unavailable.")
-  graph = None
 
 class GraphKit(object):
   """
@@ -28,8 +18,13 @@ class GraphKit(object):
       GraphKit.transc_count
   """
 
-  def __init__(self, graph):
+  def __init__(self, graph=None):
     self.g = graph
+
+  def __build(self):
+    """Build the graph using database dump.
+    """
+    pass
 
   @property
   def mirnas(self):
@@ -88,29 +83,3 @@ class GraphKit(object):
     else:
       raise ValueError("Transcript Count is not available.")
 
-
-def depth_limited_nodes(inducers, graph, depth_limit=1):
-  def _depth_limited_visits(nbunch, depth=0):
-    new_bunch = nbunch[:]
-    for node in nbunch:
-      c1 = 0
-      for h_nei in graph.host(node):
-        c1 += 1
-        if h_nei not in new_bunch:
-          new_bunch.append(h_nei)
-        if c1 == 20:
-          break
-
-      c2 = 0
-      for t_nei in graph.target(node):
-        c2 += 1
-        if t_nei not in new_bunch:
-          new_bunch.append(t_nei)
-        if c2 == 20:
-          break
-
-    if depth < depth_limit:
-      return _depth_limited_visits(new_bunch, depth + 1)
-    else:
-      return new_bunch
-  return _depth_limited_visits(inducers)

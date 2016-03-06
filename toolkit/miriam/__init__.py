@@ -1,32 +1,19 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#.--. .-. ... .... -. - ... .-.-.- .. -.
+# MiRiam
+import hug
 
-from flask import Flask, render_template
-from flask_socketio import SocketIO, send as sock_send, emit
-from walrus import Database as WalrusDB
+from pymongo import MongoClient
 
-from miriam.config import logging_handle, console_handle
+from miriam._version import current
+from miriam._config import MONGO, mongo_db_name
 
-app = Flask(__name__, template_folder='static')
-app.config.from_pyfile('config.py')
-
-walrus    = WalrusDB(**app.config.get('REDIS'))
-memcache  = walrus.cache()
-
-app.logger.handlers = [logging_handle, console_handle]
-logger = app.logger
-
-socketio  = SocketIO(app)
+client = MongoClient(**MONGO)
+db = client[mongo_db_name]
 
 
-def create_app():
-  from .api.controller import api
-
-  app.register_blueprint(api, url_prefix = '/api')
-
-  logger.info("App Started")
-
-  @app.route('/')
-  def home():
-    return render_template('index.html')
+@hug.get('/', versions=current)
+def get_root():
+  return {
+    'success': True
+  }

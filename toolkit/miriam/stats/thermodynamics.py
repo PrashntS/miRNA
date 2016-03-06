@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#.--. .-. ... .... -. - ... .-.-.- .. -.
-
+# MiRiam
 from metarna.target_scan import free_energy, scan as target_scan
 
-from packrat import db
+from miriam import db
 from miriam.alchemy.docs import Gene, MiRNA
+
 
 class Thermodynamics(object):
   def __init__(self, bulk=False, **kwargs):
