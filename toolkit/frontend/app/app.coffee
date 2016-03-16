@@ -1,11 +1,11 @@
 
-automaton = require('automaton').automaton
-interaction = require('interaction').interaction
+# automaton = require './automaton'
+interaction = require './interaction'
 
 App =
   init: ->
     @interaction = interaction
-    @automaton = automaton
+    # @automaton = automaton
     @interaction.init()
     # @automaton.init()
 

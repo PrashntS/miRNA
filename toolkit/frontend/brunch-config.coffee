@@ -1,18 +1,13 @@
 module.exports = config:
-  paths:
-    public: '../miriam/static'
   files:
-    javascripts: joinTo:
-      'js/libraries.js': (path) ->
-        /^(bower_components)\//.test path
-      'js/app.js': (path) ->
-        /^(app)\//.test path
+    javascripts:
+      joinTo:
+        'js/libraries.js': /^(?!app\/)/
+        'js/app.js': /^app\//
     stylesheets:
       joinTo:
-        'css/libraries.css': /^bower_components\//
-        'css/app.css': /^(app)/
-      order:
-        before: ['bower_components/normalize-css/normalize.css']
+        'css/libraries.css': /^(?!app\/)/
+        'css/app.css': /^app\//
     templates: joinTo: 'js/app.js'
   plugins:
     coffeescript:
@@ -32,6 +27,8 @@ module.exports = config:
       variable: null
       namespace: "module.exports"
   npm:
-    enabled: no
-    whitelist: ['lodash']
-
+    enabled: yes
+    styles:
+      'normalize.css': [
+        'normalize.css'
+      ]

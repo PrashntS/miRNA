@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
 
-rivets      = require('rivets').rvt
-GraphUtils  = require('utils/graph')
+# rivets      = require('./rivets').rvt
+GraphUtils  = require('./utils/graph')
 templates =
-  geneselect: require('views/geneselect')
+  geneselect: require('./views/geneselect')
 
 class Graph extends GraphUtils.Graph
   constructor: (opts)->
@@ -24,7 +24,7 @@ class Graph extends GraphUtils.Graph
         className: 'vex-theme-default'
 
   fetch_and_update: ->
-    $.getJSON "/api/graph?genes=SOX4"
+    $.getJSON "/api/v1/graph?genes=SOX4"
       .done (data) =>
         @_G.addNodesFrom(data.genes_store)
         @_G.addNodesFrom(data.miRNA_store)

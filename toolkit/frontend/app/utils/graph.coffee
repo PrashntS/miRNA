@@ -285,4 +285,4 @@ class Graph
       gnode = @parentNode
       gnode.parentNode.appendChild gnode
 
-module.exports = Graph: Graph
+module.exports = Graph

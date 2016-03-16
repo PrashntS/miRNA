@@ -60,5 +60,7 @@ bower_components/
 node_modules/
 static/
 .sass-cache/
+public/
+miriamdep/
 
 simulation/both_subgraph.gexf

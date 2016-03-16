@@ -1,6 +1,6 @@
 
-entities = require('creatures')
-terra = require('terra/main')
+entities = require('./creatures')
+terra = require('./terra/main')
 
 exports.automaton =
   init: ->

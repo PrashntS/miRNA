@@ -30,4 +30,4 @@ rivets.configure
   #   @call target, event, binding.view.models
   #   return
 
-exports.rvt = rivets
+module.exports = rivets
