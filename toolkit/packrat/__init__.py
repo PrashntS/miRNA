@@ -8,8 +8,6 @@ import json
 from huey import RedisHuey
 from pymongo import MongoClient
 
-from miriam import logger
-
 from packrat.config import HUEY, MONGO, ZEOCONF, CATALOGUE
 from packrat.alchemy.ensembl import ensembl_sequence, ensembl_gene_id
 from packrat.alchemy.ncbi import ncbi_search_id, ncbi_get_summary

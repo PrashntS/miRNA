@@ -5,7 +5,7 @@
 import pickle
 import transaction
 
-from packrat import db, logger
+from packrat import db,
 
 def register_precomputed_ranking(datasets):
   """
