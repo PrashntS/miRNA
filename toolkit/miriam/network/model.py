@@ -3,6 +3,8 @@
 # MiRiam
 import networkx as nx
 
+from packrat.migration import graph as graph_store
+
 class GraphKit(object):
   """
   Abstraction over the networkx graph.
@@ -19,12 +21,13 @@ class GraphKit(object):
   """
 
   def __init__(self, graph=None):
-    self.g = graph
-
-  def __build(self):
-    """Build the graph using database dump.
-    """
-    pass
+    if graph is not None:
+      self.g = graph
+    else:
+      try:
+        self.g = graph_store.get()
+      except Exception:
+        raise RuntimeError("Graph data not persistent. Migration Required.")
 
   @property
   def mirnas(self):
@@ -32,7 +35,7 @@ class GraphKit(object):
 
   @property
   def genes(self):
-    return [k for k, v in self.g.node.items() if v['kind'] == 'GEN']
+    return [k for k, v in self.g.node.items() if not v['kind'] == 'MIR']
 
   def host(self, node, *a, **kwa):
     """
@@ -69,17 +72,4 @@ class GraphKit(object):
       return self.g.predecessors(node)
     else:
       raise ValueError("Node is unsupported kind.")
-
-  def transc_count(self, node, *a, **kwa):
-    if self.g.node[node]['kind'] == 'GEN':
-      tc = self.g.node[node]['tc']
-    elif self.g.node[node]['kind'] == 'MIR':
-      tc = self.transc_count(*self.host(node))
-    else:
-      raise ValueError("Node is unsupported kind.")
-
-    if type(tc) is int:
-      return tc
-    else:
-      raise ValueError("Transcript Count is not available.")
 
