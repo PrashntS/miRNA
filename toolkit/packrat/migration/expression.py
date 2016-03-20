@@ -1,36 +1,36 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #.--. .-. ... .... -. - ... .-.-.- .. -.
-
-import csv
+import re
 import logging
+import pandas as pd
+
 from packrat import db
+from miriam import psql
+from packrat import catalogue
 
 expre_meta = db['expre_meta']
+clean = lambda varStr: re.sub('\W|^(?=\d)','_', varStr).lower()
 
-def dump_expression_dat(filename, namespace, bunch=None):
+def routine():
   #: Register Fields in the Expression Metadata
-  doc = {
-    'origin': filename,
-    'namespace': namespace,
-    'db': 'expre_' + namespace
-  }
-  fields = []
-  coll = db['expre_' + namespace]
-  coll.drop()
-  docs = []
-  with open(filename) as m:
-    rows = csv.DictReader(m, delimiter='\t')
-    for row in rows:
-      gene_name = row['Gene Name']
-      if type(bunch) is list and gene_name in bunch:
-        del row['Gene Name']
-        del row['Gene ID']
-        fields = list(row.keys())
-        row['gene_id'] = gene_name
-        docs.append(row)
+  for meta in catalogue['expression']:
+    namespace = meta['namespace'].lower()
+    filename = meta['path']
 
-  coll.insert_many(docs,  ordered=False)
+    df = pd.read_csv(filename, sep='\t')
+    df = df.rename(columns={_: clean(_) for _ in df.columns})
+    del df['gene_id']
+    df = df.set_index('gene_name')
 
-  doc['fields'] = fields
-  expre_meta.update({'namespace': namespace}, doc, True)
+    df.to_sql('e_' + namespace, psql, if_exists='replace')
+
+    doc = {
+      'origin': filename,
+      'namespace': namespace,
+      'db': 'e_' + namespace,
+      'tissues': list(df.columns[1:])
+    }
+    expre_meta.update({'namespace': namespace}, doc, True)
+
+    logging.debug('Added {0} to the DB.'.format(namespace))
