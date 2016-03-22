@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # MiRiam
-import math
 import pandas as pd
 import networkx as nx
 import functools
@@ -9,23 +8,30 @@ import itertools
 
 from multiprocessing import Pool
 from pydash import py_
+from math import exp
+from cpython cimport array
+import array
 
 from miriam import psql, db
 
-R = 8.314
-T = 303
+cdef float R = 8.314
+cdef float T = 303
+cdef float RTI = -1.0 / (R * T)
+cdef float e = exp(1)
 
 class Ranking(object):
   def __init__(self, tissue, table, **kwa):
     # Thresholds
     self.th_ps2 = kwa.get('th_ps2', 1)
     self.th_ps3 = kwa.get('th_ps3', 1)
-    self.__proc = kwa.get('__proc', 4)
+    self.__proc = kwa.get('__proc', 1)
 
     self.tissue = tissue
     self.table = table
+    self.degcache = {}
     self.__preinit()
     self.__setup_ground()
+    self.patch_ranks()
 
   def __preinit(self):
     self.ntwkdg = pd.read_sql_table('ntwkdg', psql)
@@ -60,14 +66,29 @@ class Ranking(object):
     del p2
     return p3
 
-  def _f_r1(self, x):
-    if x[3] == 0:
+  def _f_r1(self, row):
+    cdef float dg = row[2]
+    cdef float eg = row[3]
+    cdef float em = row[5]
+    try:
+      return (e ** (RTI * dg)) * (em / eg)
+    except ZeroDivisionError:
       return None
-    else:
-      return math.exp(-x[2] / (R * T)) * (x[5] / x[3])
 
-  def _f_r2(self, x):
-    return x[6] * self.g_p2.degree(x[1]) / self.g_p2.degree(x[0])
+  def __degree(self, x):
+    try:
+      return self.degcache[x]
+    except KeyError:
+      deg = self.g_p2.degree(x)
+      self.degcache[x] = deg
+      return deg
+
+  def _f_r2(self, row):
+    cdef int dm = self.__degree(row[0])
+    cdef int dg = self.__degree(row[1])
+    cdef float r1 = row[6]
+
+    return r1 * dg / dm
 
   def __setup_ground(self):
     """Adds First Ranking to the DataFrame.
@@ -78,6 +99,7 @@ class Ranking(object):
     #: Calculate keq.
 
     gd['r1'] = self.__coroutine_apply('_f_r1', gd)#  gd.apply(f_r1_p2, axis=1)
+    # gd['r1'] = gd.apply(self._f_r1, axis=1)
 
     gd_p1 = gd.sort_values('r1', ascending=False)
     gd_p1.index = range(1, len(gd_p1) + 1)
@@ -85,7 +107,7 @@ class Ranking(object):
 
   def __get_deg_rank(self):
     pd.options.mode.chained_assignment = None
-    self.gd_p2 = self.gd_p1.query('r1 > {0}'.format(math.exp(self.th_ps2)))
+    self.gd_p2 = self.gd_p1.query('r1 > {0}'.format(exp(self.th_ps2)))
     self.g_p2 = nx.from_edgelist(self.gd_p2.loc[:,('mirna', 'gene')].values,
         create_using=nx.DiGraph())
 
@@ -94,7 +116,7 @@ class Ranking(object):
     gd_p3 = self.gd_p2.sort_values('r2', ascending=False)
     gd_p3.index = range(1, len(gd_p3) + 1)
     if self.th_ps3 > 0:
-      gd_p3 = gd_p3.query('r2 > {0}'.format(math.exp(self.th_ps3)))
+      gd_p3 = gd_p3.query('r2 > {0}'.format(exp(self.th_ps3)))
     return gd_p3
 
   def __srange(self, lim, step, chunks):
@@ -170,5 +192,17 @@ def plot_gen(**kwa):
     except Exception:
       pass
     print(th)
+
+  return store
+
+def get_top_ranks(namespace, **kwa):
+  doc = db['expre_meta'].find_one({'namespace': namespace})
+
+  store = []
+  if doc is not None:
+    for tissue in doc['tissues']:
+      runner = Ranking(tissue, doc['db'], **kwa)
+      store.append(runner)
+      print(tissue)
 
   return store
