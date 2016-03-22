@@ -26,11 +26,12 @@ class Ranking(object):
     self.th_ps3 = kwa.get('th_ps3', 1)
     self.__proc = kwa.get('__proc', 1)
 
+    self.resetup = True
+
     self.tissue = tissue
     self.table = table
     self.degcache = {}
     self.__preinit()
-    self.__setup_ground()
 
   def __preinit(self):
     self.ntwkdg = pd.read_sql_table('ntwkdg', psql)
@@ -65,6 +66,14 @@ class Ranking(object):
     del p2
     return p3
 
+  def __degree(self, x):
+    try:
+      return self.degcache[x]
+    except KeyError:
+      deg = self.g_p2.degree(x)
+      self.degcache[x] = deg
+      return deg
+
   def _f_r1(self, row):
     cdef float dg = row[2]
     cdef float eg = row[3]
@@ -73,14 +82,6 @@ class Ranking(object):
       return (e ** (RTI * dg)) * (em / eg)
     except ZeroDivisionError:
       return None
-
-  def __degree(self, x):
-    try:
-      return self.degcache[x]
-    except KeyError:
-      deg = self.g_p2.degree(x)
-      self.degcache[x] = deg
-      return deg
 
   def _f_r2(self, row):
     cdef int dm = self.__degree(row[0])
@@ -103,6 +104,7 @@ class Ranking(object):
     gd_p1 = gd.sort_values('r1', ascending=False)
     gd_p1.index = range(1, len(gd_p1) + 1)
     self.gd_p1 = gd_p1
+    self.resetup = False
 
   def __get_deg_rank(self):
     pd.options.mode.chained_assignment = None
@@ -143,18 +145,33 @@ class Ranking(object):
     pool.close()
     return pd.concat(py_.flatten(passes))
 
-  def patch_ranks(self, threshold_ground=1, threshold_degree=1):
-    self.th_ps2 = threshold_ground
-    self.th_ps3 = threshold_degree
+  def patch_ranks(self, **kwa):
+    if self.resetup is True:
+      self.__setup_ground()
+
+    self.th_ps2 = kwa.get('threshold_ground', self.th_ps2)
+    self.th_ps3 = kwa.get('threshold_degree', self.th_ps3)
     self.__ranks = self.__get_deg_rank()
+
+  def patch_expression(self, updates):
+    """Alter Expression Levels to get newer ranks
+    This will reinitialise the ground data. It is advised to use `reinit` to
+    get the original data back.
+
+    Chained or subsequent Patches are Retained.
+
+    Args:
+      updates: list of ordered pairs of (gene_name, expression).
+    """
+    for gene, new_exp in updates:
+      self.exp_dat.ix[self.exp_dat.gene_name == gene, self.tissue] = new_exp
+    self.resetup = True
 
   @property
   def ranks(self):
-    try:
-      return self.__ranks
-    except AttributeError:
+    if self.resetup is True:
       self.patch_ranks()
-      return self.__ranks
+    return self.__ranks
 
   @ranks.setter
   def ranks(self, val):
@@ -162,6 +179,9 @@ class Ranking(object):
 
   @property
   def report(self):
+    if self.resetup is True:
+      self.patch_ranks()
+
     uniq_mir_p2 = len(self.gd_p2['mirna'].value_counts())
     uniq_mir_p3 = len(self.ranks['mirna'].value_counts())
 
