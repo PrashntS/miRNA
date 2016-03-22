@@ -1,3 +1,36 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a6193b1539e001727f80f68b64c3327495f1604a9f5b1e9a3a9b1145034f3e8d
-size 1838
+{
+  "mir_seq": {
+    "version": 1,
+    "added": 20160220,
+    "path": "data_dump/computed/miRBase_mature_sequences.fa"
+  },
+  "expression": [
+    {
+      "version": 1,
+      "added": 20160220,
+      "path": "data_dump/exported/E-MTAB-2919-query-results.tsv",
+      "namespace": "EMTAB2919"
+    },
+    {
+      "version": 1,
+      "added": 20160220,
+      "path": "data_dump/exported/E-MTAB-2770-query-results.tsv",
+      "namespace": "EMTAB2770"
+    },
+    {
+      "version": 1,
+      "added": 20160228,
+      "path": "data_dump/exported/E-MTAB-2706-query-results.tsv",
+      "namespace": "EMTAB2706"
+    }
+  ],
+  "network": {
+    "v3": {
+      "hosts": "data_dump/computed/gene_mirna_graph_20160220.json",
+      "targets": "data_dump/computed/mirna_gene_graph_20160220v2.json",
+      "_meta": {
+        "added": 20160228
+      }
+    }
+  }
+}
