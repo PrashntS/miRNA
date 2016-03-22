@@ -1,0 +1,26 @@
+@import "bourbon"
+
+@mixin clear-ul
+  list-style-type: none
+  padding: 0
+  margin: 0
+
+@mixin navigation-list
+  @include clear-ul
+  overflow: scroll
+  > li
+    display: inline-block
+    display: inline-flex
+    margin: 0 5px
+
+@mixin underline-proxy
+  position: relative
+
+  &::after
+    content: ""
+    background-color: #FFF
+    width: 100%
+    height: 1px
+    position: absolute
+    bottom: -5px
+    right: 0

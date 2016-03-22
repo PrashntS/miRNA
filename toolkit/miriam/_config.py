@@ -11,4 +11,4 @@ mongo_db_name = 'packrat'
 
 psql_url = 'postgresql://prashantsinha@localhost:5432/miriam'
 
-static_root = '/repository/project/mir-to-gene/toolkit/frontend/public'
+static_root = '/repository/project/mir-to-gene/toolkit/public'

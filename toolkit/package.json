@@ -1,0 +1,26 @@
+{
+  "name": "miriam",
+  "version": "1.0.0",
+  "description": "Frontend for Miriam toolkit.",
+  "main": "app.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Prashant Sinha",
+  "license": "MIT",
+  "dependencies": {
+    "auto-reload-brunch": "^2.1.0",
+    "brunch": "^2.5.2",
+    "coffee-script-brunch": "^2.0.0",
+    "css-brunch": "^2.0.0",
+    "d3": "^3.5.16",
+    "javascript-brunch": "^2.0.0",
+    "jquery": "^2.2.2",
+    "linkurious": "^1.5.0",
+    "lodash": "^4.6.1",
+    "node-bourbon": "^4.2.8",
+    "node-neat": "^1.7.2",
+    "normalize-css": "^2.3.1",
+    "sass-brunch": "^2.0.0"
+  }
+}
