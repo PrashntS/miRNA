@@ -31,7 +31,6 @@ class Ranking(object):
     self.degcache = {}
     self.__preinit()
     self.__setup_ground()
-    self.patch_ranks()
 
   def __preinit(self):
     self.ntwkdg = pd.read_sql_table('ntwkdg', psql)
@@ -147,12 +146,22 @@ class Ranking(object):
   def patch_ranks(self, threshold_ground=1, threshold_degree=1):
     self.th_ps2 = threshold_ground
     self.th_ps3 = threshold_degree
-    self.ranks = self.__get_deg_rank()
+    self.__ranks = self.__get_deg_rank()
+
+  @property
+  def ranks(self):
+    try:
+      return self.__ranks
+    except AttributeError:
+      self.patch_ranks()
+      return self.__ranks
+
+  @ranks.setter
+  def ranks(self, val):
+    self.__ranks = val
 
   @property
   def report(self):
-    if not hasattr(self, 'ranks'):
-      self.patch_ranks()
     uniq_mir_p2 = len(self.gd_p2['mirna'].value_counts())
     uniq_mir_p3 = len(self.ranks['mirna'].value_counts())
 
@@ -172,6 +181,39 @@ class Ranking(object):
       },
     }
 
+  def graphify(self, slice=100):
+    """Return a NetworkX graph of the rankbunch.
+
+    Args:
+      slice: Valid Values are:
+        - (int x) Slices the rank as rank[:x]
+        - (list [x, y]) Slices the ranks as rank[x, y]
+
+    [Caveates]
+      rankbunch: Expects a Pandas dataframe slice having compatible columns.
+        'mirna', 'gene', 'dg', 'exp_tar', 'host', 'exp_mir', 'r1', 'r2'
+         0        1       2     3          4       5          6     7
+    """
+    # Generate MiRNA -> Gene Links with weights `r2`
+    # Generate Host --> MiRNA Links with weights `exp_mir`
+    if type(slice) is int:
+      x, y = 0, slice
+    elif type(slice) in [list, tuple]:
+      x, y = slice
+    else:
+      raise ValueError("`slice` is invalid")
+
+    rankbunch = self.ranks[x:y]
+
+    g = nx.DiGraph()
+    g.add_weighted_edges_from(rankbunch.loc[:,('mirna', 'gene', 'r2')].values)
+    g.add_weighted_edges_from(rankbunch.loc[:,('host', 'mirna', 'exp_mir')].values)
+
+    for i, j in [['MIR', 'mirna'], ['GEN', 'gene'], ['GEN', 'host']]:
+      nx.set_node_attributes(g, 'kind', {v: i for v in rankbunch[j].values})
+
+    return g
+
 def get_ranks(tissue, namespace, **kwa):
   doc = db['expre_meta'].find_one({'namespace': namespace})
   if doc is not None and tissue in doc['tissues']:
@@ -180,29 +222,3 @@ def get_ranks(tissue, namespace, **kwa):
   else:
     raise KeyError("Given tissue and namespace combination is invalid.")
 
-def plot_gen(**kwa):
-  obj = get_ranks(**kwa)
-
-  store = []
-
-  for th in itertools.product(range(10), range(10)):
-    try:
-      obj.patch_ranks(*th)
-      store.append(th + (obj.report['pass_two']['total_interactions'],))
-    except Exception:
-      pass
-    print(th)
-
-  return store
-
-def get_top_ranks(namespace, **kwa):
-  doc = db['expre_meta'].find_one({'namespace': namespace})
-
-  store = []
-  if doc is not None:
-    for tissue in doc['tissues']:
-      runner = Ranking(tissue, doc['db'], **kwa)
-      store.append(runner)
-      print(tissue)
-
-  return store
