@@ -53,7 +53,7 @@ class Motif(object):
   def __post_process(dat):
     return [{v: k for k, v in d.items()} for d in dat]
 
-  def find_all(self, kind):
+  def find(self, kind):
     out = [_ for _ in self._iter_kind(kind)]
     if kind in self.no_order:
       out_pre = py_.uniq(out, callback=Motif.__duplicates)
@@ -61,6 +61,8 @@ class Motif(object):
       out_pre = out
     return Motif.__post_process(out_pre)
 
+  def find_all(self):
+    return {kind: self.find(kind) for kind in self.kinds}
 
 def pagerank(G, alpha=0.85, personalization=None,
              max_iter=100, tol=1.0e-6, nstart=None, weight='weight',

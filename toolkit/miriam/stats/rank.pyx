@@ -9,8 +9,6 @@ import itertools
 from multiprocessing import Pool
 from pydash import py_
 from math import exp
-from cpython cimport array
-import array
 
 from miriam import psql, db
 
@@ -64,7 +62,7 @@ class Ranking(object):
 
     del p1
     del p2
-    return p3
+    return p3#.query('exp_tar > 1 and exp_mir > 1')
 
   def __degree(self, x):
     try:
@@ -108,7 +106,7 @@ class Ranking(object):
 
   def __get_deg_rank(self):
     pd.options.mode.chained_assignment = None
-    self.gd_p2 = self.gd_p1.query('r1 > {0}'.format(exp(self.th_ps2)))
+    self.gd_p2 = self.gd_p1.query('{0} < r1 < {1}'.format(exp(-4), exp(4)))
     self.g_p2 = nx.from_edgelist(self.gd_p2.loc[:,('mirna', 'gene')].values,
         create_using=nx.DiGraph())
 
@@ -201,7 +199,7 @@ class Ranking(object):
       },
     }
 
-  def graphify(self, slice=100):
+  def graphify(self, slice=100, noslice=True):
     """Return a NetworkX graph of the rankbunch.
 
     Args:
@@ -216,14 +214,17 @@ class Ranking(object):
     """
     # Generate MiRNA -> Gene Links with weights `r2`
     # Generate Host --> MiRNA Links with weights `exp_mir`
-    if type(slice) is int:
-      x, y = 0, slice
-    elif type(slice) in [list, tuple]:
-      x, y = slice
-    else:
-      raise ValueError("`slice` is invalid")
+    if noslice is False:
+      if type(slice) is int:
+        x, y = 0, slice
+      elif type(slice) in [list, tuple]:
+        x, y = slice
+      else:
+        raise ValueError("`slice` is invalid")
 
-    rankbunch = self.ranks[x:y]
+      rankbunch = self.ranks[x:y]
+    else:
+      rankbunch = self.ranks
 
     g = nx.DiGraph()
     g.add_weighted_edges_from(rankbunch.loc[:,('mirna', 'gene', 'r2')].values)
