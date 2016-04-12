@@ -18,7 +18,7 @@ cdef float RTI = -1.0 / (R * T)
 cdef float e = exp(1)
 
 class Ranking(object):
-  def __init__(self, tissue, table, **kwa):
+  def __init__(self, tissue, **kwa):
     # Thresholds
     self.th_ps2 = kwa.get('th_ps2', 1)
     self.th_ps3 = kwa.get('th_ps3', 1)
@@ -27,18 +27,13 @@ class Ranking(object):
     self.resetup = True
 
     self.tissue = tissue
-    self.table = table
     self.degcache = {}
     self.__preinit()
 
   def __preinit(self):
     self.ntwkdg = pd.read_sql_table('ntwkdg', psql)
     self.mirna  = pd.read_sql_table('mirn', psql)
-
-    self.exp_dat = pd.read_sql_query(
-      'select gene_name, {0} from {1}'.format(self.tissue, self.table),
-      psql
-    )
+    self.exp_dat = self.tissue.expression
 
   def __do_merge(self):
     """Return Merged Data Segments
@@ -234,12 +229,3 @@ class Ranking(object):
       nx.set_node_attributes(g, 'kind', {v: i for v in rankbunch[j].values})
 
     return g
-
-def get_ranks(tissue, namespace, **kwa):
-  doc = db['expre_meta'].find_one({'namespace': namespace})
-  if doc is not None and tissue in doc['tissues']:
-    runner = Ranking(tissue, doc['db'], **kwa)
-    return runner
-  else:
-    raise KeyError("Given tissue and namespace combination is invalid.")
-
