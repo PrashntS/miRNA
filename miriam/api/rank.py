@@ -22,10 +22,26 @@ def get_tissues_via_id(tissue_id: id_format):
     raise falcon.HTTPNotFound
 
 @hug.get('/{tissue_id}')
-def get_rank_summary(tissue_id: id_format):
+def get_rank_summary(tissue_id: id_format,
+      threshold_pass_two: hug.types.number=3,
+      threshold_pass_three: hug.types.number=3
+  ):
+  try:
+    tissue = Tissue(tissue_id)
+    r_o = Ranking(tissue,
+        th_ps2=threshold_pass_two,
+        th_ps3=threshold_pass_three)
+    return r_o.report
+  except KeyError:
+    raise falcon.HTTPNotFound
+
+@hug.get('/{tissue_id}/{kind}')
+def get_rank_summary(tissue_id: id_format,
+      kind: kind
+  ):
   try:
     tissue = Tissue(tissue_id)
     r_o = Ranking(tissue)
-    return r_o.report
+    return r_o.ranks[kind]
   except KeyError:
     raise falcon.HTTPNotFound

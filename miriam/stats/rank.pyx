@@ -11,6 +11,7 @@ from pydash import py_
 from math import exp
 
 from miriam import psql, db
+from miriam.logger import logger
 
 cdef float R = 8.314
 cdef float T = 303
@@ -22,7 +23,7 @@ class Ranking(object):
     # Thresholds
     self.th_ps2 = kwa.get('th_ps2', 1)
     self.th_ps3 = kwa.get('th_ps3', 1)
-    self.__proc = kwa.get('__proc', 1)
+    self.__proc = kwa.get('__proc', 3)
 
     self.resetup = True
 
@@ -31,8 +32,11 @@ class Ranking(object):
     self.__preinit()
 
   def __preinit(self):
+    logger.debug('Preinit - Begin Read NW')
     self.ntwkdg = pd.read_sql_table('ntwkdg', psql)
+    logger.debug('Preinit - Begin Read MR')
     self.mirna  = pd.read_sql_table('mirn', psql)
+    logger.debug('Preinit - Begin Read EXP')
     self.exp_dat = self.tissue.expression
 
   def __do_merge(self):
@@ -87,13 +91,15 @@ class Ranking(object):
     """Adds First Ranking to the DataFrame.
     [Caveates] Added column: `r1`, index: 6
     """
+    logger.debug('Setup Ground - Begin Merge')
     gd = self.__do_merge()
 
     #: Calculate keq.
 
-    gd['r1'] = self.__coroutine_apply('_f_r1', gd)#  gd.apply(f_r1_p2, axis=1)
-    # gd['r1'] = gd.apply(self._f_r1, axis=1)
+    logger.debug('Setup Ground - Apply 1')
+    gd['r1'] = self.__coroutine_apply('_f_r1', gd)
 
+    logger.debug('Setup Ground - Sort')
     gd_p1 = gd.sort_values('r1', ascending=False)
     gd_p1.index = range(1, len(gd_p1) + 1)
     self.gd_p1 = gd_p1
@@ -101,12 +107,15 @@ class Ranking(object):
 
   def __get_deg_rank(self):
     pd.options.mode.chained_assignment = None
+    logger.debug('Deg Rank - Init Q')
     self.gd_p2 = self.gd_p1.query('{0} < r1 < {1}'.format(exp(-4), exp(4)))
     self.g_p2 = nx.from_edgelist(self.gd_p2.loc[:,('mirna', 'gene')].values,
         create_using=nx.DiGraph())
 
+    logger.debug('Deg Rank - Apply')
     self.gd_p2['r2'] = self.__coroutine_apply('_f_r2', self.gd_p2)
 
+    logger.debug('Deg Rank - Sort')
     gd_p3 = self.gd_p2.sort_values('r2', ascending=False)
     gd_p3.index = range(1, len(gd_p3) + 1)
     if self.th_ps3 > 0:
@@ -165,10 +174,6 @@ class Ranking(object):
     if self.resetup is True:
       self.patch_ranks()
     return self.__ranks
-
-  @ranks.setter
-  def ranks(self, val):
-    self.__ranks = val
 
   @property
   def report(self):

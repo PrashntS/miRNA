@@ -16,7 +16,11 @@ def id_format(param, **kwa):
 
 def kind(param):
   """Node Kind (gene, or mirna)"""
-  if not param in ['genes', 'mirnas']:
+  kinds = {
+    'genes': 'gene',
+    'mirnas': 'mirna',
+  }
+  if param not in kinds:
     raise ValueError('Supplied `kind` is invalid.')
 
-  return param
+  return kinds[param]
