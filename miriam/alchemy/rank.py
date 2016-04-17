@@ -84,6 +84,9 @@ class TissueCollection(object):
   def __repr__(self):
     return ', '.join([str(_) for _ in self])
 
+  def __len__(self):
+    return len(self._tissues)
+
   @property
   def repr(self):
     return [_.repr for _ in self]
