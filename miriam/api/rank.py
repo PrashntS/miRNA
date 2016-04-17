@@ -8,6 +8,9 @@ from miriam.alchemy.rank import TissueCollection, Tissue
 from miriam.api.directives import id_format, kind
 from miriam.stats.rank import Ranking
 
+from packrat import catalogue
+from packrat.alchemy.utils import get_json_dict
+
 @hug.get('/tissues')
 def get_tissues():
   tissues = TissueCollection()
@@ -45,3 +48,8 @@ def get_rank_summary(tissue_id: id_format,
     return r_o.ranks[kind]
   except KeyError:
     raise falcon.HTTPNotFound
+
+
+@hug.get('/computedfunctions')
+def get_computed_function():
+  return get_json_dict(catalogue['functional_ranks_computed']['path'])

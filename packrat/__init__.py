@@ -11,13 +11,12 @@ from pymongo import MongoClient
 from packrat.config import HUEY, MONGO, ZEOCONF, CATALOGUE
 from packrat.alchemy.ensembl import ensembl_sequence, ensembl_gene_id
 from packrat.alchemy.ncbi import ncbi_search_id, ncbi_get_summary
+from packrat.alchemy.utils import catalogue
 
 huey    = RedisHuey(**HUEY)
 moncli  = MongoClient(**MONGO)
 db      = moncli['packrat']
 
-with open(CATALOGUE, 'r') as fp:
-  catalogue = json.load(fp)
 
 @huey.task(retries=10, retry_delay=10)
 def spawn_gene_dat(gene_id):
