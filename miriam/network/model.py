@@ -72,4 +72,3 @@ class GraphKit(object):
       return self.g.predecessors(node)
     else:
       raise ValueError("Node is unsupported kind.")
-

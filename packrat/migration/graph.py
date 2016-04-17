@@ -7,8 +7,10 @@ import logging
 import networkx as nx
 import pandas as pd
 
-from miriam import psql
+from miriam import psql, db
 from packrat import catalogue
+
+misc_meta = db['misc_meta']
 
 def _generate_network(target_file, host_file):
   """Grow NetworkX graph object from JSON Dumps"""
@@ -37,10 +39,22 @@ def _generate_network(target_file, host_file):
 
   return g
 
+def _generate_functional_vectors(function_file):
+  with open(function_file, 'r') as fl:
+    clsfn = json.load(fl)
+
+  kys = list(clsfn.keys())
+  kys.sort()
+
+  assoc = lambda x, c, clsfn=clsfn: int(x in clsfn[c])
+  funcf = lambda x, assoc=assoc, kys=kys: [assoc(x, c) for c in kys]
+  return funcf, kys
+
 def persist(version):
   """Generate Network for a specific version of JSON dump."""
   host = catalogue['network'][version]['hosts']
   targets = catalogue['network'][version]['targets']
+  fncnl = catalogue['functional_classification']['path']
 
   g = _generate_network(targets, host)
   logging.info("Network Grown")
@@ -51,10 +65,18 @@ def persist(version):
   df.to_sql('ntwk', psql, index=False, if_exists='replace')
   logging.info("SQL Dumped: Network")
 
-  genes = ([_[0], _[1]['tc']] for _ in g.nodes(True) if _[1]['kind'] == 'GEN')
+  funcf, kys = _generate_functional_vectors(fncnl)
+
+  misc_meta.update({'namespace': 'fnclass'}, {
+    'namespace': 'fnclass',
+    'classes': kys,
+  }, True)
+
+  logging.info("Generating Function Vectors")
+  genes = ([_[0], _[1]['tc'], funcf(_[0])] for _ in g.nodes(True) if _[1]['kind'] == 'GEN')
   mirna = (_[0] for _ in g.nodes(True) if _[1]['kind'] == 'MIR')
 
-  df_gene = pd.DataFrame(genes, columns=['symbol', 'tc'])
+  df_gene = pd.DataFrame(genes, columns=['symbol', 'tc', 'functional_cls'])
   df_gene = df_gene.set_index('symbol')
   df_gene.to_sql('gene', psql, if_exists='replace')
   logging.info("SQL Dumped: Genes")
@@ -87,3 +109,7 @@ def get():
   nx.set_node_attributes(graph, 'kind', mirna.loc[:,('kind')].to_dict())
 
   return graph
+
+def function_classes():
+  """Return Functional Classes"""
+  return misc_meta.find_one({'namespace': 'fnclass'}).get('classes')

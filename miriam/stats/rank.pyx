@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # MiRiam
 import pandas as pd
+import numpy as np
 import networkx as nx
 import functools
 import itertools
@@ -12,6 +13,8 @@ from math import exp
 
 from miriam import psql, db
 from miriam.logger import logger
+from miriam.network.model import GraphKit
+from packrat.migration.graph import function_classes
 
 cdef float R = 8.314
 cdef float T = 303
@@ -38,6 +41,10 @@ class Ranking(object):
     self.mirna  = pd.read_sql_table('mirn', psql)
     logger.debug('Preinit - Begin Read EXP')
     self.exp_dat = self.tissue.expression
+    logger.debug('Preinit - Begin Read FNCLS')
+    self.fncls = pd.read_sql_query(
+      'select symbol, functional_cls from gene',
+      psql)
 
   def __do_merge(self):
     """Return Merged Data Segments
@@ -175,6 +182,29 @@ class Ranking(object):
       self.patch_ranks()
     return self.__ranks
 
+  def functional_impact(self, zipped=True, sorted=True):
+    merged = self.ranks.merge(self.fncls,
+        left_on='gene',
+        right_on='symbol',
+        how='left')
+
+    del merged['symbol']
+
+    def _function(x):
+      vector_s = x['functional_cls'][1:-1].split(',')
+      return list(map(lambda _: x['r2'] * int(_), vector_s))
+
+    dat = merged.apply(_function, axis=1)
+    impacts = list(map(sum, zip(*dat)))
+
+    if zipped:
+      to_return = list(zip(function_classes(), impacts))
+      if sorted:
+        to_return.sort(key=lambda x: x[1], reverse=True)
+      return to_return
+    else:
+      return impacts
+
   @property
   def report(self):
     if self.resetup is True:
@@ -233,4 +263,4 @@ class Ranking(object):
     for i, j in [['MIR', 'mirna'], ['GEN', 'gene'], ['GEN', 'host']]:
       nx.set_node_attributes(g, 'kind', {v: i for v in rankbunch[j].values})
 
-    return g
+    return GraphKit(g)
