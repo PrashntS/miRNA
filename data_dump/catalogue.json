@@ -34,6 +34,14 @@
     "added": 20160417,
     "path": "data_dump/computed/functional_ranks_20160417.json"
   },
+  "disease_network": [
+    {
+      "namespace": "disgenenet",
+      "version": 1,
+      "added": 20160419,
+      "path": "data_dump/exported/curated_gene_disease_associations.tsv"
+    }
+  ],
   "network": {
     "v3": {
       "hosts": "data_dump/computed/gene_mirna_graph_20160220.json",
