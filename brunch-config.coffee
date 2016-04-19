@@ -12,6 +12,12 @@ module.exports = config:
       'normalize-css': [
         'normalize.css'
       ]
+      'nvd3': [
+        'build/nv.d3.css'
+      ]
+    globals:
+      d3: 'd3'
+      nvd3: 'nvd3'
 
   files:
     javascripts:

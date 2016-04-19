@@ -4,8 +4,21 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
   <title>MiRiam | Functional Classification</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" type="text/css" href="css/libraries.css">
 </head>
 <body>
+<style>
+#chart svg {
+  height: 400px;
+}
+</style>
 
+
+  <div id="chart">
+    <svg></svg>
+  </div>
+  <script type="text/javascript" src="js/libraries.js"></script>
+  <script type="text/javascript" src="js/app.js"></script>
+  <script>app = require('graph');app.init();</script>
 </body>
 </html>
