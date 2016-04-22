@@ -36,9 +36,9 @@ class Ranking(object):
 
   def __preinit(self):
     logger.debug('Preinit - Begin Read NW')
-    self.ntwkdg = pd.read_sql_table('ntwkdg', psql)
+    self.__ntwkdg = pd.read_sql_table('ntwkdg', psql)
     logger.debug('Preinit - Begin Read MR')
-    self.mirna  = pd.read_sql_table('mirn', psql)
+    self.__mirna  = pd.read_sql_table('mirn', psql)
     logger.debug('Preinit - Begin Read EXP')
     self.exp_dat = self.tissue.expression
     logger.debug('Preinit - Begin Read FNCLS')
@@ -54,12 +54,12 @@ class Ranking(object):
         0        1       2     3          4       5
     """
     #: Join Target Gene Expressions
-    p1 = self.ntwkdg.merge(self.exp_dat, left_on='gene', right_on='gene_name')
+    p1 = self.__ntwkdg.merge(self.exp_dat, left_on='gene', right_on='gene_name')
     del p1['gene_name']
     p1 = p1.rename(columns={self.tissue: 'exp_tar'})
 
     #: Join MiRNA's host genes
-    p2 = p1.merge(self.mirna, left_on='mirna', right_on='symbol')
+    p2 = p1.merge(self.__mirna, left_on='mirna', right_on='symbol')
     del p2['symbol']
 
     p3 = p2.merge(self.exp_dat, left_on='host', right_on='gene_name')
@@ -68,7 +68,7 @@ class Ranking(object):
 
     del p1
     del p2
-    return p3#.query('exp_tar > 1 and exp_mir > 1')
+    return p3
 
   def __degree(self, x):
     try:
@@ -263,4 +263,26 @@ class Ranking(object):
     for i, j in [['MIR', 'mirna'], ['GEN', 'gene'], ['GEN', 'host']]:
       nx.set_node_attributes(g, 'kind', {v: i for v in rankbunch[j].values})
 
-    return GraphKit(g)
+    self.__graph = GraphKit(g)
+    return self.__graph
+
+  @property
+  def graph(self):
+    if self.resetup is True:
+      self.graphify(noslice=True)
+    return self.__graph
+
+  def __node_ranks(self, kind):
+    ranks = self.ranks
+    mirnas = sorted(set(ranks[kind]))
+    score = lambda x: ranks.loc[ranks[kind] == x]['r2'].sum()
+    return [(_, score(_)) for _ in mirnas]
+
+  @property
+  def mirnas(self):
+    return self.__node_ranks('mirna')
+
+  @property
+  def genes(self):
+    return self.__node_ranks('gene')
+

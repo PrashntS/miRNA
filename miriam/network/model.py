@@ -4,6 +4,8 @@
 import networkx as nx
 
 from packrat.migration import graph as graph_store
+from miriam.network.algorithm import Motif
+
 
 class GraphKit(object):
   """
@@ -72,3 +74,12 @@ class GraphKit(object):
       return self.g.predecessors(node)
     else:
       raise ValueError("Node is unsupported kind.")
+
+  @property
+  def motif(self):
+    try:
+      return self.__motif
+    except AttributeError:
+      obj = Motif(self.g)
+      self.__motif = obj.find_all()
+      return self.__motif
