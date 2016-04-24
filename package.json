@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "auto-reload-brunch": "^2.1.0",
-    "brunch": "^2.5.2",
+    "brunch": "github:brunch/brunch#aaaee25",
     "coffee-script-brunch": "^2.0.0",
     "css-brunch": "^2.0.0",
     "d3": "^3.5.16",

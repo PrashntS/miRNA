@@ -1,4 +1,6 @@
 
+maxBy = require 'lodash/maxBy'
+
 App =
   init: ->
     margin =
@@ -15,7 +17,6 @@ App =
       0
       width
     ])
-    xAxis = d3.svg.axis().scale(x).orient('top')
     formatYears = d3.format('0000')
 
     truncate = (str, maxLength, suffix) ->
@@ -25,66 +26,31 @@ App =
         str = str + suffix
       str
 
-    xAxis.tickFormat formatYears
-    svg = d3.select('body').append('svg').attr('width', width + margin.left + margin.right).attr('height', height + margin.top + margin.bottom).style('margin-left', margin.left + 'px').append('g').attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+    svg = d3.select('body')
+        .append('svg')
+          .attr('width', 180000)
+          .attr('height', height + margin.top + margin.bottom)
+          .style('margin-left', margin.left + 'px')
+        .append('g')
+          .attr('transform', "translate(#{margin.left}, #{margin.top})")
+
     d3.json '/api/v1/computed/ranksample', (data) ->
+      svg.append('g')
+          .attr('class', 'x axis')
+          .attr('transform', 'translate(0, 0)')
 
-      mouseover = (p) ->
-        g = d3.select(this).node().parentNode
-        d3.select(g).selectAll('circle').style 'display', 'none'
-        d3.select(g).selectAll('text.value').style 'display', 'block'
-        return
-
-      mouseout = (p) ->
-        g = d3.select(this).node().parentNode
-        d3.select(g).selectAll('circle').style 'display', 'block'
-        d3.select(g).selectAll('text.value').style 'display', 'none'
-        return
-
-      x.domain [
-        start_year
-        end_year
-      ]
-      xScale = d3.scale.linear().domain([
-        start_year
-        end_year
-      ]).range([
-        0
-        width
-      ])
-      svg.append('g').attr('class', 'x axis').attr('transform', 'translate(0,' + 0 + ')').call xAxis
-      j = 0
-      while j < data.length
+      for series, index in data
         g = svg.append('g').attr('class', 'journal')
-        circles = g.selectAll('circle').data(data[j]['articles']).enter().append('circle')
-        text = g.selectAll('text').data(data[j]['articles']).enter().append('text')
-        rScale = d3.scale.linear().domain([
-          0
-          d3.max(data[j]['articles'], (d) ->
-            d[1]
-          )
-        ]).range([
-          2
-          9
-        ])
-        circles.attr('cx', (d, i) ->
-          xScale d[0]
-        ).attr('cy', j * 20 + 20).attr('r', (d) ->
-          rScale d[1]
-        ).style 'fill', (d) ->
-          c j
-        text.attr('y', j * 20 + 25).attr('x', (d, i) ->
-          xScale(d[0]) - 5
-        ).attr('class', 'value').text((d) ->
-          d[1]
-        ).style('fill', (d) ->
-          c j
-        ).style 'display', 'none'
-        g.append('text').attr('y', j * 20 + 25).attr('x', width + 20).attr('class', 'label').text(truncate(data[j]['name'], 30, '...')).style('fill', (d) ->
-          c j
-        ).on('mouseover', mouseover).on 'mouseout', mouseout
-        j++
-      return
+        n_const = maxBy series.mirnas, (d) -> d[1]
 
+        circles = g.selectAll('circle')
+            .data(series.mirnas)
+            .enter()
+            .append('circle')
+              .attr 'cx', (d, i) -> i*10
+              .attr 'cy', index * 10
+              .attr 'r', (d) ->
+                val = Math.log(d[1]) / Math.log(n_const[1])
+                if val > 0 then val * 5 else 0
 
 module.exports = App
