@@ -37,7 +37,7 @@
   "ranks_sample_computed": {
     "version": 1,
     "added": 20160424,
-    "path": "data_dump/computed/ranks.mirna.genes.sample.all.json"
+    "path": "data_dump/computed/fnr.2016-04-24T16.json"
   },
   "disease_network": [
     {

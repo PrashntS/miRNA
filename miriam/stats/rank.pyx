@@ -283,7 +283,7 @@ class Ranking(object):
     else:
       raise ValueError
     score = lambda x: ranks.loc[ranks[kind] == x]['r2'].sum()
-    return [(_, score(_)) for _ in nodes]
+    return list(map(score, nodes))
 
   @property
   def mirnas(self):
