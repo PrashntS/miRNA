@@ -49,19 +49,3 @@ def get_rank_summary(tissue_id: id_format,
   except KeyError:
     raise falcon.HTTPNotFound
 
-
-@hug.get('/computedfunctions')
-def get_computed_function():
-  funcs = get_json_dict(catalogue['functional_ranks_computed']['path'])
-  # Reshape funcs to streams
-  to_return = []
-  proc_streams = zip(*funcs.values())
-
-  for stream in proc_streams:
-    label, vals = zip(*stream)
-    to_return.append({
-      'key': label[0],
-      'values': zip(funcs.keys(), vals, range(len(vals)))
-    })
-
-  return to_return

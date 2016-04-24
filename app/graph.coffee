@@ -5,21 +5,9 @@ App =
   init: ->
     colors = d3.scale.category20()
 
-    jquery.get '/api/rank/computedfunctions'
+    jquery.get '/api/computed/functional'
       .done (dat) ->
         nv.addGraph ->
-          # chart = nv.models.lineWithFocusChart()
-          # chart.xAxis.showMaxMin(false).tickFormat((d) -> dat.xTicks[d])
-          # chart.x2Axis.ticks(false)
-          # chart.yAxis.tickFormat d3.format(',.2f')
-          # chart.y2Axis.tickFormat d3.format(',.2f')
-          # d3.select('#chart svg')
-          #   .datum(dat.data)
-          #   .transition().duration(500)
-          #   .call chart
-          # nv.utils.windowResize chart.update
-          # chart
-
           nv.addGraph ->
             chart = nv.models.stackedAreaChart()
                 .useInteractiveGuideline(true)

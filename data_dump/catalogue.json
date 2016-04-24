@@ -34,6 +34,11 @@
     "added": 20160417,
     "path": "data_dump/computed/functional_ranks_20160417.json"
   },
+  "ranks_sample_computed": {
+    "version": 1,
+    "added": 20160424,
+    "path": "data_dump/computed/ranks.mirna.genes.sample.all.json"
+  },
   "disease_network": [
     {
       "namespace": "disgenenet",

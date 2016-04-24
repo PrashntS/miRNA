@@ -33,11 +33,15 @@ class GraphKit(object):
 
   @property
   def mirnas(self):
-    return [k for k, v in self.g.node.items() if v['kind'] == 'MIR']
+    nodes = [k for k, v in self.g.node.items() if v['kind'] == 'MIR']
+    nodes.sort()
+    return nodes
 
   @property
   def genes(self):
-    return [k for k, v in self.g.node.items() if not v['kind'] == 'MIR']
+    nodes = [k for k, v in self.g.node.items() if not v['kind'] == 'MIR']
+    nodes.sort()
+    return nodes
 
   def host(self, node, *a, **kwa):
     """

@@ -13,6 +13,7 @@ from math import exp
 
 from miriam import psql, db
 from miriam.logger import logger
+from miriam.network import g
 from miriam.network.model import GraphKit
 from packrat.migration.graph import function_classes
 
@@ -268,15 +269,21 @@ class Ranking(object):
 
   @property
   def graph(self):
-    if self.resetup is True:
-      self.graphify(noslice=True)
-    return self.__graph
+    try:
+      return self.__graph
+    except AttributeError:
+      return self.graphify()
 
   def __node_ranks(self, kind):
     ranks = self.ranks
-    mirnas = sorted(set(ranks[kind]))
+    if kind == 'mirna':
+      nodes = g.mirnas
+    elif kind == 'gene':
+      nodes = g.genes
+    else:
+      raise ValueError
     score = lambda x: ranks.loc[ranks[kind] == x]['r2'].sum()
-    return [(_, score(_)) for _ in mirnas]
+    return [(_, score(_)) for _ in nodes]
 
   @property
   def mirnas(self):

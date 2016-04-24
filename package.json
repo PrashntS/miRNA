@@ -4,7 +4,7 @@
   "description": "Frontend for Miriam toolkit.",
   "main": "app.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "brunch w"
   },
   "author": "Prashant Sinha",
   "license": "MIT",
