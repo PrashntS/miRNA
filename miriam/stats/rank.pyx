@@ -10,6 +10,7 @@ import itertools
 from multiprocessing import Pool
 from pydash import py_
 from math import exp
+from operator import mul
 
 from miriam import psql, db
 from miriam.logger import logger
@@ -126,8 +127,7 @@ class Ranking(object):
     logger.debug('Deg Rank - Sort')
     gd_p3 = self.gd_p2.sort_values('r2', ascending=False)
     gd_p3.index = range(1, len(gd_p3) + 1)
-    if self.th_ps3 > 0:
-      gd_p3 = gd_p3.query('r2 > {0}'.format(exp(self.th_ps3)))
+    gd_p3 = gd_p3.query('r2 > 0')
     return gd_p3
 
   def __srange(self, lim, step, chunks):
@@ -205,6 +205,42 @@ class Ranking(object):
       return to_return
     else:
       return impacts
+
+  def functional_bumps(self, ranks):
+    logger.debug('Merging Vectors - Init')
+    merged = ranks.merge(self.fncls,
+        left_on='gene',
+        right_on='symbol',
+        how='left')
+
+    del merged['symbol']
+
+    merged = merged.merge(self.fncls,
+        left_on='host',
+        right_on='symbol',
+        how='left')
+
+    del merged['symbol']
+    logger.debug('Merging Vectors - Done')
+
+    def _function(x):
+      vector_s = x['functional_cls_x'][1:-1].split(',')
+      vector_t = x['functional_cls_y'][1:-1].split(',')
+      pairs = zip(vector_s, vector_t)
+      expectation = sum(map(lambda y: int(y[0]) * int(y[1]), pairs))
+      if x['gene'] == x['host']:
+        expectation += 1
+
+      return x['r2'] * exp(expectation)
+
+    logger.debug('Score Rearrangement - Init')
+    merged['r3'] = merged.apply(_function, axis=1)
+    logger.debug('Score Rearrangement - Sort')
+    rank_adapted = merged.sort_values('r3', ascending=False)
+    logger.debug('Score Rearrangement - Re-index')
+    rank_adapted.index = range(1, len(rank_adapted) + 1)
+
+    return rank_adapted
 
   @property
   def report(self):

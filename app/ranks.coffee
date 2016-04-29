@@ -52,11 +52,11 @@ App =
 
       for series, index in data
         g = svg.append('g').attr('class', 'journal').attr 'filter', 'url(#blur)'
-        n_const = maxBy series.mirnas, (d) -> d[1]
+        n_const = maxBy series.genes, (d) -> d[1]
         quantize = d3.scale.quantile().domain([0, n_const]).range(d3.range(9))
 
         circles = g.selectAll('circle')
-            .data(series.mirnas)
+            .data(series.genes)
             .enter()
             .append('circle')
               .attr 'cx', (d, i) -> (i % 50) * 10
