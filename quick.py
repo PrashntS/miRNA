@@ -2,15 +2,9 @@
 # -*- coding: utf-8 -*-
 # MiRiam
 
-from miriam.alchemy.rank import Tissue
-#from miriam.stats.rank import Ranking
+from miriam.stats.rank import Frame, Pipeline
 
-t=Tissue('emtab2919-liver')
-#m=Ranking(t)
-#r=m.functional_bumps()
 
-from miriam.stats.rank import Frames
-
-fr = Frames()
-print(fr.merge_expression(t))
-
+fr  = Frame('emtab2919-liver')
+pl  = Pipeline()
+keq = pl.score_keq(fr.merged)

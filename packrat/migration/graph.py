@@ -7,6 +7,8 @@ import logging
 import networkx as nx
 import pandas as pd
 
+from pybloomfilter import BloomFilter
+
 from packrat import catalogue, psql, db
 
 misc_meta = db['misc_meta']
@@ -100,14 +102,14 @@ def persist(version):
 def get():
   """Return networkx object from Database"""
   network = pd.read_sql_table('ntwk', psql)
-  mirna = pd.read_sql_table('mirn', psql).set_index('symbol')
-  mirna['kind'] = 'MIR'
-
   graph = nx.from_edgelist(network.values, create_using=nx.DiGraph())
-  nx.set_node_attributes(graph, 'kind', 'GEN')
-  nx.set_node_attributes(graph, 'kind', mirna.loc[:,('kind')].to_dict())
 
-  return graph
+  mirna = pd.read_sql_table('mirn', psql)
+  mirnas = BloomFilter(3000,  0.0001)
+  for node in mirna['symbol']:
+    mirnas.add(node)
+
+  return graph, mirnas
 
 def function_classes():
   """Return Functional Classes"""

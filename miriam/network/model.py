@@ -7,6 +7,7 @@ from packrat.migration import graph as graph_store
 from miriam.network.algorithm import Motif
 from miriam.alchemy.utils import mproperty
 
+__graph__, __mirnas__ = graph_store.get()
 
 class GraphKit(object):
   """
@@ -27,20 +28,17 @@ class GraphKit(object):
     if graph is not None:
       self.g = graph
     else:
-      try:
-        self.g = graph_store.get()
-      except Exception:
-        raise RuntimeError("Graph data not persistent. Migration Required.")
+      self.g = __graph__
 
   @mproperty
   def mirnas(self):
-    nodes = [k for k, v in self.g.node.items() if v['kind'] == 'MIR']
+    nodes = [k for k in self.g.node if k in __mirnas__]
     nodes.sort()
     return nodes
 
   @mproperty
   def genes(self):
-    nodes = [k for k, v in self.g.node.items() if not v['kind'] == 'MIR']
+    nodes = [k for k in self.g.node if k not in __mirnas__]
     nodes.sort()
     return nodes
 
@@ -57,12 +55,10 @@ class GraphKit(object):
       ['hsa-miR-106b-5p', 'hsa-miR-93-5p', ...]
     """
 
-    if self.g.node[node]['kind'] == 'MIR':
+    if node in __mirnas__:
       return self.g.predecessors(node)
-    elif self.g.node[node]['kind'] == 'GEN':
-      return self.g.successors(node)
     else:
-      raise ValueError("Node is unsupported kind.")
+      return self.g.successors(node)
 
   def target(self, node, *a, **kwa):
     """
@@ -73,12 +69,10 @@ class GraphKit(object):
       node (str): Node Name
     """
 
-    if self.g.node[node]['kind'] == 'MIR':
+    if node in __mirnas__:
       return self.g.successors(node)
-    elif self.g.node[node]['kind'] == 'GEN':
-      return self.g.predecessors(node)
     else:
-      raise ValueError("Node is unsupported kind.")
+      return self.g.predecessors(node)
 
   @mproperty
   def degrees(self):

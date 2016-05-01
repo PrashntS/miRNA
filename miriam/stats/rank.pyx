@@ -18,6 +18,7 @@ from miriam.network import g
 from miriam.network.model import GraphKit
 from packrat.migration.graph import function_classes
 from miriam.alchemy.utils import mproperty
+from miriam.alchemy.rank import Tissue
 
 
 cdef float R = 8.314
@@ -320,6 +321,8 @@ class Ranking(object):
 
 class Frame(object):
   def __init__(self, tissue):
+    if type(tissue) is str:
+      tissue = Tissue(tissue)
     self.tissue = tissue
 
   @mproperty
@@ -380,9 +383,71 @@ class Frame(object):
 class Pipeline(object):
   '''Ranking Stages - Modular Pipeline'''
 
-  def __init__(self):
-    pass
+  def __init__(self, proc=3):
+    self.proc = proc
 
-  def compute_column(self, on, method):
-    pass
+  def _chunks(self, frame, method):
+    lim  = len(frame)
+    step = lim // self.proc
+    step_x = list(range(0, lim, step))
+    step_y = step_x[1:]
+    if len(step_x) > self.proc:
+      step_y[-1] = lim
+    else:
+      step_y.append(lim)
+    steps  = zip(step_x, step_y)
+    for step in steps:
+      yield frame[step[0]:step[1]], method
 
+  def _apply(self, pair):
+    return pair[0].apply(pair[1], axis=1)
+
+  def _get_column(self, on, method):
+    pool = Pool(processes=self.proc)
+    passes = []
+
+    res = pool.map(self._apply, self._chunks(on, method))
+    pool.close()
+    return pd.concat(res)
+
+  def _fn_keq(self, r):
+    '''Calculate K equivalent.'''
+    cdef float dg = r['dg']
+    cdef float e_gene = r['exp_gene']
+    cdef float e_mirn = r['exp_host']
+    try:
+      return (e ** (RTI * dg)) * (e_mirn / e_gene)
+    except ZeroDivisionError:
+      return None
+
+  def _fn_deg(self, r):
+    '''Calculate degree correction.'''
+    cdef int dm = self.__deg_graph__.deg(r['mirna'])
+    cdef int dg = self.__deg_graph__.deg(r['gene'])
+    return dg / dm
+
+  def _fn_ont(self, r):
+    '''Calculate ontology values.'''
+    ont   = int(r['ont_gene'], 2) & int(r['ont_host'], 2)
+    score = str(bin(ont)).count('1')
+    score += r['gene'] == r['host']
+    return exp(score)
+
+  def score_keq(self, frame):
+    frame['s_keq'] = self._get_column(frame, self._fn_keq)
+    return frame
+
+  def score_deg(self, frame):
+    self.__deg_graph__ = self.as_graph(frame)
+    frame['s_deg'] = self._get_column(frame, self._fn_deg)
+    return frame
+
+  def score_ont(self, frame):
+    frame['s_ont'] = self._get_column(frame, self._fn_ont)
+    return frame
+
+  def as_graph(self, frame):
+    g = nx.DiGraph()
+    g.add_edges_from(frame.loc[:,('mirna', 'gene')].values)
+    g.add_edges_from(frame.loc[:,('host', 'mirna')].values)
+    return GraphKit(g)
