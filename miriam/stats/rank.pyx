@@ -17,6 +17,8 @@ from miriam.logger import logger
 from miriam.network import g
 from miriam.network.model import GraphKit
 from packrat.migration.graph import function_classes
+from miriam.alchemy.utils import mproperty
+
 
 cdef float R = 8.314
 cdef float T = 303
@@ -329,3 +331,39 @@ class Ranking(object):
   def genes(self):
     return self.__node_ranks('gene')
 
+
+class Frames(object):
+  def __init__(self):
+    pass
+
+  @mproperty
+  def ntwkdg(self):
+    '''Return network edge'''
+    logger.debug('[Frames] Reading NW DG')
+    ntwkdg = pd.read_sql_table('ntwkdg', psql)
+    mirnas = pd.read_sql_table('mirn', psql)
+    merged = ntwkdg.merge(mirnas, left_on='mirna', right_on='symbol')
+    del merged['symbol']
+    merged = merged[['mirna', 'gene', 'host', 'dg']]
+    return merged
+
+  def merge_expression(self, tissue):
+    '''Merge Tissue Expression Values with the Network'''
+    logger.debug('[Frames] Merging expression with NW')
+    merge_target = self.ntwkdg.merge(tissue.expression,
+                                     left_on='gene',
+                                     right_on='gene_name')
+    del merge_target['gene_name']
+    merge_target = merge_target.rename(columns={tissue.tissue_id: 'exp_gene'})
+    merge_host = merge_target.merge(tissue.expression,
+                                    left_on='host',
+                                    right_on='gene_name')
+    del merge_host['gene_name']
+    merge_host = merge_host.rename(columns={tissue.tissue_id: 'exp_host'})
+    return merge_host
+
+class Pipeline(object):
+  '''Ranking Stages - Modular Pipeline'''
+
+  def __init__(self):
+    pass
