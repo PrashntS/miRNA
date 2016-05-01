@@ -83,6 +83,8 @@ class GraphKit(object):
 
   @mproperty
   def motif(self):
-    obj = Motif(self.g)
-    self.__motif = obj.find_all()
-    return self.__motif
+    g_k = self.g.copy()
+    nx.set_node_attributes(g_k, 'kind', 'GEN')
+    nx.set_node_attributes(g_k, 'kind', {_: 'MIR' for _ in self.mirnas})
+    obj = Motif(g_k)
+    return obj.find_all()

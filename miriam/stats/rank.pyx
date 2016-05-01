@@ -382,9 +382,13 @@ class Frame(object):
 
 class Pipeline(object):
   '''Ranking Stages - Modular Pipeline'''
+  col_fn_deg = None
+  col_fn_ont = None
+  col_ranks  = None
+  proc = 3
 
-  def __init__(self, proc=3):
-    self.proc = proc
+  def __init__(self, tissue):
+    self.frame = Frame(tissue)
 
   def _chunks(self, frame, method):
     lim  = len(frame)
@@ -422,32 +426,96 @@ class Pipeline(object):
 
   def _fn_deg(self, r):
     '''Calculate degree correction.'''
-    cdef int dm = self.__deg_graph__.deg(r['mirna'])
-    cdef int dg = self.__deg_graph__.deg(r['gene'])
-    return dg / dm
+    dm = self.__deg_graph__.deg(r['mirna'])
+    dg = self.__deg_graph__.deg(r['gene'])
+    try:
+      score_prev = r[self.col_fn_deg]
+    except KeyError:
+      score_prev = 1
+    return score_prev * (dg / dm)
 
   def _fn_ont(self, r):
     '''Calculate ontology values.'''
+    try:
+      score_prev = r[self.col_fn_ont]
+    except KeyError:
+      score_prev = 1
     ont   = int(r['ont_gene'], 2) & int(r['ont_host'], 2)
     score = str(bin(ont)).count('1')
     score += r['gene'] == r['host']
-    return exp(score)
+    return exp(score) * score_prev
 
   def score_keq(self, frame):
+    logger.debug('[ScoreKeq] Begin Apply')
     frame['s_keq'] = self._get_column(frame, self._fn_keq)
-    return frame
+    logger.debug('[ScoreKeq] Begin Sort')
+    s_frame = frame.sort_values('s_keq', ascending=False)
+    logger.debug('[ScoreKeq] Begin Reindex')
+    s_frame.index = range(1, len(s_frame) + 1)
+    logger.debug('[ScoreKeq] Done')
+    return s_frame
 
   def score_deg(self, frame):
+    logger.debug('[ScoreDeg] Begin')
     self.__deg_graph__ = self.as_graph(frame)
     frame['s_deg'] = self._get_column(frame, self._fn_deg)
-    return frame
+    logger.debug('[ScoreDeg] Begin Sort')
+    s_frame = frame.sort_values('s_deg', ascending=False)
+    logger.debug('[ScoreDeg] Begin Reindex')
+    s_frame.index = range(1, len(s_frame) + 1)
+    logger.debug('[ScoreDeg] Done')
+    return s_frame
 
   def score_ont(self, frame):
+    logger.debug('[ScoreOnt] Begin')
     frame['s_ont'] = self._get_column(frame, self._fn_ont)
-    return frame
+    logger.debug('[ScoreOnt] Begin Sort')
+    s_frame = frame.sort_values('s_ont', ascending=False)
+    logger.debug('[ScoreOnt] Begin Reindex')
+    s_frame.index = range(1, len(s_frame) + 1)
+    logger.debug('[ScoreOnt] Done')
+    return s_frame
 
   def as_graph(self, frame):
+    logger.debug('[GraphKit] Begin')
     g = nx.DiGraph()
     g.add_edges_from(frame.loc[:,('mirna', 'gene')].values)
     g.add_edges_from(frame.loc[:,('host', 'mirna')].values)
-    return GraphKit(g)
+    gk = GraphKit(g)
+    logger.debug('[GraphKit] End')
+    return gk
+
+  def stack(self):
+    '''Ranking Stacks'''
+    raise NotImplemented
+
+  def _node_rank(self, frame, kind, nodes):
+    score = lambda x: frame.loc[frame[kind] == x][self.col_ranks].sum()
+    return list(map(score, nodes))
+
+  def _mirna_rank(self, frame):
+    return self._node_rank(frame, 'mirna', g.mirnas)
+
+  def _gene_rank(self, frame):
+    return self._node_rank(frame, 'gene', g.genes)
+
+
+class Score_K_O_D(Pipeline):
+  '''Score in KOD order.
+  Calculate the score in following order:
+    1. K equivalent (thermodynamics)
+    2. Ontology
+    3. Degree Score
+  Thresholds applied at stage 2.
+  '''
+  col_fn_ont = 's_keq'
+  col_fn_deg = 's_ont'
+  col_ranks  = 's_deg'
+  slices = [exp(-4), exp(4)]
+
+  def stack(self):
+    first_pass  = self.score_keq(self.frame.merged)
+    second_pass = self.score_ont(first_pass)
+    sliced      = first_pass.query('{0} < s_ont < {1}'.format(*self.slices))
+    third_pass  = self.score_deg(sliced)
+    return third_pass

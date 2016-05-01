@@ -2,9 +2,8 @@
 # -*- coding: utf-8 -*-
 # MiRiam
 
-from miriam.stats.rank import Frame, Pipeline
+from miriam.stats.rank import Frame, Score_K_O_D
 
 
-fr  = Frame('emtab2919-liver')
-pl  = Pipeline()
-keq = pl.score_keq(fr.merged)
+fr  = Score_K_O_D('emtab2919-liver')
+rnk = fr.stack()
