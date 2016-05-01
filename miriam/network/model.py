@@ -5,6 +5,7 @@ import networkx as nx
 
 from packrat.migration import graph as graph_store
 from miriam.network.algorithm import Motif
+from miriam.alchemy.utils import mproperty
 
 
 class GraphKit(object):
@@ -31,13 +32,13 @@ class GraphKit(object):
       except Exception:
         raise RuntimeError("Graph data not persistent. Migration Required.")
 
-  @property
+  @mproperty
   def mirnas(self):
     nodes = [k for k, v in self.g.node.items() if v['kind'] == 'MIR']
     nodes.sort()
     return nodes
 
-  @property
+  @mproperty
   def genes(self):
     nodes = [k for k, v in self.g.node.items() if not v['kind'] == 'MIR']
     nodes.sort()
@@ -79,11 +80,15 @@ class GraphKit(object):
     else:
       raise ValueError("Node is unsupported kind.")
 
-  @property
+  @mproperty
+  def degrees(self):
+    return {_: self.g.in_degree(_) for _ in self.g.node}
+
+  def deg(self, node):
+    return self.degrees[node]
+
+  @mproperty
   def motif(self):
-    try:
-      return self.__motif
-    except AttributeError:
-      obj = Motif(self.g)
-      self.__motif = obj.find_all()
-      return self.__motif
+    obj = Motif(self.g)
+    self.__motif = obj.find_all()
+    return self.__motif

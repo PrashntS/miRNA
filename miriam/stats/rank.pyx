@@ -165,20 +165,6 @@ class Ranking(object):
     self.th_ps3 = kwa.get('threshold_degree', self.th_ps3)
     self.__ranks = self.__get_deg_rank()
 
-  def patch_expression(self, updates):
-    """Alter Expression Levels to get newer ranks
-    This will reinitialise the ground data. It is advised to use `reinit` to
-    get the original data back.
-
-    Chained or subsequent Patches are Retained.
-
-    Args:
-      updates: list of ordered pairs of (gene_name, expression).
-    """
-    for gene, new_exp in updates:
-      self.exp_dat.ix[self.exp_dat.gene_name == gene, self.tissue] = new_exp
-    self.resetup = True
-
   @property
   def ranks(self):
     if self.resetup is True:
@@ -332,12 +318,18 @@ class Ranking(object):
     return self.__node_ranks('gene')
 
 
-class Frames(object):
-  def __init__(self):
-    pass
+class Frame(object):
+  def __init__(self, tissue):
+    self.tissue = tissue
 
   @mproperty
-  def ntwkdg(self):
+  def ontology(self):
+    query = 'select symbol, functional_cls from gene'
+    data  = pd.read_sql_query(query, psql)
+    return data
+
+  @mproperty
+  def network(self):
     '''Return network edge'''
     logger.debug('[Frames] Reading NW DG')
     ntwkdg = pd.read_sql_table('ntwkdg', psql)
@@ -347,23 +339,50 @@ class Frames(object):
     merged = merged[['mirna', 'gene', 'host', 'dg']]
     return merged
 
-  def merge_expression(self, tissue):
+  @mproperty
+  def merged(self):
     '''Merge Tissue Expression Values with the Network'''
     logger.debug('[Frames] Merging expression with NW')
-    merge_target = self.ntwkdg.merge(tissue.expression,
-                                     left_on='gene',
-                                     right_on='gene_name')
+    merge_target = self.network.merge(
+      self.tissue.expression,
+      left_on='gene',
+      right_on='gene_name')
     del merge_target['gene_name']
-    merge_target = merge_target.rename(columns={tissue.tissue_id: 'exp_gene'})
-    merge_host = merge_target.merge(tissue.expression,
-                                    left_on='host',
-                                    right_on='gene_name')
+    merge_target = merge_target.rename(columns={
+      self.tissue.tissue_id: 'exp_gene'
+    })
+    merge_host = merge_target.merge(
+      self.tissue.expression,
+      left_on='host',
+      right_on='gene_name')
     del merge_host['gene_name']
-    merge_host = merge_host.rename(columns={tissue.tissue_id: 'exp_host'})
-    return merge_host
+    merge_host = merge_host.rename(columns={self.tissue.tissue_id: 'exp_host'})
+
+    logger.debug('[Frames] Merging ontology')
+    merge_ontology_gene = merge_host.merge(self.ontology,
+      left_on='gene',
+      right_on='symbol')
+    del merge_ontology_gene['symbol']
+    merge_ontology_gene = merge_ontology_gene.rename(columns={
+      'functional_cls': 'ont_gene'
+    })
+    merge_ontology_host = merge_ontology_gene.merge(self.ontology,
+      left_on='host',
+      right_on='symbol')
+    del merge_ontology_host['symbol']
+    merge_ontology_host = merge_ontology_host.rename(columns={
+      'functional_cls': 'ont_host'
+    })
+
+    return merge_ontology_host
+
 
 class Pipeline(object):
   '''Ranking Stages - Modular Pipeline'''
 
   def __init__(self):
     pass
+
+  def compute_column(self, on, method):
+    pass
+

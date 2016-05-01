@@ -7,8 +7,9 @@ import json
 
 from huey import RedisHuey
 from pymongo import MongoClient
+from sqlalchemy import create_engine
 
-from packrat.config import HUEY, MONGO, ZEOCONF, CATALOGUE
+from packrat.config import HUEY, MONGO, ZEOCONF, CATALOGUE, PGSQLU
 from packrat.alchemy.ensembl import ensembl_sequence, ensembl_gene_id
 from packrat.alchemy.ncbi import ncbi_search_id, ncbi_get_summary
 from packrat.alchemy.utils import catalogue
@@ -16,6 +17,7 @@ from packrat.alchemy.utils import catalogue
 huey    = RedisHuey(**HUEY)
 moncli  = MongoClient(**MONGO)
 db      = moncli['packrat']
+psql    = create_engine(PGSQLU)
 
 
 @huey.task(retries=10, retry_delay=10)

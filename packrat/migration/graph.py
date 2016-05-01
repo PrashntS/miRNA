@@ -7,8 +7,7 @@ import logging
 import networkx as nx
 import pandas as pd
 
-from miriam import psql, db
-from packrat import catalogue
+from packrat import catalogue, psql, db
 
 misc_meta = db['misc_meta']
 
@@ -46,8 +45,8 @@ def _generate_functional_vectors(function_file):
   kys = list(clsfn.keys())
   kys.sort()
 
-  assoc = lambda x, c, clsfn=clsfn: int(x in clsfn[c])
-  funcf = lambda x, assoc=assoc, kys=kys: [assoc(x, c) for c in kys]
+  assoc = lambda x, c, clsfn=clsfn: str(int(x in clsfn[c]))
+  funcf = lambda x, assoc=assoc, kys=kys: ''.join([assoc(x, c) for c in kys])
   return funcf, kys
 
 def persist(version):

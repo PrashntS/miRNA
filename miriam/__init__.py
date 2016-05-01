@@ -5,15 +5,10 @@ import hug
 import pecan_mount
 import static
 
-from pymongo import MongoClient
-from sqlalchemy import create_engine
-
 from miriam._version import current
-from miriam._config import mongo, mongo_db_name, static_root, psql_url
+from miriam._config import static_root
+from packrat import db, psql
 
-client  = MongoClient(**mongo)
-db      = client[mongo_db_name]
-psql    = create_engine(psql_url)
 
 @hug.get('/', versions=current)
 def get_root():

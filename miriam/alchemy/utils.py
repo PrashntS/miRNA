@@ -12,7 +12,7 @@ def mproperty(fget):
     Example::
         >>> class C(object):
         ...     load_name_count = 0
-        ...     @memoized_property
+        ...     @mproperty
         ...     def name(self):
         ...         "name's docstring"
         ...         self.load_name_count += 1

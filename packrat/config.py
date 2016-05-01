@@ -19,3 +19,5 @@ ZEOCONF = ['localhost', 8090]
 
 CATALOGUE = ("/repository/project/mir-to-gene/"
              "data_dump/catalogue.json")
+
+PGSQLU = 'postgresql://prashantsinha@localhost:5432/miriam'
