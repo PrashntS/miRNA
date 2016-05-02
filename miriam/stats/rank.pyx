@@ -6,11 +6,13 @@ import numpy as np
 import networkx as nx
 import functools
 import itertools
+import math
 
 from multiprocessing import Pool
 from pydash import py_
 from math import exp
 from operator import mul
+from matplotlib import pyplot as plt
 
 from miriam import psql, db
 from miriam.logger import logger
@@ -489,6 +491,21 @@ class Pipeline(object):
     '''Ranking Stacks'''
     raise NotImplemented
 
+  def plot_line(self, frame, col):
+    ''''''
+    dat = frame[col].plot(logy=True)
+    plt.show()
+
+  def plot_hist(self, frame, col):
+    '''Plots Histogram'''
+    dat = frame[col].tolist()
+    dat.sort()
+    log = lambda x: math.log(x) if x > 0 else None
+    datexp = map(log, dat)
+    datmod = list(filter(lambda x: x, datexp))
+    plt.hist(datmod, bins=75)
+    plt.show()
+
   def _node_rank(self, frame, kind, nodes):
     score = lambda x: frame.loc[frame[kind] == x][self.col_ranks].sum()
     return list(map(score, nodes))
@@ -511,8 +528,9 @@ class Score_K_O_D(Pipeline):
   col_fn_ont = 's_keq'
   col_fn_deg = 's_ont'
   col_ranks  = 's_deg'
-  slices = [exp(-4), exp(4)]
+  slices     = [exp(-4), exp(4)]
 
+  @mproperty
   def stack(self):
     first_pass  = self.score_keq(self.frame.merged)
     second_pass = self.score_ont(first_pass)
