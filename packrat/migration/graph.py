@@ -12,6 +12,7 @@ from pybloomfilter import BloomFilter
 from packrat import catalogue, psql, db
 
 misc_meta = db['misc_meta']
+SOURCES = ['PharmGKB', 'KEGG', 'SMPDB', 'PID']
 
 
 def _generate_network(target_file, host_file):
@@ -50,7 +51,7 @@ def _generate_functional_vectors(function_file):
   kys.sort()
 
   assoc = lambda x, c, clsfn=clsfn: str(int(x in clsfn[c]))
-  funcf = lambda x, assoc=assoc, kys=kys: ''.join([assoc(x, c) for c in kys])
+  funcf = lambda x, assoc=assoc, kys=kys: hex(int(''.join([assoc(x, c) for c in kys]), 2))
   return funcf, kys
 
 
@@ -58,13 +59,22 @@ def _generate_pathway_vectors(data_file):
   with open(data_file, 'r') as fl:
     pwv = json.load(fl)
 
-  print(len(pwv))
+  for srk in SOURCES:
+    dats  = list(filter(lambda x: x[0] == srk, pwv))
+    kys   = [x[1] for x in dats]
+    kys.sort()
+    clsfn = {x[1]: x[2] for x in dats}
+    assoc = lambda x, c, clsfn=clsfn: str(int(x in clsfn[c]))
+    funcf = lambda x, assoc=assoc, kys=kys: hex(int(''.join([assoc(x, c) for c in kys]), 2))
+    yield funcf, kys
+
 
 def persist():
   """Generate Network for a specific version of JSON dump."""
   host    = catalogue['network']['hosts']
   targets = catalogue['network']['targets']
   fncnl   = catalogue['functional_classification']['path']
+  pwont   = catalogue['pathway_ontology']['path']
 
   g = _generate_network(targets, host)
   logging.info("Network Grown")
@@ -76,6 +86,7 @@ def persist():
   logging.info("SQL Dumped: Network")
 
   funcf, kys = _generate_functional_vectors(fncnl)
+  ontfncts   = list(_generate_pathway_vectors(pwont))
 
   misc_meta.update({'namespace': 'fnclass'}, {
     'namespace': 'fnclass',
@@ -83,10 +94,28 @@ def persist():
   }, True)
 
   logging.info("Generating Function Vectors")
-  genes = ([_[0], _[1]['tc'], funcf(_[0])] for _ in g.nodes(True) if _[1]['kind'] == 'GEN')
+
+  genes = []
+
+  for _ in g.nodes(True):
+    if _[1]['kind'] == 'GEN':
+      dat = [_[0], _[1]['tc'], funcf(_[0])]
+      for fnont, kys in ontfncts:
+        dat.append(fnont(_[0]))
+      genes.append(dat)
+
+  for i, _ in enumerate(SOURCES):
+    ns = '{0}{1}'.format('ont_', _.lower())
+    misc_meta.update({'namespace': ns}, {
+      'namespace': ns,
+      'classes': ontfncts[i][1],
+    }, True)
+
   mirna = (_[0] for _ in g.nodes(True) if _[1]['kind'] == 'MIR')
 
-  df_gene = pd.DataFrame(genes, columns=['symbol', 'tc', 'functional_cls'])
+  cols = ['symbol', 'tc', 'functional_cls'] + list(map(lambda x: 'ont_{0}'.format(x.lower()), SOURCES))
+
+  df_gene = pd.DataFrame(genes, columns=cols)
   df_gene = df_gene.set_index('symbol')
   df_gene.to_sql('gene', psql, if_exists='replace')
   logging.info("SQL Dumped: Genes")
