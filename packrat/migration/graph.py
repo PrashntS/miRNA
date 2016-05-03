@@ -13,6 +13,7 @@ from packrat import catalogue, psql, db
 
 misc_meta = db['misc_meta']
 
+
 def _generate_network(target_file, host_file):
   """Grow NetworkX graph object from JSON Dumps"""
   with open(target_file, 'r') as m:
@@ -40,6 +41,7 @@ def _generate_network(target_file, host_file):
 
   return g
 
+
 def _generate_functional_vectors(function_file):
   with open(function_file, 'r') as fl:
     clsfn = json.load(fl)
@@ -51,11 +53,18 @@ def _generate_functional_vectors(function_file):
   funcf = lambda x, assoc=assoc, kys=kys: ''.join([assoc(x, c) for c in kys])
   return funcf, kys
 
-def persist(version):
+
+def _generate_pathway_vectors(data_file):
+  with open(data_file, 'r') as fl:
+    pwv = json.load(fl)
+
+  print(len(pwv))
+
+def persist():
   """Generate Network for a specific version of JSON dump."""
-  host = catalogue['network'][version]['hosts']
-  targets = catalogue['network'][version]['targets']
-  fncnl = catalogue['functional_classification']['path']
+  host    = catalogue['network']['hosts']
+  targets = catalogue['network']['targets']
+  fncnl   = catalogue['functional_classification']['path']
 
   g = _generate_network(targets, host)
   logging.info("Network Grown")
@@ -99,6 +108,7 @@ def persist(version):
   df_mirna.to_sql('mirn', psql, if_exists='replace')
   logging.info("SQL Dumped: miRNA")
 
+
 def get():
   """Return networkx object from Database"""
   network = pd.read_sql_table('ntwk', psql)
@@ -110,6 +120,7 @@ def get():
     mirnas.add(node)
 
   return graph, mirnas
+
 
 def function_classes():
   """Return Functional Classes"""

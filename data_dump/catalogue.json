@@ -29,6 +29,11 @@
     "added": 20160425,
     "path": "data_dump/computed/functional_classification_20160425.json"
   },
+  "pathway_ontology": {
+    "version": 1,
+    "added": 20160503,
+    "path": "data_dump/computed/cpdb_filtered.json"
+  },
   "functional_ranks_computed": {
     "version": 2,
     "added": 20160425,
@@ -48,12 +53,9 @@
     }
   ],
   "network": {
-    "v3": {
-      "hosts": "data_dump/computed/gene_mirna_graph_20160220.json",
-      "targets": "data_dump/computed/mirna_gene_graph_20160220v2.json",
-      "_meta": {
-        "added": 20160228
-      }
-    }
+    "version": 3,
+    "hosts": "data_dump/computed/gene_mirna_graph_20160220.json",
+    "targets": "data_dump/computed/mirna_gene_graph_20160220v2.json",
+    "added": 20160228
   }
 }
