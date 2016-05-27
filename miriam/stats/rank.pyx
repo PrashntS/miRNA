@@ -329,8 +329,7 @@ class Frame(object):
 
   @mproperty
   def ontology(self):
-    query = 'select symbol, functional_cls from gene'
-    data  = pd.read_sql_query(query, psql)
+    data  = pd.read_sql_table('gene', psql)
     return data
 
   @mproperty
@@ -368,16 +367,10 @@ class Frame(object):
       left_on='gene',
       right_on='symbol')
     del merge_ontology_gene['symbol']
-    merge_ontology_gene = merge_ontology_gene.rename(columns={
-      'functional_cls': 'ont_gene'
-    })
     merge_ontology_host = merge_ontology_gene.merge(self.ontology,
       left_on='host',
       right_on='symbol')
     del merge_ontology_host['symbol']
-    merge_ontology_host = merge_ontology_host.rename(columns={
-      'functional_cls': 'ont_host'
-    })
 
     return merge_ontology_host
 
@@ -442,8 +435,14 @@ class Pipeline(object):
       score_prev = r[self.col_fn_ont]
     except KeyError:
       score_prev = 1
-    ont   = int(r['ont_gene'], 2) & int(r['ont_host'], 2)
-    score = str(bin(ont)).count('1')
+
+    scs = ['ont_fnc', 'ont_pharmgkb', 'ont_kegg', 'ont_smpdb', 'ont_pid']
+    score = 0x0
+    for ont in scs:
+      rt = ont + '_x'
+      lt = ont + '_y'
+      ont = int(r[rt], 16) & int(r[lt], 16)
+      score += str(bin(ont)).count('1')
     score += r['gene'] == r['host']
     return exp(score) * score_prev
 
@@ -487,6 +486,7 @@ class Pipeline(object):
     logger.debug('[GraphKit] End')
     return gk
 
+  @mproperty
   def stack(self):
     '''Ranking Stacks'''
     raise NotImplemented
@@ -507,14 +507,24 @@ class Pipeline(object):
     plt.show()
 
   def _node_rank(self, frame, kind, nodes):
-    score = lambda x: frame.loc[frame[kind] == x][self.col_ranks].sum()
-    return list(map(score, nodes))
+    score = lambda x: (x, frame.loc[frame[kind] == x][self.col_ranks].sum())
+    scores = list(map(score, nodes))
+    scores.sort(key=lambda x: x[1], reverse=True)
+    return scores
 
   def _mirna_rank(self, frame):
     return self._node_rank(frame, 'mirna', g.mirnas)
 
   def _gene_rank(self, frame):
     return self._node_rank(frame, 'gene', g.genes)
+
+  @mproperty
+  def mirnas(self):
+    return self._mirna_rank(self.stack)
+
+  @mproperty
+  def genes(self):
+    return self._gene_rank(self.stack)
 
 
 class Score_K_O_D(Pipeline):

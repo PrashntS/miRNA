@@ -113,7 +113,7 @@ def persist():
 
   mirna = (_[0] for _ in g.nodes(True) if _[1]['kind'] == 'MIR')
 
-  cols = ['symbol', 'tc', 'functional_cls'] + list(map(lambda x: 'ont_{0}'.format(x.lower()), SOURCES))
+  cols = ['symbol', 'tc', 'ont_fnc'] + list(map(lambda x: 'ont_{0}'.format(x.lower()), SOURCES))
 
   df_gene = pd.DataFrame(genes, columns=cols)
   df_gene = df_gene.set_index('symbol')
