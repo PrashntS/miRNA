@@ -24,25 +24,27 @@ def proc_row(row, pivot):
 
   labeled_ranks = add_label(mean_ranks)
   labeled_ranks.sort(key=lambda x: x[1], reverse=True)
-
-  axes_labels = [_[0] for _ in labeled_ranks]
+  labeled_ranks = labeled_ranks[:50]
 
   row_s_rearranged = {}
 
-  row_f = pd.DataFrame(index=[_[0] for _ in labeled_ranks], columns=row_s.keys())
-  row_f['mean'] = list(range(len(labeled_ranks)))#[_[1] for _ in labeled_ranks]
+  # row_f = pd.DataFrame(index=[_[0] for _ in labeled_ranks], columns=row_s.keys())
+  row_f1 = pd.DataFrame(index=range(len(labeled_ranks)), columns=row_s.keys())
+  row_f2 = pd.DataFrame(index=range(len(labeled_ranks)), columns=row_s.keys())
+  # row_f['mean'] = list(range(len(labeled_ranks)))#[_[1] for _ in labeled_ranks]
+  row_f1['mean'], row_f2['mean'] = zip(*labeled_ranks)
 
   for k, v in row_s.items():
     lbd = add_label(v)
     lbd.sort(key=lambda x: x[1], reverse=True)
-    lbdi = {_[0]: i for i, _ in enumerate(lbd)}
+    # lbdi = {_[0]: i for i, _ in enumerate(lbd)}
 
-    row_f[k] = [lbdi[_] for _ in row_f.index]
+    row_f1[k], row_f2[k] = zip(*[lbd[_] for _ in row_f1.index])
     # ranks = {}
     # for i, v in enumerate(lbd):
     #   row_f.loc[v[0], k] = i
 
-  return row_f
+  return pd.DataFrame([row_f1, row_f2])
 
 if __name__ == '__main__':
   with open('/data/miriam.out.json', 'r') as f:

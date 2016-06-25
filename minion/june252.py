@@ -2,8 +2,9 @@ import pandas as pd
 from miriam.stats.slope import slope
 
 if __name__ == '__main__':
-  df = pd.read_pickle('miriam.out.mirnas.pkl')
-  cols = ['mean'] + list(df.columns[:40])
-  dat = df.loc[:,cols][:100]
-  sl = slope(dat)
+  df1, df2 = [_[0] for _ in pd.read_pickle('miriam.out.genes.pkl').values]
+  # cols = ['mean'] + list(df1.columns[:20])
+  cols = df1.columns
+  label, values = df1.loc[:,cols], df2.loc[:,cols]
+  sl = slope(label, values)
   # print(dat)

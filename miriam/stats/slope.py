@@ -5,39 +5,48 @@ import numpy as np
 import pandas as pd
 import os
 import matplotlib.gridspec as gridspec
+import math
 
 
-def slope(data,
-      kind='interval',
+def cubic(max_v):
+  p0, p1, p2, p3 = (0, 0.1, 0.4, 1)
+  def cubic_bezier(t_):
+    t_ = t_ / max_v
+    t = 1 - t_
+    return (t_**3 * p0) + (3 * t * p1 * t_**2) + (3 * t**2 * t_ * p2) + (t**3 * p3)
+  return cubic_bezier
+  # return lambda x: max_v - x
+
+
+def slope(lbls, vals,
       marker='%0.f',
       color=None,
       title='',
-      width=20,
-      height=20,
-      ax=None,
-      savename='test.png',
-      dpi=150,
-      wspace=None, ):
+      savename='test2.png',
+      dpi=300):
 
   font = FontProperties('Montserrat')
   font.set_size(5)
   bx = None
-
-  df = data.copy()
+  # fn = cubic(vals.max().max() + 1)
+  fn = math.log
+  # df = data.copy().applymap(fn)
+  df = vals.copy().applymap(fn)
 
   cols = df.columns
+  data_range = [df.min().min(), df.max().max()]
   df['__label__'] = df.index
   df['__order__'] = range(len(df.index))
 
   width = (len(cols) - 1)
   height = 20
 
-  f = plt.figure(figsize=(width, height), dpi=50)
+  f = plt.figure(figsize=(width, height), dpi=150)
   gs = gridspec.GridSpec(
     nrows=height,
     ncols=width,
     hspace=0,
-    wspace=0
+    wspace=1
   )
   # gs.update(wspace=0, hspace=0.0)
   axarr = []
@@ -51,7 +60,6 @@ def slope(data,
   axarr = np.array(axarr)
   axarr_X = np.array(axarr_X)
   renderer = f.canvas.get_renderer()
-  data_range = [data.min().min(), data.max().max()]
 
   fh = f.get_figheight()
   fw = f.get_figwidth()
@@ -69,26 +77,40 @@ def slope(data,
     axarr_X[i].yaxis.set_tick_params(width=0, pad=0)
     axarr_X[i].xaxis.set_tick_params(width=0, pad=0)
 
-    labelsL = df.groupby(pd.cut(df[cols[i]], nt))['__label__'].agg(
-      ', '.join).dropna()
-    labelsR = df.groupby(pd.cut(df[cols[i + 1]], nt))['__label__'].agg(
-      ', '.join).dropna()
+    # labelsL = df.groupby(pd.cut(df[cols[i]], nt))['__label__'].agg(
+    #   ', '.join).dropna()
+    # labelsR = df.groupby(pd.cut(df[cols[i + 1]], nt))['__label__'].agg(
+    #   ', '.join).dropna()
 
-    yPos_L = df.groupby(pd.cut(df[cols[i]],
-                   nt))[cols[i]].mean().dropna()
-    yPos_R = df.groupby(pd.cut(df[cols[i + 1]],
-                   nt))[cols[i + 1]].mean().dropna()
+    # yPos_L = df.groupby(pd.cut(df[cols[i]],
+    #                nt))[cols[i]].mean().dropna()
+    # yPos_R = df.groupby(pd.cut(df[cols[i + 1]],
+    #                nt))[cols[i + 1]].mean().dropna()
 
-    yMark_L = df.groupby(pd.cut(df[cols[i]],
-                  nt))[cols[i]].mean().dropna()
-    yMark_R = df.groupby(pd.cut(df[cols[i + 1]],
-                  nt))[cols[i + 1]].mean().dropna()
+    # yMark_L = df.groupby(pd.cut(df[cols[i]],
+    #               nt))[cols[i]].mean().dropna()
+    # yMark_R = df.groupby(pd.cut(df[cols[i + 1]],
+    #               nt))[cols[i + 1]].mean().dropna()
 
-    yPos_ = df[[cols[i], cols[i + 1]]]
-    yPos_.columns = range(2)
+    commons = set(lbls[cols[i]]).intersection(lbls[cols[i + 1]])
+
+    get_ix = lambda x, _: lbls[lbls[cols[x]] == _].index[0]
+    get_iv = lambda x, _: df[cols[x]][get_ix(x, _)]
+
+    yPos_ = list(zip(*[(get_iv(i, _), get_iv(i + 1, _)) for _ in commons]))
+
+    # i_ixs = [is_ix(i, _) for _ in commons]
+    # j_ixs = [lbls[lbls[cols[i + 1]] == _].index[0] for _ in commons]
+
+    # yPos_ = df[[cols[i], cols[i + 1]]]
 
 
-    lines = ax.plot(yPos_.T, color='k', alpha=0.5)
+    # yPos_.columns = range(2)
+
+    # print(yPos_)
+    # print(yPos_.T)
+
+    lines = ax.plot(yPos_, color='k', alpha=0.5)
     ax.spines['bottom'].set_visible(False)
     ax.xaxis.set_ticks_position('bottom')
 
@@ -98,28 +120,31 @@ def slope(data,
     axarr_X[i].set_yticklabels([str(cols[i])], fontproperties=font, ha='center')
 
 
-    labelsL_str = [item[1] + ('%f' % item[0]).rjust(6)
-             for item in zip(yMark_L.values, labelsL.values)]
-    labelsR_str = [('%f' % item[0]).ljust(6) + item[1]
-             for item in zip(yMark_R.values, labelsR.values)]
-    ylabelsL_str = map(lambda el: '%f' % el, yMark_L.values)
-    ylabelsR_str = map(lambda el: '%f' % el, yMark_R.values)
+    # labelsL_str = [item[1] + ('%f' % item[0]).rjust(6)
+    #          for item in zip(yMark_L.values, labelsL.values)]
+    # labelsR_str = [('%f' % item[0]).ljust(6) + item[1]
+    #          for item in zip(yMark_R.values, labelsR.values)]
+    # ylabelsL_str = map(lambda el: '%f' % el, yMark_L.values)
+    # ylabelsR_str = map(lambda el: '%f' % el, yMark_R.values)
 
     # if i == 0:
     #   ax.set_yticks(yPos_L.values)
     #   ax.set_yticklabels(labelsL_str, fontproperties=font)
     # elif marker:
-    ax.set_yticks(yPos_L.values)
-    ax.set_yticklabels([el for el in  ylabelsL_str],
+
+    ax.set_yticks(df[cols[i]].values)
+    ax.set_yticklabels(lbls[cols[i]].values,
                fontproperties=font,
-               ha='center',
+               ha='right',
                alpha=0.5
                )  #ha='center')#,backgroundcolor='w')
 
-    ax.set_ylim(data_range)
+    ax.set_ybound(data_range)
     ax.yaxis.set_tick_params(width=0, pad=0)
     ax.set_xbound((0, 1))
     ax.set_aspect('auto')
+
+
     # else:
     #   plt.setp(ax.get_yticklabels(), visible=False)
     #   wspace = 0
@@ -128,8 +153,8 @@ def slope(data,
       bx = ax.twinx()
 
       bx.set_ybound(data_range)
-      bx.set_yticks(yPos_R.values)
-      bx.set_yticklabels(labelsR_str, fontproperties=font)
+      # bx.set_yticks(yPos_R.values)
+      # bx.set_yticklabels(labelsR_str, fontproperties=font)
       bx.yaxis.set_tick_params(width=0, pad=0)
 
       bx_X = axarr_X[i].twinx()
@@ -196,7 +221,7 @@ def slope(data,
   # else:
   # aw = ax.get_tightbbox(renderer).width
   # wspace = tw / aw * 1.4
-  f.subplots_adjust(wspace=0, hspace=0)
+  f.subplots_adjust(wspace=0, hspace=10)
   # f.subplots_adjust(wspace=0, hspace=0, left=0, right=1)
   if savename:
     f.savefig(savename, dpi=dpi)
