@@ -18,6 +18,7 @@ from miriam import psql, db
 from miriam.logger import logger
 from miriam.network import g
 from miriam.network.model import GraphKit
+from miriam.network.algorithm import Motif
 from packrat.migration.graph import function_classes
 from miriam.alchemy.utils import mproperty
 from miriam.alchemy.rank import Tissue
@@ -507,8 +508,13 @@ class Pipeline(object):
     plt.show()
 
   def _node_rank(self, frame, kind, nodes):
-    score = lambda x: (x, frame.loc[frame[kind] == x][self.col_ranks].sum())
-    scores = list(map(score, nodes))
+    groups = frame.groupby(kind)
+    def get_sum(el):
+      try:
+        return groups.get_group(el)[self.col_ranks].sum()
+      except KeyError:
+        return 0
+    scores = list(map(lambda x: (x, get_sum(x)), nodes))
     scores.sort(key=lambda x: x[1], reverse=True)
     return scores
 
@@ -525,6 +531,47 @@ class Pipeline(object):
   @mproperty
   def genes(self):
     return self._gene_rank(self.stack)
+
+  @property
+  def graph(self):
+    return self.as_graph(self.stack)
+
+  @mproperty
+  def motifs(self):
+    formats = {
+      'D1': "{M1} ⇌ {G}",
+      'T2': "{M1} ⇌ {G} ⇌ {M2}",
+      'T3': "{M1} ⇌ {G} → {M2}",
+      'T4': "{M1} ⇌ {G} ← {M2}",
+      'T6': "{M1} → {G} → {M2}",
+      'T7': "{M1} ← {G} → {M2}"
+    }
+    mir_scores = dict(self.mirnas)
+    gene_scores = dict(self.genes)
+
+    def motif_fmt(motif, kind):
+      score = 0
+      for k, v in motif.items():
+        if 'M' in k:
+          score += mir_scores[v]
+        else:
+          score += gene_scores[v]
+      return formats[kind].format(**motif), score
+
+    return {k: [motif_fmt(m, k) for m in v] for k, v in self.graph.motif.items()}
+
+  def report(self):
+    genes = self.genes
+    genes.sort(key=lambda x: x[0])
+
+    mirnas = self.mirnas
+    mirnas.sort(key=lambda x: x[0])
+    return {
+      'tissue': self.frame.tissue.id,
+      'genes': [x[1] for x in genes],
+      'mirnas': [x[1] for x in mirnas],
+      'motifs': self.motifs,
+    }
 
 
 class Score_K_O_D(Pipeline):

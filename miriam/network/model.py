@@ -74,6 +74,16 @@ class GraphKit(object):
     else:
       return self.g.predecessors(node)
 
+  def interaction_hash(self):
+    def as_str(x):
+      if x[0] in __mirnas__:
+        return "{0} {1}".format(*x)
+      else:
+        return None
+    interactions = list(filter(lambda x: x, map(as_str, self.g.edges())))
+    interactions.sort()
+    return interactions
+
   @mproperty
   def degrees(self):
     return {_: self.g.in_degree(_) for _ in self.g.node}
