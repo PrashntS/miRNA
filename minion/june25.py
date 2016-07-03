@@ -1,10 +1,15 @@
 # Agora NHS
 import json
+import yaml
 import numpy
 import numpy.linalg
 import pandas as pd
 
 from miriam.network import g
+
+
+with open('tissues.chosen.yaml', 'r') as fl:
+  tissues = yaml.load(fl)
 
 
 def unit_scale(x):
@@ -29,12 +34,13 @@ def proc_row(row, pivot):
   row_s_rearranged = {}
 
   # row_f = pd.DataFrame(index=[_[0] for _ in labeled_ranks], columns=row_s.keys())
-  row_f1 = pd.DataFrame(index=range(len(labeled_ranks)), columns=row_s.keys())
-  row_f2 = pd.DataFrame(index=range(len(labeled_ranks)), columns=row_s.keys())
+  row_f1 = pd.DataFrame(index=range(len(labeled_ranks)), columns=tissues)
+  row_f2 = pd.DataFrame(index=range(len(labeled_ranks)), columns=tissues)
   # row_f['mean'] = list(range(len(labeled_ranks)))#[_[1] for _ in labeled_ranks]
   row_f1['mean'], row_f2['mean'] = zip(*labeled_ranks)
 
-  for k, v in row_s.items():
+  for k in tissues:
+    v = row_s[k]
     lbd = add_label(v)
     lbd.sort(key=lambda x: x[1], reverse=True)
     # lbdi = {_[0]: i for i, _ in enumerate(lbd)}
@@ -56,8 +62,9 @@ if __name__ == '__main__':
   # gene_trnk, gene_mrnk = proc_row({k: d[k]['genes'] for k in d}, g.genes)
   # mirna_trnk = proc_row({k: d[k]['mirnas'] for k in d}, g.mirnas)
 
-  # with open('/data/miriam.out.two.json', 'r') as f:
-  #   e = json.load(f)
+  with open('/data/miriam.out.two.json', 'r') as f:
+    e = json.load(f)
+  proc_row({k: e[k] for k in e}, g.interaction_hash()).to_pickle('miriam.out.interaction.pkl')
 
   # intrn_trnk, intrn_mrnk = proc_row({k: e[k] for k in e}, g.interaction_hash())
 
