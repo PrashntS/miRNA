@@ -46,7 +46,7 @@ def slope(lbls, vals,
     nrows=height,
     ncols=width,
     hspace=0,
-    wspace=1
+    wspace=0
   )
   # gs.update(wspace=0, hspace=0.0)
   axarr = []
@@ -97,7 +97,7 @@ def slope(lbls, vals,
     get_ix = lambda x, _: lbls[lbls[cols[x]] == _].index[0]
     get_iv = lambda x, _: df[cols[x]][get_ix(x, _)]
 
-    yPos_ = list(zip(*[(get_iv(i, _), get_iv(i + 1, _)) for _ in commons]))
+    yPos_ = list(zip(*[(get_iv(i, _), get_iv(i, _), get_iv(i + 1, _), get_iv(i + 1, _)) for _ in commons]))
 
     # i_ixs = [is_ix(i, _) for _ in commons]
     # j_ixs = [lbls[lbls[cols[i + 1]] == _].index[0] for _ in commons]
@@ -117,8 +117,7 @@ def slope(lbls, vals,
     ax.set_xticklabels([])
     axarr_X[i].set_yticks([1])
     axarr_X[i].set_xticklabels([])
-    axarr_X[i].set_yticklabels([str(cols[i])], fontproperties=font, ha='center')
-
+    axarr_X[i].set_yticklabels([str(cols[i])[10:]], fontproperties=font, ha='center')
 
     # labelsL_str = [item[1] + ('%f' % item[0]).rjust(6)
     #          for item in zip(yMark_L.values, labelsL.values)]
@@ -141,7 +140,7 @@ def slope(lbls, vals,
 
     ax.set_ybound(data_range)
     ax.yaxis.set_tick_params(width=0, pad=0)
-    ax.set_xbound((0, 1))
+    ax.set_xbound((0, 3))
     ax.set_aspect('auto')
 
 
@@ -149,19 +148,19 @@ def slope(lbls, vals,
     #   plt.setp(ax.get_yticklabels(), visible=False)
     #   wspace = 0
 
-    if i == len(cols) - 2:
-      bx = ax.twinx()
+    # if i == len(cols) - 2:
+    #   bx = ax.twinx()
 
-      bx.set_ybound(data_range)
-      # bx.set_yticks(yPos_R.values)
-      # bx.set_yticklabels(labelsR_str, fontproperties=font)
-      bx.yaxis.set_tick_params(width=0, pad=0)
+    #   bx.set_ybound(data_range)
+    #   # bx.set_yticks(yPos_R.values)
+    #   # bx.set_yticklabels(labelsR_str, fontproperties=font)
+    #   bx.yaxis.set_tick_params(width=0, pad=0)
 
-      bx_X = axarr_X[i].twinx()
-      bx_X.set_xticklabels([])
-      bx_X.set_yticks([1])
-      bx_X.yaxis.set_tick_params(width=0, pad=0)
-      bx_X.set_yticklabels([str(cols[i + 1])], fontproperties=font)
+    #   bx_X = axarr_X[i].twinx()
+    #   bx_X.set_xticklabels([])
+    #   bx_X.set_yticks([1])
+    #   bx_X.yaxis.set_tick_params(width=0, pad=0)
+    #   bx_X.set_yticklabels([str(cols[i + 1])], fontproperties=font)
 
 
     if color:

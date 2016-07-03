@@ -6,10 +6,11 @@ import falcon
 
 from miriam.alchemy.rank import TissueCollection, Tissue
 from miriam.api.directives import id_format, kind
-from miriam.stats.rank import Ranking
 
 from packrat import catalogue
 from packrat.alchemy.utils import get_json_dict
+
+#// IMPORTANT BROKEN!
 
 @hug.get('/tissues')
 def get_tissues():

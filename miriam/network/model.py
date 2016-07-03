@@ -74,6 +74,7 @@ class GraphKit(object):
     else:
       return self.g.predecessors(node)
 
+  @mproperty
   def interaction_hash(self):
     def as_str(x):
       if x[0] in __mirnas__:
@@ -98,3 +99,28 @@ class GraphKit(object):
     nx.set_node_attributes(g_k, 'kind', {_: 'MIR' for _ in self.mirnas})
     obj = Motif(g_k)
     return obj.find_all()
+
+  def _motif_sformat(self, motif, kind):
+    formats = {
+      'D1': "{M1} ⇌ {G}",
+      'T2': "{M1} ⇌ {G} ⇌ {M2}",
+      'T3': "{M1} ⇌ {G} → {M2}",
+      'T4': "{M1} ⇌ {G} ← {M2}",
+      'T6': "{M1} → {G} → {M2}",
+      'T7': "{M1} ← {G} → {M2}"
+    }
+    return formats[kind].format(**motif)
+
+  @mproperty
+  def motif_hash(self):
+    hashes = {}
+    for k, v in self.motif.items():
+      motifs = [self._motif_sformat(m, k) for m in v]
+      motifs.sort()
+      hashes[k] = motifs
+    keys = list(hashes.keys())
+    keys.sort()
+    hashed = []
+    for key in keys:
+      hashed.extend(hashes[key])
+    return hashed
