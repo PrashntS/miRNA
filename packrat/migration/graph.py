@@ -143,7 +143,7 @@ def get():
   network = pd.read_sql_table('ntwk', psql)
   graph = nx.from_edgelist(network.values, create_using=nx.DiGraph())
 
-  mirna = pd.read_sql_table('mirn', psql)
+  mirna = pd.read_sql_table('mirna', psql)
   mirnas = BloomFilter(3000,  0.0001)
   for node in mirna['symbol']:
     mirnas.add(node)

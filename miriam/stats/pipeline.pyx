@@ -319,6 +319,6 @@ class Score_K_O_D(Pipeline):
     sframe = frame.sort_values('score', ascending=False)
     sframe.index = range(1, len(sframe) + 1)
 
-    pd.to_pickle(cached_file)
+    sframe.to_pickle(cached_file)
 
     return sframe
