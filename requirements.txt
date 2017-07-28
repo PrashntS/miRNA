@@ -20,8 +20,8 @@ gevent==1.1rc5
 gnureadline==6.3.3
 greenlet==0.4.9
 huey==1.1.0
-ipython==4.1.2
-ipython-genutils==0.1.0
+hug==2.2.0
+ipython==5.1.0
 itsdangerous==0.24
 Jinja2==2.8
 MarkupSafe==0.23
@@ -36,13 +36,14 @@ numpy==1.10.4
 pandas==0.17.1
 path.py==8.1.2
 pbr==1.8.1
+pecan-mount==0.0.2
 persistent==4.1.1
 pexpect==4.0.1
 pickleshare==0.6
 psycopg2==2.6.1
 ptyprocess==0.5.1
+pybloomfiltermmap3==0.4.15
 pydash==3.4.1
-pymiranda==1.0
 pymongo==3.2.1
 python-dateutil==2.4.2
 python-engineio==0.8.8
@@ -54,6 +55,8 @@ requests==2.9.1
 simplegeneric==0.8.1
 six==1.10.0
 sortedcontainers==1.4.4
+sqlalchemy==1.1.4
+static==1.1.1
 traitlets==4.1.0
 transaction==1.4.4
 walrus==0.3.4

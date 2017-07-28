@@ -1,12 +1,10 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 # MiRiam
 import hug
 import pecan_mount
 import static
 
+from miriam import config
 from miriam._version import current
-from miriam._config import static_root
 from packrat import db, psql
 
 
@@ -28,6 +26,6 @@ def mount_rank():
   return [computed_api]
 
 pecan_mount.tree.graft(__hug_wsgi__, '/api')
-pecan_mount.tree.graft(static.Cling(static_root), '/')
+pecan_mount.tree.graft(static.Cling(config.static_root), '/')
 
 api = pecan_mount.tree
