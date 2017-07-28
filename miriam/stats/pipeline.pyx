@@ -1,27 +1,27 @@
 # MiRiam
-import pandas as pd
-import numpy as np
-import numpy.linalg
-import networkx as nx
 import functools
 import itertools
 import math
+import networkx as nx
+import numpy as np
+import numpy.linalg
 import os
+import pandas as pd
 
-from multiprocessing import Pool
-from pydash import py_
 from math import exp
-from operator import mul
 from matplotlib import pyplot as plt
+from multiprocessing import Pool
+from operator import mul
+from pydash import py_
 
 from miriam import psql, db, config
+from miriam.alchemy.rank import Frame
+from miriam.alchemy.transforms import OntologyTransform, FunctionalOntologyTx, PathwayPIDOntologyTx, MolecularFnOntologyTx
+from miriam.alchemy.utils import mproperty
 from miriam.logger import logger
 from miriam.network import g
-from miriam.network.model import GraphKit
 from miriam.network.algorithm import Motif
-from packrat.migration.graph import function_classes
-from miriam.alchemy.utils import mproperty
-from miriam.alchemy.rank import Frame
+from miriam.network.model import GraphKit
 
 
 cdef int CONCURRENCY = 3
@@ -50,21 +50,18 @@ cdef float scale_spt(int x):
   return 1 + (n / d)
 
 
-def step_keq(r):
-  '''Calculate K equivalent.'''
-  cdef float dg = r['dg']
-  cdef float e_gene = math.log(r['exp_gene'] + 1)
-  cdef float e_mirn = math.log(r['exp_host'] + 1)
-  try:
-    return (e ** (RTI * dg)) * (e_mirn / e_gene)
-  except ZeroDivisionError:
-    return None
-
-cpdef float step_deg(r):
-  cdef int dm = r['mirna']
-  cdef int dg = r['gene']
-  return dg / dm
-
+def ontology_adjacency(frame, column_x, column_y, cardinality):
+  adj_mat = np.zeros(cardinality ** 2)
+  for _, x in frame.iterrows():
+    if not x.score > 0:
+      continue
+    v1 = OntologyTransform(x[column_x], cardinality)
+    v2 = OntologyTransform(x[column_y], cardinality)
+    factor = v1.hamming_weight + v2.hamming_weight
+    if not factor > 0:
+      continue
+    adj_mat += np.kron(v1.row, v2.row) * (x.score / factor)
+  return adj_mat.reshape((cardinality, cardinality))
 
 
 class Pipeline(object):
@@ -112,7 +109,7 @@ class Pipeline(object):
 
   def _fn_ont(self, r):
     '''Calculate ontology values.'''
-    scs = ['ont_fnc', 'ont_pharmgkb', 'ont_kegg', 'ont_smpdb', 'ont_pid']
+    scs = ['ont_fnc', 'ont_pharmgkb', 'ont_kegg', 'ont_smpdb', 'ont_pid', 'ont_mol_fn']
     score = 0x0
     for ont in scs:
       rt = ont + '_x'
@@ -121,9 +118,6 @@ class Pipeline(object):
       score += str(bin(ont)).count('1')
     score += r['gene'] == r['host']
     return scale_spt(score)
-
-  def _combine_scores(self, frame, columns):
-    pass
 
   def as_graph(self, frame):
     logger.debug('[GraphKit] Begin')
@@ -152,21 +146,6 @@ class Pipeline(object):
     '''Ranking Stacks'''
     raise NotImplemented
 
-  def plot_line(self, frame, col):
-    ''''''
-    dat = frame[col].plot(logy=True)
-    plt.show()
-
-  def plot_hist(self, frame, col):
-    '''Plots Histogram'''
-    dat = frame[col].tolist()
-    dat.sort()
-    log = lambda x: math.log(x) if x > 0 else None
-    datexp = map(log, dat)
-    datmod = list(filter(lambda x: x, datexp))
-    plt.hist(datmod, bins=75)
-    plt.show()
-
   def _node_rank(self, kind, nodes):
     ranked = nx.degree_centrality(self.nx_graph)
     if kind is 'mirna':
@@ -179,30 +158,6 @@ class Pipeline(object):
     scores = [(_, nodes.get(_, None)) for _ in nodes]
     scores.sort(key=lambda x: x[1], reverse=True)
     return scores
-
-  def ontology_score(self, kind):
-    genes = (self
-        .stack
-        .drop_duplicates('host')
-        .loc[:,('host', 'ont_fnc_x', 'ont_pharmgkb_x', 'ont_kegg_x', 'ont_smpdb_x', 'ont_pid_x')]
-        .set_index('host')
-        .to_dict())
-
-    dim_pivot = max(genes[kind], key=lambda x: int(genes[kind][x], 16))
-    val = genes[kind][dim_pivot]
-
-    to_vector = lambda x: np.array([int(_) for _ in bin(int(x, 16))[2:]])
-
-    val_dim = np.zeros_like(to_vector(val), dtype='float64')
-
-    out = val_dim.copy()
-
-    for gene, score in self.genes:
-      if gene in genes[kind]:
-        vec = to_vector(genes[kind][gene]) * score
-        vec.resize(len(out))
-        out += vec
-    return out
 
   @mproperty
   def mirnas(self):
@@ -219,8 +174,8 @@ class Pipeline(object):
   @mproperty
   def motifs(self):
     formats = {
-      'D1': "{M1} ⇌ {G}",
-      'T2': "{M1} ⇌ {G} ⇌ {M2}",
+      # 'D1': "{M1} ⇌ {G}",
+      # 'T2': "{M1} ⇌ {G} ⇌ {M2}",
       'T3': "{M1} ⇌ {G} → {M2}",
       'T4': "{M1} ⇌ {G} ← {M2}",
       'T6': "{M1} → {G} → {M2}",
@@ -290,6 +245,21 @@ class Pipeline(object):
     diseases_ranked.sort(key=lambda x: x[1], reverse=True)
     return diseases_ranked
 
+  @mproperty
+  def functions_adjacency(self):
+    c = FunctionalOntologyTx.cardinality
+    return ontology_adjacency(self.stack, 'ont_fnc_x', 'ont_fnc_y', c)
+
+  @mproperty
+  def pathway_pid_adjacency(self):
+    c = PathwayPIDOntologyTx.cardinality
+    return ontology_adjacency(self.stack, 'ont_pid_x', 'ont_pid_y', c)
+
+  @mproperty
+  def molecular_fn_adjacency(self):
+    c = MolecularFnOntologyTx.cardinality
+    return ontology_adjacency(self.stack, 'ont_mol_fn_x', 'ont_mol_fn_y', 16)
+
 
 class Score_K_O_D(Pipeline):
   '''Score in KOD order.
@@ -303,13 +273,15 @@ class Score_K_O_D(Pipeline):
   @mproperty
   def stack(self):
     cached_file = os.path.join(config.pickle_dir, '{}.pkl'.format(self.frame.tissue.id))
-    frame = self.frame.filtered
-    self._deg_graph = self.as_graph(frame)
 
     try:
+      # Attempt to load a cached version of this file.
       return pd.read_pickle(cached_file)
     except FileNotFoundError:
       pass
+
+    frame = self.frame.filtered
+    self._deg_graph = self.as_graph(frame)
 
     frame['s_keq'] = self._get_column(frame, self._fn_keq)
     frame['s_deg'] = self._get_column(frame, self._fn_deg)

@@ -98,7 +98,7 @@ class Frame(object):
 
   @mproperty
   def ontology(self):
-    return pd.read_sql_table('gene', psql)
+    return pd.read_sql_table('gene_beta', psql)
 
   @mproperty
   def network(self):
